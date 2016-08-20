@@ -1,0 +1,16 @@
+body {
+    font-family: arial;
+    background-color: black;
+    color: greenyellow;
+    font-size: 14pt;
+}
+
+textarea {
+    background-color: black;
+    color: greenyellow;
+    font-size: 14pt;
+    border-color: blue;
+}
+.appTitle{
+    font-size: smaller;
+}

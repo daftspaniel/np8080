@@ -1,0 +1,6 @@
+<div *ngIf="note != null">
+    <div>
+        <textarea [(ngModel)]="note.text" cols="80" style="height:480px" (keyup)="changeHandler()"></textarea>
+    </div>
+    <text-status text="{{note.text}}"></text-status>
+</div>
