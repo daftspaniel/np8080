@@ -1,8 +1,8 @@
 import 'package:angular2/core.dart';
 
-import 'status_component.dart';
-import 'toolbar_component.dart';
-import 'textdocument.dart';
+import 'package:np8080/editor/status_component.dart';
+import 'package:np8080/toolbar/toolbar_component.dart';
+import 'package:np8080/document/textdocument.dart';
 
 @Component(
     selector: 'plain-editor',

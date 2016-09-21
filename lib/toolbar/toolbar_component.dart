@@ -1,8 +1,7 @@
 import 'dart:html';
 
 import 'package:angular2/core.dart';
-
-import 'textdocument.dart';
+import 'package:np8080/document/textdocument.dart';
 
 @Component(
     selector: 'editor-toolbar',
@@ -12,6 +11,10 @@ class ToolbarComponent {
 
   @Input()
   TextDocument note;
+
+  void aboutHandler() {
+    window.alert('np 8080 v0.2');
+  }
 
   void trimHandler() {
     note.trim();

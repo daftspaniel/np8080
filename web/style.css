@@ -7,7 +7,7 @@ html, body {
 }
 
 textarea {
-    background-color: black;
+    background-color: #111111;
     color: greenyellow;
     font-size: 14pt;
     border-color: blue;
@@ -19,7 +19,7 @@ textarea {
 }
 
 textarea {
-    background-color: #111111;
+    background-color: black;
     width: 95vw;
     height: 91vh;
 }
