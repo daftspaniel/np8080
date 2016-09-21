@@ -9,4 +9,5 @@ class StatusComponent {
 
   String get length => text.length.toString();
   String get wordCount => text.split(' ').length.toString();
+  String get lineCount => ('\n'.allMatches(text).length).toString();
 }

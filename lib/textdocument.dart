@@ -12,4 +12,9 @@ class TextDocument {
   void save() {
     window.localStorage['id' + id.toString()] = text;
   }
+
+  void trim() {
+    text = text.trim();
+    save();
+  }
 }

@@ -1,8 +1,9 @@
-body {
+html, body {
     font-family: arial;
     background-color: black;
     color: greenyellow;
     font-size: 14pt;
+    width: 95%;
 }
 
 textarea {
@@ -10,7 +11,19 @@ textarea {
     color: greenyellow;
     font-size: 14pt;
     border-color: blue;
+    width: 100%;
 }
-.appTitle{
+
+.appTitle {
     font-size: smaller;
+}
+
+textarea {
+    background-color: #111111;
+    width: 95vw;
+    height: 91vh;
+}
+
+button {
+    width: 80px;
 }
