@@ -7,8 +7,9 @@ class TextDocument {
 
   TextDocument() {
     text = window.localStorage['id1'];
+    lastModified = null;
     if (text == null) text = "Welcome to notepad8080";
-    updateModifiedDate();
+    if (lastModified == null) updateModifiedDate();
   }
 
   void updateModifiedDate() {
