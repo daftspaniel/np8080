@@ -1,10 +1,10 @@
 name: np8080
 description: A Dart app that uses Angular 2
-version: 0.0.1
+version: 0.0.3h
 environment:
   sdk: '>=1.13.0 <2.0.0'
 dependencies:
-  angular2: 2.0.0-beta.20
+  angular2: ^2.0.0-beta.20
   browser: ^0.10.0
   dart_to_js_script_rewriter: ^1.0.1
 transformers:

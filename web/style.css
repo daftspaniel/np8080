@@ -1,21 +1,18 @@
 html, body {
-    font-family: arial;
-    background-color: black;
-    color: greenyellow;
+    font-family: monospace;
+    background-color: #333333;
+    color: #b8df42;
     font-size: 14pt;
     width: 95%;
 }
 
 textarea {
     background-color: #111111;
-    color: greenyellow;
-    font-size: 14pt;
+    color: #b8df42;
+    font-size: 10pt;
     border-color: blue;
+    border: 0px;
     width: 100%;
-}
-
-.appTitle {
-    font-size: smaller;
 }
 
 textarea {
@@ -25,5 +22,18 @@ textarea {
 }
 
 button {
+    background-color: cornflowerblue;
     width: 80px;
+    color: white;
+    border: 0px;
+    margin: -6px;
+}
+.toolbar{
+    margin-left: 6px;
+
+    height: 25px;
+}
+
+button:hover {
+    background-color: darkslategrey;
 }

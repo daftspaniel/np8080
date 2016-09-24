@@ -3,5 +3,5 @@
 
     <textarea [(ngModel)]="note.text" (keyup)="changeHandler()"></textarea>
 
-    <text-status text="{{note.text}}"></text-status>
+    <text-status [text]="note.text" [modified]="note.lastModified"></text-status>
 </div>
