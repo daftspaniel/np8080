@@ -13,7 +13,17 @@ class ToolbarComponent {
   TextDocument note;
 
   void aboutHandler() {
-    window.alert('np 8080 v0.2');
+    String txt = """np 8080 v0.3
+
+np8080.win is a web based text editor.
+
+Your data is stored in your web browser's Local Storage.
+
+It is NOT stored on any server.
+
+Click Download to store the current contents on your filesystem.
+    """;
+    window.alert(txt);
   }
 
   void trimHandler() {

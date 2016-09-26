@@ -1,15 +1,15 @@
 import 'dart:html';
 
 class TextDocument {
-  final int id = 1;
+
+  int id = 1;
   String text = '';
   DateTime lastModified;
 
   TextDocument() {
     text = window.localStorage['id1'];
     lastModified = null;
-    if (text == null) text = "Welcome to notepad8080";
-    if (lastModified == null) updateModifiedDate();
+    if (text == null) text = "";
   }
 
   void updateModifiedDate() {

@@ -10,15 +10,17 @@ textarea {
     background-color: #111111;
     color: #b8df42;
     font-size: 10pt;
-    border-color: blue;
     border: 0px;
     width: 100%;
+    outline: none;
+    resize: none;
+    overflow-y: scroll;
 }
 
 textarea {
     background-color: black;
-    width: 95vw;
-    height: 91vh;
+    width: 98vw;
+    height: 90vh;
 }
 
 button {
@@ -28,7 +30,8 @@ button {
     border: 0px;
     margin: -6px;
 }
-.toolbar{
+
+.toolbar {
     margin-left: 6px;
 
     height: 25px;
