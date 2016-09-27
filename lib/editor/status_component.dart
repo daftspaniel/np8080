@@ -1,11 +1,15 @@
-import 'dart:math';
-
 import 'package:angular2/core.dart';
+import 'package:np8080/services/textprocessingservice.dart';
 
 @Component(
     selector: 'text-status',
-    templateUrl: 'status_component.html')
+    templateUrl: 'status_component.html',
+    providers: const [TextProcessingService])
 class StatusComponent {
+
+  final TextProcessingService _textProcessingService;
+
+  StatusComponent(this._textProcessingService);
 
   @Input('text')
   String text;
@@ -15,18 +19,7 @@ class StatusComponent {
 
   String get length => text.length.toString();
 
-  //String get lastModified => modified.toString();
+  String get wordCount => _textProcessingService.getWordCount(text).toString();
 
-  String get wordCount {
-    String workingText = text;
-    workingText = workingText.replaceAll('\n', ' ');
-    List<String> words = workingText.split(' ');
-    words.removeWhere((word) => word.length == 0 || word == " ");
-    return min(words.length, text.length).toString();
-  }
-
-  String get lineCount =>
-      ('\n'
-          .allMatches(text)
-          .length).toString();
+  String get lineCount => _textProcessingService.getLineCount(text).toString();
 }

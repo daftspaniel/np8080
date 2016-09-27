@@ -23,18 +23,44 @@ textarea {
     height: 90vh;
 }
 
-button {
+.toolbarButton {
     background-color: cornflowerblue;
     width: 80px;
     color: white;
     border: 0px;
-    margin: -6px;
+    margin: 0px;
+    flex: 1;
+    height: 25px;
+    font-weight: bold;
+}
+
+.rhsButtons {
+    flex:5;
+    text-align: right;
+    height: 25px;
+}
+
+.rhsStatus {
+    flex: 2;
+    text-align: right;
+    height: 20px;
+}
+
+.statusPanel {
+    display: flex;
+    font-size: small;
+    flex: 1;
+    width: 95vw;
+    height: 12px;
 }
 
 .toolbar {
-    margin-left: 6px;
-
+    display: flex;
+    margin-left: 2px;
     height: 25px;
+    margin-bottom: 2px;
+    width: 98vw;
+    padding: 0px;
 }
 
 button:hover {

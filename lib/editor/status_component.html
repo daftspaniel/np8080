@@ -1,6 +1,6 @@
-<div style="font-size: small">
+<div class="statusPanel">
 Characters: {{length}}
 Lines: {{lineCount}}
 Words: {{wordCount}} &nbsp;&nbsp;&nbsp;&nbsp;
-<span *ngIf="modified!=null">Last modified: {{modified |  date:'fullDate' | uppercase}}</span>
+<span  class="rhsStatus" *ngIf="modified!=null">Last modified: {{modified |  date:'fullDate' | uppercase}}</span>
 </div>

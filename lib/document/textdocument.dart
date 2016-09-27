@@ -20,9 +20,4 @@ class TextDocument {
     updateModifiedDate();
     window.localStorage['id' + id.toString()] = text;
   }
-
-  void trim() {
-    text = text.trim();
-    save();
-  }
 }

@@ -2,18 +2,9 @@ import 'dart:html';
 
 import 'package:angular2/core.dart';
 import 'package:np8080/document/textdocument.dart';
+import 'package:np8080/services/textprocessingservice.dart';
 
-@Component(
-    selector: 'editor-toolbar',
-    templateUrl: 'toolbar_component.html',
-    directives: const [ToolbarComponent])
-class ToolbarComponent {
-
-  @Input()
-  TextDocument note;
-
-  void aboutHandler() {
-    String txt = """np 8080 v0.3
+const String aboutTxt = """np 8080 v0.4
 
 np8080.win is a web based text editor.
 
@@ -23,11 +14,32 @@ It is NOT stored on any server.
 
 Click Download to store the current contents on your filesystem.
     """;
-    window.alert(txt);
+
+@Component(
+    selector: 'editor-toolbar',
+    templateUrl: 'toolbar_component.html',
+    directives: const [ToolbarComponent],
+    providers: const [TextProcessingService])
+class ToolbarComponent {
+
+  final TextProcessingService _textProcessingService;
+
+  ToolbarComponent(this._textProcessingService);
+
+  @Input()
+  TextDocument note;
+
+  void aboutHandler() {
+    window.alert(aboutTxt);
   }
 
   void trimHandler() {
-    note.trim();
+    note.text = _textProcessingService.trimText(note.text);
+    note.save();
+  }
+
+  void githubHandler(){
+    window.location.href = "https://github.com/daftspaniel/np8080";
   }
 
   void downloadHandler() {
@@ -40,4 +52,3 @@ Click Download to store the current contents on your filesystem.
       ..click();
   }
 }
-

@@ -1,5 +1,11 @@
 <div class="toolbar">
-    <button (click)="downloadHandler()">Download</button>
-    <button (click)="trimHandler()">Trim</button>
-    <button (click)="aboutHandler()">About</button>
+
+    <button class="toolbarButton" (click)="downloadHandler()">Download</button>
+    <button class="toolbarButton" (click)="trimHandler()">Trim</button>
+
+    <span class="rhsButtons">
+        <button class="toolbarButton" (click)="githubHandler()">GitHub</button>
+        <button class="toolbarButton" (click)="aboutHandler()">About</button>
+    </span>
+
 </div>
