@@ -1,0 +1,36 @@
+#overlay {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    z-index: 1000;
+    background-image: url("img/background.png");
+}
+
+#overlay .dialogPanel {
+    font-size: smaller;
+    width: 600px;
+    margin: 100px auto;
+    background-color: black;
+    color: white;
+    border: 1px solid whitesmoke;
+    padding: 5px;
+    text-align: left;
+    z-index: 1010;
+}
+
+#overlay .header {
+    text-align: center;
+    width: 100%;
+    color: whitesmoke;
+    background-color: cornflowerblue;
+    font-size: large;
+}
+
+#overlay .footer {
+    text-align: center;
+    width: 100%;
+    padding: 5px;
+}

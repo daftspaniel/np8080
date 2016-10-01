@@ -4,17 +4,6 @@ import 'package:angular2/core.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/services/textprocessingservice.dart';
 
-const String aboutTxt = """np 8080 v0.4
-
-np8080.win is a web based text editor.
-
-Your data is stored in your web browser's Local Storage.
-
-It is NOT stored on any server.
-
-Click Download to store the current contents on your filesystem.
-    """;
-
 @Component(
     selector: 'editor-toolbar',
     templateUrl: 'toolbar_component.html',
@@ -29,8 +18,15 @@ class ToolbarComponent {
   @Input()
   TextDocument note;
 
+  @Input()
+  bool showDialog;
+
+  @Output()
+  EventEmitter<showDialog> showDialogChange = new EventEmitter<showDialog>();
+
   void aboutHandler() {
-    window.alert(aboutTxt);
+    showDialog = true;
+    showDialogChange.emit(showDialog);
   }
 
   void trimHandler() {
@@ -38,7 +34,7 @@ class ToolbarComponent {
     note.save();
   }
 
-  void githubHandler(){
+  void githubHandler() {
     window.location.href = "https://github.com/daftspaniel/np8080";
   }
 

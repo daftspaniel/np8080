@@ -66,3 +66,13 @@ textarea {
 button:hover {
     background-color: darkslategrey;
 }
+
+.closeButton{
+    background-color: cornflowerblue;
+    width: 80px;
+    color: white;
+    border: 0px;
+    margin: 0px;
+    font-weight: bold;
+    height: 25px;
+}
