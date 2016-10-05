@@ -22,7 +22,7 @@ class ToolbarComponent {
   bool showDialog;
 
   @Output()
-  EventEmitter<showDialog> showDialogChange = new EventEmitter<showDialog>();
+  EventEmitter<bool> showDialogChange = new EventEmitter<bool>();
 
   void aboutHandler() {
     showDialog = true;

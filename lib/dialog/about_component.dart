@@ -8,7 +8,7 @@ class AboutDialogComponent {
   bool showDialog = false;
 
   @Output()
-  EventEmitter<showDialog> showDialogChange = new EventEmitter<showDialog>();
+  EventEmitter<bool> showDialogChange = new EventEmitter<bool>();
 
   void closeTheDialog() {
     showDialog = false;
