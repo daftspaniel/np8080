@@ -1,7 +1,14 @@
 <div class="toolbar">
 
-    <button class="toolbarButton" (click)="downloadHandler()">Download</button>
-    <button class="toolbarButton" (click)="trimHandler()">Trim</button>
+    <button class="toolbarButton" (click)="downloadHandler()">&#11015; Download</button>
+
+    <div (mouseenter)="show()" (mouseleave)="hide()" class="toolbarButton" style="z-index: 999;" >
+        <button  class="toolbarMenu">&#9881; Modify</button>
+        <div id="boomenu" style="position: relative" [ngStyle]="{'display':  display}">
+            <button class="toolbarButton" (click)="trimHandler()">Trim</button><br/>
+            <button class="toolbarButton" (click)="generateHandler()">Generate</button>
+        </div>
+    </div>
 
     <span class="rhsButtons">
         <button class="toolbarButton" (click)="githubHandler()">GitHub</button>

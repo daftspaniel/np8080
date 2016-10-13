@@ -15,18 +15,26 @@ class ToolbarComponent {
 
   ToolbarComponent(this._textProcessingService);
 
+  String display = "none";
+
   @Input()
   TextDocument note;
 
   @Input()
-  bool showDialog;
+  bool showAboutDialog;
+
+  @Input()
+  bool showGenerateDialog;
 
   @Output()
-  EventEmitter<bool> showDialogChange = new EventEmitter<bool>();
+  EventEmitter<bool> showAboutDialogChange = new EventEmitter<bool>();
+
+  @Output()
+  EventEmitter<bool> showGenerateDialogChange = new EventEmitter<bool>();
 
   void aboutHandler() {
-    showDialog = true;
-    showDialogChange.emit(showDialog);
+    showAboutDialog = true;
+    showAboutDialogChange.emit(showAboutDialog);
   }
 
   void trimHandler() {
@@ -46,5 +54,18 @@ class ToolbarComponent {
           Uri.encodeComponent(text)
       ..attributes['download'] = "np8080.txt"
       ..click();
+  }
+
+  void generateHandler() {
+    showGenerateDialog = true;
+    showGenerateDialogChange.emit(showGenerateDialog);
+  }
+
+  void hide() {
+    display = "none";
+  }
+
+  void show() {
+    display = "block";
   }
 }

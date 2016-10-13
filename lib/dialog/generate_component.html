@@ -1,0 +1,18 @@
+<div id="overlay" [hidden]="!showDialog">
+    <div class="dialogPanel">
+        <div class="header">Generate Text</div>
+
+        <div style="text-align: center;padding: 10px">
+            <form (ngSubmit)="onSubmit()">
+                <label>Repeat</label>
+                <input type="text" placeholder="Type text here..." [(ngModel)]="textToRepeat">
+                <input type="number" [(ngModel)]="repeatCount" min="1"> Times
+                <button type="submit" class="actionButton">Append</button>
+            </form>
+        </div>
+
+        <div class="footer">
+            <button class="closeButton" (click)="closeTheDialog()">Close</button>
+        </div>
+    </div>
+</div>

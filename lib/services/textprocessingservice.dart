@@ -11,7 +11,9 @@ class TextProcessingService {
 
   int getWordCount(String text) {
     String workingText = text;
-    workingText = workingText.replaceAll('\n', ' ');
+    workingText =
+    workingText..replaceAll('\n', ' ')..replaceAll('.', ' ')..replaceAll(
+        ',', ' ')..replaceAll(':', ' ')..replaceAll(';', ' ')..replaceAll('?', ' ');
     List<String> words = workingText.split(' ');
     words.removeWhere((word) => word.length == 0 || word == " ");
     return min(words.length, text.length);
@@ -21,5 +23,10 @@ class TextProcessingService {
     return '\n'
         .allMatches(text)
         .length;
+  }
+
+  String getRepeatedString(String textToRepeat, num count) {
+    count ??= 1;
+    return textToRepeat * count.toInt();
   }
 }

@@ -2,7 +2,7 @@ html, body {
     font-family: monospace;
     background-color: #333333;
     color: #b8df42;
-    font-size: 14pt;
+    font-size: 12pt;
     width: 95%;
 }
 
@@ -31,11 +31,24 @@ textarea {
     margin: 0px;
     flex: 1;
     height: 25px;
-    font-weight: bold;
+    text-align: center;
+    font-size: 10pt;
+    min-width: 120px;
+}
+
+.toolbarMenu {
+    background-color: cornflowerblue;
+    width: 80px;
+    color: white;
+    border: 0px;
+    margin: 0px;
+    flex: 1;
+    height: 25px;
+    min-width: 120px;
 }
 
 .rhsButtons {
-    flex:5;
+    flex: 5;
     text-align: right;
     height: 25px;
 }
@@ -67,8 +80,18 @@ button:hover {
     background-color: darkslategrey;
 }
 
-.closeButton{
+.closeButton {
     background-color: cornflowerblue;
+    width: 80px;
+    color: white;
+    border: 0px;
+    margin: 0px;
+    font-weight: bold;
+    height: 25px;
+}
+
+.actionButton {
+    background-color: #58c800;
     width: 80px;
     color: white;
     border: 0px;
