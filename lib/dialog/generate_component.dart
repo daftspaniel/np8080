@@ -24,6 +24,7 @@ class GenerateDialogComponent {
   GenerateDialogComponent(this._textProcessingService);
 
   void closeTheDialog() {
+    textToRepeat = "";
     showDialog = false;
     showDialogChange.emit(showDialog);
   }
@@ -31,5 +32,6 @@ class GenerateDialogComponent {
   void onSubmit() {
     note.text +=
         _textProcessingService.getRepeatedString(textToRepeat, repeatCount);
+    note.save();
   }
 }
