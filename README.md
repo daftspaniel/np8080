@@ -22,3 +22,9 @@ http://divingintodart.blogspot.co.uk/2016/09/building-notepad-with-dart-angular-
 
 *Part Four - Injectable Services*
 http://divingintodart.blogspot.co.uk/2016/09/building-notepad-with-dart-angular-2_28.html
+
+*Part Five - Dialogs and Two Way Binding*
+http://divingintodart.blogspot.co.uk/2016/10/building-notepad-with-dart-angular-2.html
+
+*Part Six - Mouse Events and More Dialogs*
+http://divingintodart.blogspot.co.uk/2016/10/building-notepad-with-dart-angular-2_24.html

@@ -13,7 +13,8 @@ class TextProcessingService {
     String workingText = text;
     workingText =
     workingText..replaceAll('\n', ' ')..replaceAll('.', ' ')..replaceAll(
-        ',', ' ')..replaceAll(':', ' ')..replaceAll(';', ' ')..replaceAll('?', ' ');
+        ',', ' ')..replaceAll(':', ' ')..replaceAll(';', ' ')..replaceAll(
+        '?', ' ');
     List<String> words = workingText.split(' ');
     words.removeWhere((word) => word.length == 0 || word == " ");
     return min(words.length, text.length);
