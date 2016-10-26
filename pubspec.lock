@@ -6,13 +6,13 @@ packages:
       name: analyzer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.28.1"
+    version: "0.29.0"
   angular2:
     description:
       name: angular2
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0-beta.22"
+    version: "2.0.0"
   args:
     description:
       name: args
@@ -24,7 +24,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.11.2"
+    version: "1.11.3"
   barback:
     description:
       name: barback
@@ -42,7 +42,7 @@ packages:
       name: build
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.1"
+    version: "0.4.1+2"
   charcode:
     description:
       name: charcode
@@ -60,7 +60,7 @@ packages:
       name: code_transformers
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.2+3"
+    version: "0.5.0"
   collection:
     description:
       name: collection
@@ -84,13 +84,13 @@ packages:
       name: csslib
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.2"
+    version: "0.13.2+1"
   dart_style:
     description:
       name: dart_style
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.11"
+    version: "0.2.11+1"
   dart_to_js_script_rewriter:
     description:
       name: dart_to_js_script_rewriter
@@ -198,7 +198,7 @@ packages:
       name: shelf
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.5+3"
+    version: "0.6.6"
   shelf_static:
     description:
       name: shelf_static
@@ -216,7 +216,7 @@ packages:
       name: source_span
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.3"
+    version: "1.2.4"
   stack_trace:
     description:
       name: stack_trace
