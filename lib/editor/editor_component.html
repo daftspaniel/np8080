@@ -1,9 +1,9 @@
 <div *ngIf="note != null" style="min-height:100%">
-    <editor-toolbar [note]="note"
+    <editor-toolbar [(note)]="note"
                     [(showAboutDialog)]="showAboutDialog"
                     [(showGenerateDialog)]="showGenerateDialog"></editor-toolbar>
 
-    <textarea [(ngModel)]="note.text" (keyup)="changeHandler()" placeholder="{{placeHolderText}}"></textarea>
+    <textarea [(ngModel)]="note.text" (keyup)="changeHandler()" placeholder="{{placeHolderText}}" tabindex="1" autofocus></textarea>
 
     <text-status [text]="note.text" [modified]="note.lastModified"></text-status>
 </div>

@@ -36,11 +36,48 @@ textarea {
     min-width: 120px;
 }
 
+.miniToolbarButton {
+    background-color: cornflowerblue;
+    width: 40px;
+    color: white;
+    border: 0px;
+    margin: 0px;
+    flex: 0.1;
+    height: 25px;
+    text-align: center;
+    font-size: 10pt;
+    min-width: 40px;
+}
+
+.labelReadOnly {
+    font-size: small;
+    height: 25px;
+    vertical-align: middle;
+    padding-top: 4px;
+}
+
+.toolbarField {
+    flex: 1.5;
+    font-size: 8pt;
+    width: 180px;
+    background-color: #111111;
+    height: 25px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    border-top: solid 1px black;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    border-radius: 4px;
+    padding-right: 4px;
+}
+
 .toolbarMenu {
     background-color: cornflowerblue;
     width: 80px;
     color: white;
-    border: 0px;
+    border: 1px;
     margin: 0px;
     flex: 1;
     height: 25px;
@@ -98,4 +135,15 @@ button:hover {
     margin: 0px;
     font-weight: bold;
     height: 25px;
+}
+
+.ghlogo {
+    height: 11px;
+    width: 11px;
+}
+
+.roundButton{
+    font-size: x-small;
+    height: 22px;
+    border-radius: 2px;
 }

@@ -1,0 +1,8 @@
+<div>
+    <div [hidden]="!editMode">
+        <input type="text" [(ngModel)]="text"
+               (keyup)="update()" (blur)="toggle()"
+               tabindex="2" />
+    </div>
+    <div class="labelReadOnly" [hidden]="editMode" (click)="toggle()" title="{{text}}">{{outputText}}</div>
+</div>
