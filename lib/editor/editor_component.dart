@@ -16,7 +16,18 @@ import 'package:np8080/toolbar/toolbar_component.dart';
     ])
 class EditorComponent {
 
-  final String placeHolderText = "Welcome to notepad8080! Click 'About' to learn more.";
+  final String placeHolderText = """
+  Welcome to notepad8080!
+
+  np8080.win is a simple text editor in your browser. It is free and Open Source software.
+
+  Your data is stored in your web browser's local storage and NOT on any server.
+
+  Click the download button to save the text as a file.
+
+  You can change the filename by clicking on the field in the top left.
+
+  Click 'About' to learn even more.""";
 
   @Input()
   TextDocument note;
