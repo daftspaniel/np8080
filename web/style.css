@@ -3,50 +3,85 @@ html, body {
     background-color: #333333;
     color: #b8df42;
     font-size: 12pt;
-    width: 95%;
+    xwidth: 95%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0px;
 }
 
-textarea {
-    background-color: #111111;
-    color: #b8df42;
-    font-size: 10pt;
-    border: 0px;
-    width: 100%;
-    outline: none;
-    resize: none;
-    overflow-y: scroll;
-}
-
-textarea {
-    background-color: black;
-    width: 98vw;
-    height: 90vh;
-}
-
-.toolbarButton {
+button:hover {
     background-color: cornflowerblue;
-    width: 120px;
+}
+
+.closeButton {
+    background-color: darkslategrey;
+    width: 80px;
     color: white;
     border: 0px;
     margin: 0px;
-    flex: 1;
+    font-weight: bold;
+    height: 25px;
+}
+
+textarea {
+    color: #b8df42;
+    font-size: 10pt;
+    border: 0px;
+    outline: none;
+    resize: none;
+    overflow-y: scroll;
+    background-color: black;
+    height: 90vh;
+    margin-left: 5px;
+    width: 48%;
+}
+
+.preview {
+    width: 50%;
+    background-color: #111111;
+    color: #b8df42;
+    overflow-y: scroll;
+    overflow-x: none;
+    height: 90vh;
+    xmargin-left: 10px;
+    vertical-align: top;
+    xdisplay: inline-block;
+    width: 45%;
+    font-size: xx-small;
+    display: inline-block;
+}
+
+.toolbarButton {
+    background-color: darkslategrey;
+    xwidth: 120px;
+    color: white;
+    border: 0px;
+    margin: 0px;
+    xflex: 0.25;
     height: 25px;
     text-align: center;
     font-size: 10pt;
     min-width: 120px;
+    margin-left: 12px;
 }
 
 .miniToolbarButton {
-    background-color: cornflowerblue;
-    width: 40px;
+    background-color: darkslategrey;
+    width: 60px;
     color: white;
     border: 0px;
     margin: 0px;
-    flex: 0.1;
-    height: 25px;
+    xflex: 0.1;
+    height: 26px;
     text-align: center;
     font-size: 10pt;
     min-width: 40px;
+    border-bottom-right-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.toolbarMenuButton{
+    margin-left: 0px;
 }
 
 .labelReadOnly {
@@ -57,9 +92,9 @@ textarea {
 }
 
 .toolbarField {
-    flex: 1.5;
+
     font-size: 8pt;
-    width: 180px;
+    width: 150px;
     background-color: #111111;
     height: 25px;
     text-align: center;
@@ -69,34 +104,39 @@ textarea {
     border-top: solid 1px black;
     border-left: solid 1px black;
     border-right: solid 1px black;
-    border-radius: 4px;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
     padding-right: 4px;
+    margin-left: 14px;
 }
 
 .toolbarMenu {
-    background-color: cornflowerblue;
+    background-color:darkslategrey;
     width: 80px;
     color: white;
     border: 1px;
     margin: 0px;
-    flex: 1;
+    xflex: 1;
     height: 25px;
     min-width: 120px;
 }
 
-.rhsButtons {
-    flex: 5;
-    text-align: right;
-    height: 25px;
+.srhsButtons {
+    flex: 1.1;
+    text-align: center;
+    /*height: 25px;*/
+    margin-left: 20%;
 }
 
 .rhsStatus {
-    flex: 2;
+    xflex: 1;
     text-align: right;
     height: 20px;
+
 }
 
 .statusPanel {
+    padding-left: 5px;
     display: flex;
     font-size: small;
     flex: 1;
@@ -106,25 +146,14 @@ textarea {
 
 .toolbar {
     display: flex;
-    margin-left: 2px;
-    height: 25px;
-    margin-bottom: 2px;
-    width: 98vw;
-    padding: 0px;
-}
-
-button:hover {
-    background-color: darkslategrey;
-}
-
-.closeButton {
-    background-color: cornflowerblue;
-    width: 80px;
-    color: white;
-    border: 0px;
-    margin: 0px;
-    font-weight: bold;
-    height: 25px;
+    margin-left: -5px;
+    margin-right: -12px;
+    height: 30px;
+    margin-bottom: 0px;  padding: 0px;
+    width: 110%;
+    xbackground-color: aqua;
+    border-bottom: 1px yellow solid;
+    padding: 1px;
 }
 
 .actionButton {
@@ -135,6 +164,7 @@ button:hover {
     margin: 0px;
     font-weight: bold;
     height: 25px;
+
 }
 
 .ghlogo {
@@ -142,8 +172,9 @@ button:hover {
     width: 11px;
 }
 
-.roundButton{
-    font-size: x-small;
-    height: 22px;
-    border-radius: 2px;
-}
+/*.roundButton {*/
+    /*font-size: x-small;*/
+    /*height: 25px;*/
+    /*border-radius: 2px;*/
+    /*xflex:1;*/
+/*}*/

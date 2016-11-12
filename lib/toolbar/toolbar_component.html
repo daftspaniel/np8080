@@ -1,22 +1,22 @@
 <div class="toolbar">
-
     <editable-label class="toolbarField" [(text)]="note.downloadName"></editable-label>
+
     <button class="miniToolbarButton" (click)="downloadHandler()" title="Download">&#11015;</button>
-    <span>&nbsp;</span>
-    <div (mouseenter)="show()" (mouseleave)="hide()" class="toolbarButton" style="z-index: 999;">
+    <div (mouseenter)="show()" (click)="hide()" class="toolbarButton" style="z-index: 999;">
         <button class="toolbarMenu">&#9881; Modify</button>
-        <div id="boomenu" style="position: relative" [ngStyle]="{'display':  display}">
-            <button class="toolbarButton" (click)="trimHandler()">Trim</button>
-            <button class="toolbarButton" (click)="generateHandler()">Generate</button>
+        <div id="boomenu" style="position: relative" [ngStyle]="{'display':  display, 'width':'80px'}">
+            <button class="toolbarButton toolbarMenuButton" (click)="trimHandler()">Trim</button>
+            <button class="toolbarButton toolbarMenuButton" (click)="generateHandler()">Generate</button>
+            <button class="toolbarButton toolbarMenuButton" (click)="timestampHandler()">Timestamp</button>
         </div>
     </div>
 
-    <span class="rhsButtons">
-        <button class="miniToolbarButton roundButton" (click)="aboutHandler()">About</button>
-        <button class="miniToolbarButton roundButton"
-                title="View Source on Github"(click)="githubHandler()" target="_new">
-            <img src="img/github.png" class="ghlogo">
-        </button>
+    <button class="toolbarButton" (click)="markdownHandler()">&#x1f440; Markdown</button>
+    <span class="srhsButtons">
+    <button class="miniToolbarButton roundButton" (click)="aboutHandler()">About</button>
+    <button class="miniToolbarButton roundButton"
+            title="View Source on Github" (click)="githubHandler()" target="_new">
+    <img src="img/github.png" class="ghlogo">
+    </button>
     </span>
-
 </div>

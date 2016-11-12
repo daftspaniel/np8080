@@ -1,10 +1,21 @@
-<div *ngIf="note != null" style="min-height:100%">
-    <editor-toolbar [(note)]="note"
-                    [(showAboutDialog)]="showAboutDialog"
-                    [(showGenerateDialog)]="showGenerateDialog"></editor-toolbar>
+<editor-toolbar [(note)]="note"
+                [(showAboutDialog)]="showAboutDialog"
+                [(showGenerateDialog)]="showGenerateDialog"
+                [(showPreview)]="showPreview"></editor-toolbar>
 
-    <textarea [(ngModel)]="note.text" (keyup)="changeHandler()" placeholder="{{placeHolderText}}" tabindex="1" autofocus></textarea>
+<div>
+    <textarea [(ngModel)]="note.text" (keyup)="changeHandler()"
+              [ngStyle]="{width: showPreview ? '48%':'99%'}"
+              placeholder="{{placeHolderText}}"
+              tabindex="1" autofocus></textarea>
 
+    <div class="preview" [ngStyle]="{width: showPreview ? '48%':'0px'}"
+         [hidden]="!showPreview" id="previewPane"
+    ></div>
+
+</div>
+
+<div style="position: absolute;bottom:5px;">
     <text-status [text]="note.text" [modified]="note.lastModified"></text-status>
 </div>
 

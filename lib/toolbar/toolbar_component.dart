@@ -29,11 +29,22 @@ class ToolbarComponent {
   @Input()
   bool showGenerateDialog;
 
+  @Input()
+  bool showPreview;
+
   @Output()
   EventEmitter<bool> showAboutDialogChange = new EventEmitter<bool>();
 
   @Output()
+  EventEmitter<bool> showPreviewChange = new EventEmitter<bool>();
+
+  @Output()
   EventEmitter<bool> showGenerateDialogChange = new EventEmitter<bool>();
+
+  void markdownHandler() {
+    showPreview = !showPreview;
+    showPreviewChange.emit(showPreview);
+  }
 
   void aboutHandler() {
     showAboutDialog = true;
@@ -63,6 +74,11 @@ class ToolbarComponent {
   void generateHandler() {
     showGenerateDialog = true;
     showGenerateDialogChange.emit(showGenerateDialog);
+  }
+
+  void timestampHandler() {
+    note.text += "\r\n" + new DateTime.now().toString();
+    note.save();
   }
 
   void hide() {

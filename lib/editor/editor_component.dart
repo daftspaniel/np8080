@@ -1,4 +1,7 @@
+import 'dart:html';
+
 import 'package:angular2/core.dart';
+import 'package:markdown/markdown.dart' as md;
 import 'package:np8080/dialog/about_component.dart';
 import 'package:np8080/dialog/generate_component.dart';
 import 'package:np8080/document/textdocument.dart';
@@ -14,8 +17,11 @@ import 'package:np8080/toolbar/toolbar_component.dart';
       AboutDialogComponent,
       GenerateDialogComponent
     ])
-class EditorComponent {
+class EditorComponent implements OnChanges {
 
+  DivElement htmlDiv = querySelector('#previewPane');
+
+  final nullSanitizer = new NullTreeSanitizer();
   final String placeHolderText = """
   Welcome to notepad8080!
 
@@ -38,7 +44,36 @@ class EditorComponent {
   @Input()
   bool showGenerateDialog = false;
 
+  @Input()
+  bool showPreview = false;
+
   void changeHandler() {
     note.save();
+    if (!showPreview) return;
+
+    htmlDiv = querySelector('#previewPane');
+
+    htmlDiv.setInnerHtml(
+        md.markdownToHtml(note.text, extensionSet: md.ExtensionSet.commonMark),
+        treeSanitizer: nullSanitizer);
   }
+
+  @override
+  ngOnChanges(Map<String, SimpleChange> changes) {
+    // TODO: implement ngOnChanges
+    print(changes);
+    print(changes.keys);
+//    if (changes.containsKey("showPreview")) {
+      htmlDiv = querySelector('#previewPane');
+
+      htmlDiv.setInnerHtml(
+          md.markdownToHtml(
+              note.text, extensionSet: md.ExtensionSet.commonMark),
+          treeSanitizer: nullSanitizer);
+//    }
+  }
+}
+
+class NullTreeSanitizer implements NodeTreeSanitizer {
+  void sanitizeTree(Node node) {}
 }

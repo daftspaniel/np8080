@@ -7,6 +7,7 @@ dependencies:
   angular2: ^2.0.0
   browser: ^0.10.0
   dart_to_js_script_rewriter: ^1.0.1
+  markdown: ^0.11.1
 transformers:
 - angular2:
     platform_directives:
