@@ -18,7 +18,7 @@ packages:
       name: args
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.6+1"
+    version: "0.13.7"
   async:
     description:
       name: async
@@ -60,7 +60,7 @@ packages:
       name: code_transformers
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.0"
+    version: "0.5.0+1"
   collection:
     description:
       name: collection
@@ -228,7 +228,7 @@ packages:
       name: stack_trace
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.6.8"
+    version: "1.7.0"
   stream_channel:
     description:
       name: stream_channel

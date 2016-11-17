@@ -3,7 +3,6 @@ html, body {
     background-color: #333333;
     color: #b8df42;
     font-size: 12pt;
-    xwidth: 95%;
     overflow-x: hidden;
     overflow-y: hidden;
     margin: 0px;
@@ -37,15 +36,12 @@ textarea {
 }
 
 .preview {
-    width: 50%;
     background-color: #111111;
     color: #b8df42;
     overflow-y: scroll;
     overflow-x: none;
     height: 90vh;
-    xmargin-left: 10px;
     vertical-align: top;
-    xdisplay: inline-block;
     width: 45%;
     font-size: xx-small;
     display: inline-block;
@@ -53,11 +49,9 @@ textarea {
 
 .toolbarButton {
     background-color: darkslategrey;
-    xwidth: 120px;
     color: white;
     border: 0px;
     margin: 0px;
-    xflex: 0.25;
     height: 25px;
     text-align: center;
     font-size: 10pt;
@@ -71,7 +65,6 @@ textarea {
     color: white;
     border: 0px;
     margin: 0px;
-    xflex: 0.1;
     height: 26px;
     text-align: center;
     font-size: 10pt;
@@ -92,7 +85,6 @@ textarea {
 }
 
 .toolbarField {
-
     font-size: 8pt;
     width: 150px;
     background-color: #111111;
@@ -116,7 +108,6 @@ textarea {
     color: white;
     border: 1px;
     margin: 0px;
-    xflex: 1;
     height: 25px;
     min-width: 120px;
 }
@@ -124,15 +115,19 @@ textarea {
 .srhsButtons {
     flex: 1.1;
     text-align: center;
-    /*height: 25px;*/
     margin-left: 20%;
 }
 
 .rhsStatus {
-    xflex: 1;
+    position: absolute;
     text-align: right;
     height: 20px;
-
+    right:1px;
+}
+.lhsStatus {
+    position: absolute;
+    text-align: left;
+    height: 20px;
 }
 
 .statusPanel {
@@ -149,9 +144,8 @@ textarea {
     margin-left: -5px;
     margin-right: -12px;
     height: 30px;
-    margin-bottom: 0px;  padding: 0px;
+    margin-bottom: 0px;
     width: 110%;
-    xbackground-color: aqua;
     border-bottom: 1px yellow solid;
     padding: 1px;
 }

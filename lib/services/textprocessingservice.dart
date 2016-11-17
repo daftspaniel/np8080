@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:angular2/core.dart';
+import 'package:markdown/markdown.dart' as md;
 
 @Injectable()
 class TextProcessingService {
@@ -29,5 +30,9 @@ class TextProcessingService {
   String getRepeatedString(String textToRepeat, num count) {
     count ??= 1;
     return textToRepeat * count.toInt();
+  }
+
+  String convertMarkdownToHtml(String content) {
+    return md.markdownToHtml(content, extensionSet: md.ExtensionSet.commonMark);
   }
 }

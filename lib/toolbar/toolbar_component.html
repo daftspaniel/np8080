@@ -2,7 +2,7 @@
     <editable-label class="toolbarField" [(text)]="note.downloadName"></editable-label>
 
     <button class="miniToolbarButton" (click)="downloadHandler()" title="Download">&#11015;</button>
-    <div (mouseenter)="show()" (click)="hide()" class="toolbarButton" style="z-index: 999;">
+    <div (mouseenter)="show()" (mouseleave)="hide()" (click)="hide()" class="toolbarButton" style="z-index: 999;">
         <button class="toolbarMenu">&#9881; Modify</button>
         <div id="boomenu" style="position: relative" [ngStyle]="{'display':  display, 'width':'80px'}">
             <button class="toolbarButton toolbarMenuButton" (click)="trimHandler()">Trim</button>

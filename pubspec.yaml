@@ -1,6 +1,6 @@
 name: np8080
-description: A Dart app that uses Angular 2
-version: 0.0.7
+description: A Text editor app that uses Angular 2
+version: 0.0.8
 environment:
   sdk: '>=1.13.0 <2.0.0'
 dependencies:

@@ -9,9 +9,7 @@
               placeholder="{{placeHolderText}}"
               tabindex="1" autofocus></textarea>
 
-    <div class="preview" [ngStyle]="{width: showPreview ? '48%':'0px'}"
-         [hidden]="!showPreview" id="previewPane"
-    ></div>
+    <markdown-preview [content]="note.text" [active]="showPreview"></markdown-preview>
 
 </div>
 
