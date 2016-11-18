@@ -17,7 +17,7 @@ class PreviewComponent implements OnChanges, OnInit {
   PreviewComponent(this._textProcessingService);
 
   @Input('content')
-  String content;
+  String content = "";
 
   @Input('active')
   bool active;
@@ -25,13 +25,12 @@ class PreviewComponent implements OnChanges, OnInit {
   @override
   ngOnInit() {
     active = false;
-    content = "";
   }
 
   @override
   ngOnChanges(Map<String, SimpleChange> changes) {
-
-    if (active || changes.containsKey(active)) updatePreview();
+    if (active || changes.containsKey("active"))
+      updatePreview();
   }
 
   void updatePreview() {
