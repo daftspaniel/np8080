@@ -30,7 +30,7 @@ textarea {
     resize: none;
     overflow-y: scroll;
     background-color: black;
-    height: 90vh;
+    height: 100%;
     margin-left: 5px;
     width: 48%;
 }
@@ -40,11 +40,12 @@ textarea {
     color: #b8df42;
     overflow-y: scroll;
     overflow-x: none;
-    height: 90vh;
+    xheight: 90vh;
     vertical-align: top;
     width: 45%;
     font-size: xx-small;
     display: inline-block;
+    height: calc(100vh - 60px);
 }
 
 .toolbarButton {
@@ -128,6 +129,7 @@ textarea {
     position: absolute;
     text-align: left;
     height: 20px;
+    width: 50%;
 }
 
 .statusPanel {
@@ -165,10 +167,3 @@ textarea {
     height: 11px;
     width: 11px;
 }
-
-/*.roundButton {*/
-    /*font-size: x-small;*/
-    /*height: 25px;*/
-    /*border-radius: 2px;*/
-    /*xflex:1;*/
-/*}*/

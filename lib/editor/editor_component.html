@@ -1,22 +1,29 @@
-<editor-toolbar [(note)]="note"
-                [(showAboutDialog)]="showAboutDialog"
-                [(showGenerateDialog)]="showGenerateDialog"
-                [(showPreview)]="showPreview"></editor-toolbar>
+<div style="display: flex;  flex-flow: column;height: 100vh">
+    <header>
+        <editor-toolbar [(note)]="note"
+                        [(showAboutDialog)]="showAboutDialog"
+                        [(showGenerateDialog)]="showGenerateDialog"
+                        [(showPreview)]="showPreview"></editor-toolbar>
+    </header>
 
-<div>
+
+    <div style="flex:2;overflow: none;height: calc(100vh - 60px);padding-bottom: 110px">
     <textarea [(ngModel)]="note.text" (keyup)="changeHandler()"
               [ngStyle]="{width: showPreview ? '48%':'99%'}"
               placeholder="{{placeHolderText}}"
               tabindex="1" autofocus></textarea>
 
-    <markdown-preview [content]="note.text" [active]="showPreview"></markdown-preview>
+        <markdown-preview [content]="note.text" [active]="showPreview"></markdown-preview>
+
+    </div>
+
+    <footer style="flex:1;">
+        <div style="padding-left:4px;position: absolute;bottom: 1px;min-height: 20px;width: 100%;vertical-align: bottom">
+            <text-status [text]="note.text" [modified]="note.lastModified"></text-status>
+        </div>
+    </footer>
 
 </div>
-
-<div style="position: absolute;bottom:5px;">
-    <text-status [text]="note.text" [modified]="note.lastModified"></text-status>
-</div>
-
 <about-dialog [(showDialog)]="showAboutDialog"></about-dialog>
 
 <generate-dialog [(showDialog)]="showGenerateDialog" [note]="note"></generate-dialog>
