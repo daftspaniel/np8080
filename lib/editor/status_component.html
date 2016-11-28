@@ -1,6 +1,6 @@
-<div class="xstatusPanel">
-    <span class="xlhsStatus">Characters: {{length}}
+<div class="statusPanel">
+    <span class="lhsStatus">Characters: {{length}}
         Lines: {{lineCount}}
         Words: {{wordCount}} &nbsp;</span>
-    <span class="xrhsStatus" *ngIf="modified!=null">Last modified: {{modified |  date:'mediumTime' | uppercase}}</span>
+    <span class="rhsStatus" *ngIf="modified!=null">Last modified: {{modified |  date:'mediumTime' | uppercase}}</span>
 </div>

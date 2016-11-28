@@ -30,7 +30,7 @@ textarea {
     resize: none;
     overflow-y: scroll;
     background-color: black;
-    height: 100%;
+    height: calc(100vh - 60px);
     margin-left: 5px;
     width: 48%;
 }
@@ -40,12 +40,14 @@ textarea {
     color: #b8df42;
     overflow-y: scroll;
     overflow-x: none;
-    xheight: 90vh;
-    vertical-align: top;
+    xvertical-align: top;
     width: 45%;
-    font-size: xx-small;
+    font-size: 10pt;
     display: inline-block;
     height: calc(100vh - 60px);
+    border: 0px;
+    padding: 0px;
+    margin: 0px;
 }
 
 .toolbarButton {
@@ -74,7 +76,7 @@ textarea {
     border-top-right-radius: 4px;
 }
 
-.toolbarMenuButton{
+.toolbarMenuButton {
     margin-left: 0px;
 }
 
@@ -104,7 +106,7 @@ textarea {
 }
 
 .toolbarMenu {
-    background-color:darkslategrey;
+    background-color: darkslategrey;
     width: 80px;
     color: white;
     border: 1px;
@@ -120,16 +122,13 @@ textarea {
 }
 
 .rhsStatus {
-    position: absolute;
+    flex: 1;
     text-align: right;
-    height: 20px;
-    right:1px;
 }
+
 .lhsStatus {
-    position: absolute;
-    text-align: left;
-    height: 20px;
-    width: 50%;
+    flex: 4;
+
 }
 
 .statusPanel {

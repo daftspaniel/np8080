@@ -7,7 +7,7 @@
     </header>
 
 
-    <div style="flex:2;overflow: none;height: calc(100vh - 60px);padding-bottom: 110px">
+    <div style="flex:2;overflow: none;height: calc(100vh - 60px);">
     <textarea [(ngModel)]="note.text" (keyup)="changeHandler()"
               [ngStyle]="{width: showPreview ? '48%':'99%'}"
               placeholder="{{placeHolderText}}"
