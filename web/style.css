@@ -76,6 +76,10 @@ textarea {
     border-top-right-radius: 4px;
 }
 
+.roundButton {
+    border-radius: 4px;
+}
+
 .toolbarMenuButton {
     margin-left: 0px;
 }

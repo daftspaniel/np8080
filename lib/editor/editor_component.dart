@@ -41,7 +41,7 @@ class EditorComponent {
   bool showPreview = false;
 
   void changeHandler() {
-  note.save();
+    note.save();
   }
 
 }
