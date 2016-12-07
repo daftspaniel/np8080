@@ -35,4 +35,12 @@ class TextProcessingService {
   String convertMarkdownToHtml(String content) {
     return md.markdownToHtml(content, extensionSet: md.ExtensionSet.commonMark);
   }
+
+  String sortText(String text) {
+    List<String> lines = text.split('\n');
+    String out = "";
+    lines.sort();
+    lines.forEach((line) => out += line + '\n');
+    return out;
+  }
 }

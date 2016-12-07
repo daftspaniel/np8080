@@ -16,9 +16,20 @@ class ToolbarComponent {
 
   final TextProcessingService _textProcessingService;
 
-  ToolbarComponent(this._textProcessingService);
+  ToolbarComponent(this._textProcessingService) {
+    display = new List<String>();
+    display.add("none");
+    display.add("none");
+    display.add("none");
+    display.add("none");
+    //display = "none";
+    //print(display[0]);
+  }
 
-  String display = "none";
+  //String getDisplay(int index){return 'none';}
+  List<String> display;
+
+  //String display;
 
   @Input()
   TextDocument note;
@@ -51,8 +62,20 @@ class ToolbarComponent {
     showAboutDialogChange.emit(showAboutDialog);
   }
 
+  void clearHandler() {
+    if (window.confirm("Are you sure you want to clear the current document?")){
+      note.text = "";
+      note.save();
+    }
+  }
+
   void trimHandler() {
     note.text = _textProcessingService.trimText(note.text);
+    note.save();
+  }
+
+  void sortHandler() {
+    note.text = _textProcessingService.sortText(note.text);
     note.save();
   }
 
@@ -81,11 +104,18 @@ class ToolbarComponent {
     note.save();
   }
 
-  void hide() {
-    display = "none";
+  void hide(int index) {
+    display[index] = "none";
   }
 
-  void show() {
-    display = "block";
+  void show(int index) {
+    display[index] = "block";
+  }
+
+  String getDisplay(int index) {
+    if(display==null) return 'none';
+    if(display.length==0) return 'none';
+    print(index);
+    return display.elementAt(index);
   }
 }

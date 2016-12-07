@@ -40,7 +40,6 @@ textarea {
     color: #b8df42;
     overflow-y: scroll;
     overflow-x: none;
-    xvertical-align: top;
     width: 45%;
     font-size: 10pt;
     display: inline-block;
@@ -58,7 +57,7 @@ textarea {
     height: 25px;
     text-align: center;
     font-size: 10pt;
-    min-width: 120px;
+    min-width: 100px;
     margin-left: 12px;
 }
 
@@ -116,7 +115,7 @@ textarea {
     border: 1px;
     margin: 0px;
     height: 25px;
-    min-width: 120px;
+    min-width: 100px;
 }
 
 .srhsButtons {
