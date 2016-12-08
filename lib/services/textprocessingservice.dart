@@ -36,10 +36,18 @@ class TextProcessingService {
     return md.markdownToHtml(content, extensionSet: md.ExtensionSet.commonMark);
   }
 
-  String sortText(String text) {
+  String sortLines(String text) {
     List<String> lines = text.split('\n');
     String out = "";
     lines.sort();
+    lines.forEach((line) => out += line + '\n');
+    return out;
+  }
+
+  String reverseLines(String text) {
+    List<String> lines = text.split('\n');
+    String out = "";
+    lines = lines..reversed;
     lines.forEach((line) => out += line + '\n');
     return out;
   }

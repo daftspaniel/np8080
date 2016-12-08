@@ -13,15 +13,16 @@
     <div (mouseenter)="show(1)" (mouseleave)="hide(1)" (click)="hide(1)" class="toolbarButton" style="z-index: 999;">
         <button class="toolbarMenu">&#9881; Modify</button>
         <div id="boomenu" style="position: relative" [ngStyle]="{'display':  getDisplay(1), 'width':'80px'}">
-            <button class="toolbarButton toolbarMenuButton" (click)="trimHandler()">Trim</button>
+            <button class="toolbarButton toolbarMenuButton" (click)="reverseHandler()">Reverse</button>
             <button class="toolbarButton toolbarMenuButton" (click)="sortHandler()">Sort</button>
+            <button class="toolbarButton toolbarMenuButton" (click)="trimHandler()">Trim</button>
         </div>
     </div>
 
     <div (mouseenter)="show(2)" (mouseleave)="hide(2)" (click)="hide(2)" class="toolbarButton" style="z-index: 999;">
         <button class="toolbarMenu">&#9881; Add</button>
         <div id="boo1menu" style="position: relative" [ngStyle]="{'display':  getDisplay(2), 'width':'80px'}">
-            <button class="toolbarButton toolbarMenuButton" (click)="generateHandler()">Generate</button>
+            <button class="toolbarButton toolbarMenuButton" (click)="generateHandler()">Generate...</button>
             <button class="toolbarButton toolbarMenuButton" (click)="timestampHandler()">Timestamp</button>
         </div>
     </div>

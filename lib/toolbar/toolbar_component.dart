@@ -75,7 +75,12 @@ class ToolbarComponent {
   }
 
   void sortHandler() {
-    note.text = _textProcessingService.sortText(note.text);
+    note.text = _textProcessingService.sortLines(note.text);
+    note.save();
+  }
+
+  void reverseHandler() {
+    note.text = _textProcessingService.reverseLines(note.text);
     note.save();
   }
 
