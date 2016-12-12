@@ -57,5 +57,11 @@ void main() {
     test('reverse - single line', () {
       expect(tps.reverse("Dogs are the best!"), "best! the are Dogs");
     });
+
+    test('reverse - multi line', () {
+      expect(tps.reverse(
+          "Zebras are cool!\nMonkeys are okay!\nDogs are the best!\n"),
+          "Dogs are the best!\nMonkeys are okay!\nZebras are cool!");
+    });
   });
 }
