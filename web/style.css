@@ -116,6 +116,11 @@ textarea {
     margin: 0px;
     height: 25px;
     min-width: 100px;
+    font-weight: bolder;
+}
+
+.toolbarMenu:hover {
+    border-bottom: inset 1px floralwhite;
 }
 
 .srhsButtons {

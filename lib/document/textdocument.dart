@@ -12,13 +12,17 @@ class TextDocument {
   set downloadName(String value) {
     _downloadName = value;
     save();
-    print("setter");
   }
 
   TextDocument() {
     text = window.localStorage['id1'];
     _downloadName = window.localStorage['dn1'];
-    lastModified = null;
+    String lms = window.localStorage['lm1'];
+
+    if (lms != null) {
+      lastModified = DateTime.parse(lms);
+    }
+
     if (text == null) text = "";
     if (_downloadName == null) downloadName = "np8080.txt";
   }
@@ -31,5 +35,6 @@ class TextDocument {
     updateModifiedDate();
     window.localStorage['id' + id.toString()] = text;
     window.localStorage['dn' + id.toString()] = _downloadName;
+    window.localStorage['lm' + id.toString()] = lastModified.toIso8601String();
   }
 }

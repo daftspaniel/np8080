@@ -22,14 +22,10 @@ class ToolbarComponent {
     display.add("none");
     display.add("none");
     display.add("none");
-    //display = "none";
-    //print(display[0]);
+    display.add("none");
   }
 
-  //String getDisplay(int index){return 'none';}
   List<String> display;
-
-  //String display;
 
   @Input()
   TextDocument note;
@@ -63,7 +59,8 @@ class ToolbarComponent {
   }
 
   void clearHandler() {
-    if (window.confirm("Are you sure you want to clear the current document?")){
+    if (window.confirm(
+        "Are you sure you want to clear the current document?")) {
       note.text = "";
       note.save();
     }
@@ -75,12 +72,12 @@ class ToolbarComponent {
   }
 
   void sortHandler() {
-    note.text = _textProcessingService.sortLines(note.text);
+    note.text = _textProcessingService.sort(note.text);
     note.save();
   }
 
   void reverseHandler() {
-    note.text = _textProcessingService.reverseLines(note.text);
+    note.text = _textProcessingService.reverse(note.text);
     note.save();
   }
 
@@ -118,9 +115,9 @@ class ToolbarComponent {
   }
 
   String getDisplay(int index) {
-    if(display==null) return 'none';
-    if(display.length==0) return 'none';
-    print(index);
+    if (display == null) return 'none';
+    if (display.length == 0) return 'none';
+
     return display.elementAt(index);
   }
 }
