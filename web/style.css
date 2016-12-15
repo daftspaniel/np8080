@@ -84,10 +84,11 @@ textarea {
 }
 
 .labelReadOnly {
+    top:0px;
+    left:2px;
     font-size: small;
-    height: 25px;
-    vertical-align: middle;
-    padding-top: 4px;
+    min-width: 120px;
+    margin-top:-10px;
 }
 
 .toolbarField {
@@ -124,9 +125,9 @@ textarea {
 }
 
 .srhsButtons {
-    flex: 1.1;
+    flex: 1;
     text-align: center;
-    margin-left: 20%;
+    xmargin-left: 20%;
 }
 
 .rhsStatus {

@@ -1,9 +1,4 @@
-<div>
-    <div [hidden]="!editMode">
-        <input type="text" [(ngModel)]="text"
-               (keyup)="update()" (blur)="toggle()"
-               (autofocus)="editMode"
-               tabindex="2" />
-    </div>
-    <div class="labelReadOnly" [hidden]="editMode" (click)="toggle()" title="{{text}}">{{outputText}}</div>
-</div>
+<input type="text" [(ngModel)]="text" [ngStyle]="{'height': editMode ? '20px':'0px'}"
+       (keyup)="update()" (blur)="toggle()"
+       tabindex="2" id="editbox" style="border:0px;padding: 0px;"/>
+<div class="labelReadOnly" [hidden]="editMode" (click)="toggle()" title="{{text}}">{{outputText}}</div>

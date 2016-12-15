@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:angular2/core.dart';
 
 @Component(
@@ -28,9 +30,19 @@ class EditableLabelComponent implements OnInit {
     outputText = text.length < 18 ? text : text.substring(0, 15) + "...";
   }
 
-  @HostListener('blur')
   void toggle() {
     editMode = !editMode;
+    if (editMode) {
+      TextInputElement tb = querySelector("#editbox");
+      tb.focus();
+    }
+    else {
+      if (text.length == 0) {
+        text = "np8080.txt";
+        print(text);
+        formatText();
+      }
+    }
   }
 
   @override

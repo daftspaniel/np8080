@@ -1,8 +1,8 @@
 name: np8080
-description: A Text editor app that uses Angular 2
+description: A web based Text editor app that uses AngularDart
 version: 0.0.9
 environment:
-  sdk: '>=1.13.0 <2.0.0'
+  sdk: '>=1.21.0 <2.0.0'
 dependencies:
   angular2: ^2.2.0
   browser: ^0.10.0

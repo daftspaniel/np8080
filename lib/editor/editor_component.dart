@@ -19,11 +19,11 @@ import 'package:np8080/toolbar/toolbar_component.dart';
 class EditorComponent {
 
   final String placeHolderText = """
-  Welcome to notepad8080!
+  Welcome to Notepad 8080!
 
-  np8080.win is a simple text editor in your browser. It is free and Open Source software.
+  Notepad 8080 is a simple web based text editor in your browser. It is free and Open Source software.
 
-  Your data is stored in your web browser's local storage and NOT on any server.
+  Your data is automatically stored in your web browser's local storage and NOT on any server.
 
   Click the download button to save the text as a file.
 
