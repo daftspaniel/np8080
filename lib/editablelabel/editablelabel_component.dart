@@ -39,8 +39,7 @@ class EditableLabelComponent implements OnInit {
     else {
       if (text.length == 0) {
         text = "np8080.txt";
-        print(text);
-        formatText();
+        update();
       }
     }
   }
