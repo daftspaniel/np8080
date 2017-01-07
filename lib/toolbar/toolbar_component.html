@@ -4,7 +4,7 @@
     <button class="miniToolbarButton" (click)="downloadHandler()" title="Download">&#11015;</button>
 
     <div (mouseenter)="show(0)" (mouseleave)="hide(0)" (click)="hide(0)" class="toolbarButton" style="z-index: 999;">
-        <button class="toolbarMenu">&#9881; Init</button>
+        <button class="toolbarMenu">&#x269B; Init</button>
         <div id="initmenu" style="position: relative" [ngStyle]="{'display':  getDisplay(0), 'width':'80px'}">
             <button class="toolbarButton toolbarMenuButton" (click)="clearHandler()">Clear</button>
         </div>
@@ -19,7 +19,7 @@
     </div>
 
     <div (mouseenter)="show(2)" (mouseleave)="hide(2)" (click)="hide(2)" class="toolbarButton" style="z-index: 999;">
-        <button class="toolbarMenu">&#9881; Add</button>
+        <button class="toolbarMenu">+ Add</button>
         <div id="boo1menu" style="position: relative" [ngStyle]="{'display':  getDisplay(2), 'width':'80px'}">
             <button class="toolbarButton toolbarMenuButton" (click)="generateHandler()">Generate...</button>
             <button class="toolbarButton toolbarMenuButton" (click)="timestampHandler()">Timestamp</button>
@@ -27,7 +27,7 @@
     </div>
 
     <div (mouseenter)="show(4)" (mouseleave)="hide(4)" (click)="hide(4)" class="toolbarButton" style="z-index: 999;">
-        <button class="toolbarMenu">&#9881; Remove</button>
+        <button class="toolbarMenu">- Remove</button>
         <div id="boo1menu" style="position: relative" [ngStyle]="{'display':  getDisplay(4), 'width':'80px'}">
             <button class="toolbarButton toolbarMenuButton" (click)="trimHandler()">Trim</button>
             <button class="toolbarButton toolbarMenuButton" (click)="removeBlankLinesHandler()">Blank Lines</button>
