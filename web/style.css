@@ -125,9 +125,8 @@ textarea {
 }
 
 .srhsButtons {
-    flex: 1;
-    text-align: center;
-    xmargin-left: 20%;
+    flex: 0.8;
+    text-align: right;
 }
 
 .rhsStatus {
@@ -137,7 +136,6 @@ textarea {
 
 .lhsStatus {
     flex: 4;
-
 }
 
 .statusPanel {
@@ -156,6 +154,7 @@ textarea {
     height: 30px;
     margin-bottom: 0px;
     width: 110%;
+    xwidth: 95vw;
     border-bottom: 1px yellow solid;
     padding: 1px;
 }

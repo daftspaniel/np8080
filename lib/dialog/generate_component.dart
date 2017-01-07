@@ -32,7 +32,7 @@ class GenerateDialogComponent {
     showDialogChange.emit(showDialog);
   }
 
-  void onSubmit() {
+  void appendText() {
     note.text +=
         _textProcessingService.getRepeatedString(textToRepeat, repeatCount);
     note.save();
