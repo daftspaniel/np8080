@@ -19,6 +19,7 @@ class GenerateDialogComponent {
 
   String textToRepeat;
   num repeatCount = 10;
+  int insertPos = -1;
 
   final TextProcessingService _textProcessingService;
   final TextareaDomService _textareaDomService;
@@ -30,24 +31,40 @@ class GenerateDialogComponent {
     textToRepeat = "";
     showDialog = false;
     showDialogChange.emit(showDialog);
+    _textareaDomService.setFocus('#nptextbox');
+    if (insertPos > 0) {
+      _textareaDomService.setCursorPosition('#nptextbox', insertPos);
+    }
   }
 
   void appendText() {
+    String generatedText = getGeneratedText();
     note.text +=
         _textProcessingService.getRepeatedString(textToRepeat, repeatCount);
+    trackCursorPosition(note.text.length, generatedText);
     note.save();
+  }
+
+  String  getGeneratedText() {
+    String generatedText = _textProcessingService.getRepeatedString(textToRepeat, repeatCount);
+    return generatedText;
   }
 
   void insertCurrentPosition() {
     TextareaSelection selInfo = _textareaDomService.getCurrentSelectionInfo(
         '#nptextbox');
 
-    String generatedText = _textProcessingService.getRepeatedString(
-        textToRepeat, repeatCount);
+    String generatedText = getGeneratedText();
 
     note.text = note.text.substring(0, selInfo.start) + generatedText +
         note.text.substring(selInfo.start);
 
+    trackCursorPosition(selInfo.start, generatedText);
+
     note.save();
+  }
+
+  void trackCursorPosition(int start, String generatedText) {
+    insertPos = start + generatedText.length;
   }
 }

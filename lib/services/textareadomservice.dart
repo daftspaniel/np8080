@@ -13,6 +13,16 @@ class TextareaDomService {
     return sel;
   }
 
+  void setCursorPosition(String id, int pos) {
+    TextAreaElement nptb = querySelector(id);
+    nptb.setSelectionRange(pos, pos);
+  }
+
+  void setFocus(String id) {
+    TextAreaElement nptb = querySelector(id);
+    nptb.focus();
+  }
+
 }
 
 class TextareaSelection {
