@@ -34,6 +34,9 @@ class ToolbarComponent {
   bool showAboutDialog;
 
   @Input()
+  bool showReplaceDialog;
+
+  @Input()
   bool showGenerateDialog;
 
   @Input()
@@ -41,6 +44,9 @@ class ToolbarComponent {
 
   @Output()
   EventEmitter<bool> showAboutDialogChange = new EventEmitter<bool>();
+
+  @Output()
+  EventEmitter<bool> showReplaceDialogChange = new EventEmitter<bool>();
 
   @Output()
   EventEmitter<bool> showPreviewChange = new EventEmitter<bool>();
@@ -79,6 +85,11 @@ class ToolbarComponent {
   void reverseHandler() {
     note.text = _textProcessingService.reverse(note.text);
     note.save();
+  }
+
+  void replaceHandler() {
+    showReplaceDialog = true;
+    showReplaceDialogChange.emit(showReplaceDialog);
   }
 
   void removeBlankLinesHandler() {

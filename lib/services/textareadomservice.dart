@@ -5,21 +5,23 @@ import 'package:angular2/core.dart';
 @Injectable()
 class TextareaDomService {
 
-  TextareaSelection getCurrentSelectionInfo(String id) {
-    TextAreaElement nptb = querySelector(id);
+  String _id = '#nptextbox';
+
+  TextareaSelection getCurrentSelectionInfo() {
+    TextAreaElement nptb = querySelector(_id);
     TextareaSelection sel = new TextareaSelection();
     sel.start = nptb.selectionStart;
     sel.end = nptb.selectionEnd;
     return sel;
   }
 
-  void setCursorPosition(String id, int pos) {
-    TextAreaElement nptb = querySelector(id);
+  void setCursorPosition(int pos) {
+    TextAreaElement nptb = querySelector(_id);
     nptb.setSelectionRange(pos, pos);
   }
 
-  void setFocus(String id) {
-    TextAreaElement nptb = querySelector(id);
+  void setFocus() {
+    TextAreaElement nptb = querySelector(_id);
     nptb.focus();
   }
 

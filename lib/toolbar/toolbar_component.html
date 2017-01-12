@@ -18,16 +18,20 @@
                     title="Reverse line order">Reverse</button>
             <button class="toolbarButton toolbarMenuButton" (click)="sortHandler()"
                     title="Alphabetically sort lines">Sort</button>
+            <div class="menuSeparator">&nbsp;</div>
+            <button class="toolbarButton toolbarMenuButton" (click)="replaceHandler()"
+                    title="Alphabetically sort lines">Replace...</button>
         </div>
     </div>
 
     <div (mouseenter)="show(2)" (mouseleave)="hide(2)" (click)="hide(2)" class="toolbarButton" style="z-index: 999;">
         <button class="toolbarMenu">+ Add</button>
         <div id="boo1menu" style="position: relative" [ngStyle]="{'display':  getDisplay(2), 'width':'80px'}">
-            <button class="toolbarButton toolbarMenuButton" (click)="generateHandler()"
-                    title="Add generated text to put into document">Generate...</button>
             <button class="toolbarButton toolbarMenuButton" (click)="timestampHandler()"
                     title="Add a timestamp to the document">Timestamp</button>
+            <div class="menuSeparator">&nbsp;</div>
+            <button class="toolbarButton toolbarMenuButton" (click)="generateHandler()"
+                    title="Add generated text to put into document">Generate...</button>
         </div>
     </div>
 

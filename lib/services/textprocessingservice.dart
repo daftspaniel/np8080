@@ -32,6 +32,10 @@ class TextProcessingService {
     return textToRepeat * count.toInt();
   }
 
+  String getReplaced(String content, String target, String replacement) {
+    return content.replaceAll(target, replacement);
+  }
+
   String convertMarkdownToHtml(String content) {
     return md.markdownToHtml(content, extensionSet: md.ExtensionSet.commonMark);
   }

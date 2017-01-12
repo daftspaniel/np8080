@@ -3,6 +3,7 @@
         <editor-toolbar [(note)]="note"
                         [(showAboutDialog)]="showAboutDialog"
                         [(showGenerateDialog)]="showGenerateDialog"
+                        [(showReplaceDialog)]="showReplaceDialog"
                         [(showPreview)]="showPreview"></editor-toolbar>
     </header>
 
@@ -27,3 +28,5 @@
 <about-dialog [(showDialog)]="showAboutDialog"></about-dialog>
 
 <generate-dialog [(showDialog)]="showGenerateDialog" [note]="note"></generate-dialog>
+
+<replace-dialog [(showDialog)]="showReplaceDialog" [note]="note"></replace-dialog>

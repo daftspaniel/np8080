@@ -1,5 +1,5 @@
 import 'package:angular2/core.dart';
-import 'package:np8080/dialog/dialog_base.dart';
+import 'package:np8080/dialog/common/dialog_base.dart';
 
 @Component(
     selector: 'about-dialog',

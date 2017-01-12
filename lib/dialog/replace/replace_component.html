@@ -1,0 +1,21 @@
+<div id="overlay" [hidden]="!showDialog">
+    <div class="dialogPanel">
+        <div class="header">Replace</div>
+
+        <div style="text-align: center;padding: 10px">
+
+            <label>Replace</label>
+            <input type="text" placeholder="Type text here..." [(ngModel)]="textToReplace">
+            <label> with </label>
+            <input type="text" placeholder="Type text here..." [(ngModel)]="replacementText">
+        </div>
+
+        <div class="footer">
+            <button class="actionButton" (click)="performReplace()">Replace</button>
+            <!--<button class="closeButton" (click)="undoTextGeneration()">Undo</button>-->
+            <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+            <!--<button class="closeButton" (click)="closeTheDialog()">Peek!</button>-->
+            <button class="closeButton" (click)="closeTheDialog()">Close</button>
+        </div>
+    </div>
+</div>

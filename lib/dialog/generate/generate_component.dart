@@ -18,6 +18,9 @@ class GenerateDialogComponent {
   EventEmitter<bool> showDialogChange = new EventEmitter<bool>();
 
   String textToRepeat;
+  String _generatedText;
+  List<String> _undoList = new List<String>();
+
   num repeatCount = 10;
   int insertPos = -1;
 
@@ -31,40 +34,39 @@ class GenerateDialogComponent {
     textToRepeat = "";
     showDialog = false;
     showDialogChange.emit(showDialog);
-    _textareaDomService.setFocus('#nptextbox');
+    _textareaDomService.setFocus();
     if (insertPos > 0) {
-      _textareaDomService.setCursorPosition('#nptextbox', insertPos);
+      _textareaDomService.setCursorPosition(insertPos);
     }
   }
 
   void appendText() {
-    String generatedText = getGeneratedText();
-    note.text +=
-        _textProcessingService.getRepeatedString(textToRepeat, repeatCount);
-    trackCursorPosition(note.text.length, generatedText);
-    note.save();
+    note.text += getGeneratedText();
+    saveAndUpdateState(note.text.length);
   }
 
-  String  getGeneratedText() {
-    String generatedText = _textProcessingService.getRepeatedString(textToRepeat, repeatCount);
-    return generatedText;
+  String getGeneratedText() {
+    _generatedText = _textProcessingService.getRepeatedString(
+        textToRepeat, repeatCount);
+    return _generatedText;
   }
 
   void insertCurrentPosition() {
-    TextareaSelection selInfo = _textareaDomService.getCurrentSelectionInfo(
-        '#nptextbox');
+    TextareaSelection selInfo = _textareaDomService.getCurrentSelectionInfo();
 
-    String generatedText = getGeneratedText();
-
-    note.text = note.text.substring(0, selInfo.start) + generatedText +
+    note.text = note.text.substring(0, selInfo.start) + getGeneratedText() +
         note.text.substring(selInfo.start);
 
-    trackCursorPosition(selInfo.start, generatedText);
-
-    note.save();
+    saveAndUpdateState(selInfo.start);
   }
 
-  void trackCursorPosition(int start, String generatedText) {
-    insertPos = start + generatedText.length;
+  void saveAndUpdateState(int cursorPos) {
+    trackCursorPosition(cursorPos);
+    note.save();
+    _undoList.add(note.text);
+  }
+
+  void trackCursorPosition(int start) {
+    insertPos = start + _generatedText.length;
   }
 }

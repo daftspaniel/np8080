@@ -63,5 +63,9 @@ void main() {
           "Zebras are cool!\nMonkeys are okay!\nDogs are the best!\n"),
           "Dogs are the best!\nMonkeys are okay!\nZebras are cool!");
     });
+
+    test('replace',(){
+
+    });
   });
 }
