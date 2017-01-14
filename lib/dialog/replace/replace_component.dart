@@ -7,7 +7,10 @@ import 'package:np8080/services/textprocessingservice.dart';
     selector: 'replace-dialog',
     templateUrl: 'replace_component.html',
     providers: const [TextProcessingService, TextareaDomService])
-class ReplaceDialogComponent {
+class ReplaceDialogComponent implements OnChanges {
+
+  final TextProcessingService _textProcessingService;
+  final TextareaDomService _textareaDomService;
 
   @Input()
   bool showDialog = false;
@@ -25,9 +28,6 @@ class ReplaceDialogComponent {
   List<String> _undoList = new List<String>();
 
   int insertPos = -1;
-
-  final TextProcessingService _textProcessingService;
-  final TextareaDomService _textareaDomService;
 
   ReplaceDialogComponent(this._textProcessingService,
       this._textareaDomService);
@@ -57,18 +57,24 @@ class ReplaceDialogComponent {
     replacementText ??= "";
     if (textToReplace.length > 0) {
       TextareaSelection selInfo = _textareaDomService.getCurrentSelectionInfo();
+
       note.text = getUpdatedText();
       saveAndUpdateState(selInfo.start);
     }
   }
 
   void saveAndUpdateState(int cursorPos) {
-    trackCursorPosition(cursorPos);
     note.save();
     _undoList.add(note.text);
   }
 
   void trackCursorPosition(int start) {
     insertPos = start + _updatedText.length;
+  }
+
+  @override
+  ngOnChanges(Map<String, SimpleChange> changes) {
+    TextareaSelection selInfo = _textareaDomService.getCurrentSelectionInfo();
+    insertPos = selInfo.start;
   }
 }
