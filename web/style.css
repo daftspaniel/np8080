@@ -55,7 +55,7 @@ textarea {
     border: 0px;
     margin: 0px;
     height: 25px;
-    text-align: center;
+    text-align: left;
     font-size: 10pt;
     min-width: 100px;
     margin-left: 12px;
@@ -81,6 +81,7 @@ textarea {
 
 .toolbarMenuButton {
     margin-left: 0px;
+    padding-left: 10px;
 }
 
 .labelReadOnly {
@@ -154,7 +155,6 @@ textarea {
     height: 30px;
     margin-bottom: 0px;
     width: 110%;
-    xwidth: 95vw;
     border-bottom: 1px yellow solid;
     padding: 1px;
 }

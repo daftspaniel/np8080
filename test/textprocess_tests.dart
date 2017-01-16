@@ -64,8 +64,9 @@ void main() {
           "Dogs are the best!\nMonkeys are okay!\nZebras are cool!");
     });
 
-    test('replace',(){
-
+    test('replace', () {
+      expect(tps.getReplaced("The cat sat on the mat", "cat", "dog"),
+          "The dog sat on the mat");
     });
   });
 }

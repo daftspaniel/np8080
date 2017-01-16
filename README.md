@@ -4,9 +4,12 @@ Simple Angular2 Dart project.
 
 This is my personal 'Learn Angular 2' project. It's a simple notepad type app for the web. Something that I wanted for my Chromebook.
 
+Run tests with:
++ pub run test test/textprocess_tests.dart -p dartium
+
 Future features:
 + Offline support
-+ Improved GUI
+
 
 
 Blog Posts

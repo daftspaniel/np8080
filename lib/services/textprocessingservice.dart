@@ -88,4 +88,15 @@ class TextProcessingService {
     });
     return out;
   }
+
+  String randomise(String text) {
+    List<String> segments = text.split('\n');
+    segments.shuffle();
+    String out = "";
+
+    segments.forEach((line) {
+      if (line.length > 0) out += line + '\n';
+    });
+    return out;
+  }
 }

@@ -86,6 +86,15 @@ class ToolbarComponent {
     note.text = _textProcessingService.reverse(note.text);
     note.save();
   }
+  void randomHandler() {
+    note.text = _textProcessingService.randomise(note.text);
+    note.save();
+  }
+
+  void duplicateHandler() {
+    note.text = _textProcessingService.getRepeatedString(note.text, 2);
+    note.save();
+  }
 
   void replaceHandler() {
     showReplaceDialog = true;
