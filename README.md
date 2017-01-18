@@ -1,8 +1,13 @@
 # np8080
 Simple Angular2 Dart project.
-20/8/16
+18th January 2017
 
-This is my personal 'Learn Angular 2' project. It's a simple notepad type app for the web. Something that I wanted for my Chromebook.
+This is my personal 'Learn Angular 2' project. It's a simple notepad type app for the web 
+with some text processing features primarily for generating test data.
+
+Something that I wanted for my Chromebook.
+
+[![Build Status](https://travis-ci.org/daftspaniel/np8080.svg?branch=master)](https://travis-ci.org/daftspaniel/np8080)
 
 Run tests with:
 + pub run test test/textprocess_tests.dart -p dartium
