@@ -25,6 +25,16 @@ class TextareaDomService {
     nptb.focus();
   }
 
+  void setText(String txt) {
+    TextAreaElement nptb = querySelector(_id);
+    nptb.value = txt;
+  }
+
+  String getText() {
+    TextAreaElement nptb = querySelector(_id);
+    return nptb.value;
+  }
+
 }
 
 class TextareaSelection {

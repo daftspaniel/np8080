@@ -1,10 +1,12 @@
 import 'package:angular2/core.dart';
+import 'package:angular2/src/facade/browser.dart';
 import 'package:np8080/dialog/about/about_component.dart';
 import 'package:np8080/dialog/generate/generate_component.dart';
 import 'package:np8080/dialog/replace/replace_component.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/editor/preview_component.dart';
 import 'package:np8080/editor/status_component.dart';
+import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/toolbar/toolbar_component.dart';
 
 @Component(
@@ -17,8 +19,12 @@ import 'package:np8080/toolbar/toolbar_component.dart';
       GenerateDialogComponent,
       ReplaceDialogComponent,
       PreviewComponent
-    ])
+    ],
+    providers: const [TextareaDomService])
 class EditorComponent {
+  final TextareaDomService _textareaDomService;
+
+  EditorComponent(this._textareaDomService);
 
   final String placeHolderText = """
   Welcome to Notepad 8080!
@@ -46,6 +52,26 @@ class EditorComponent {
 
   void changeHandler() {
     note.save();
+  }
+
+  bool keyHandler(KeyboardEvent e) {
+    // TAB key
+    if (e.keyCode == 9) {
+      e.preventDefault();
+      TextareaSelection selInfo = _textareaDomService.getCurrentSelectionInfo();
+
+      int pos = selInfo.start + 4;
+
+      _textareaDomService.setText(
+          note.text.substring(0, selInfo.start) + "    " +
+              note.text.substring(selInfo.start));
+      _textareaDomService.setCursorPosition(pos);
+
+      note.text = _textareaDomService.getText();
+
+      return false;
+    }
+    return true;
   }
 
 }
