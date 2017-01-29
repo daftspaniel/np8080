@@ -79,6 +79,16 @@ class TextProcessingService {
     return trimText(out);
   }
 
+  String prefixLines(String text, String prefix) {
+    List<String> segments = text.split('\n');
+    String out = "";
+
+    segments.forEach((line) {
+      out += prefix + line + '\n';
+    });
+    return out;
+  }
+
   String removeBlankLines(String text) {
     List<String> segments = text.split('\n');
     String out = "";

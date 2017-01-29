@@ -24,6 +24,13 @@ void main() {
       expect(tps.getLineCount("hello\nthere\nare\napples\nin\nhere."), 5);
     });
 
+    test('prefixLines',(){
+      expect(tps.prefixLines("", "TEST"), "TEST\n");
+      expect(tps.prefixLines("\n\n", "TEST"), "TEST\nTEST\nTEST\n");
+      expect(tps.prefixLines("asdf\nxyzz\n", "  "), "  asdf\n  xyzz\n  \n");
+      expect(tps.prefixLines("Cup", ""), "Cup\n");
+    });
+
     test('removeBlankLines', () {
       expect(tps.removeBlankLines(""), "");
       expect(tps.removeBlankLines("\n\n\n\n\nhello"), "hello\n");
