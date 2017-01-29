@@ -7,7 +7,7 @@ import 'package:np8080/services/textprocessingservice.dart';
     selector: 'generate-dialog',
     templateUrl: 'generate_component.html',
     providers: const [TextProcessingService, TextareaDomService])
-class GenerateDialogComponent {
+class GenerateDialogComponent implements OnInit {
   @Input()
   bool showDialog = false;
 
@@ -19,9 +19,10 @@ class GenerateDialogComponent {
 
   String textToRepeat;
   String _generatedText;
-  List<String> _undoList = new List<String>();
+  List<String> _undoText = new List<String>();
+  List<int> _undoPositions = new List<int>();
 
-  num repeatCount = 10;
+  int repeatCount = 10;
   int insertPos = -1;
 
   final TextProcessingService _textProcessingService;
@@ -40,9 +41,14 @@ class GenerateDialogComponent {
     }
   }
 
+  void undoTextGeneration() {
+    if (_undoText.length == 0) return;
+    saveAndUpdateState(_undoText.removeLast(), _undoPositions.removeLast());
+  }
+
   void appendText() {
-    note.text += getGeneratedText();
-    saveAndUpdateState(note.text.length);
+    String newText = note.text + getGeneratedText();
+    saveAndUpdateState(newText, note.text.length);
   }
 
   String getGeneratedText() {
@@ -54,19 +60,28 @@ class GenerateDialogComponent {
   void insertCurrentPosition() {
     TextareaSelection selInfo = _textareaDomService.getCurrentSelectionInfo();
 
-    note.text = note.text.substring(0, selInfo.start) + getGeneratedText() +
+    String newText = note.text.substring(0, selInfo.start) +
+        getGeneratedText() +
         note.text.substring(selInfo.start);
 
-    saveAndUpdateState(selInfo.start);
+    saveAndUpdateState(newText, selInfo.start);
   }
 
-  void saveAndUpdateState(int cursorPos) {
-    trackCursorPosition(cursorPos);
+  void saveAndUpdateState(String newNoteText, int cursorPos) {
+    storeStateForUndo(cursorPos);
+    note.text = newNoteText;
     note.save();
-    _undoList.add(note.text);
+    insertPos = cursorPos + _generatedText.length;
   }
 
-  void trackCursorPosition(int start) {
-    insertPos = start + _generatedText.length;
+  void storeStateForUndo(int cursorPos) {
+    _undoText.add(note.text);
+    _undoPositions.add(cursorPos);
+  }
+
+  @override
+  ngOnInit() {
+//    TextareaSelection selInfo = _textareaDomService.getCurrentSelectionInfo();
+//    storeStateForUndo(selInfo.start);
   }
 }
