@@ -4,6 +4,7 @@
                         [(showAboutDialog)]="showAboutDialog"
                         [(showGenerateDialog)]="showGenerateDialog"
                         [(showReplaceDialog)]="showReplaceDialog"
+                        [(showPrePostDialog)]="showPrePostDialog"
                         [(showPreview)]="showPreview"></editor-toolbar>
     </header>
 
@@ -30,3 +31,5 @@
 <generate-dialog [(showDialog)]="showGenerateDialog" [note]="note"></generate-dialog>
 
 <replace-dialog [(showDialog)]="showReplaceDialog" [note]="note"></replace-dialog>
+
+<prepost-dialog [(showDialog)]="showPrePostDialog" [note]="note"></prepost-dialog>

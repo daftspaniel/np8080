@@ -1,0 +1,19 @@
+<div id="overlay" [hidden]="!showDialog">
+    <div class="dialogPanel">
+        <div class="header">Prefix and Postfix Lines</div>
+
+        <div style="text-align: center;padding: 10px">
+
+            <label>Add To Start</label>
+            <input type="text" placeholder="Type text here..." [(ngModel)]="prefix">
+            <br/>
+            <label>Add To End</label>
+            <input type="text" placeholder="Type text here..." [(ngModel)]="postfix">
+        </div>
+
+        <div class="footer">
+            <button class="actionButton" (click)="performPrePost()">Do it!</button>
+            <button class="closeButton" (click)="closeTheDialog()">Close</button>
+        </div>
+    </div>
+</div>

@@ -2,6 +2,7 @@ import 'package:angular2/core.dart';
 import 'package:angular2/src/facade/browser.dart';
 import 'package:np8080/dialog/about/about_component.dart';
 import 'package:np8080/dialog/generate/generate_component.dart';
+import 'package:np8080/dialog/prepost/prepost_component.dart';
 import 'package:np8080/dialog/replace/replace_component.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/editor/preview_component.dart';
@@ -18,6 +19,7 @@ import 'package:np8080/toolbar/toolbar_component.dart';
       AboutDialogComponent,
       GenerateDialogComponent,
       ReplaceDialogComponent,
+      PrePostDialogComponent,
       PreviewComponent
     ],
     providers: const [TextareaDomService])
@@ -49,6 +51,8 @@ class EditorComponent {
   bool showReplaceDialog = false;
 
   bool showPreview = false;
+
+  bool showPrePostDialog = false;
 
   void changeHandler() {
     note.save();

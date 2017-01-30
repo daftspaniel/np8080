@@ -37,6 +37,9 @@ class ToolbarComponent {
   bool showReplaceDialog;
 
   @Input()
+  bool showPrePostDialog;
+
+  @Input()
   bool showGenerateDialog;
 
   @Input()
@@ -47,6 +50,9 @@ class ToolbarComponent {
 
   @Output()
   EventEmitter<bool> showReplaceDialogChange = new EventEmitter<bool>();
+
+  @Output()
+  EventEmitter<bool> showPrePostDialogChange = new EventEmitter<bool>();
 
   @Output()
   EventEmitter<bool> showPreviewChange = new EventEmitter<bool>();
@@ -86,6 +92,7 @@ class ToolbarComponent {
     note.text = _textProcessingService.reverse(note.text);
     note.save();
   }
+
   void randomHandler() {
     note.text = _textProcessingService.randomise(note.text);
     note.save();
@@ -101,8 +108,13 @@ class ToolbarComponent {
     showReplaceDialogChange.emit(showReplaceDialog);
   }
 
+  void prePostHandler() {
+    showPrePostDialog = true;
+    showPrePostDialogChange.emit(showPrePostDialog);
+  }
+
   void removeBlankLinesHandler() {
-    note.text = _textProcessingService.removeBlankLines (note.text);
+    note.text = _textProcessingService.removeBlankLines(note.text);
     note.save();
   }
 

@@ -22,7 +22,7 @@ class GenerateDialogComponent implements OnInit {
   List<String> _undoText = new List<String>();
   List<int> _undoPositions = new List<int>();
 
-  int repeatCount = 10;
+  num repeatCount = 10;
   int insertPos = -1;
 
   final TextProcessingService _textProcessingService;
