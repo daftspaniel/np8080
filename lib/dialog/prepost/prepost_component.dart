@@ -24,8 +24,6 @@ class PrePostDialogComponent {
   String prefix;
   String postfix;
 
-  int insertPos = -1;
-
   PrePostDialogComponent(this._textProcessingService,
       this._textareaDomService);
 
@@ -33,9 +31,6 @@ class PrePostDialogComponent {
     showDialog = false;
     showDialogChange.emit(showDialog);
     _textareaDomService.setFocus();
-    if (insertPos > 0) {
-      _textareaDomService.setCursorPosition(insertPos);
-    }
   }
 
   performPrePost() {
@@ -43,5 +38,6 @@ class PrePostDialogComponent {
     txt = _textProcessingService.prefixLines(txt, prefix);
     txt = _textProcessingService.postfixLines(txt, postfix);
     note.text = txt;
+    note.save();
   }
 }
