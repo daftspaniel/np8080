@@ -31,6 +31,13 @@ void main() {
       expect(tps.prefixLines("Cup", ""), "Cup\n");
     });
 
+    test('postfixLines',(){
+      expect(tps.postfixLines("", "TEST"), "TEST\n");
+      expect(tps.postfixLines("a\nb\n", "TEST"), "aTEST\nbTEST\nTEST\n");
+      expect(tps.postfixLines("asdf\nxyzz\n", "12345"), "asdf12345\nxyzz12345\n12345\n");
+      expect(tps.postfixLines("Coffee", "Cup"), "CoffeeCup\n");
+    });
+
     test('removeBlankLines', () {
       expect(tps.removeBlankLines(""), "");
       expect(tps.removeBlankLines("\n\n\n\n\nhello"), "hello\n");

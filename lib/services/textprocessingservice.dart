@@ -89,6 +89,16 @@ class TextProcessingService {
     return out;
   }
 
+  String postfixLines(String text, String postfix) {
+    List<String> segments = text.split('\n');
+    String out = "";
+
+    segments.forEach((line) {
+      out += line + postfix + '\n';
+    });
+    return out;
+  }
+
   String removeBlankLines(String text) {
     List<String> segments = text.split('\n');
     String out = "";
