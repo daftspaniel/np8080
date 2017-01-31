@@ -109,6 +109,14 @@ class TextProcessingService {
     return out;
   }
 
+  String removeExtraBlankLines(String text) {
+    while (text.indexOf('\n\n\n') > -1) {
+      text = text.replaceAll('\n\n\n', '\n\n');
+    }
+
+    return text;
+  }
+
   String randomise(String text) {
     List<String> segments = text.split('\n');
     segments.shuffle();

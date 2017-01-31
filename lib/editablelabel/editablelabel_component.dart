@@ -1,7 +1,6 @@
 import 'dart:html';
 
 import 'package:angular2/core.dart';
-import 'package:angular2/src/platform/browser/title.dart';
 
 @Component(
     selector: 'editable-label',
@@ -11,7 +10,6 @@ class EditableLabelComponent implements OnInit {
 
   bool editMode = false;
   String outputText;
-  Title _title = new Title();
 
   @Input()
   String text;
@@ -30,7 +28,7 @@ class EditableLabelComponent implements OnInit {
 
   void formatText() {
     outputText = text.length < 18 ? text : text.substring(0, 15) + "...";
-    _title.setTitle(text);
+    document.title = text;
   }
 
   void toggle() {

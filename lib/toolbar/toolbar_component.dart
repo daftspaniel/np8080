@@ -118,6 +118,11 @@ class ToolbarComponent {
     note.save();
   }
 
+  void removeExtraBlankLinesHandler() {
+    note.text = _textProcessingService.removeExtraBlankLines(note.text);
+    note.save();
+  }
+
   void githubHandler() {
     window.location.href = "https://github.com/daftspaniel/np8080";
   }

@@ -49,6 +49,13 @@ void main() {
           "hello\nthere\nare\napples\nin\nhere.\n");
     });
 
+    test('removeExtraBlankLines', () {
+      expect(tps.removeExtraBlankLines(""), "");
+      expect(tps.removeExtraBlankLines("\n\n\n\n\nhello"), "\n\nhello");
+      expect(tps.removeExtraBlankLines("hello\n\n\n"), "hello\n\n");
+      expect(tps.removeExtraBlankLines("hello\n\n\nthere\n"), "hello\n\nthere\n");
+    });
+
     test('getRepeatedString', () {
       expect(tps.getRepeatedString("Moo", 4), "MooMooMooMoo");
       expect(tps.getRepeatedString("Moo", 0), "");
