@@ -25,17 +25,17 @@ void main() {
     });
 
     test('prefixLines',(){
-      expect(tps.prefixLines("", "TEST"), "TEST\n");
-      expect(tps.prefixLines("\n\n", "TEST"), "TEST\nTEST\nTEST\n");
-      expect(tps.prefixLines("asdf\nxyzz\n", "  "), "  asdf\n  xyzz\n  \n");
-      expect(tps.prefixLines("Cup", ""), "Cup\n");
+      expect(tps.prefixLines("", "TEST"), "TEST");
+      expect(tps.prefixLines("\n\n", "TEST"), "TEST\nTEST\nTEST");
+      expect(tps.prefixLines("asdf\nxyzz\n", "  "), "  asdf\n  xyzz\n  ");
+      expect(tps.prefixLines("Cup", ""), "Cup");
     });
 
     test('postfixLines',(){
-      expect(tps.postfixLines("", "TEST"), "TEST\n");
-      expect(tps.postfixLines("a\nb\n", "TEST"), "aTEST\nbTEST\nTEST\n");
-      expect(tps.postfixLines("asdf\nxyzz\n", "12345"), "asdf12345\nxyzz12345\n12345\n");
-      expect(tps.postfixLines("Coffee", "Cup"), "CoffeeCup\n");
+      expect(tps.postfixLines("", "TEST"), "TEST");
+      expect(tps.postfixLines("a\nb\n", "TEST"), "aTEST\nbTEST\nTEST");
+      expect(tps.postfixLines("asdf\nxyzz\n", "12345"), "asdf12345\nxyzz12345\n12345");
+      expect(tps.postfixLines("Coffee", "Cup"), "CoffeeCup");
     });
 
     test('removeBlankLines', () {

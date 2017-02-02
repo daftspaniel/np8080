@@ -6,7 +6,7 @@ import 'package:angular2/core.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/editor/editor_component.dart';
 
-@Component(selector: 'my-app', templateUrl: 'app_component.html',
+@Component(selector: 'np8080-app', templateUrl: 'app_component.html',
     directives: const [
       EditorComponent
     ])

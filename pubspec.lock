@@ -6,13 +6,13 @@ packages:
       name: analyzer
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.29.5"
+    version: "0.29.6"
   angular2:
     description:
       name: angular2
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.2.0"
+    version: "3.0.0-alpha"
   args:
     description:
       name: args
@@ -187,12 +187,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.9.3"
-  observable:
-    description:
-      name: observable
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.14.0+1"
   package_config:
     description:
       name: package_config

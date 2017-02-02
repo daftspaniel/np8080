@@ -82,10 +82,12 @@ class TextProcessingService {
   String prefixLines(String text, String prefix) {
     List<String> segments = text.split('\n');
     String out = "";
-
-    segments.forEach((line) {
-      out += prefix + line + '\n';
-    });
+    for (int i = 0; i < segments.length; i++) {
+      out += prefix + segments[i];
+      if (i < (segments.length - 1)) {
+        out += '\n';
+      }
+    }
     return out;
   }
 
@@ -93,9 +95,12 @@ class TextProcessingService {
     List<String> segments = text.split('\n');
     String out = "";
 
-    segments.forEach((line) {
-      out += line + postfix + '\n';
-    });
+    for (int i = 0; i < segments.length; i++) {
+      out += segments[i] + postfix;
+      if (i < (segments.length - 1)) {
+        out += '\n';
+      }
+    }
     return out;
   }
 

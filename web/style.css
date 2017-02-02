@@ -57,7 +57,7 @@ textarea {
     height: 25px;
     text-align: left;
     font-size: 10pt;
-    min-width: 100px;
+    min-width: 130px;
     margin-left: 12px;
 }
 
@@ -112,7 +112,7 @@ textarea {
 
 .toolbarMenu {
     background-color: darkslategrey;
-    width: 80px;
+    width: 130px;
     color: white;
     border: 1px;
     margin: 0px;
@@ -176,7 +176,7 @@ textarea {
 }
 
 .menuSeparator {
-    width: 100px;
+    width: 130px;
     height: 1px;
     background-color: aliceblue;
     padding: 0px;

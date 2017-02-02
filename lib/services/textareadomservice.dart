@@ -10,8 +10,11 @@ class TextareaDomService {
   TextareaSelection getCurrentSelectionInfo() {
     TextAreaElement nptb = querySelector(_id);
     TextareaSelection sel = new TextareaSelection();
-    sel.start = nptb.selectionStart;
-    sel.end = nptb.selectionEnd;
+    sel
+      ..start = nptb.selectionStart
+      ..end = nptb.selectionEnd
+      ..text = nptb.value.substring(sel.start, sel.end);
+    print(sel.text);
     return sel;
   }
 
@@ -40,4 +43,5 @@ class TextareaDomService {
 class TextareaSelection {
   int start;
   int end;
+  String text;
 }

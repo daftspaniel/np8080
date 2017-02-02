@@ -67,8 +67,9 @@ class EditorComponent {
       int pos = selInfo.start + 4;
 
       _textareaDomService.setText(
-          note.text.substring(0, selInfo.start) + "    " +
-              note.text.substring(selInfo.start));
+          note.text.substring(0, selInfo.start) +
+              selInfo.text.replaceAll('\n', '\n\t') +
+              note.text.substring(selInfo.end));
       _textareaDomService.setCursorPosition(pos);
 
       note.text = _textareaDomService.getText();
