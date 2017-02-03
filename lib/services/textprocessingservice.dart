@@ -108,9 +108,15 @@ class TextProcessingService {
     List<String> segments = text.split('\n');
     String out = "";
 
-    segments.forEach((line) {
-      if (line.length > 0) out += line + '\n';
-    });
+    for (int i = 0; i < segments.length; i++) {
+      if (segments[i].length > 0) {
+        out += segments[i];
+        if (i < (segments.length - 1) && text.indexOf('\n') > -1) {
+          out += '\n';
+        }
+      }
+    }
+
     return out;
   }
 
@@ -127,9 +133,12 @@ class TextProcessingService {
     segments.shuffle();
     String out = "";
 
-    segments.forEach((line) {
-      if (line.length > 0) out += line + '\n';
-    });
+    for (int i = 0; i < segments.length; i++) {
+      if (segments[i].length > 0) out += segments[i];
+      if (i < (segments.length - 1)) {
+        out += '\n';
+      }
+    }
     return out;
   }
 }

@@ -40,7 +40,7 @@ void main() {
 
     test('removeBlankLines', () {
       expect(tps.removeBlankLines(""), "");
-      expect(tps.removeBlankLines("\n\n\n\n\nhello"), "hello\n");
+      expect(tps.removeBlankLines("\n\n\n\n\nhello"), "hello");
       expect(tps.removeBlankLines("hello\n\n\n"), "hello\n");
       expect(tps.removeBlankLines("hello\nthere\nare\napples\nin\nhere.\n"),
           "hello\nthere\nare\napples\nin\nhere.\n");
