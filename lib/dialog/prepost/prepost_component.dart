@@ -34,9 +34,11 @@ class PrePostDialogComponent {
   }
 
   performPrePost() {
-    String txt = note.text;
-    txt = _textProcessingService.prefixLines(txt, prefix);
-    txt = _textProcessingService.postfixLines(txt, postfix);
-    note.updateAndSave(txt);
+    if (prefix.length + postfix.length > 0) {
+      String txt = note.text;
+      txt = _textProcessingService.prefixLines(txt, prefix);
+      txt = _textProcessingService.postfixLines(txt, postfix);
+      note.updateAndSave(txt);
+    }
   }
 }

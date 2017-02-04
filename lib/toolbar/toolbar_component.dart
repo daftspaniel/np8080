@@ -4,25 +4,27 @@ import 'package:angular2/core.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/editablelabel/editablelabel_component.dart';
 import 'package:np8080/services/textprocessingservice.dart';
+import 'package:np8080/toolbar/menu/menu.dart';
 
 @Component(
     selector: 'editor-toolbar',
     templateUrl: 'toolbar_component.html',
     directives: const [ToolbarComponent,
-    EditableLabelComponent
+    EditableLabelComponent, MenuComponent
     ],
     providers: const [TextProcessingService])
 class ToolbarComponent {
 
   final TextProcessingService _textProcessingService;
+  List helpMenuItems;
 
   ToolbarComponent(this._textProcessingService) {
     display = new List<String>();
-    display.add("none");
-    display.add("none");
-    display.add("none");
-    display.add("none");
-    display.add("none");
+    display..add("none")..add("none")..add("none")..add("none")..add("none");
+    helpMenuItems =
+    [new Menu("GitHub", githubHandler, "Get the source code!"),
+    new Menu("About", aboutHandler, "Find out more about NP8080")
+    ];
   }
 
   List<String> display;
@@ -136,8 +138,7 @@ class ToolbarComponent {
   }
 
   void timestampHandler() {
-    note.text += "\r\n" + new DateTime.now().toString();
-    note.save();
+    note.appendAndSave("\r\n" + new DateTime.now().toString());
   }
 
   void hide(int index) {

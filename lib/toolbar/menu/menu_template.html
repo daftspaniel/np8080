@@ -1,0 +1,10 @@
+<div (mouseenter)="show()" (mouseleave)="hide()" style="z-index: 999;">
+    <button class="toolbarMenu">{{menutitle}}</button>
+    <div id="boo2menu" style="position: relative" [ngStyle]="{'display':  display, 'width':'130px'}" style="z-index: 999;">
+        <button *ngFor="#menuItem of items"
+                class="toolbarButton toolbarMenuButton"
+                (click)="menuItem.handler()"
+                title="{{menuItem.tooltip}}">{{menuItem.name}}
+        </button>
+    </div>
+</div>
