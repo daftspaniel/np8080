@@ -31,6 +31,16 @@ class TextDocument {
     lastModified = new DateTime.now();
   }
 
+  void updateAndSave(String newText) {
+    text = newText;
+    save();
+  }
+
+  void appendAndSave(String additionalText) {
+    text += additionalText;
+    save();
+  }
+
   void save() {
     updateModifiedDate();
     window.localStorage['id' + id.toString()] = text;

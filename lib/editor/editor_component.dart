@@ -8,6 +8,7 @@ import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/editor/preview_component.dart';
 import 'package:np8080/editor/status_component.dart';
 import 'package:np8080/services/textareadomservice.dart';
+import 'package:np8080/services/textprocessingservice.dart';
 import 'package:np8080/toolbar/toolbar_component.dart';
 
 @Component(
@@ -22,11 +23,15 @@ import 'package:np8080/toolbar/toolbar_component.dart';
       PrePostDialogComponent,
       PreviewComponent
     ],
-    providers: const [TextareaDomService])
+    providers: const [TextareaDomService, TextProcessingService])
 class EditorComponent {
   final TextareaDomService _textareaDomService;
+  final TextProcessingService _textProcessingService;
 
-  EditorComponent(this._textareaDomService);
+  List<String> _undoText = new List<String>();
+  List<int> _undoPositions = new List<int>();
+
+  EditorComponent(this._textareaDomService, this._textProcessingService);
 
   final String placeHolderText = """
   Welcome to Notepad 8080!
@@ -40,6 +45,8 @@ class EditorComponent {
   You can change the filename by clicking on the name in the top left.
 
   Click 'About' to learn even more.""";
+
+  final String tab = "    ";
 
   @Input()
   TextDocument note;
@@ -64,19 +71,38 @@ class EditorComponent {
       e.preventDefault();
       TextareaSelection selInfo = _textareaDomService.getCurrentSelectionInfo();
 
-      int pos = selInfo.start + 4;
+      if (selInfo.text.length > 0) {
+        String out = note.text.substring(0, selInfo.start);
 
-      _textareaDomService.setText(
-          note.text.substring(0, selInfo.start) +
-              selInfo.text.replaceAll('\n', '\n\t') +
-              note.text.substring(selInfo.end));
-      _textareaDomService.setCursorPosition(pos);
+        out += _textProcessingService.prefixLines(selInfo.text, tab);
 
-      note.text = _textareaDomService.getText();
+        out += note.text.substring(selInfo.end);
+        _textareaDomService.setText(out);
+        _textareaDomService.setCursorPosition(
+            selInfo.start + selInfo.text.length);
+      }
+      else {
+        _textareaDomService.setText(
+            note.text.substring(0, selInfo.start) +
+                tab +
+                note.text.substring(selInfo.end));
+        _textareaDomService.setCursorPosition(selInfo.start + tab.length);
+      }
 
+      note.updateAndSave(_textareaDomService.getText());
       return false;
     }
+
     return true;
   }
 
+  void undoTextGeneration() {
+    if (_undoText.length == 0) return;
+    //saveAndUpdateState(_undoText.removeLast(), _undoPositions.removeLast());
+  }
+
+  void storeStateForUndo(int cursorPos) {
+    _undoText.add(note.text);
+    _undoPositions.add(cursorPos);
+  }
 }

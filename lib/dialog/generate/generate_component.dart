@@ -7,7 +7,7 @@ import 'package:np8080/services/textprocessingservice.dart';
     selector: 'generate-dialog',
     templateUrl: 'generate_component.html',
     providers: const [TextProcessingService, TextareaDomService])
-class GenerateDialogComponent implements OnInit {
+class GenerateDialogComponent {
   @Input()
   bool showDialog = false;
 
@@ -19,8 +19,6 @@ class GenerateDialogComponent implements OnInit {
 
   String textToRepeat;
   String _generatedText;
-  List<String> _undoText = new List<String>();
-  List<int> _undoPositions = new List<int>();
 
   num repeatCount = 10;
   int insertPos = -1;
@@ -39,11 +37,6 @@ class GenerateDialogComponent implements OnInit {
     if (insertPos > 0) {
       _textareaDomService.setCursorPosition(insertPos);
     }
-  }
-
-  void undoTextGeneration() {
-    if (_undoText.length == 0) return;
-    saveAndUpdateState(_undoText.removeLast(), _undoPositions.removeLast());
   }
 
   void appendText() {
@@ -68,20 +61,8 @@ class GenerateDialogComponent implements OnInit {
   }
 
   void saveAndUpdateState(String newNoteText, int cursorPos) {
-    storeStateForUndo(cursorPos);
-    note.text = newNoteText;
-    note.save();
+    note.updateAndSave(newNoteText);
     insertPos = cursorPos + _generatedText.length;
   }
 
-  void storeStateForUndo(int cursorPos) {
-    _undoText.add(note.text);
-    _undoPositions.add(cursorPos);
-  }
-
-  @override
-  ngOnInit() {
-//    TextareaSelection selInfo = _textareaDomService.getCurrentSelectionInfo();
-//    storeStateForUndo(selInfo.start);
-  }
 }

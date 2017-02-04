@@ -37,7 +37,6 @@ class PrePostDialogComponent {
     String txt = note.text;
     txt = _textProcessingService.prefixLines(txt, prefix);
     txt = _textProcessingService.postfixLines(txt, postfix);
-    note.text = txt;
-    note.save();
+    note.updateAndSave(txt);
   }
 }

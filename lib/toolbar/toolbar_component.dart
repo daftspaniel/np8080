@@ -73,34 +73,28 @@ class ToolbarComponent {
   void clearHandler() {
     if (window.confirm(
         "Are you sure you want to clear the current document?")) {
-      note.text = "";
-      note.save();
+      note.updateAndSave("");
     }
   }
 
   void trimHandler() {
-    note.text = _textProcessingService.trimText(note.text);
-    note.save();
+    note.updateAndSave(_textProcessingService.trimText(note.text));
   }
 
   void sortHandler() {
-    note.text = _textProcessingService.sort(note.text);
-    note.save();
+    note.updateAndSave(_textProcessingService.sort(note.text));
   }
 
   void reverseHandler() {
-    note.text = _textProcessingService.reverse(note.text);
-    note.save();
+    note.updateAndSave(_textProcessingService.reverse(note.text));
   }
 
   void randomHandler() {
-    note.text = _textProcessingService.randomise(note.text);
-    note.save();
+    note.updateAndSave(_textProcessingService.randomise(note.text));
   }
 
   void duplicateHandler() {
-    note.text = _textProcessingService.getRepeatedString(note.text, 2);
-    note.save();
+    note.updateAndSave(_textProcessingService.getRepeatedString(note.text, 2));
   }
 
   void replaceHandler() {
@@ -114,13 +108,11 @@ class ToolbarComponent {
   }
 
   void removeBlankLinesHandler() {
-    note.text = _textProcessingService.removeBlankLines(note.text);
-    note.save();
+    note.updateAndSave(_textProcessingService.removeBlankLines(note.text));
   }
 
   void removeExtraBlankLinesHandler() {
-    note.text = _textProcessingService.removeExtraBlankLines(note.text);
-    note.save();
+    note.updateAndSave(_textProcessingService.removeExtraBlankLines(note.text));
   }
 
   void githubHandler() {

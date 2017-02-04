@@ -25,8 +25,6 @@ class ReplaceDialogComponent implements OnChanges {
   String replacementText;
   String _updatedText;
 
-  List<String> _undoList = new List<String>();
-
   int insertPos = -1;
 
   ReplaceDialogComponent(this._textProcessingService,
@@ -44,7 +42,7 @@ class ReplaceDialogComponent implements OnChanges {
 
   void appendText() {
     note.text += getUpdatedText();
-    saveAndUpdateState(note.text.length);
+    note.save();
   }
 
   String getUpdatedText() {
@@ -56,16 +54,8 @@ class ReplaceDialogComponent implements OnChanges {
   void performReplace() {
     replacementText ??= "";
     if (textToReplace.length > 0) {
-      TextareaSelection selInfo = _textareaDomService.getCurrentSelectionInfo();
-
-      note.text = getUpdatedText();
-      saveAndUpdateState(selInfo.start);
+      note.updateAndSave(getUpdatedText());
     }
-  }
-
-  void saveAndUpdateState(int cursorPos) {
-    note.save();
-    _undoList.add(note.text);
   }
 
   void trackCursorPosition(int start) {
