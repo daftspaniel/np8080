@@ -114,6 +114,7 @@ textarea {
     margin: 0px;
     padding: 0px;
     padding-left: 10px;
+    z-index:99;
 }
 
 .toolbarMenu {

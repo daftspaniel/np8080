@@ -8,7 +8,7 @@
                 (click)="menuItem.handler()"
                 title="{{menuItem.tooltip}}">{{menuItem.name}}
         </button>
-             <div class="menuSeparator">&nbsp;</div>
+             <div *ngIf="menuItem.separator" class="menuSeparator">&nbsp;</div>
             </span>
     </div>
 </div>

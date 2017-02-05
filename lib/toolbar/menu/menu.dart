@@ -32,6 +32,7 @@ class Menu {
   String name;
   String tooltip;
   var handler;
+  bool separator;
 
-  Menu(this.name, this.handler, this.tooltip);
+  Menu(this.name, this.handler, this.tooltip, [this.separator = false]);
 }

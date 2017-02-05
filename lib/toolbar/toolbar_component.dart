@@ -25,47 +25,7 @@ class ToolbarComponent {
   List<Menu> helpMenuItems;
 
   ToolbarComponent(this._textProcessingService) {
-
-    initMenuItems =
-    [new Menu("Clear", clearHandler, "Start again with an empty file.")];
-
-    modifyMenuItems =
-    [new Menu("Reverse", reverseHandler, "Reverse line order."),
-    new Menu("Randomise", randomHandler, "Random line order."),
-    new Menu("Sort", sortHandler, "Alphabetically sort lines."),
-    new Menu("Replace...", replaceHandler,
-        "Replace some text with some other text."),
-    new Menu("Pre/Post...", prePostHandler,
-        "Add text to start and/or end of lines."),
-    ];
-
-    addMenuItems = [
-      new Menu(
-          "Timestamp", timestampHandler, "Add a timestamp to the document."),
-      new Menu("Duplicate", duplicateHandler,
-          "Append a copy of the text to itself."),
-      new Menu("Generate...", generateHandler,
-          "Add generated text to put into document."),
-    ];
-
-    removeMenuItems = [
-      new Menu(
-          "Trim", trimHandler, "Remove proceeding and trailing whitespace."),
-      new Menu(
-          "Blank Lines", removeBlankLinesHandler, "Remove all blank lines."),
-      new Menu("Extra Blank Lines", removeExtraBlankLinesHandler,
-          "Remove extra blank lines."),
-    ];
-
-    viewMenuItems = [
-      new Menu("Markdown", markdownHandler,
-          "Show a rendering of Markdown alongside the text.")
-    ];
-
-    helpMenuItems =
-    [new Menu("GitHub", githubHandler, "Get the source code!"),
-    new Menu("About", aboutHandler, "Find out more about NP8080")
-    ];
+    buildMenus();
   }
 
   @Input()
@@ -100,6 +60,11 @@ class ToolbarComponent {
 
   @Output()
   EventEmitter<bool> showGenerateDialogChange = new EventEmitter<bool>();
+
+  void generateHandler() {
+    showGenerateDialog = true;
+    showGenerateDialogChange.emit(showGenerateDialog);
+  }
 
   void markdownHandler() {
     showPreview = !showPreview;
@@ -171,13 +136,51 @@ class ToolbarComponent {
       ..click();
   }
 
-  void generateHandler() {
-    showGenerateDialog = true;
-    showGenerateDialogChange.emit(showGenerateDialog);
-  }
-
   void timestampHandler() {
     note.appendAndSave("\r\n" + new DateTime.now().toString());
+  }
+
+  void buildMenus() {
+    initMenuItems =
+    [new Menu("Clear", clearHandler, "Start again with an empty file.")];
+
+    modifyMenuItems =
+    [new Menu("Reverse", reverseHandler, "Reverse line order."),
+    new Menu("Randomise", randomHandler, "Random line order."),
+    new Menu("Sort", sortHandler, "Alphabetically sort lines.", true),
+    new Menu("Replace...", replaceHandler,
+        "Replace some text with some other text."),
+    new Menu("Pre/Post...", prePostHandler,
+        "Add text to start and/or end of lines."),
+    ];
+
+    addMenuItems = [
+      new Menu(
+          "Timestamp", timestampHandler, "Add a timestamp to the document."),
+      new Menu("Duplicate", duplicateHandler,
+          "Append a copy of the text to itself.",true),
+      new Menu("Generate...", generateHandler,
+          "Add generated text to put into document."),
+    ];
+
+    removeMenuItems = [
+      new Menu(
+          "Trim", trimHandler, "Remove proceeding and trailing whitespace.",true),
+      new Menu(
+          "Blank Lines", removeBlankLinesHandler, "Remove all blank lines."),
+      new Menu("Extra Blank Lines", removeExtraBlankLinesHandler,
+          "Remove extra blank lines."),
+    ];
+
+    viewMenuItems = [
+      new Menu("Markdown", markdownHandler,
+          "Show a rendering of Markdown alongside the text.")
+    ];
+
+    helpMenuItems =
+    [new Menu("GitHub", githubHandler, "Get the source code!"),
+    new Menu("About", aboutHandler, "Find out more about NP8080")
+    ];
   }
 
 }
