@@ -31,6 +31,13 @@ void main() {
       expect(tps.prefixLines("Cup", ""), "Cup");
     });
 
+    test('trimLines',(){
+      expect(tps.trimLines(""), "");
+      expect(tps.trimLines("       asdf  \n"), "asdf\n");
+      expect(tps.trimLines("       asdf  \nsss\n ooo "), "asdf\nsss\nooo");
+      expect(tps.trimLines("       asdf  \n sss  \n ooo "), "asdf\nsss\nooo");
+    });
+
     test('postfixLines',(){
       expect(tps.postfixLines("", "TEST"), "TEST");
       expect(tps.postfixLines("a\nb\n", "TEST"), "aTEST\nbTEST\nTEST");

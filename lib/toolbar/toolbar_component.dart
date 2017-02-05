@@ -83,8 +83,12 @@ class ToolbarComponent {
     }
   }
 
-  void trimHandler() {
+  void trimFileHandler() {
     note.updateAndSave(_textProcessingService.trimText(note.text));
+  }
+
+  void trimLinesHandler() {
+    note.updateAndSave(_textProcessingService.trimLines(note.text));
   }
 
   void sortHandler() {
@@ -121,7 +125,7 @@ class ToolbarComponent {
     note.updateAndSave(_textProcessingService.removeExtraBlankLines(note.text));
   }
 
-  void doublespaceHandler(){
+  void doublespaceHandler() {
     note.updateAndSave(_textProcessingService.doubleSpaceLines(note.text));
   }
 
@@ -171,7 +175,11 @@ class ToolbarComponent {
 
     removeMenuItems = [
       new Menu(
-          "Trim", trimHandler, "Remove proceeding and trailing whitespace.",
+          "Trim", trimFileHandler,
+          "Remove proceeding and trailing whitespace from file."),
+      new Menu(
+          "Trim Lines", trimLinesHandler,
+          "Remove proceeding and trailing whitespace from each line.",
           true),
       new Menu(
           "Blank Lines", removeBlankLinesHandler, "Remove all blank lines."),

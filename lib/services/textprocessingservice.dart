@@ -104,6 +104,19 @@ class TextProcessingService {
     return out;
   }
 
+  String trimLines(String text) {
+    List<String> segments = text.split('\n');
+    String out = "";
+
+    for (int i = 0; i < segments.length; i++) {
+      out += segments[i].trim();
+      if (i < (segments.length - 1)) {
+        out += '\n';
+      }
+    }
+    return out;
+  }
+
   String removeBlankLines(String text) {
     List<String> segments = text.split('\n');
     String out = "";
@@ -129,9 +142,7 @@ class TextProcessingService {
   }
 
   String doubleSpaceLines(String text) {
-    text = text.replaceAll('\n', '\n\n');
-
-    return text;
+    return text.replaceAll('\n', '\n\n');
   }
 
   String randomise(String text) {
