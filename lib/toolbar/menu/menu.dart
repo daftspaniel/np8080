@@ -15,7 +15,7 @@ class MenuComponent {
   String menutitle;
 
   @Input('items')
-  List items;
+  List<Menu> items;
 
   void hide() {
     display = "none";

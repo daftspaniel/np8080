@@ -110,6 +110,12 @@ textarea {
     margin-left: 14px;
 }
 
+.toolbarMenuTitle{
+    margin: 0px;
+    padding: 0px;
+    padding-left: 10px;
+}
+
 .toolbarMenu {
     background-color: darkslategrey;
     width: 130px;

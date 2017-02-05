@@ -16,18 +16,57 @@ import 'package:np8080/toolbar/menu/menu.dart';
 class ToolbarComponent {
 
   final TextProcessingService _textProcessingService;
-  List helpMenuItems;
+
+  List<Menu> initMenuItems;
+  List<Menu> modifyMenuItems;
+  List<Menu> addMenuItems;
+  List<Menu> removeMenuItems;
+  List<Menu> viewMenuItems;
+  List<Menu> helpMenuItems;
 
   ToolbarComponent(this._textProcessingService) {
-    display = new List<String>();
-    display..add("none")..add("none")..add("none")..add("none")..add("none");
+
+    initMenuItems =
+    [new Menu("Clear", clearHandler, "Start again with an empty file.")];
+
+    modifyMenuItems =
+    [new Menu("Reverse", reverseHandler, "Reverse line order."),
+    new Menu("Randomise", randomHandler, "Random line order."),
+    new Menu("Sort", sortHandler, "Alphabetically sort lines."),
+    new Menu("Replace...", replaceHandler,
+        "Replace some text with some other text."),
+    new Menu("Pre/Post...", prePostHandler,
+        "Add text to start and/or end of lines."),
+    ];
+
+    addMenuItems = [
+      new Menu(
+          "Timestamp", timestampHandler, "Add a timestamp to the document."),
+      new Menu("Duplicate", duplicateHandler,
+          "Append a copy of the text to itself."),
+      new Menu("Generate...", generateHandler,
+          "Add generated text to put into document."),
+    ];
+
+    removeMenuItems = [
+      new Menu(
+          "Trim", trimHandler, "Remove proceeding and trailing whitespace."),
+      new Menu(
+          "Blank Lines", removeBlankLinesHandler, "Remove all blank lines."),
+      new Menu("Extra Blank Lines", removeExtraBlankLinesHandler,
+          "Remove extra blank lines."),
+    ];
+
+    viewMenuItems = [
+      new Menu("Markdown", markdownHandler,
+          "Show a rendering of Markdown alongside the text.")
+    ];
+
     helpMenuItems =
     [new Menu("GitHub", githubHandler, "Get the source code!"),
     new Menu("About", aboutHandler, "Find out more about NP8080")
     ];
   }
-
-  List<String> display;
 
   @Input()
   TextDocument note;
@@ -141,18 +180,4 @@ class ToolbarComponent {
     note.appendAndSave("\r\n" + new DateTime.now().toString());
   }
 
-  void hide(int index) {
-    display[index] = "none";
-  }
-
-  void show(int index) {
-    display[index] = "block";
-  }
-
-  String getDisplay(int index) {
-    if (display == null) return 'none';
-    if (display.length == 0) return 'none';
-
-    return display.elementAt(index);
-  }
 }

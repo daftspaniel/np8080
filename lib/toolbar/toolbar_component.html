@@ -3,77 +3,17 @@
 
     <button class="miniToolbarButton" (click)="downloadHandler()" title="Download">&#11015;</button>
 
-    <div (mouseenter)="show(0)" (mouseleave)="hide(0)" (click)="hide(0)" class="toolbarButton" style="z-index: 999;">
-        <button class="toolbarMenu">&#x269B; Init</button>
-        <div id="initmenu" style="position: relative" [ngStyle]="{'display':  getDisplay(0), 'width':'80px'}">
-            <button class="toolbarButton toolbarMenuButton" (click)="clearHandler()"
-                    title="Start again with an empty file">Clear
-            </button>
-        </div>
-    </div>
+    <menu [menutitle]="'Init'" [items]="initMenuItems" class="toolbarMenuTitle" style="z-index: 999;"></menu>
 
-    <div (mouseenter)="show(1)" (mouseleave)="hide(1)" (click)="hide(1)" class="toolbarButton" style="z-index: 999;">
-        <button class="toolbarMenu">&#9881; Modify</button>
-        <div id="boomenu" style="position: relative" [ngStyle]="{'display':  getDisplay(1), 'width':'130px'}">
-            <button class="toolbarButton toolbarMenuButton" (click)="reverseHandler()"
-                    title="Reverse line order">Reverse
-            </button>
-            <button class="toolbarButton toolbarMenuButton" (click)="randomHandler()"
-                    title="Random line order">Randomise
-            </button>
-            <button class="toolbarButton toolbarMenuButton" (click)="sortHandler()"
-                    title="Alphabetically sort lines">Sort
-            </button>
-            <div class="menuSeparator">&nbsp;</div>
-            <button class="toolbarButton toolbarMenuButton" (click)="replaceHandler()"
-                    title="Replace some text with some other text">Replace...
-            </button>
-            <button class="toolbarButton toolbarMenuButton" (click)="prePostHandler()"
-                    title="Add text to start and/or end of lines">Pre/Post...
-            </button>
-        </div>
-    </div>
+    <menu [menutitle]="'&#9881; Modify'" [items]="modifyMenuItems" class="toolbarMenuTitle"
+          style="z-index: 999;"></menu>
 
-    <div (mouseenter)="show(2)" (mouseleave)="hide(2)" (click)="hide(2)" class="toolbarButton" style="z-index: 999;">
-        <button class="toolbarMenu">+ Add</button>
-        <div id="boo1menu" style="position: relative" [ngStyle]="{'display':  getDisplay(2), 'width':'130px'}">
-            <button class="toolbarButton toolbarMenuButton" (click)="timestampHandler()"
-                    title="Add a timestamp to the document">Timestamp
-            </button>
-            <button class="toolbarButton toolbarMenuButton" (click)="duplicateHandler()"
-                    title="Append a copy of the text to itself">Duplicate
-            </button>
-            <div class="menuSeparator">&nbsp;</div>
-            <button class="toolbarButton toolbarMenuButton" (click)="generateHandler()"
-                    title="Add generated text to put into document">Generate...
-            </button>
-        </div>
-    </div>
+    <menu [menutitle]="'+ Add'" [items]="addMenuItems" class="toolbarMenuTitle" style="z-index: 999;"></menu>
 
-    <div (mouseenter)="show(4)" (mouseleave)="hide(4)" (click)="hide(4)" class="toolbarButton" style="z-index: 999;">
-        <button class="toolbarMenu">- Remove</button>
-        <div id="boo1menu" style="position: relative" [ngStyle]="{'display':  getDisplay(4), 'width':'130px'}">
-            <button class="toolbarButton toolbarMenuButton" (click)="trimHandler()"
-                    title="Remove proceeding and trailing whitespace">Trim
-            </button>
-            <button class="toolbarButton toolbarMenuButton" (click)="removeBlankLinesHandler()"
-                    title="Remove all blank lines">Blank Lines
-            </button>
-            <button class="toolbarButton toolbarMenuButton" (click)="removeExtraBlankLinesHandler()"
-                    title="Remove extra blank lines">Extra Blank Lines
-            </button>
-        </div>
-    </div>
+    <menu [menutitle]="'- Remove'" [items]="removeMenuItems" class="toolbarMenuTitle" style="z-index: 999;"></menu>
 
-    <div (mouseenter)="show(3)" (mouseleave)="hide(3)" (click)="hide(3)" class="toolbarButton" style="z-index: 999;">
-        <button class="toolbarMenu">&#x1f440; View</button>
-        <div id="boo2menu" style="position: relative" [ngStyle]="{'display':  getDisplay(3), 'width':'130px'}">
-            <button class="toolbarButton toolbarMenuButton" (click)="markdownHandler()"
-                    title="Show a rendering of Markdown alongside the text">Markdown
-            </button>
-        </div>
-    </div>
+    <menu [menutitle]="'&#x1f440; View'" [items]="viewMenuItems" class="toolbarMenuTitle" style="z-index: 999;"></menu>
 
-    <menu [menutitle]="'Help'" [items]="helpMenuItems" class="toolbarButton" style="z-index: 999;"></menu>
+    <menu [menutitle]="'Help'" [items]="helpMenuItems" class="toolbarMenuTitle" style="z-index: 999;"></menu>
 
 </div>
