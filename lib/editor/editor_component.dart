@@ -44,7 +44,7 @@ class EditorComponent {
 
   You can change the filename by clicking on the name in the top left.
 
-  Click 'About' to learn even more.""";
+  Click on the Help menu and then click 'About' to learn even more.""";
 
   final String tab = "    ";
 

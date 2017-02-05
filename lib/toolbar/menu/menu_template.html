@@ -3,12 +3,12 @@
     <div id="boo2menu" style="position: relative" [ngStyle]="{'display':  display, 'width':'130px'}"
          style="z-index: 999;">
         <span *ngFor="#menuItem of items">
-        <button
-                class="toolbarButton toolbarMenuButton"
-                (click)="menuItem.handler()"
-                title="{{menuItem.tooltip}}">{{menuItem.name}}
-        </button>
-             <div *ngIf="menuItem.separator" class="menuSeparator">&nbsp;</div>
-            </span>
+            <button
+                    class="toolbarButton toolbarMenuButton"
+                    (click)="menuItem.handler()"
+                    title="{{menuItem.tooltip}}">{{menuItem.name}}
+            </button>
+            <div *ngIf="menuItem.separator" class="menuSeparator">&nbsp;</div>
+        </span>
     </div>
 </div>

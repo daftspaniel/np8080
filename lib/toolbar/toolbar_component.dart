@@ -121,6 +121,10 @@ class ToolbarComponent {
     note.updateAndSave(_textProcessingService.removeExtraBlankLines(note.text));
   }
 
+  void doublespaceHandler(){
+    note.updateAndSave(_textProcessingService.doubleSpaceLines(note.text));
+  }
+
   void githubHandler() {
     window.location.href = "https://github.com/daftspaniel/np8080";
   }
@@ -145,27 +149,30 @@ class ToolbarComponent {
     [new Menu("Clear", clearHandler, "Start again with an empty file.")];
 
     modifyMenuItems =
-    [new Menu("Reverse", reverseHandler, "Reverse line order."),
-    new Menu("Randomise", randomHandler, "Random line order."),
-    new Menu("Sort", sortHandler, "Alphabetically sort lines.", true),
-    new Menu("Replace...", replaceHandler,
-        "Replace some text with some other text."),
-    new Menu("Pre/Post...", prePostHandler,
-        "Add text to start and/or end of lines."),
+    [
+      new Menu("Doublespace", doublespaceHandler, "Double space the lines."),
+      new Menu("Reverse", reverseHandler, "Reverse line order."),
+      new Menu("Randomise", randomHandler, "Random line order."),
+      new Menu("Sort", sortHandler, "Alphabetically sort lines.", true),
+      new Menu("Replace...", replaceHandler,
+          "Replace some text with some other text."),
+      new Menu("Pre/Post...", prePostHandler,
+          "Add text to start and/or end of lines."),
     ];
 
     addMenuItems = [
       new Menu(
           "Timestamp", timestampHandler, "Add a timestamp to the document."),
       new Menu("Duplicate", duplicateHandler,
-          "Append a copy of the text to itself.",true),
+          "Append a copy of the text to itself.", true),
       new Menu("Generate...", generateHandler,
           "Add generated text to put into document."),
     ];
 
     removeMenuItems = [
       new Menu(
-          "Trim", trimHandler, "Remove proceeding and trailing whitespace.",true),
+          "Trim", trimHandler, "Remove proceeding and trailing whitespace.",
+          true),
       new Menu(
           "Blank Lines", removeBlankLinesHandler, "Remove all blank lines."),
       new Menu("Extra Blank Lines", removeExtraBlankLinesHandler,
