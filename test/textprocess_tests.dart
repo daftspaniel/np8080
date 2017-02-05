@@ -37,6 +37,13 @@ void main() {
       expect(tps.postfixLines("asdf\nxyzz\n", "12345"), "asdf12345\nxyzz12345\n12345");
       expect(tps.postfixLines("Coffee", "Cup"), "CoffeeCup");
     });
+    test('doubleSpaceLines',(){
+      expect(tps.doubleSpaceLines(""),"");
+      expect(tps.doubleSpaceLines("Moo\n"),"Moo\n\n");
+      expect(tps.doubleSpaceLines("Moo\nBaa"),"Moo\n\nBaa");
+      expect(tps.doubleSpaceLines("Moo\nBaa\n"),"Moo\n\nBaa\n\n");
+      expect(tps.doubleSpaceLines("Moo\n\nBaa\n"),"Moo\n\n\n\nBaa\n\n");
+    });
 
     test('removeBlankLines', () {
       expect(tps.removeBlankLines(""), "");

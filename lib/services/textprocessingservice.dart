@@ -128,6 +128,12 @@ class TextProcessingService {
     return text;
   }
 
+  String doubleSpaceLines(String text) {
+    text = text.replaceAll('\n', '\n\n');
+
+    return text;
+  }
+
   String randomise(String text) {
     List<String> segments = text.split('\n');
     segments.shuffle();
