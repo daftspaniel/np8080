@@ -73,13 +73,13 @@ class EditorComponent {
 
       if (selInfo.text.length > 0) {
         String out = note.text.substring(0, selInfo.start);
-
-        out += _textProcessingService.prefixLines(selInfo.text, tab);
-
+        String tabbedText = _textProcessingService.prefixLines(
+            selInfo.text, tab);
+        out += tabbedText;
         out += note.text.substring(selInfo.end);
         _textareaDomService.setText(out);
         _textareaDomService.setCursorPosition(
-            selInfo.start + selInfo.text.length);
+            selInfo.start + tabbedText.length);
       }
       else {
         _textareaDomService.setText(

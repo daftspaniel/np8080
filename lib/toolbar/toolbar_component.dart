@@ -133,6 +133,10 @@ class ToolbarComponent {
     window.location.href = "https://github.com/daftspaniel/np8080";
   }
 
+  void gitterHandler() {
+    window.location.href = "https://gitter.im/np8080/Lobby";
+  }
+
   void downloadHandler() {
     note.save();
     String text = note.text;
@@ -149,12 +153,14 @@ class ToolbarComponent {
   }
 
   void buildMenus() {
-    initMenuItems =
-    [new Menu("Clear", clearHandler, "Start again with an empty file.")];
+    initMenuItems = [
+      new Menu("Clear", clearHandler, "Start again with an empty file.")
+    ];
 
     modifyMenuItems =
     [
-      new Menu("Doublespace", doublespaceHandler, "Double space the lines."),
+      new Menu(
+          "Doublespace", doublespaceHandler, "Double space the lines.", true),
       new Menu("Reverse", reverseHandler, "Reverse line order."),
       new Menu("Randomise", randomHandler, "Random line order."),
       new Menu("Sort", sortHandler, "Alphabetically sort lines.", true),
@@ -192,9 +198,10 @@ class ToolbarComponent {
           "Show a rendering of Markdown alongside the text.")
     ];
 
-    helpMenuItems =
-    [new Menu("GitHub", githubHandler, "Get the source code!"),
-    new Menu("About", aboutHandler, "Find out more about NP8080")
+    helpMenuItems = [
+      new Menu("About", aboutHandler, "Find out more about NP8080", true),
+      new Menu("GitHub", githubHandler, "Get the source code!"),
+      new Menu("Gitter Chat", gitterHandler, "Gitter based Chatroom")
     ];
   }
 
