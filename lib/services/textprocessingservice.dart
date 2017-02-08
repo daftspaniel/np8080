@@ -104,6 +104,19 @@ class TextProcessingService {
     return out;
   }
 
+  String dupeLines(String text) {
+    List<String> segments = text.split('\n');
+    String out = "";
+
+    for (int i = 0; i < segments.length; i++) {
+      out += segments[i] * 2;
+      if (i < (segments.length - 1)) {
+        out += '\n';
+      }
+    }
+    return out;
+  }
+
   String trimLines(String text) {
     List<String> segments = text.split('\n');
     String out = "";

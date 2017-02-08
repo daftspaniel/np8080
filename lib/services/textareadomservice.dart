@@ -14,7 +14,7 @@ class TextareaDomService {
       ..start = nptb.selectionStart
       ..end = nptb.selectionEnd
       ..text = nptb.value.substring(sel.start, sel.end);
-    print(sel.text);
+
     return sel;
   }
 

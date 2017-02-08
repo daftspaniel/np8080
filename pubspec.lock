@@ -24,7 +24,7 @@ packages:
       name: async
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.12.0"
+    version: "1.13.0"
   barback:
     description:
       name: barback
@@ -283,12 +283,18 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.1"
+  term_glyph:
+    description:
+      name: term_glyph
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   test:
     description:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.18+1"
+    version: "0.12.19"
   typed_data:
     description:
       name: typed_data

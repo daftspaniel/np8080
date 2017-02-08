@@ -24,6 +24,13 @@ void main() {
       expect(tps.getLineCount("hello\nthere\nare\napples\nin\nhere."), 5);
     });
 
+    test('dupeLines', () {
+      expect(tps.dupeLines(""), "");
+      expect(tps.dupeLines("hello"), "hellohello");
+      expect(tps.dupeLines("hello\n"),"hellohello\n");
+          expect(tps.dupeLines("hello\nthere\nare\napples\nin\nhere."), "hellohello\ntherethere\nareare\napplesapples\ninin\nhere.here.");
+    });
+
     test('prefixLines',(){
       expect(tps.prefixLines("", "TEST"), "TEST");
       expect(tps.prefixLines("\n\n", "TEST"), "TEST\nTEST\nTEST");

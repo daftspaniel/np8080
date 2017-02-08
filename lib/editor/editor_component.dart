@@ -7,6 +7,7 @@ import 'package:np8080/dialog/replace/replace_component.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/editor/preview_component.dart';
 import 'package:np8080/editor/status_component.dart';
+import 'package:np8080/resources/resources.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
 import 'package:np8080/toolbar/toolbar_component.dart';
@@ -33,21 +34,6 @@ class EditorComponent {
 
   EditorComponent(this._textareaDomService, this._textProcessingService);
 
-  final String placeHolderText = """
-  Welcome to Notepad 8080!
-
-  Notepad 8080 is a simple web based text editor in your browser. It is free to use and Open Source software.
-
-  Your data is automatically stored in your web browser's local storage and NOT on any server.
-
-  Click the download button to save the text as a file.
-
-  You can change the filename by clicking on the name in the top left.
-
-  Click on the Help menu and then click 'About' to learn even more.""";
-
-  final String tab = "    ";
-
   @Input()
   TextDocument note;
 
@@ -60,6 +46,8 @@ class EditorComponent {
   bool showPreview = false;
 
   bool showPrePostDialog = false;
+
+  final String placeHolderText = editorPlaceHolderText;
 
   void changeHandler() {
     note.save();
