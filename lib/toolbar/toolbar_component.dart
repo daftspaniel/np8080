@@ -129,6 +129,10 @@ class ToolbarComponent {
     note.updateAndSave(_textProcessingService.doubleSpaceLines(note.text));
   }
 
+  void dupeHandler() {
+    note.updateAndSave(_textProcessingService.dupeLines(note.text));
+  }
+
   void githubHandler() {
     window.location.href = "https://github.com/daftspaniel/np8080";
   }
@@ -172,11 +176,16 @@ class ToolbarComponent {
 
     addMenuItems = [
       new Menu(
-          "Timestamp", timestampHandler, "Add a timestamp to the document."),
+          "Timestamp", timestampHandler, "Add a timestamp to the document.",
+          true),
       new Menu("Duplicate", duplicateHandler,
-          "Append a copy of the text to itself.", true),
-      new Menu("Generate...", generateHandler,
+          "Append a copy of the entire text to itself."),
+      new Menu("Duplicate lines", dupeHandler,
+          "Add a copy of a line to itself.", true),
+      new Menu("Generate Text...", generateHandler,
           "Add generated text to put into document."),
+      new Menu("Num Sequence...", generateHandler,
+          "Add generated number sequence to document."),
     ];
 
     removeMenuItems = [

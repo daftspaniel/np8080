@@ -1,0 +1,21 @@
+<div id="overlay" [hidden]="!showDialog">
+    <div class="dialogPanel">
+        <div class="header">Generate Sequence</div>
+
+        <div style="text-align: center;padding: 10px">
+
+            <label>Start At</label>
+            <input type="number" [(ngModel)]="startIndex" min="1"> and repeat<br/>
+            <input type="number" [(ngModel)]="repeatCount" min="10"> times<br/>
+            adding <input type="number" [(ngModel)]="increment"> each time<br/>
+        </div>
+
+        <div class="footer">
+            <button class="actionButton" (click)="insertCurrentPosition()">Insert</button>
+            <button class="actionButton" (click)="appendText()">Append</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="closeButton" (click)="closeTheDialog()" style="visibility: hidden">Peek!</button>
+            <button class="closeButton" (click)="closeTheDialog()">Close</button>
+        </div>
+    </div>
+</div>
