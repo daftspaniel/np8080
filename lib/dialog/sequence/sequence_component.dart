@@ -20,7 +20,9 @@ class SequenceDialogComponent {
   String textToRepeat;
   String _generatedText;
 
+  num startIndex = 1;
   num repeatCount = 10;
+  num increment = 10;
   int insertPos = -1;
 
   final TextProcessingService _textProcessingService;
@@ -45,8 +47,8 @@ class SequenceDialogComponent {
   }
 
   String getGeneratedText() {
-    _generatedText = _textProcessingService.getRepeatedString(
-        textToRepeat, repeatCount);
+    _generatedText = _textProcessingService.getSequenceString(
+        startIndex, repeatCount, increment);
     return _generatedText;
   }
 

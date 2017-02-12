@@ -3,6 +3,7 @@
         <editor-toolbar [(note)]="note"
                         [(showAboutDialog)]="showAboutDialog"
                         [(showGenerateDialog)]="showGenerateDialog"
+                        [(showSeqGenerateDialog)]="showSeqDialog"
                         [(showReplaceDialog)]="showReplaceDialog"
                         [(showPrePostDialog)]="showPrePostDialog"
                         [(showPreview)]="showPreview"></editor-toolbar>
@@ -33,3 +34,5 @@
 <replace-dialog [(showDialog)]="showReplaceDialog" [note]="note"></replace-dialog>
 
 <prepost-dialog [(showDialog)]="showPrePostDialog" [note]="note"></prepost-dialog>
+
+<sequence-dialog [(showDialog)]="showSeqDialog" [note]="note"></sequence-dialog >

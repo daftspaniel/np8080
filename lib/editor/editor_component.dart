@@ -4,6 +4,7 @@ import 'package:np8080/dialog/about/about_component.dart';
 import 'package:np8080/dialog/generate/generate_component.dart';
 import 'package:np8080/dialog/prepost/prepost_component.dart';
 import 'package:np8080/dialog/replace/replace_component.dart';
+import 'package:np8080/dialog/sequence/sequence_component.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/editor/preview_component.dart';
 import 'package:np8080/editor/status_component.dart';
@@ -22,6 +23,7 @@ import 'package:np8080/toolbar/toolbar_component.dart';
       GenerateDialogComponent,
       ReplaceDialogComponent,
       PrePostDialogComponent,
+      SequenceDialogComponent,
       PreviewComponent
     ],
     providers: const [TextareaDomService, TextProcessingService])
@@ -40,6 +42,8 @@ class EditorComponent {
   bool showAboutDialog = false;
 
   bool showGenerateDialog = false;
+
+  bool showSeqDialog = false;
 
   bool showReplaceDialog = false;
 

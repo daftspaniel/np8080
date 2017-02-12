@@ -44,6 +44,9 @@ class ToolbarComponent {
   bool showGenerateDialog;
 
   @Input()
+  bool showSeqGenerateDialog;
+
+  @Input()
   bool showPreview;
 
   @Output()
@@ -61,9 +64,17 @@ class ToolbarComponent {
   @Output()
   EventEmitter<bool> showGenerateDialogChange = new EventEmitter<bool>();
 
+  @Output()
+  EventEmitter<bool> showSeqGenerateDialogChange = new EventEmitter<bool>();
+
   void generateHandler() {
     showGenerateDialog = true;
     showGenerateDialogChange.emit(showGenerateDialog);
+  }
+
+  void generateSeqHandler() {
+    showSeqGenerateDialog = true;
+    showSeqGenerateDialogChange.emit(showSeqGenerateDialog);
   }
 
   void markdownHandler() {
@@ -184,7 +195,7 @@ class ToolbarComponent {
           "Add a copy of a line to itself.", true),
       new Menu("Generate Text...", generateHandler,
           "Add generated text to put into document."),
-      new Menu("Num Sequence...", generateHandler,
+      new Menu("Num Sequence...", generateSeqHandler,
           "Add generated number sequence to document."),
     ];
 

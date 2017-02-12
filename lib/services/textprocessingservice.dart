@@ -171,4 +171,14 @@ class TextProcessingService {
     }
     return out;
   }
+
+  String getSequenceString(num startIndex, num repeatCount, num increment) {
+    String out = "";
+    num current = startIndex;
+    for (int i = 0; i < repeatCount; i++) {
+      out += current.toString() + "\n";
+      current += increment;
+    }
+    return out;
+  }
 }

@@ -1,9 +1,24 @@
 import 'package:np8080/services/textprocessingservice.dart';
 import 'package:test/test.dart';
 
-
 void main() {
   TextProcessingService tps = new TextProcessingService();
+
+  group('Generate:', () {
+    test('getSequenceString', () {
+      expect(
+          tps.getSequenceString(1, 10, 1), "1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n");
+      expect(tps.getSequenceString(5, 5, 1), "5\n6\n7\n8\n9\n");
+      expect(tps.getSequenceString(1, 10, 10),
+          "1\n11\n21\n31\n41\n51\n61\n71\n81\n91\n");
+      expect(tps.getSequenceString(10, 5, -1), "10\n9\n8\n7\n6\n");
+    });
+
+    test('getRepeatedString', () {
+      expect(tps.getRepeatedString("Moo", 4), "MooMooMooMoo");
+      expect(tps.getRepeatedString("Moo", 0), "");
+    });
+  });
 
   group('Core :', () {
     test('trim', () {
@@ -27,36 +42,39 @@ void main() {
     test('dupeLines', () {
       expect(tps.dupeLines(""), "");
       expect(tps.dupeLines("hello"), "hellohello");
-      expect(tps.dupeLines("hello\n"),"hellohello\n");
-          expect(tps.dupeLines("hello\nthere\nare\napples\nin\nhere."), "hellohello\ntherethere\nareare\napplesapples\ninin\nhere.here.");
+      expect(tps.dupeLines("hello\n"), "hellohello\n");
+      expect(tps.dupeLines("hello\nthere\nare\napples\nin\nhere."),
+          "hellohello\ntherethere\nareare\napplesapples\ninin\nhere.here.");
     });
 
-    test('prefixLines',(){
+    test('prefixLines', () {
       expect(tps.prefixLines("", "TEST"), "TEST");
       expect(tps.prefixLines("\n\n", "TEST"), "TEST\nTEST\nTEST");
       expect(tps.prefixLines("asdf\nxyzz\n", "  "), "  asdf\n  xyzz\n  ");
       expect(tps.prefixLines("Cup", ""), "Cup");
     });
 
-    test('trimLines',(){
+    test('trimLines', () {
       expect(tps.trimLines(""), "");
       expect(tps.trimLines("       asdf  \n"), "asdf\n");
       expect(tps.trimLines("       asdf  \nsss\n ooo "), "asdf\nsss\nooo");
       expect(tps.trimLines("       asdf  \n sss  \n ooo "), "asdf\nsss\nooo");
     });
 
-    test('postfixLines',(){
+    test('postfixLines', () {
       expect(tps.postfixLines("", "TEST"), "TEST");
       expect(tps.postfixLines("a\nb\n", "TEST"), "aTEST\nbTEST\nTEST");
-      expect(tps.postfixLines("asdf\nxyzz\n", "12345"), "asdf12345\nxyzz12345\n12345");
+      expect(tps.postfixLines("asdf\nxyzz\n", "12345"),
+          "asdf12345\nxyzz12345\n12345");
       expect(tps.postfixLines("Coffee", "Cup"), "CoffeeCup");
     });
-    test('doubleSpaceLines',(){
-      expect(tps.doubleSpaceLines(""),"");
-      expect(tps.doubleSpaceLines("Moo\n"),"Moo\n\n");
-      expect(tps.doubleSpaceLines("Moo\nBaa"),"Moo\n\nBaa");
-      expect(tps.doubleSpaceLines("Moo\nBaa\n"),"Moo\n\nBaa\n\n");
-      expect(tps.doubleSpaceLines("Moo\n\nBaa\n"),"Moo\n\n\n\nBaa\n\n");
+
+    test('doubleSpaceLines', () {
+      expect(tps.doubleSpaceLines(""), "");
+      expect(tps.doubleSpaceLines("Moo\n"), "Moo\n\n");
+      expect(tps.doubleSpaceLines("Moo\nBaa"), "Moo\n\nBaa");
+      expect(tps.doubleSpaceLines("Moo\nBaa\n"), "Moo\n\nBaa\n\n");
+      expect(tps.doubleSpaceLines("Moo\n\nBaa\n"), "Moo\n\n\n\nBaa\n\n");
     });
 
     test('removeBlankLines', () {
@@ -74,12 +92,8 @@ void main() {
       expect(tps.removeExtraBlankLines(""), "");
       expect(tps.removeExtraBlankLines("\n\n\n\n\nhello"), "\n\nhello");
       expect(tps.removeExtraBlankLines("hello\n\n\n"), "hello\n\n");
-      expect(tps.removeExtraBlankLines("hello\n\n\nthere\n"), "hello\n\nthere\n");
-    });
-
-    test('getRepeatedString', () {
-      expect(tps.getRepeatedString("Moo", 4), "MooMooMooMoo");
-      expect(tps.getRepeatedString("Moo", 0), "");
+      expect(
+          tps.removeExtraBlankLines("hello\n\n\nthere\n"), "hello\n\nthere\n");
     });
 
     test('convertMarkdownToHtml', () {
@@ -101,8 +115,9 @@ void main() {
     });
 
     test('reverse - multi line', () {
-      expect(tps.reverse(
-          "Zebras are cool!\nMonkeys are okay!\nDogs are the best!\n"),
+      expect(
+          tps.reverse(
+              "Zebras are cool!\nMonkeys are okay!\nDogs are the best!\n"),
           "Dogs are the best!\nMonkeys are okay!\nZebras are cool!");
     });
 
