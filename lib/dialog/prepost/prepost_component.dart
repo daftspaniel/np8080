@@ -21,8 +21,8 @@ class PrePostDialogComponent {
   @Output()
   EventEmitter<bool> showDialogChange = new EventEmitter<bool>();
 
-  String prefix;
-  String postfix;
+  String prefix = "";
+  String postfix = "";
 
   PrePostDialogComponent(this._textProcessingService,
       this._textareaDomService);
@@ -36,8 +36,11 @@ class PrePostDialogComponent {
   performPrePost() {
     if (prefix.length + postfix.length > 0) {
       String txt = note.text;
-      txt = _textProcessingService.prefixLines(txt, prefix);
-      txt = _textProcessingService.postfixLines(txt, postfix);
+      if (prefix.length > 0)
+        txt = _textProcessingService.prefixLines(txt, prefix);
+      if (postfix.length > 0)
+        txt = _textProcessingService.postfixLines(txt, postfix);
+
       note.updateAndSave(txt);
     }
   }

@@ -2,12 +2,16 @@
     <div class="dialogPanel">
         <div class="header">Generate Sequence</div>
 
-        <div style="text-align: center;padding: 10px">
+        <div style="margin-left:150px;text-align: left;padding: 10px">
 
-            <label>Start At</label>
-            <input type="number" [(ngModel)]="startIndex" min="1"> and repeat<br/>
-            <input type="number" [(ngModel)]="repeatCount" min="10"> times<br/>
-            adding <input type="number" [(ngModel)]="increment"> each time<br/>
+            <label style="min-width: 100px;display: inline-block">Start at</label>
+            <input type="number" [(ngModel)]="startIndex" min="1" style="width: 100px"><br/>
+
+            <label style="min-width: 100px;display: inline-block"> and repeat</label>
+            <input type="number" [(ngModel)]="repeatCount" min="10" style="width: 100px"> times<br/>
+
+            <label style="min-width: 100px;display: inline-block">adding</label>
+            <input type="number" [(ngModel)]="increment" style="width: 100px"> each time<br/>
         </div>
 
         <div class="footer">
