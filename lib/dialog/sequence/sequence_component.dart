@@ -20,7 +20,7 @@ class SequenceDialogComponent {
   String textToRepeat;
   String _generatedText;
 
-  num startIndex = 1;
+  num startIndex = 10;
   num repeatCount = 10;
   num increment = 10;
   int insertPos = -1;
