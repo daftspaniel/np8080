@@ -176,7 +176,7 @@ class TextProcessingService {
     String out = "";
     num current = startIndex;
     for (int i = 0; i < repeatCount; i++) {
-      out += current.toString() + "\n";
+      out += current.round().toString() + "\n";
       current += increment;
     }
     return out;

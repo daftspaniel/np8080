@@ -1,5 +1,6 @@
 import 'package:angular2/core.dart';
 import 'package:np8080/services/textprocessingservice.dart';
+import 'dart:html';
 
 @Component(
     selector: 'text-status',
@@ -22,4 +23,8 @@ class StatusComponent {
   String get wordCount => _textProcessingService.getWordCount(text).toString();
 
   String get lineCount => _textProcessingService.getLineCount(text).toString();
+
+  bool isHttps(){
+    return document.baseUri.toString().contains('https://');
+  }
 }

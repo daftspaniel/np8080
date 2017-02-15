@@ -2,5 +2,6 @@
     <span class="lhsStatus">Chars: {{length}}
         Lines: {{lineCount}}
         Words: {{wordCount}} &nbsp;</span>
+    <span [hidden]="isHttps()" style="background-color:#1E90FF;color:white">WARNING : Please download your doc & update the Url to HTTPS!</span>
     <span class="rhsStatus" *ngIf="modified!=null">Mod: {{modified |  date:'mediumTime' | uppercase}}</span>
 </div>
