@@ -1,7 +1,7 @@
 <div class="toolbar">
-    <editable-label class="toolbarField" [(text)]="note.downloadName"></editable-label>
+    <editable-label class="toolbarField accent-color" [(text)]="note.downloadName"></editable-label>
 
-    <button class="miniToolbarButton" (click)="downloadHandler()" title="Download">&#11015;</button>
+    <button class="miniToolbarButton light-primary-color" (click)="downloadHandler()" title="Download">&#11015;</button>
 
     <menu [menutitle]="'⚛ Init'" [items]="menus.initMenuItems" class="toolbarMenuTitle menuInit"></menu>
 

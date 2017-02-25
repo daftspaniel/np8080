@@ -1,20 +1,27 @@
 html, body {
     font-family: monospace;
-    background-color: #333333;
-    color: #b8df42;
+
     font-size: 12pt;
     overflow-x: hidden;
     overflow-y: hidden;
     margin: 0px;
 }
 
+.dark-primary-color    { background: #778d9c; }
+.default-primary-color { background: #cce6d9; }
+.light-primary-color   { background: rgba(38, 47, 51, 0.19); }
+.text-primary-color    { color: #FFFFFF; }
+.accent-color          { background: #cce6d9; }
+.primary-text-color    { color: #212121; }
+.secondary-text-color  { color: #757575; }
+.divider-color         { border-color: #BDBDBD; }
+
 .menuItem {
     border: groove 1px white;
-    z-index: 999
+    z-index: 999;
 }
 
 .closeButton {
-    background-color: darkslategrey;
     width: 80px;
     color: white;
     border: 0px;
@@ -24,21 +31,17 @@ html, body {
 }
 
 textarea {
-    color: #b8df42;
     font-size: 10pt;
     border: 0px;
     outline: none;
     resize: none;
     overflow-y: scroll;
-    background-color: black;
     height: calc(100vh - 60px);
     margin-left: 5px;
     width: 48%;
 }
 
 .preview {
-    background-color: #111111;
-    color: #b8df42;
     overflow-y: scroll;
     overflow-x: none;
     width: 45%;
@@ -51,7 +54,6 @@ textarea {
 }
 
 .toolbarButton {
-    background-color: darkslategrey;
     color: white;
     border: 0px;
     margin: 0px;
@@ -63,7 +65,6 @@ textarea {
 }
 
 .miniToolbarButton {
-    background-color: darkslategrey;
     width: 60px;
     color: white;
     border: 0px;
@@ -99,15 +100,14 @@ textarea {
 .toolbarField {
     font-size: 8pt;
     width: 150px;
-    background-color: #111111;
     height: 25px;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    border-top: solid 1px black;
-    border-left: solid 1px black;
-    border-right: solid 1px black;
+    /*border-top: solid 1px black;*/
+    /*border-left: solid 1px black;*/
+    /*border-right: solid 1px black;*/
     border-top-left-radius: 4px;
     border-bottom-left-radius: 4px;
     padding-right: 4px;
@@ -122,7 +122,6 @@ textarea {
 }
 
 .toolbarMenu {
-    background-color: #333333;
     width: 90px;
     color: white;
     border: 1px;
@@ -147,7 +146,6 @@ textarea {
 
 .menuModify {
     position: absolute;
-    background-color: #333333;
     top: -10px;
     left: 330px;
     width: 110px;
@@ -157,7 +155,6 @@ textarea {
 
 .menuAdd {
     position: absolute;
-    background-color: #333333;
     top: -10px;
     left: 430px;
     width: 110px;
@@ -167,7 +164,6 @@ textarea {
 
 .menuRemove {
     position: absolute;
-    background-color: #333333;
     top: -10px;
     left: 530px;
     width: 110px;
@@ -177,7 +173,6 @@ textarea {
 
 .menuView {
     position: absolute;
-    background-color: #333333;
     top: -10px;
     left: 630px;
     width: 110px;
@@ -187,7 +182,6 @@ textarea {
 
 .menuHelp {
     position: absolute;
-    background-color: #333333;
     top: -10px;
     left: 730px;
     width: 110px;
