@@ -179,4 +179,8 @@ class ToolbarComponent {
     _textareaDomService.setFocus();
   }
 
+  void undoHandler() {
+    note.undo();
+  }
+
 }

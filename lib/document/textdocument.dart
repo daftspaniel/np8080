@@ -6,8 +6,11 @@ class TextDocument {
   String text = '';
   String _downloadName;
   DateTime lastModified;
+  final List<String> _undoText = new List<String>();
 
-  get downloadName => _downloadName;
+  String get downloadName => _downloadName;
+
+  String get storedText => window.localStorage['id1'];
 
   set downloadName(String value) {
     _downloadName = value;
@@ -15,7 +18,7 @@ class TextDocument {
   }
 
   TextDocument() {
-    text = window.localStorage['id1'];
+    text = storedText;
     _downloadName = window.localStorage['dn1'];
     String lms = window.localStorage['lm1'];
 
@@ -42,9 +45,27 @@ class TextDocument {
   }
 
   void save() {
+    print("Save ${_undoText.length}");
+    if ((_undoText.length == 0) ||
+        (_undoText.length > 0 && _undoText[_undoText.length - 1] != storedText)) {
+      print("Storing current ${storedText.length}");
+      _undoText.add(storedText);
+    }
+    print("Save ${_undoText.length}");
+
+    performSave();
+  }
+
+  void performSave() {
+
     updateModifiedDate();
     window.localStorage['id' + id.toString()] = text;
     window.localStorage['dn' + id.toString()] = _downloadName;
     window.localStorage['lm' + id.toString()] = lastModified.toIso8601String();
+  }
+
+  void undo() {
+    text = _undoText.removeLast();
+    performSave();
   }
 }

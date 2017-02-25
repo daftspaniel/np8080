@@ -3,6 +3,8 @@
 
     <button class="miniToolbarButton light-primary-color" (click)="downloadHandler()" title="Download">&#11015;</button>
 
+    &nbsp;<button class="undoToolbarButton light-primary-color" (click)="undoHandler()" title="Undo previous change.">Undo</button>
+
     <menu [menutitle]="'⚛ Init'" [items]="menus.initMenuItems" class="toolbarMenuTitle menuInit"></menu>
 
     <menu [menutitle]="'&#9881; Modify'" [items]="menus.modifyMenuItems" class="toolbarMenuTitle menuModify"></menu>
