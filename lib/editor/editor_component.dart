@@ -31,7 +31,7 @@ class EditorComponent {
   final TextareaDomService _textareaDomService;
   final TextProcessingService _textProcessingService;
 
-  List<String> _undoText = new List<String>();
+  //List<String> _undoText = new List<String>();
   List<int> _undoPositions = new List<int>();
 
   EditorComponent(this._textareaDomService, this._textProcessingService);
@@ -84,17 +84,22 @@ class EditorComponent {
       note.updateAndSave(_textareaDomService.getText());
       return false;
     }
+    else if (e.keyCode == 90 && e.ctrlKey == true) {
+      print("HEAFDS");
+      note.undo();
+      return false;
+    }
 
     return true;
   }
 
   void undoTextGeneration() {
-    if (_undoText.length == 0) return;
+    //if (_undoText.length == 0) return;
     //saveAndUpdateState(_undoText.removeLast(), _undoPositions.removeLast());
   }
 
   void storeStateForUndo(int cursorPos) {
-    _undoText.add(note.text);
+    //_undoText.add(note.text);
     _undoPositions.add(cursorPos);
   }
 }

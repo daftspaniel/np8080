@@ -8,6 +8,12 @@ class TextDocument {
   DateTime lastModified;
   final List<String> _undoText = new List<String>();
 
+  TextDocument() {
+    initText();
+    initLastModifiedDate();
+    initDownloadName();
+  }
+
   String get downloadName => _downloadName;
 
   String get storedText => window.localStorage['id1'];
@@ -17,17 +23,22 @@ class TextDocument {
     save();
   }
 
-  TextDocument() {
+  void initText() {
     text = storedText;
+    if (text == null) text = "";
+  }
+
+  void initDownloadName() {
     _downloadName = window.localStorage['dn1'];
+    if (_downloadName == null) downloadName = "np8080.txt";
+  }
+
+  void initLastModifiedDate() {
     String lms = window.localStorage['lm1'];
 
     if (lms != null) {
       lastModified = DateTime.parse(lms);
     }
-
-    if (text == null) text = "";
-    if (_downloadName == null) downloadName = "np8080.txt";
   }
 
   void updateModifiedDate() {
@@ -45,19 +56,20 @@ class TextDocument {
   }
 
   void save() {
-    print("Save ${_undoText.length}");
-    if ((_undoText.length == 0) ||
-        (_undoText.length > 0 && _undoText[_undoText.length - 1] != storedText)) {
-      print("Storing current ${storedText.length}");
-      _undoText.add(storedText);
-    }
-    print("Save ${_undoText.length}");
-
+    if (text == storedText) return;
+    updateUndoBuffer();
     performSave();
   }
 
-  void performSave() {
+  void updateUndoBuffer() {
+    if ((_undoText.length == 0) ||
+        (_undoText.length > 0 &&
+            _undoText[_undoText.length - 1] != storedText)) {
+      _undoText.add(storedText);
+    }
+  }
 
+  void performSave() {
     updateModifiedDate();
     window.localStorage['id' + id.toString()] = text;
     window.localStorage['dn' + id.toString()] = _downloadName;

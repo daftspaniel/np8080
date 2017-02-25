@@ -7,14 +7,37 @@ html, body {
     margin: 0px;
 }
 
-.dark-primary-color    { background: #778d9c; }
-.default-primary-color { background: #cce6d9; }
-.light-primary-color   { background: rgba(38, 47, 51, 0.19); }
-.text-primary-color    { color: #FFFFFF; }
-.accent-color          { background: #cce6d9; }
-.primary-text-color    { color: #212121; }
-.secondary-text-color  { color: #757575; }
-.divider-color         { border-color: #BDBDBD; }
+.dark-primary-color {
+    background: #778d9c;
+}
+
+.default-primary-color {
+    background: #cce6d9;
+}
+
+.light-primary-color {
+    background: rgba(38, 47, 51, 0.19);
+}
+
+.text-primary-color {
+    color: #FFFFFF;
+}
+
+.accent-color {
+    background: #cce6d9;
+}
+
+.primary-text-color {
+    color: #212121;
+}
+
+.secondary-text-color {
+    color: #757575;
+}
+
+.divider-color {
+    border-color: #BDBDBD;
+}
 
 .menuItem {
     border: groove 1px white;
@@ -76,12 +99,15 @@ textarea {
     min-width: 40px;
     border-bottom-right-radius: 4px;
     border-top-right-radius: 4px;
+    margin-top: 2px;
 }
+
 .undoToolbarButton {
+    margin: 0px;
+    margin-top: 2px;
     width: 40px;
     color: white;
     border: 0px;
-    margin: 0px;
     height: 26px;
     text-align: center;
     font-size: 9pt;
@@ -97,6 +123,7 @@ textarea {
     margin-left: 0px;
     padding-left: 10px;
 }
+
 .toolbarMenuButton:hover {
     background-color: cornflowerblue;
 }
@@ -121,6 +148,7 @@ textarea {
     border-bottom-left-radius: 4px;
     padding-right: 4px;
     margin-left: 14px;
+    margin-top: 2px;
 }
 
 .toolbarMenuTitle {
@@ -143,6 +171,7 @@ textarea {
     position: absolute;
     top: 10px;
     left: 20px;
+    font-size: 11pt;
 }
 
 .menuInit {
