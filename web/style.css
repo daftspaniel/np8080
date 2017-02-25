@@ -42,8 +42,9 @@ textarea {
 }
 
 .preview {
+    background-color: #dddddd;
     overflow-y: scroll;
-    overflow-x: none;
+    overflow-x: hidden;
     width: 45%;
     font-size: 10pt;
     display: inline-block;
