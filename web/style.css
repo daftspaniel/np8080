@@ -8,8 +8,9 @@ html, body {
     margin: 0px;
 }
 
-button:hover {
-    background-color: cornflowerblue;
+.menuItem {
+    border: groove 1px white;
+    z-index: 999
 }
 
 .closeButton {
@@ -83,13 +84,16 @@ textarea {
     margin-left: 0px;
     padding-left: 10px;
 }
+.toolbarMenuButton:hover {
+    background-color: cornflowerblue;
+}
 
 .labelReadOnly {
-    top:0px;
-    left:2px;
+    top: 0px;
+    left: 2px;
     font-size: small;
     min-width: 120px;
-    margin-top:-10px;
+    margin-top: -10px;
 }
 
 .toolbarField {
@@ -110,26 +114,85 @@ textarea {
     margin-left: 14px;
 }
 
-.toolbarMenuTitle{
+.toolbarMenuTitle {
     margin: 0px;
     padding: 0px;
-    padding-left: 10px;
-    z-index:99;
+    padding-left: 3px;
+    z-index: 99;
 }
 
 .toolbarMenu {
-    background-color: darkslategrey;
-    width: 130px;
+    background-color: #333333;
+    width: 90px;
     color: white;
     border: 1px;
     margin: 0px;
     height: 25px;
     min-width: 100px;
     font-weight: bolder;
+    position: absolute;
+    top: 10px;
+    left: 20px;
 }
 
-.toolbarMenu:hover {
-    border-bottom: inset 1px floralwhite;
+.menuInit {
+    position: absolute;
+
+    top: -10px;
+    left: 240px;
+    width: 110px;
+    height: 30px;
+    z-index: 1000;
+}
+
+.menuModify {
+    position: absolute;
+    background-color: #333333;
+    top: -10px;
+    left: 330px;
+    width: 110px;
+    height: 30px;
+    z-index: 1000;
+}
+
+.menuAdd {
+    position: absolute;
+    background-color: #333333;
+    top: -10px;
+    left: 430px;
+    width: 110px;
+    height: 30px;
+    z-index: 1000;
+}
+
+.menuRemove {
+    position: absolute;
+    background-color: #333333;
+    top: -10px;
+    left: 530px;
+    width: 110px;
+    height: 30px;
+    z-index: 1000;
+}
+
+.menuView {
+    position: absolute;
+    background-color: #333333;
+    top: -10px;
+    left: 630px;
+    width: 110px;
+    height: 30px;
+    z-index: 1000;
+}
+
+.menuHelp {
+    position: absolute;
+    background-color: #333333;
+    top: -10px;
+    left: 730px;
+    width: 110px;
+    height: 30px;
+    z-index: 1000;
 }
 
 .srhsButtons {
@@ -162,7 +225,6 @@ textarea {
     height: 30px;
     margin-bottom: 0px;
     width: 110%;
-    border-bottom: 1px yellow solid;
     padding: 1px;
 }
 

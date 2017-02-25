@@ -13,13 +13,15 @@ class MenuDefinition {
 
   void buildMenus(ToolbarComponent toolbar) {
     initMenuItems = [
-      new Menu("Clear", toolbar.clearHandler, "Start again with an empty file.")
+      new Menu(
+          "Clear Text", toolbar.clearHandler, "Start again with an empty file.")
     ];
 
     modifyMenuItems =
     [
       new Menu(
-          "Doublespace", toolbar.doublespaceHandler, "Double space the lines.", true),
+          "Doublespace", toolbar.doublespaceHandler, "Double space the lines.",
+          true),
       new Menu("Reverse", toolbar.reverseHandler, "Reverse line order."),
       new Menu("Randomise", toolbar.randomHandler, "Random line order."),
       new Menu("Sort", toolbar.sortHandler, "Alphabetically sort lines.", true),
@@ -31,7 +33,8 @@ class MenuDefinition {
 
     addMenuItems = [
       new Menu(
-          "Timestamp", toolbar.timestampHandler, "Add a timestamp to the document.",
+          "Timestamp", toolbar.timestampHandler,
+          "Add a timestamp to the document.",
           true),
       new Menu("Duplicate", toolbar.duplicateHandler,
           "Append a copy of the entire text to itself."),
@@ -52,7 +55,8 @@ class MenuDefinition {
           "Remove proceeding and trailing whitespace from each line.",
           true),
       new Menu(
-          "Blank Lines", toolbar.removeBlankLinesHandler, "Remove all blank lines."),
+          "Blank Lines", toolbar.removeBlankLinesHandler,
+          "Remove all blank lines."),
       new Menu("Extra Blank Lines", toolbar.removeExtraBlankLinesHandler,
           "Remove extra blank lines."),
     ];
@@ -63,7 +67,8 @@ class MenuDefinition {
     ];
 
     helpMenuItems = [
-      new Menu("About", toolbar.aboutHandler, "Find out more about NP8080", true),
+      new Menu(
+          "About", toolbar.aboutHandler, "Find out more about NP8080", true),
       new Menu("GitHub", toolbar.githubHandler, "Get the source code!"),
       new Menu("Gitter Chat", toolbar.gitterHandler, "Gitter based Chatroom")
     ];
