@@ -1,5 +1,5 @@
+import 'dart:html';
 import 'package:angular2/core.dart';
-import 'package:angular2/src/facade/browser.dart';
 import 'package:np8080/dialog/about/about_component.dart';
 import 'package:np8080/dialog/generate/generate_component.dart';
 import 'package:np8080/dialog/prepost/prepost_component.dart';

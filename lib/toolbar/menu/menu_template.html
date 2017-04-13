@@ -3,7 +3,7 @@
     <br/>
     <br/>
     <div class="menuItem dark-primary-color" [ngStyle]="{'display':  display, 'width':'130px'}">
-        <span *ngFor="#menuItem of items" style="">
+        <span *ngFor="let menuItem of items" style="">
             <button
                     class="toolbarButton toolbarMenuButton dark-primary-color"
                     (click)="menuItem.handler()"
