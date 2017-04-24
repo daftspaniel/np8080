@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:html';
 
 import 'package:angular2/core.dart';
@@ -48,42 +49,48 @@ class ToolbarComponent {
   bool showPreview;
 
   @Output()
-  EventEmitter<bool> showAboutDialogChange = new EventEmitter<bool>();
+  Stream<bool> get showAboutDialogChange => onShowAboutDialogChange.stream;
+  final StreamController onShowAboutDialogChange = new StreamController();
 
   @Output()
-  EventEmitter<bool> showReplaceDialogChange = new EventEmitter<bool>();
+  Stream<bool> get showReplaceDialogChange => onShowReplaceDialogChange.stream;
+  final StreamController onShowReplaceDialogChange = new StreamController();
 
   @Output()
-  EventEmitter<bool> showPrePostDialogChange = new EventEmitter<bool>();
+  Stream<bool> get showPrePostDialogChange => onShowPrePostDialogChange.stream;
+  final StreamController onShowPrePostDialogChange = new StreamController();
 
   @Output()
-  EventEmitter<bool> showPreviewChange = new EventEmitter<bool>();
+  Stream<bool> get showPreviewChange => onShowPreviewChange.stream;
+  final StreamController onShowPreviewChange = new StreamController();
 
   @Output()
-  EventEmitter<bool> showGenerateDialogChange = new EventEmitter<bool>();
+  Stream<bool> get showGenerateDialogChange => onShowGenerateDialogChange.stream;
+  final StreamController onShowGenerateDialogChange = new StreamController();
 
   @Output()
-  EventEmitter<bool> showSeqGenerateDialogChange = new EventEmitter<bool>();
+  Stream<bool> get showSeqGenerateDialogChange => onShowSeqGenerateDialogChange.stream;
+  final StreamController onShowSeqGenerateDialogChange = new StreamController();
 
   void generateHandler() {
     showGenerateDialog = true;
-    showGenerateDialogChange.emit(showGenerateDialog);
+    onShowGenerateDialogChange.add(showGenerateDialog);
   }
 
   void generateSeqHandler() {
     showSeqGenerateDialog = true;
-    showSeqGenerateDialogChange.emit(showSeqGenerateDialog);
+    onShowSeqGenerateDialogChange.add(showSeqGenerateDialog);
   }
 
   void markdownHandler() {
     showPreview = !showPreview;
-    showPreviewChange.emit(showPreview);
+    onShowPreviewChange.add(showPreview);
     _textareaDomService.setFocus();
   }
 
   void aboutHandler() {
     showAboutDialog = true;
-    showAboutDialogChange.emit(showAboutDialog);
+    onShowAboutDialogChange.add(showAboutDialog);
   }
 
   void clearHandler() {
@@ -126,12 +133,12 @@ class ToolbarComponent {
 
   void replaceHandler() {
     showReplaceDialog = true;
-    showReplaceDialogChange.emit(showReplaceDialog);
+    onShowReplaceDialogChange.add(showReplaceDialog);
   }
 
   void prePostHandler() {
     showPrePostDialog = true;
-    showPrePostDialogChange.emit(showPrePostDialog);
+    onShowPrePostDialogChange.add(showPrePostDialog);
   }
 
   void removeBlankLinesHandler() {

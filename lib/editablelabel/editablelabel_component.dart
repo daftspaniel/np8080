@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:html';
 
 import 'package:angular2/core.dart';
@@ -8,6 +9,8 @@ import 'package:angular2/core.dart';
 )
 class EditableLabelComponent implements OnInit {
 
+  final StreamController onTextChange = new StreamController();
+
   bool editMode = false;
   String outputText;
 
@@ -15,14 +18,14 @@ class EditableLabelComponent implements OnInit {
   String text;
 
   @Output()
-  EventEmitter<String> textChange = new EventEmitter<String>();
+  Stream<String> get textChange => onTextChange.stream;
 
   EditableLabelComponent() {
     editMode = false;
   }
 
   void update() {
-    textChange.emit(text);
+    onTextChange.add(text);
     formatText();
   }
 

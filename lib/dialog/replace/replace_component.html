@@ -8,13 +8,12 @@
             <input type="text" placeholder="Type text here..." [(ngModel)]="textToReplace">
             <label> with </label>
             <input type="text" placeholder="Type text here..." [(ngModel)]="replacementText">
+            <br/>
+            <input type="checkbox" ngChecked="true"> Add newline after replacement
         </div>
 
         <div class="footer">
             <button class="actionButton" (click)="performReplace()">Replace</button>
-            <!--<button class="closeButton" (click)="undoTextGeneration()">Undo</button>-->
-            <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-            <!--<button class="closeButton" (click)="closeTheDialog()">Peek!</button>-->
             <button class="closeButton light-primary-color" (click)="closeTheDialog()">Close</button>
         </div>
     </div>

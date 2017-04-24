@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:angular2/core.dart';
 import 'package:np8080/dialog/common/dialog_base.dart';
 
@@ -9,10 +11,10 @@ class AboutDialogComponent extends DialogBase {
   bool showDialog = false;
 
   @Output()
-  EventEmitter<bool> showDialogChange = new EventEmitter<bool>();
+  Stream<bool> get showDialogChange => onShowDialogChange.stream;
 
   void closeTheDialog() {
     showDialog = false;
-    showDialogChange.emit(showDialog);
+    onShowDialogChange.add(showDialog);
   }
 }

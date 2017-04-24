@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:angular2/core.dart';
+import 'package:np8080/dialog/common/dialog_base.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
@@ -7,7 +10,7 @@ import 'package:np8080/services/textprocessingservice.dart';
     selector: 'sequence-dialog',
     templateUrl: 'sequence_component.html',
     providers: const [TextProcessingService, TextareaDomService])
-class SequenceDialogComponent {
+class SequenceDialogComponent extends DialogBase {
   @Input()
   bool showDialog = false;
 
@@ -15,7 +18,7 @@ class SequenceDialogComponent {
   TextDocument note;
 
   @Output()
-  EventEmitter<bool> showDialogChange = new EventEmitter<bool>();
+  Stream<bool> get showDialogChange => onShowDialogChange.stream;
 
   String textToRepeat;
   String _generatedText;
@@ -34,7 +37,7 @@ class SequenceDialogComponent {
   void closeTheDialog() {
     textToRepeat = "";
     showDialog = false;
-    showDialogChange.emit(showDialog);
+    onShowDialogChange.add(showDialog);
     _textareaDomService.setFocus();
     if (insertPos > 0) {
       _textareaDomService.setCursorPosition(insertPos);

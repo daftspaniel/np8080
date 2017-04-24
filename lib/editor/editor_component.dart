@@ -93,13 +93,7 @@ class EditorComponent {
     return true;
   }
 
-  void undoTextGeneration() {
-    //if (_undoText.length == 0) return;
-    //saveAndUpdateState(_undoText.removeLast(), _undoPositions.removeLast());
-  }
-
   void storeStateForUndo(int cursorPos) {
-    //_undoText.add(note.text);
     _undoPositions.add(cursorPos);
   }
 }

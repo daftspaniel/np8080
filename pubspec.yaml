@@ -4,13 +4,11 @@ version: 0.0.16
 environment:
   sdk: '>=1.21.0 <2.0.0'
 dependencies:
-  angular2: 3.0.0-beta
+  angular2: "3.0.0-beta+2"
   browser: ^0.10.0
   dart_to_js_script_rewriter: ^1.0.1
   markdown: ^0.11.1
   test: any
-dependency_overrides:
-  quiver:
 transformers:
 - angular2:
     platform_directives:

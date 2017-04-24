@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:angular2/core.dart';
+import 'package:np8080/dialog/common/dialog_base.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
@@ -7,7 +10,7 @@ import 'package:np8080/services/textprocessingservice.dart';
     selector: 'prepost-dialog',
     templateUrl: 'prepost_component.html',
     providers: const [TextProcessingService, TextareaDomService])
-class PrePostDialogComponent {
+class PrePostDialogComponent extends DialogBase {
 
   final TextProcessingService _textProcessingService;
   final TextareaDomService _textareaDomService;
@@ -19,7 +22,7 @@ class PrePostDialogComponent {
   TextDocument note;
 
   @Output()
-  EventEmitter<bool> showDialogChange = new EventEmitter<bool>();
+  Stream<bool> get showDialogChange => onShowDialogChange.stream;
 
   String prefix = "";
   String postfix = "";
@@ -29,7 +32,7 @@ class PrePostDialogComponent {
 
   void closeTheDialog() {
     showDialog = false;
-    showDialogChange.emit(showDialog);
+    onShowDialogChange.add(showDialog);
     _textareaDomService.setFocus();
   }
 
