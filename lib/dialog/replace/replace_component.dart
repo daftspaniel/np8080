@@ -26,6 +26,7 @@ class ReplaceDialogComponent extends DialogBase implements OnChanges {
 
   String textToReplace;
   String replacementText;
+  bool newLine = false;
   String _updatedText;
 
   int insertPos = -1;
@@ -55,8 +56,12 @@ class ReplaceDialogComponent extends DialogBase implements OnChanges {
   }
 
   void performReplace() {
-    replacementText ??= "";
     if (textToReplace.length > 0) {
+      replacementText ??= "";
+      if (newLine) {
+        replacementText += "\n";
+      }
+
       note.updateAndSave(getUpdatedText());
     }
   }

@@ -9,7 +9,7 @@
             <label> with </label>
             <input type="text" placeholder="Type text here..." [(ngModel)]="replacementText">
             <br/>
-            <input type="checkbox" ngChecked="true"> Add newline after replacement
+            <input type="checkbox" [(ngModel)]="newLine"> Add a newline after each replacement
         </div>
 
         <div class="footer">
