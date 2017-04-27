@@ -1,15 +1,28 @@
 
 final String editorPlaceHolderText = """
-  Welcome to Notepad 8080!
+  Welcome to Notepad 8080 a clutter-free text editor in your browser.
 
-  Notepad 8080 is a simple web based text editor in your browser. It is free to use and Open Source software.
+  1. It is free to use and Open Source software.
 
-  Your data is automatically stored in your web browser's local storage and NOT on any server.
+  2. Your data is automatically stored in your web browser's local storage and NOT on any server.
 
-  Click the download button to save the text as a file.
+  3. Click the Download button to save the text as a file to your computer.
 
-  You can change the filename by clicking on the name in the top left.
+  4. You can change the filename by clicking on the name in the top left.
 
-  Click on the Help menu and then click 'About' to learn even more.""";
+  5. 100% functionality when offline - great for Chromebooks!
+
+  6. Lightweight and fast to load!
+
+  7. Written in Angular Dart 3.
+
+  8. The application is constantly updated.
+
+  9. NP8080 can be hosted on any web server - just HTML/CSS/JS!
+
+  10. Find out more about NP8080 in the 'About' menu.
+
+
+""";
 
 final String tab = "    ";
