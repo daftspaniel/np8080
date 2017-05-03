@@ -4,6 +4,7 @@ import 'dart:html';
 import 'package:angular2/core.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/editablelabel/editablelabel_component.dart';
+import 'package:np8080/resources/resources.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
 import 'package:np8080/toolbar/menu/menu.dart';
@@ -91,6 +92,11 @@ class ToolbarComponent {
   void aboutHandler() {
     showAboutDialog = true;
     onShowAboutDialogChange.add(showAboutDialog);
+  }
+
+  void sampleHandler(){
+    note.updateAndSave(editorPlaceHolderText);
+    _textareaDomService.setFocus();
   }
 
   void clearHandler() {

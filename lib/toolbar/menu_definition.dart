@@ -13,8 +13,9 @@ class MenuDefinition {
 
   void buildMenus(ToolbarComponent toolbar) {
     initMenuItems = [
-      new Menu(
-          "Clear Text", toolbar.clearHandler, "Start again with an empty file.")
+      new Menu("Clear Text", toolbar.clearHandler, "Start again with an empty file.",true),
+      new Menu("Sample Text", toolbar.sampleHandler, "Put sample text into the file.")
+
     ];
 
     modifyMenuItems =
