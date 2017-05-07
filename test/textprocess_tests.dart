@@ -125,5 +125,15 @@ void main() {
       expect(tps.getReplaced("The cat sat on the mat", "cat", "dog"),
           "The dog sat on the mat");
     });
+
+    test('makeOneLine', () {
+      expect(tps.makeOneLine("\nThe cat sat\n on the mat\n"),
+          "The cat sat on the mat");
+    });
+
+    test('makeOneLine', () {
+      expect(tps.makeOneLine("\r\nThe cat sat\r\n on the mat\r\n"),
+          "The cat sat on the mat");
+    });
   });
 }

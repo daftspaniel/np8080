@@ -1,18 +1,7 @@
 <div id="overlay" [hidden]="!showDialog">
-    <div class="dialogPanel default-primary-color">
+    <div class="dialogPanel">
         <div class="header dark-primary-color">About Notepad 8080 v0.0.17</div>
-        <p><a href="http://np8080.win">np8080.win</a> is a web based text editor.</p>
-
-        <p> Your data is saved in your web browser's Local Storage. It is NOT stored on any server.</p>
-
-        <p> Click the 'Download' button to store the current contents on the computers disk. </p>
-
-        <p> This app is written with <a target="_new" href="https://www.dartlang.org/">Dart</a>
-            and <a target="_new" href="https://angulardart.org/">AngularDart</a>.
-            Read about it on the '<a target="_new" href="http://divingintodart.blogspot.co.uk/">Diving into Dart</a>'
-            blog!</p>
-
-        <p>The source code is available from <a href="https://github.com/daftspaniel/np8080">GitHub</a>.</p>
+        <pre style="font-size: small">{{aboutText}}</pre>
 
         <div class="footer">
             <button class="closeButton light-primary-color" (click)="closeTheDialog()">Close</button>

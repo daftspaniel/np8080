@@ -1,42 +1,10 @@
 html, body {
-    font-family: monospace;
-
+    font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
     font-size: 12pt;
     overflow-x: hidden;
     overflow-y: hidden;
     margin: 0px;
-}
-
-.dark-primary-color {
-    background: #778d9c;
-}
-
-.default-primary-color {
-    background: #cce6d9;
-}
-
-.light-primary-color {
-    background: rgba(38, 47, 51, 0.19);
-}
-
-.text-primary-color {
-    color: #FFFFFF;
-}
-
-.accent-color {
-    background: #cce6d9;
-}
-
-.primary-text-color {
-    color: #212121;
-}
-
-.secondary-text-color {
-    color: #757575;
-}
-
-.divider-color {
-    border-color: #BDBDBD;
+    background-color: lightgrey;
 }
 
 .menuItem {
@@ -46,7 +14,7 @@ html, body {
 
 .closeButton {
     width: 80px;
-    color: white;
+    background-color: blanchedalmond;
     border: 0px;
     margin: 0px;
     font-weight: bold;
@@ -65,7 +33,6 @@ textarea {
 }
 
 .preview {
-    background-color: #dddddd;
     overflow-y: scroll;
     overflow-x: hidden;
     width: 45%;
@@ -75,10 +42,10 @@ textarea {
     border: 0px;
     padding: 0px;
     margin: 0px;
+    background-color: azure;
 }
 
 .toolbarButton {
-    color: white;
     border: 0px;
     margin: 0px;
     height: 25px;
@@ -90,7 +57,8 @@ textarea {
 
 .miniToolbarButton {
     width: 60px;
-    color: white;
+    color: lightgrey;
+    background-color: #2B2926;
     border: 0px;
     margin: 0px;
     height: 26px;
@@ -106,7 +74,8 @@ textarea {
     margin: 0px;
     margin-top: 2px;
     width: 40px;
-    color: white;
+    color: darkgray;
+    background-color: #2B2926;
     border: 0px;
     height: 26px;
     text-align: center;
@@ -133,7 +102,10 @@ textarea {
     left: 2px;
     font-size: small;
     min-width: 120px;
-    margin-top: -10px;
+    margin-top: -20px;
+    background-color: darkseagreen;
+    padding: 10px;
+    padding-left: 3px;
 }
 
 .toolbarField {
@@ -151,7 +123,12 @@ textarea {
     margin-top: 2px;
 }
 
+button {
+    background-color: lightgrey;
+}
+
 .toolbarMenuTitle {
+
     margin: 0px;
     margin-top: 5px;
 
@@ -162,12 +139,10 @@ textarea {
 
 .toolbarMenu {
     width: 90px;
-    color: white;
     border: 1px;
     margin: 0px;
     height: 25px;
     min-width: 100px;
-    font-weight: bolder;
     position: absolute;
     top: 10px;
     left: 20px;
@@ -176,7 +151,6 @@ textarea {
 
 .menuInit {
     position: absolute;
-
     top: -10px;
     left: 230px;
     width: 110px;
@@ -244,6 +218,7 @@ textarea {
 }
 
 .statusPanel {
+    background-color: lightgrey;
     padding-left: 5px;
     display: flex;
     font-size: small;
@@ -253,17 +228,15 @@ textarea {
 }
 
 .toolbar {
+    background-color: lightgrey;
+    border-bottom: solid 1px #606993;
     display: flex;
+    height: 30px;
     margin-left: -5px;
     margin-right: -12px;
-    height: 30px;
     margin-bottom: 0px;
-    width: 110%;
     padding: 1px;
-    border-bottom: solid 1px #606993;
-    /*border-top: solid 1px black;*/
-    /*border-left: solid 1px black;*/
-    /*border-right: solid 1px black;*/
+    width: 110%;
 }
 
 .actionButton {
@@ -274,13 +247,11 @@ textarea {
     margin: 0px;
     font-weight: bold;
     height: 25px;
-
 }
 
 .menuSeparator {
     width: 130px;
     height: 1px;
-    background-color: aliceblue;
     padding: 0px;
     margin: 0px;
 }

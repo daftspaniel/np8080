@@ -13,9 +13,8 @@
     <div style="flex:2;overflow: none;height: calc(100vh - 60px);">
     <textarea [(ngModel)]="note.text" (keyup)="changeHandler()" (keydown)="keyHandler($event)"
               [ngStyle]="{width: showPreview ? '48%':'99%'}"
-              placeholder="{{placeHolderText}}"
               tabindex="1" autofocus id="nptextbox"
-              class="primary-text-color" style="background-color: #dddddd"></textarea>
+              class="primary-text-color"></textarea>
 
         <markdown-preview [content]="note.text" [active]="showPreview"></markdown-preview>
 

@@ -1,4 +1,5 @@
 import 'dart:html';
+
 import 'package:angular2/core.dart';
 import 'package:np8080/dialog/about/about_component.dart';
 import 'package:np8080/dialog/generate/generate_component.dart';
@@ -31,7 +32,6 @@ class EditorComponent {
   final TextareaDomService _textareaDomService;
   final TextProcessingService _textProcessingService;
 
-  //List<String> _undoText = new List<String>();
   List<int> _undoPositions = new List<int>();
 
   EditorComponent(this._textareaDomService, this._textProcessingService);
@@ -50,8 +50,6 @@ class EditorComponent {
   bool showPreview = false;
 
   bool showPrePostDialog = false;
-
-  final String placeHolderText = editorPlaceHolderText;
 
   void changeHandler() {
     note.save();
@@ -85,7 +83,6 @@ class EditorComponent {
       return false;
     }
     else if (e.keyCode == 90 && e.ctrlKey == true) {
-      print("HEAFDS");
       note.undo();
       return false;
     }

@@ -1,5 +1,7 @@
 import 'dart:html';
 
+import '../resources/resources.dart';
+
 class TextDocument {
 
   int id = 1;
@@ -25,7 +27,7 @@ class TextDocument {
 
   void initText() {
     text = storedText;
-    if (text == null) text = "";
+    if (text == null) text = welcomeText;
   }
 
   void initDownloadName() {

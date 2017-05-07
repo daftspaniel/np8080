@@ -66,11 +66,13 @@ class ToolbarComponent {
   final StreamController onShowPreviewChange = new StreamController();
 
   @Output()
-  Stream<bool> get showGenerateDialogChange => onShowGenerateDialogChange.stream;
+  Stream<bool> get showGenerateDialogChange =>
+      onShowGenerateDialogChange.stream;
   final StreamController onShowGenerateDialogChange = new StreamController();
 
   @Output()
-  Stream<bool> get showSeqGenerateDialogChange => onShowSeqGenerateDialogChange.stream;
+  Stream<bool> get showSeqGenerateDialogChange =>
+      onShowSeqGenerateDialogChange.stream;
   final StreamController onShowSeqGenerateDialogChange = new StreamController();
 
   void generateHandler() {
@@ -94,8 +96,13 @@ class ToolbarComponent {
     onShowAboutDialogChange.add(showAboutDialog);
   }
 
-  void sampleHandler(){
-    note.updateAndSave(editorPlaceHolderText);
+  void sampleHandler() {
+    note.updateAndSave(welcomeText);
+    _textareaDomService.setFocus();
+  }
+
+  void markdownSampleHandler() {
+    note.updateAndSave(markdownSampler);
     _textareaDomService.setFocus();
   }
 
@@ -145,6 +152,11 @@ class ToolbarComponent {
   void prePostHandler() {
     showPrePostDialog = true;
     onShowPrePostDialogChange.add(showPrePostDialog);
+  }
+
+  void oneLineHandler() {
+    note.updateAndSave(_textProcessingService.makeOneLine(note.text));
+    _textareaDomService.setFocus();
   }
 
   void removeBlankLinesHandler() {

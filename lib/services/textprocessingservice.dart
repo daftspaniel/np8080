@@ -117,6 +117,10 @@ class TextProcessingService {
     return out;
   }
 
+  String makeOneLine(String text) {
+    return text.replaceAll('\r\n', '').replaceAll('\n', '');
+  }
+
   String trimLines(String text) {
     List<String> segments = text.split('\n');
     String out = "";

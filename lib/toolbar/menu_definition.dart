@@ -13,23 +13,31 @@ class MenuDefinition {
 
   void buildMenus(ToolbarComponent toolbar) {
     initMenuItems = [
-      new Menu("Clear Text", toolbar.clearHandler, "Start again with an empty file.",true),
-      new Menu("Sample Text", toolbar.sampleHandler, "Put sample text into the file.")
-
+      new Menu(
+          "Clear Text", toolbar.clearHandler, "Start again with an empty file.",
+          true),
+      new Menu("Welcome Text", toolbar.sampleHandler,
+          "Put sample text into the file."),
+      new Menu("Sample Markdown", toolbar.markdownSampleHandler,
+          "Put sample Markdown into the file.")
     ];
 
     modifyMenuItems =
-    [
-      new Menu(
-          "Doublespace", toolbar.doublespaceHandler, "Double space the lines.",
-          true),
-      new Menu("Reverse", toolbar.reverseHandler, "Reverse line order."),
-      new Menu("Randomise", toolbar.randomHandler, "Random line order."),
-      new Menu("Sort", toolbar.sortHandler, "Alphabetically sort lines.", true),
-      new Menu("Replace...", toolbar.replaceHandler,
-          "Replace some text with some other text."),
-      new Menu("Pre/Post...", toolbar.prePostHandler,
-          "Add text to start and/or end of lines."),
+    [ new Menu("Replace...", toolbar.replaceHandler,
+        "Replace some text with some other text."),
+    new Menu("Pre/Post...", toolbar.prePostHandler,
+        "Add text to start and/or end of lines.", true),
+    new Menu(
+      "Doublespace", toolbar.doublespaceHandler, "Double space the lines.",
+    ),
+    new Menu(
+        "Make One Line", toolbar.oneLineHandler,
+        "Put all the text onto one line.",
+        true),
+    new Menu("Reverse", toolbar.reverseHandler, "Reverse line order."),
+    new Menu("Randomise", toolbar.randomHandler, "Random line order."),
+    new Menu("Sort", toolbar.sortHandler, "Alphabetically sort lines."),
+
     ];
 
     addMenuItems = [

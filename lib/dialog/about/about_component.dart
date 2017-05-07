@@ -1,5 +1,5 @@
 import 'dart:async';
-
+import '../../resources/resources.dart';
 import 'package:angular2/core.dart';
 import 'package:np8080/dialog/common/dialog_base.dart';
 
@@ -7,6 +7,8 @@ import 'package:np8080/dialog/common/dialog_base.dart';
     selector: 'about-dialog',
     templateUrl: 'about_component.html')
 class AboutDialogComponent extends DialogBase {
+
+  String aboutText = welcomeText;
   @Input()
   bool showDialog = false;
 

@@ -6,17 +6,17 @@
     height: 100%;
     text-align: center;
     z-index: 1000;
-    background-image: url("img/background.png");
 }
 
 #overlay .dialogPanel {
     font-size: smaller;
-    width: 600px;
+    width: 700px;
     margin: 100px auto;
     border: 1px solid whitesmoke;
     padding: 5px;
     text-align: left;
     z-index: 1010;
+    background-color: lightgrey;
 }
 
 #overlay .header {

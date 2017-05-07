@@ -1,5 +1,5 @@
 
-final String editorPlaceHolderText = """
+final String welcomeText = """
   Welcome to Notepad 8080 a clutter-free text editor in your browser.
 
   1. It is free to use and Open Source software.
@@ -20,8 +20,37 @@ final String editorPlaceHolderText = """
 
   9. NP8080 can be hosted on any web server - just HTML/CSS/JS!
 
-  10. Find out more about NP8080 in the 'About' menu.
+  10. Get the Source code - click on GitHub in the 'About' menu.
 
+
+""";
+
+final String markdownSampler = """
+
+# Heading 1
+## Heading 2
+### Heading 3
+#### Heading 4
+##### Heading 5
+###### Heading 6
+
+*bold*
+
+_italic_
+
+### Numbered list
+1. Apple
+2. Oranges
+3. Pineapples
+
+### Bulleted list:
++ Milk
++ Cheese
++ Yoghurt
+
+Web Links
+
+[NP8080.win](http://NP8080.win)
 
 """;
 

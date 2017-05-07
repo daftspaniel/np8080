@@ -1,11 +1,11 @@
-<div (mouseenter)="show()" (mouseleave)="hide()" style="z-index: 999;" class="dark-primary-color">
+<div (mouseenter)="show()" (mouseleave)="hide()" style="z-index: 999;">
     <button class="toolbarMenu dark-primary-color">{{menutitle}}</button>
     <br/>
     <br/>
     <div class="menuItem dark-primary-color" [ngStyle]="{'display':  display, 'width':'130px'}">
         <span *ngFor="let menuItem of items" style="">
             <button
-                    class="toolbarButton toolbarMenuButton dark-primary-color"
+                    class="toolbarButton toolbarMenuButton"
                     (click)="menuItem.handler()"
                     title="{{menuItem.tooltip}}">{{menuItem.name}}
             </button>
