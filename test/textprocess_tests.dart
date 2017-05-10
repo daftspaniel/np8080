@@ -135,5 +135,11 @@ void main() {
       expect(tps.makeOneLine("\r\nThe cat sat\r\n on the mat\r\n"),
           "The cat sat on the mat");
     });
+
+    test('remove lines containing',(){
+      String txt = "\r\nThe cat sat\r\n";
+      txt = txt + txt + 'MOO\r\n' + txt;
+      expect(tps.deleteLinesContaining(txt,"cat"),"MOO\r\n");
+    });
   });
 }

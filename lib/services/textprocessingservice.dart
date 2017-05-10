@@ -185,4 +185,21 @@ class TextProcessingService {
     }
     return out;
   }
+
+  deleteLinesContaining(String text, String target) {
+    List<String> segments = text.split('\n');
+    String out = "";
+
+    for (int i = 0; i < segments.length; i++) {
+      if (segments[i].length != 0 && segments[i] != "\r" &&
+          segments[i].indexOf(target) == -1) {
+        out += segments[i];
+        if (i < (segments.length - 1) && text.indexOf('\n') > -1) {
+          out += '\n';
+        }
+      }
+    }
+
+    return out;
+  }
 }
