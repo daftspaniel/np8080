@@ -2,6 +2,7 @@ import 'dart:html';
 
 import 'package:angular2/core.dart';
 import 'package:np8080/dialog/about/about_component.dart';
+import 'package:np8080/dialog/deletelines/deletelines_component.dart';
 import 'package:np8080/dialog/generate/generate_component.dart';
 import 'package:np8080/dialog/prepost/prepost_component.dart';
 import 'package:np8080/dialog/replace/replace_component.dart';
@@ -25,7 +26,8 @@ import 'package:np8080/toolbar/toolbar_component.dart';
       ReplaceDialogComponent,
       PrePostDialogComponent,
       SequenceDialogComponent,
-      PreviewComponent
+      DeleteLinesDialogComponent,
+      PreviewComponent,
     ],
     providers: const [TextareaDomService, TextProcessingService])
 class EditorComponent {
@@ -50,6 +52,8 @@ class EditorComponent {
   bool showPreview = false;
 
   bool showPrePostDialog = false;
+
+  bool showDeleteLinesDialog = false;
 
   void changeHandler() {
     note.save();

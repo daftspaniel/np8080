@@ -136,10 +136,10 @@ void main() {
           "The cat sat on the mat");
     });
 
-    test('remove lines containing',(){
+    test('remove lines containing', () {
       String txt = "\r\nThe cat sat\r\n";
-      txt = txt + txt + 'MOO\r\n' + txt;
-      expect(tps.deleteLinesContaining(txt,"cat"),"MOO\r\n");
+      txt = txt + txt + 'MOO' + txt;
+      expect(tps.deleteLinesContaining(txt, "cat"), "\r\n\r\nMOO\r\n");
     });
   });
 }

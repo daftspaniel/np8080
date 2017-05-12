@@ -47,6 +47,9 @@ class ToolbarComponent {
   bool showSeqGenerateDialog;
 
   @Input()
+  bool showDeleteLinesDialog;
+
+  @Input()
   bool showPreview;
 
   @Output()
@@ -60,6 +63,11 @@ class ToolbarComponent {
   @Output()
   Stream<bool> get showPrePostDialogChange => onShowPrePostDialogChange.stream;
   final StreamController onShowPrePostDialogChange = new StreamController();
+
+  @Output()
+  Stream<bool> get showDeleteLinesDialogChange =>
+      onshowDeleteLinesDialogChange.stream;
+  final StreamController onshowDeleteLinesDialogChange = new StreamController();
 
   @Output()
   Stream<bool> get showPreviewChange => onShowPreviewChange.stream;
@@ -167,6 +175,11 @@ class ToolbarComponent {
   void removeExtraBlankLinesHandler() {
     note.updateAndSave(_textProcessingService.removeExtraBlankLines(note.text));
     _textareaDomService.setFocus();
+  }
+
+  void removeLinesContaining() {
+    showDeleteLinesDialog = true;
+    onshowDeleteLinesDialogChange.add(showDeleteLinesDialog);
   }
 
   void doublespaceHandler() {

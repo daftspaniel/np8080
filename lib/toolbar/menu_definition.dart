@@ -67,7 +67,9 @@ class MenuDefinition {
           "Blank Lines", toolbar.removeBlankLinesHandler,
           "Remove all blank lines."),
       new Menu("Extra Blank Lines", toolbar.removeExtraBlankLinesHandler,
-          "Remove extra blank lines."),
+          "Remove extra blank lines.",true),
+      new Menu("Lines containing...", toolbar.removeLinesContaining,
+          "Remove lines containing a particular string."),
     ];
 
     viewMenuItems = [

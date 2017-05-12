@@ -250,6 +250,7 @@ button {
 }
 
 .menuSeparator {
+    background-color: white;
     width: 130px;
     height: 1px;
     padding: 0px;

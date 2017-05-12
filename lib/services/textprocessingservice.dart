@@ -191,12 +191,16 @@ class TextProcessingService {
     String out = "";
 
     for (int i = 0; i < segments.length; i++) {
+      print('*' + segments[i].replaceAll('\r', 'NL') + ']');
       if (segments[i].length != 0 && segments[i] != "\r" &&
           segments[i].indexOf(target) == -1) {
         out += segments[i];
         if (i < (segments.length - 1) && text.indexOf('\n') > -1) {
           out += '\n';
         }
+      }
+      else if (segments[i].length == 0) {
+        out += '\r\n';
       }
     }
 

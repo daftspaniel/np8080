@@ -6,6 +6,7 @@
                         [(showSeqGenerateDialog)]="showSeqDialog"
                         [(showReplaceDialog)]="showReplaceDialog"
                         [(showPrePostDialog)]="showPrePostDialog"
+                        [(showDeleteLinesDialog)]="showDeleteLinesDialog"
                         [(showPreview)]="showPreview"></editor-toolbar>
     </header>
 
@@ -28,6 +29,8 @@
 
 </div>
 <about-dialog [(showDialog)]="showAboutDialog"></about-dialog>
+
+<delete-lines-dialog [(showDialog)]="showDeleteLinesDialog" [note]="note"></delete-lines-dialog>
 
 <generate-dialog [(showDialog)]="showGenerateDialog" [note]="note"></generate-dialog>
 
