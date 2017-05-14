@@ -105,12 +105,18 @@ class ToolbarComponent {
   }
 
   void sampleHandler() {
-    note.updateAndSave(welcomeText);
+    if (window.confirm(
+        "Are you sure you want to clear the current document?")) {
+      note.updateAndSave(welcomeText);
+    }
     _textareaDomService.setFocus();
   }
 
   void markdownSampleHandler() {
-    note.updateAndSave(markdownSampler);
+    if (window.confirm(
+        "Are you sure you want to clear the current document?")) {
+      note.updateAndSave(markdownSampler);
+    }
     _textareaDomService.setFocus();
   }
 
@@ -184,6 +190,16 @@ class ToolbarComponent {
 
   void doublespaceHandler() {
     note.updateAndSave(_textProcessingService.doubleSpaceLines(note.text));
+    _textareaDomService.setFocus();
+  }
+
+  void uriEncodeHandler() {
+    note.updateAndSave(_textProcessingService.uriEncode(note.text));
+    _textareaDomService.setFocus();
+  }
+
+  void uriDecodeHandler() {
+    note.updateAndSave(_textProcessingService.uriDecode(note.text));
     _textareaDomService.setFocus();
   }
 

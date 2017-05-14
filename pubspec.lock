@@ -84,7 +84,7 @@ packages:
       name: csslib
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.5"
+    version: "0.13.6"
   dart_style:
     description:
       name: dart_style

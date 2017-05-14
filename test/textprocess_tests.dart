@@ -139,7 +139,17 @@ void main() {
     test('remove lines containing', () {
       String txt = "\r\nThe cat sat\r\n";
       txt = txt + txt + 'MOO' + txt;
-      expect(tps.deleteLinesContaining(txt, "cat"), "\r\n\r\nMOO\r\n");
+      expect(tps.deleteLinesContaining(txt, "cat"), "\r\n\r\nMOO\r\n\r\n\r\n");
+    });
+
+    test('encode', () {
+      String txt = "The cat sat on the mat";
+      expect(tps.uriEncode(txt), 'The%20cat%20sat%20on%20the%20mat');
+    });
+
+    test('decode', () {
+      String txt = "The%20cat%20sat%20on%20the%20mat";
+      expect(tps.uriDecode(txt), "The cat sat on the mat");
     });
   });
 }

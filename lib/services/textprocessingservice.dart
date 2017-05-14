@@ -191,7 +191,6 @@ class TextProcessingService {
     String out = "";
 
     for (int i = 0; i < segments.length; i++) {
-      print('*' + segments[i].replaceAll('\r', 'NL') + ']');
       if (segments[i].length != 0 && segments[i] != "\r" &&
           segments[i].indexOf(target) == -1) {
         out += segments[i];
@@ -199,11 +198,19 @@ class TextProcessingService {
           out += '\n';
         }
       }
-      else if (segments[i].length == 0) {
+      else if (segments[i].length == 0 || segments[i] != "\r") {
         out += '\r\n';
       }
     }
 
     return out;
+  }
+
+  uriEncode(String txt) {
+    return Uri.encodeFull(txt);
+  }
+
+  uriDecode(String txt) {
+    return Uri.decodeFull(txt);
   }
 }

@@ -36,7 +36,11 @@ class MenuDefinition {
         true),
     new Menu("Reverse", toolbar.reverseHandler, "Reverse line order."),
     new Menu("Randomise", toolbar.randomHandler, "Random line order."),
-    new Menu("Sort", toolbar.sortHandler, "Alphabetically sort lines."),
+    new Menu("Sort", toolbar.sortHandler, "Alphabetically sort lines.", true),
+    new Menu("Uri Encode", toolbar.uriEncodeHandler,
+        "Encode the text for use in a Uri."),
+    new Menu("Uri Decode", toolbar.uriDecodeHandler,
+        "Decode the text from a Uri."),
 
     ];
 
@@ -52,7 +56,7 @@ class MenuDefinition {
       new Menu("Generate Text...", toolbar.generateHandler,
           "Add generated text to put into document."),
       new Menu("Num Sequence...", toolbar.generateSeqHandler,
-          "Add generated number sequence to document."),
+          "Add generated number sequence to document.")
     ];
 
     removeMenuItems = [
@@ -67,7 +71,7 @@ class MenuDefinition {
           "Blank Lines", toolbar.removeBlankLinesHandler,
           "Remove all blank lines."),
       new Menu("Extra Blank Lines", toolbar.removeExtraBlankLinesHandler,
-          "Remove extra blank lines.",true),
+          "Remove extra blank lines.", true),
       new Menu("Lines containing...", toolbar.removeLinesContaining,
           "Remove lines containing a particular string."),
     ];
