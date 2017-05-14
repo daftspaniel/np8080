@@ -1,8 +1,9 @@
 CACHE MANIFEST
-#V5
+#V6
 index.html
 dialog.css
 style.css
 img/background.png
 img/github.png
 main.dart.js
+favicon.ico
