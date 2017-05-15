@@ -7,6 +7,7 @@ class MenuDefinition {
   List<Menu> modifyMenuItems;
   List<Menu> addMenuItems;
   List<Menu> removeMenuItems;
+  List<Menu> advancedMenuItems;
   List<Menu> viewMenuItems;
   List<Menu> helpMenuItems;
 
@@ -36,12 +37,7 @@ class MenuDefinition {
         true),
     new Menu("Reverse", toolbar.reverseHandler, "Reverse line order."),
     new Menu("Randomise", toolbar.randomHandler, "Random line order."),
-    new Menu("Sort", toolbar.sortHandler, "Alphabetically sort lines.", true),
-    new Menu("Uri Encode", toolbar.uriEncodeHandler,
-        "Encode the text for use in a Uri."),
-    new Menu("Uri Decode", toolbar.uriDecodeHandler,
-        "Decode the text from a Uri."),
-
+    new Menu("Sort", toolbar.sortHandler, "Alphabetically sort lines.")
     ];
 
     addMenuItems = [
@@ -74,6 +70,13 @@ class MenuDefinition {
           "Remove extra blank lines.", true),
       new Menu("Lines containing...", toolbar.removeLinesContaining,
           "Remove lines containing a particular string."),
+    ];
+
+    advancedMenuItems = [
+      new Menu("Uri Encode", toolbar.uriEncodeHandler,
+          "Encode the text for use in a Uri."),
+      new Menu("Uri Decode", toolbar.uriDecodeHandler,
+          "Decode the text from a Uri."),
     ];
 
     viewMenuItems = [

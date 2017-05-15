@@ -116,6 +116,7 @@ class ToolbarComponent {
     if (window.confirm(
         "Are you sure you want to clear the current document?")) {
       note.updateAndSave(markdownSampler);
+      onShowPreviewChange.add(true);
     }
     _textareaDomService.setFocus();
   }

@@ -2,21 +2,21 @@
 final String welcomeText = """
   Welcome to Notepad 8080 a clutter-free text editor in your browser.
 
-  1. It is free to use and Open Source software.
+  1. It is 100% free to use, no adverts and Open Source software.
 
   2. Your data is automatically stored in your web browser's local storage and NOT on any server.
 
-  3. Click the Download button to save the text as a file to your computer.
+  3. Lightweight and fast to load!
 
   4. You can change the filename by clicking on the name in the top left.
 
   5. 100% functionality when offline - great for Chromebooks!
 
-  6. Lightweight and fast to load!
+  6. Click the Download button to save the text as a file to your computer.
 
   7. Written in Angular Dart 3.
 
-  8. The application is constantly updated.
+  8. The application is constantly updated!
 
   9. NP8080 can be hosted on any web server - just HTML/CSS/JS!
 

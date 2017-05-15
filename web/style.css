@@ -185,7 +185,7 @@ button {
     z-index: 1000;
 }
 
-.menuView {
+.menuAdvanced {
     position: absolute;
     top: -10px;
     left: 630px;
@@ -194,10 +194,19 @@ button {
     z-index: 1000;
 }
 
-.menuHelp {
+.menuView {
     position: absolute;
     top: -10px;
     left: 730px;
+    width: 110px;
+    height: 30px;
+    z-index: 1000;
+}
+
+.menuHelp {
+    position: absolute;
+    top: -10px;
+    left: 830px;
     width: 110px;
     height: 30px;
     z-index: 1000;
