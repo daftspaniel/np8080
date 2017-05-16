@@ -16,14 +16,14 @@
     padding: 5px;
     text-align: left;
     z-index: 1010;
-    background-color: lightgrey;
+    background-color: #9ed3d9;
 }
 
 #overlay .header {
     text-align: center;
     width: 100%;
     color: whitesmoke;
-    background-color: darkslategrey;
+    background-color: #7eb3b9;
     font-size: large;
 }
 
