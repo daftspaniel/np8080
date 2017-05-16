@@ -45,7 +45,7 @@ class MenuDefinition {
           "Timestamp", toolbar.timestampHandler,
           "Add a timestamp to the document.",
           true),
-      new Menu("Duplicate", toolbar.duplicateHandler,
+      new Menu("Duplicate All", toolbar.duplicateHandler,
           "Append a copy of the entire text to itself."),
       new Menu("Duplicate lines", toolbar.dupeHandler,
           "Add a copy of a line to itself.", true),
