@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:angular2/angular2.dart' show NgStyle, NgModel, FORM_DIRECTIVES;
 import 'package:angular2/core.dart';
 import 'package:np8080/dialog/common/dialog_base.dart';
 import 'package:np8080/document/textdocument.dart';
@@ -9,7 +10,8 @@ import 'package:np8080/services/textprocessingservice.dart';
 @Component(
     selector: 'replace-dialog',
     templateUrl: 'replace_component.html',
-    providers: const [TextProcessingService, TextareaDomService])
+    providers: const [TextProcessingService, TextareaDomService],
+    directives: const [NgModel, NgStyle, FORM_DIRECTIVES])
 class ReplaceDialogComponent extends DialogBase implements OnChanges {
 
   final TextProcessingService _textProcessingService;

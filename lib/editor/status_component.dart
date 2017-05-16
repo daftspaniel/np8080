@@ -1,11 +1,17 @@
+import 'dart:html';
+
+import 'package:angular2/angular2.dart'
+    show UpperCasePipe, DatePipe, NgIf;
 import 'package:angular2/core.dart';
 import 'package:np8080/services/textprocessingservice.dart';
-import 'dart:html';
 
 @Component(
     selector: 'text-status',
     templateUrl: 'status_component.html',
-    providers: const [TextProcessingService])
+    providers: const [TextProcessingService],
+    directives: const [NgIf],
+    pipes: const [UpperCasePipe, DatePipe]
+)
 class StatusComponent {
 
   final TextProcessingService _textProcessingService;
@@ -24,7 +30,8 @@ class StatusComponent {
 
   String get lineCount => _textProcessingService.getLineCount(text).toString();
 
-  bool isHttps(){
+  bool isHttps() {
+    print('Hey');
     return window.location.href.contains('https://');
   }
 }

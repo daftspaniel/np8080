@@ -1,7 +1,7 @@
 <div class="statusPanel">
-    <span class="lhsStatus">Chars: {{length}}
+        <span class="lhsStatus">Chars:{{length}}
         Lines: {{lineCount}}
         Words: {{wordCount}} &nbsp;</span>
     <span [hidden]="isHttps()" style="background-color:#119011;color:white">WARNING : Please download your doc & update the Url to HTTPS!</span>
-    <span class="rhsStatus" *ngIf="modified!=null">Mod: {{modified |  date:'mediumTime' | uppercase}}</span>
+    <span class="rhsStatus" *ngIf="modified!=null">Mod: {{modified|  date:'mediumTime' | uppercase }}</span>
 </div>

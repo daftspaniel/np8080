@@ -1,5 +1,7 @@
 import 'dart:html';
 
+import 'package:angular2/angular2.dart'
+    show NgFor, NgModel, NgStyle, NgIf, FORM_DIRECTIVES;
 import 'package:angular2/core.dart';
 import 'package:np8080/dialog/about/about_component.dart';
 import 'package:np8080/dialog/deletelines/deletelines_component.dart';
@@ -28,6 +30,7 @@ import 'package:np8080/toolbar/toolbar_component.dart';
       SequenceDialogComponent,
       DeleteLinesDialogComponent,
       PreviewComponent,
+      NgFor, NgModel, NgStyle, NgIf, FORM_DIRECTIVES
     ],
     providers: const [TextareaDomService, TextProcessingService])
 class EditorComponent {

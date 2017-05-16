@@ -1,11 +1,13 @@
 import 'dart:async';
 import 'dart:html';
 
+import 'package:angular2/angular2.dart' show NgModel, NgStyle, FORM_DIRECTIVES;
 import 'package:angular2/core.dart';
 
 @Component(
     selector: 'editable-label',
-    templateUrl: 'editablelabel_component.html'
+    templateUrl: 'editablelabel_component.html',
+    directives: const [NgModel, NgStyle, FORM_DIRECTIVES]
 )
 class EditableLabelComponent implements OnInit {
 

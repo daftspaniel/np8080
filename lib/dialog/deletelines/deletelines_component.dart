@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:angular2/angular2.dart'
+    show NgModel, FORM_DIRECTIVES;
 import 'package:angular2/core.dart';
 import 'package:np8080/dialog/common/dialog_base.dart';
 import 'package:np8080/document/textdocument.dart';
@@ -9,7 +11,9 @@ import 'package:np8080/services/textprocessingservice.dart';
 @Component(
     selector: 'delete-lines-dialog',
     templateUrl: 'deletelines_component.html',
-    providers: const [TextProcessingService, TextareaDomService])
+    providers: const [TextProcessingService, TextareaDomService],
+    directives: const[NgModel, FORM_DIRECTIVES]
+)
 class DeleteLinesDialogComponent extends DialogBase {
 
   final TextProcessingService _textProcessingService;

@@ -1,12 +1,16 @@
 import 'dart:html';
 
+import 'package:angular2/angular2.dart' show NgStyle, NgModel;
 import 'package:angular2/core.dart';
 import 'package:np8080/services/textprocessingservice.dart';
 
 @Component(
     selector: 'markdown-preview',
     templateUrl: 'preview_component.html',
-    providers: const [TextProcessingService])
+    providers: const [TextProcessingService],
+    directives: const [NgModel, NgStyle]
+
+)
 class PreviewComponent implements OnChanges, OnInit {
 
   final _nullSanitizer = new NullTreeSanitizer();

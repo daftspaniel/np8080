@@ -1,9 +1,10 @@
 import 'package:angular2/angular2.dart';
+import 'package:angular2/angular2.dart' show NgStyle, NgModel, NgIf;
 import 'package:angular2/core.dart';
 
 @Component(
     selector: 'menu',
-    directives: const [NgFor],
+    directives: const [NgFor, NgModel, NgStyle, NgIf],
     templateUrl: 'menu_template.html')
 class MenuComponent {
 
