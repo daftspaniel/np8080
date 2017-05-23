@@ -27,6 +27,7 @@ class GenerateDialogComponent extends DialogBase {
 
   num repeatCount = 10;
   int insertPos = -1;
+  bool newLine = false;
 
   final TextProcessingService _textProcessingService;
   final TextareaDomService _textareaDomService;
@@ -51,7 +52,7 @@ class GenerateDialogComponent extends DialogBase {
 
   String getGeneratedText() {
     _generatedText = _textProcessingService.getRepeatedString(
-        textToRepeat, repeatCount);
+        textToRepeat, repeatCount, newLine);
     return _generatedText;
   }
 

@@ -13,7 +13,7 @@
 
     <div style="flex:2;overflow: none;height: calc(100vh - 60px);">
     <textarea [(ngModel)]="note.text" (keyup)="changeHandler()" (keydown)="keyHandler($event)"
-              [ngStyle]="{width: showPreview ? '48%':'99%'}"
+              [ngStyle]="{width: showPreview ? '47%':'calc(100% - 18px)'}"
               tabindex="1" autofocus id="nptextbox"
               class="primary-text-color"></textarea>
 

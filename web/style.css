@@ -27,9 +27,11 @@ textarea {
     outline: none;
     resize: none;
     overflow-y: scroll;
-    height: calc(100vh - 60px);
+    height: calc(100vh - 65px);
     margin-left: 5px;
-    width: 48%;
+    margin-right: 5px;
+
+    padding: 5px;
 }
 
 .preview {

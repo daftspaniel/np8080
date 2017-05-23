@@ -27,9 +27,12 @@ class TextProcessingService {
         .length;
   }
 
-  String getRepeatedString(String textToRepeat, num count) {
+  String getRepeatedString(String textToRepeat, num count,
+      [bool newLine = false]) {
     count ??= 1;
-    return textToRepeat * count.toInt();
+
+    return newLine ? (textToRepeat + '\n') * count.toInt() : textToRepeat *
+        count.toInt();
   }
 
   String getReplaced(String content, String target, String replacement) {

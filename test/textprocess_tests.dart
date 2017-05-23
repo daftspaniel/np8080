@@ -18,6 +18,11 @@ void main() {
       expect(tps.getRepeatedString("Moo", 4), "MooMooMooMoo");
       expect(tps.getRepeatedString("Moo", 0), "");
     });
+
+    test('getRepeatedString with newline', () {
+      expect(tps.getRepeatedString("Moo", 4, true), "Moo\nMoo\nMoo\nMoo\n");
+      expect(tps.getRepeatedString("Moo", 0, true), "");
+    });
   });
 
   group('Core :', () {
