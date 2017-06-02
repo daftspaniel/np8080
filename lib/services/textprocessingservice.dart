@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:angular2/core.dart';
 import 'package:markdown/markdown.dart' as md;
+import 'package:html_unescape/html_unescape.dart';
 
 @Injectable()
 class TextProcessingService {
@@ -209,11 +210,16 @@ class TextProcessingService {
     return out;
   }
 
-  uriEncode(String txt) {
+  String uriEncode(String txt) {
     return Uri.encodeFull(txt);
   }
 
-  uriDecode(String txt) {
+  String uriDecode(String txt) {
     return Uri.decodeFull(txt);
   }
+
+  String htmlUnescape(String txt){
+    return (new HtmlUnescape()).convert(txt);
+  }
+
 }

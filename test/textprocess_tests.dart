@@ -156,5 +156,11 @@ void main() {
       String txt = "The%20cat%20sat%20on%20the%20mat";
       expect(tps.uriDecode(txt), "The cat sat on the mat");
     });
+
+    test('htmlEscape',(){
+      String txt = "";
+      expect(tps.htmlUnescape(""), "");
+      expect(tps.htmlUnescape("&lt;HTML&gt;"), "<HTML>");
+    });
   });
 }

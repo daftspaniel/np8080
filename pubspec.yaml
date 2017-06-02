@@ -4,11 +4,13 @@ version: 0.0.19
 environment:
   sdk: '>=1.23.0 <2.0.0'
 dependencies:
-  angular2: '^3.1.0'
+  angular2: ^3.1.0
   browser: ^0.10.0
   dart_to_js_script_rewriter: ^1.0.1
   markdown: ^0.11.1
   test: any
+  pwa: ^0.1.7
+  html_unescape: ^0.1.5
 transformers:
 - angular2:
     angular2/transform/codegen:

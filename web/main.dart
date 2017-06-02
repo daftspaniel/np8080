@@ -6,16 +6,11 @@ import 'dart:html';
 
 import 'package:angular2/platform/browser.dart';
 import 'package:np8080/app_component.dart';
+import 'package:pwa/client.dart' as pwa;
 
 ApplicationCache appCache = window.applicationCache;
 
 main() {
+  new pwa.Client();
   bootstrap(AppComponent);
-
-  appCache.onUpdateReady.listen((e) => (){
-    if (appCache.status == ApplicationCache.UPDATEREADY) {
-      appCache.swapCache();
-      window.alert('A new version of NP8080 is available. Please reload to enjoy the new hotness!');
-    }
-  });
 }
