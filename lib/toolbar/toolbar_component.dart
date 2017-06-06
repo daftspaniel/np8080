@@ -204,6 +204,11 @@ class ToolbarComponent {
     _textareaDomService.setFocus();
   }
 
+  void htmlUnescapeHandler() {
+    note.updateAndSave(_textProcessingService.htmlUnescape(note.text));
+    _textareaDomService.setFocus();
+  }
+
   void dupeHandler() {
     note.updateAndSave(_textProcessingService.dupeLines(note.text));
     _textareaDomService.setFocus();

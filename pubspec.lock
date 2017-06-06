@@ -348,7 +348,7 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.20+13"
+    version: "0.12.21"
   typed_data:
     description:
       name: typed_data
