@@ -10,6 +10,7 @@ final List<String> offlineUrls = [
   './img/ico/favicon-96x96.png',
   './img/ico/favicon.ico',
   './main.dart.js',
+  './pwa.dart.js',
   './manifest.json',
   './style.css',
 ];
