@@ -78,7 +78,7 @@ class MenuDefinition {
       new Menu("Uri Decode", toolbar.uriDecodeHandler,
           "Decode the text from a Uri.", true),
       new Menu("Unescape HTML", toolbar.htmlUnescapeHandler,
-          "Unescape HTML.", true),
+          "Unescape HTML."),
     ];
 
     viewMenuItems = [
