@@ -31,7 +31,6 @@ class StatusComponent {
   String get lineCount => _textProcessingService.getLineCount(text).toString();
 
   bool isHttps() {
-    print('Hey');
     return window.location.href.contains('https://');
   }
 }

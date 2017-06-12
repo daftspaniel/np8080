@@ -1,8 +1,9 @@
 Changelog
 
 v0.0.19
-Favicon updated.
 
+Favicon updated.
+HTML unencode.
 
 v0.0.18
 

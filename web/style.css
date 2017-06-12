@@ -58,7 +58,7 @@ textarea {
 }
 
 .miniToolbarButton {
-    width: 60px;
+    width: 30px;
     color: #9ed3d9;
     background-color: #2B2926;
     border: 0px;
@@ -103,16 +103,16 @@ textarea {
     top: 0px;
     left: 2px;
     font-size: small;
-    min-width: 120px;
-    margin-top: -20px;
+    min-width: 180px;
+    margin-top: -16px;
     background-color: darkseagreen;
     padding: 10px;
-    padding-left: 3px;
+    text-align: left;
 }
 
 .toolbarField {
     font-size: 8pt;
-    width: 100px;
+    width: 135px;
     height: 25px;
     text-align: center;
     text-overflow: ellipsis;

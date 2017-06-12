@@ -158,7 +158,6 @@ void main() {
     });
 
     test('htmlEscape',(){
-      String txt = "";
       expect(tps.htmlUnescape(""), "");
       expect(tps.htmlUnescape("&lt;HTML&gt;"), "<HTML>");
     });
