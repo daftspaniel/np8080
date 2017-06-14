@@ -192,7 +192,7 @@ packages:
       name: markdown
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.3"
+    version: "0.11.4"
   matcher:
     description:
       name: matcher
@@ -348,7 +348,7 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.21"
+    version: "0.12.22"
   typed_data:
     description:
       name: typed_data

@@ -3,7 +3,7 @@
   "short_name": "np8080",
   "description": "A web based Text editor app that uses AngularDart",
   "lang": "en-US",
-  "start_url": "/",
+  "start_url": "https://daftspaniel.github.io/demos/np8080/",
   "scope": "/",
   "display": "standalone",
   "orientation": "any",
