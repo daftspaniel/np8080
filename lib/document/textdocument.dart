@@ -8,6 +8,7 @@ class TextDocument {
   String text = '';
   String _downloadName;
   DateTime lastModified;
+
   final List<String> _undoText = new List<String>();
 
   TextDocument() {
@@ -15,6 +16,8 @@ class TextDocument {
     initLastModifiedDate();
     initDownloadName();
   }
+
+  bool get empty => text.length == 0;
 
   String get downloadName => _downloadName;
 

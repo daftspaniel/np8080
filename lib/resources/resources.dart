@@ -10,7 +10,7 @@ final String welcomeText = """
 
   4. You can change the filename by clicking on the name in the top left.
 
-  5. 100% functionality when offline - great for Chromebooks!
+  5. 100% functionality when offline (PWA) - great for Chromebooks!
 
   6. Click the Download button to save the text as a file to your computer.
 

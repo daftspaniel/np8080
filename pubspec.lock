@@ -114,7 +114,7 @@ packages:
       name: dart_to_js_script_rewriter
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.2"
+    version: "1.0.3"
   fixnum:
     description:
       name: fixnum
@@ -168,7 +168,7 @@ packages:
       name: intl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.15.0"
+    version: "0.15.1"
   isolate:
     description:
       name: isolate
@@ -270,7 +270,7 @@ packages:
       name: service_worker
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.14"
+    version: "0.0.15"
   shelf:
     description:
       name: shelf
@@ -337,6 +337,12 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
+  stringprocess:
+    description:
+      name: stringprocess
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.1"
   term_glyph:
     description:
       name: term_glyph
@@ -392,4 +398,4 @@ packages:
     source: hosted
     version: "2.1.12"
 sdks:
-  dart: ">=1.23.0 <2.0.0"
+  dart: ">=1.24.0 <2.0.0"

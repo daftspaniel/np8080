@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:html';
-
 import 'package:angular2/core.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/editablelabel/editablelabel_component.dart';
 import 'package:np8080/resources/resources.dart';
+import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
 import 'package:np8080/toolbar/menu/menu.dart';
@@ -16,15 +16,18 @@ import 'package:np8080/toolbar/menu_definition.dart';
     directives: const [ToolbarComponent,
     EditableLabelComponent, MenuComponent
     ],
-    providers: const [TextProcessingService, TextareaDomService])
+    providers: const [TextProcessingService, TextareaDomService, EventBusService
+    ])
 class ToolbarComponent {
 
   final TextProcessingService _textProcessingService;
   final TextareaDomService _textareaDomService;
+  final EventBusService _eventBusService;
 
   final MenuDefinition menus = new MenuDefinition();
 
-  ToolbarComponent(this._textProcessingService, this._textareaDomService) {
+  ToolbarComponent(this._textProcessingService, this._textareaDomService,
+      this._eventBusService) {
     menus.buildMenus(this);
   }
 
@@ -100,12 +103,13 @@ class ToolbarComponent {
   }
 
   void aboutHandler() {
+    print('posting');
     showAboutDialog = true;
     onShowAboutDialogChange.add(showAboutDialog);
   }
 
   void sampleHandler() {
-    if (window.confirm(
+    if (note.empty || window.confirm(
         "Are you sure you want to clear the current document?")) {
       note.updateAndSave(welcomeText);
     }
@@ -113,7 +117,7 @@ class ToolbarComponent {
   }
 
   void markdownSampleHandler() {
-    if (window.confirm(
+    if (note.empty || window.confirm(
         "Are you sure you want to clear the current document?")) {
       note.updateAndSave(markdownSampler);
       onShowPreviewChange.add(true);
@@ -122,7 +126,7 @@ class ToolbarComponent {
   }
 
   void clearHandler() {
-    if (window.confirm(
+    if (note.empty || window.confirm(
         "Are you sure you want to clear the current document?")) {
       note.updateAndSave("");
     }
@@ -150,7 +154,7 @@ class ToolbarComponent {
   }
 
   void randomHandler() {
-    note.updateAndSave(_textProcessingService.randomise(note.text));
+    note.updateAndSave(_textProcessingService.randomiseLines(note.text));
     _textareaDomService.setFocus();
   }
 

@@ -1,5 +1,10 @@
 Changelog
 
+v0.0.20
+
+Moved to use stringprocess package for all string operations.
+No confirmation required for Start items if note is blank.
+
 v0.0.19
 
 Favicon updated.
