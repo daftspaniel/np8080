@@ -10,7 +10,6 @@ import 'package:np8080/services/textprocessingservice.dart';
 @Component(
     selector: 'generate-dialog',
     templateUrl: 'generate_component.html',
-    providers: const [TextProcessingService, TextareaDomService],
     directives: const [NgModel, NgStyle, FORM_DIRECTIVES])
 class GenerateDialogComponent extends DialogBase {
   @Input()

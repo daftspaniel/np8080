@@ -11,7 +11,6 @@ import 'package:np8080/services/textprocessingservice.dart';
 @Component(
     selector: 'delete-lines-dialog',
     templateUrl: 'deletelines_component.html',
-    providers: const [TextProcessingService, TextareaDomService],
     directives: const[NgModel, FORM_DIRECTIVES]
 )
 class DeleteLinesDialogComponent extends DialogBase {

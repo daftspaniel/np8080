@@ -10,7 +10,6 @@ import 'package:np8080/services/textprocessingservice.dart';
 @Component(
     selector: 'prepost-dialog',
     templateUrl: 'prepost_component.html',
-    providers: const [TextProcessingService, TextareaDomService],
     directives: const [NgModel, NgStyle, FORM_DIRECTIVES])
 class PrePostDialogComponent extends DialogBase {
 

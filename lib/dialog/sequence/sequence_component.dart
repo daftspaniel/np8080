@@ -10,7 +10,6 @@ import 'package:np8080/services/textprocessingservice.dart';
 @Component(
     selector: 'sequence-dialog',
     templateUrl: 'sequence_component.html',
-    providers: const [TextProcessingService, TextareaDomService],
     directives: const [NgModel, NgStyle, FORM_DIRECTIVES])
 class SequenceDialogComponent extends DialogBase {
   @Input()
