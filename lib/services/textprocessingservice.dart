@@ -3,4 +3,5 @@ import 'package:stringprocess/stringprocess.dart';
 
 @Injectable()
 class TextProcessingService extends StringProcessor {
+
 }

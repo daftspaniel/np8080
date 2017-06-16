@@ -15,8 +15,6 @@ import 'package:np8080/toolbar/menu_definition.dart';
     templateUrl: 'toolbar_component.html',
     directives: const [ToolbarComponent,
     EditableLabelComponent, MenuComponent
-    ],
-    providers: const [TextProcessingService, TextareaDomService, EventBusService
     ])
 class ToolbarComponent {
 
@@ -35,9 +33,6 @@ class ToolbarComponent {
   TextDocument note;
 
   @Input()
-  bool showAboutDialog;
-
-  @Input()
   bool showReplaceDialog;
 
   @Input()
@@ -54,10 +49,6 @@ class ToolbarComponent {
 
   @Input()
   bool showPreview;
-
-  @Output()
-  Stream<bool> get showAboutDialogChange => onShowAboutDialogChange.stream;
-  final StreamController onShowAboutDialogChange = new StreamController();
 
   @Output()
   Stream<bool> get showReplaceDialogChange => onShowReplaceDialogChange.stream;
@@ -103,9 +94,7 @@ class ToolbarComponent {
   }
 
   void aboutHandler() {
-    print('posting');
-    showAboutDialog = true;
-    onShowAboutDialogChange.add(showAboutDialog);
+    this._eventBusService.post("showAboutDialog");
   }
 
   void sampleHandler() {

@@ -1,4 +1,3 @@
-import 'dart:async';
 import '../../resources/resources.dart';
 
 import 'package:angular2/core.dart';
@@ -7,22 +6,22 @@ import 'package:np8080/services/eventbusservice.dart';
 
 @Component(
     selector: 'about-dialog',
-    templateUrl: 'about_component.html',
-    providers: const [EventBusService])
+    templateUrl: 'about_component.html')
 class AboutDialogComponent extends DialogBase {
+
   final EventBusService _eventBusService;
-  String aboutText = welcomeText;
+  final String aboutText = welcomeText;
+
   @Input()
   bool showDialog = false;
 
-  @Output()
-  Stream<bool> get showDialogChange => onShowDialogChange.stream;
-
   AboutDialogComponent(this._eventBusService) {
+    this._eventBusService.subscribe("showAboutDialog", () {
+      showDialog = true;
+    });
   }
 
   void closeTheDialog() {
     showDialog = false;
-    onShowDialogChange.add(showDialog);
   }
 }

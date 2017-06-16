@@ -3,9 +3,14 @@
 
 import 'package:angular2/platform/browser.dart';
 import 'package:np8080/app_component.dart';
+import 'package:np8080/services/eventbusservice.dart';
+import 'package:np8080/services/textareadomservice.dart';
+import 'package:np8080/services/textprocessingservice.dart';
 import 'package:pwa/client.dart' as pwa;
 
 main() {
   new pwa.Client();
-  bootstrap(AppComponent);
+  bootstrap(
+      AppComponent, [EventBusService, TextProcessingService, TextareaDomService
+  ]);
 }
