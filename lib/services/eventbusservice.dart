@@ -1,5 +1,4 @@
 import 'package:angular2/core.dart';
-import 'dart:html';
 
 @Injectable()
 class EventBusService {

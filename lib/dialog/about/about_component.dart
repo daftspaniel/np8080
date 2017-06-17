@@ -12,16 +12,7 @@ class AboutDialogComponent extends DialogBase {
   final EventBusService _eventBusService;
   final String aboutText = welcomeText;
 
-  @Input()
-  bool showDialog = false;
-
   AboutDialogComponent(this._eventBusService) {
-    this._eventBusService.subscribe("showAboutDialog", () {
-      showDialog = true;
-    });
-  }
-
-  void closeTheDialog() {
-    showDialog = false;
+    this._eventBusService.subscribe("showAboutDialog", show);
   }
 }

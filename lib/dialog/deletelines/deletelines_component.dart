@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:angular2/angular2.dart'
     show NgModel, FORM_DIRECTIVES;
 import 'package:angular2/core.dart';
@@ -7,6 +5,7 @@ import 'package:np8080/dialog/common/dialog_base.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
+import 'package:np8080/services/eventbusservice.dart';
 
 @Component(
     selector: 'delete-lines-dialog',
@@ -17,15 +16,10 @@ class DeleteLinesDialogComponent extends DialogBase {
 
   final TextProcessingService _textProcessingService;
   final TextareaDomService _textareaDomService;
-
-  @Input()
-  bool showDialog = false;
+  final EventBusService _eventBusService;
 
   @Input()
   TextDocument note;
-
-  @Output()
-  Stream<bool> get showDialogChange => onShowDialogChange.stream;
 
   String markerText;
   String _updatedText;
@@ -33,12 +27,13 @@ class DeleteLinesDialogComponent extends DialogBase {
   int insertPos = -1;
 
   DeleteLinesDialogComponent(this._textProcessingService,
-      this._textareaDomService);
+      this._textareaDomService, this._eventBusService) {
+    _eventBusService.subscribe("showDeleteLinesDialog", show);
+  }
 
   void closeTheDialog() {
     markerText = "";
-    showDialog = false;
-    onShowDialogChange.add(showDialog);
+    close();
     _textareaDomService.setFocus();
   }
 

@@ -1,9 +1,8 @@
-import 'dart:async';
-
 import 'package:angular2/angular2.dart' show NgStyle, NgModel, FORM_DIRECTIVES;
 import 'package:angular2/core.dart';
 import 'package:np8080/dialog/common/dialog_base.dart';
 import 'package:np8080/document/textdocument.dart';
+import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
 
@@ -15,15 +14,10 @@ class ReplaceDialogComponent extends DialogBase implements OnChanges {
 
   final TextProcessingService _textProcessingService;
   final TextareaDomService _textareaDomService;
-
-  @Input()
-  bool showDialog = false;
+  final EventBusService _eventBusService;
 
   @Input()
   TextDocument note;
-
-  @Output()
-  Stream<bool> get showDialogChange => onShowDialogChange.stream;
 
   String textToReplace;
   String replacementText;
@@ -33,12 +27,13 @@ class ReplaceDialogComponent extends DialogBase implements OnChanges {
   int insertPos = -1;
 
   ReplaceDialogComponent(this._textProcessingService,
-      this._textareaDomService);
+      this._textareaDomService, this._eventBusService) {
+    this._eventBusService.subscribe("showReplaceDialog", show);
+  }
 
   void closeTheDialog() {
     textToReplace = "";
-    showDialog = false;
-    onShowDialogChange.add(showDialog);
+    close();
     _textareaDomService.setFocus();
     if (insertPos > 0) {
       _textareaDomService.setCursorPosition(insertPos);

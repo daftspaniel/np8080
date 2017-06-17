@@ -1,11 +1,14 @@
-import 'dart:async';
-
-import 'package:np8080/services/eventbusservice.dart';
-
 abstract class DialogBase {
-  final StreamController onShowDialogChange = new StreamController();
+
+  bool showDialog = false;
+
+  DialogBase();
+
+  void show() {
+    showDialog = true;
+  }
 
   void close() {
-    onShowDialogChange.close();
+    showDialog = false;
   }
 }

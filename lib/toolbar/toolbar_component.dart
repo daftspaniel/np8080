@@ -33,59 +33,11 @@ class ToolbarComponent {
   TextDocument note;
 
   @Input()
-  bool showReplaceDialog;
-
-  @Input()
-  bool showPrePostDialog;
-
-  @Input()
-  bool showGenerateDialog;
-
-  @Input()
-  bool showSeqGenerateDialog;
-
-  @Input()
-  bool showDeleteLinesDialog;
-
-  @Input()
   bool showPreview;
-
-  @Output()
-  Stream<bool> get showReplaceDialogChange => onShowReplaceDialogChange.stream;
-  final StreamController onShowReplaceDialogChange = new StreamController();
-
-  @Output()
-  Stream<bool> get showPrePostDialogChange => onShowPrePostDialogChange.stream;
-  final StreamController onShowPrePostDialogChange = new StreamController();
-
-  @Output()
-  Stream<bool> get showDeleteLinesDialogChange =>
-      onshowDeleteLinesDialogChange.stream;
-  final StreamController onshowDeleteLinesDialogChange = new StreamController();
 
   @Output()
   Stream<bool> get showPreviewChange => onShowPreviewChange.stream;
   final StreamController onShowPreviewChange = new StreamController();
-
-  @Output()
-  Stream<bool> get showGenerateDialogChange =>
-      onShowGenerateDialogChange.stream;
-  final StreamController onShowGenerateDialogChange = new StreamController();
-
-  @Output()
-  Stream<bool> get showSeqGenerateDialogChange =>
-      onShowSeqGenerateDialogChange.stream;
-  final StreamController onShowSeqGenerateDialogChange = new StreamController();
-
-  void generateHandler() {
-    showGenerateDialog = true;
-    onShowGenerateDialogChange.add(showGenerateDialog);
-  }
-
-  void generateSeqHandler() {
-    showSeqGenerateDialog = true;
-    onShowSeqGenerateDialogChange.add(showSeqGenerateDialog);
-  }
 
   void markdownHandler() {
     showPreview = !showPreview;
@@ -93,8 +45,28 @@ class ToolbarComponent {
     _textareaDomService.setFocus();
   }
 
+  void generateHandler() {
+    _eventBusService.post("showGenerateDialog");
+  }
+
+  void prePostHandler() {
+    _eventBusService.post("showPrePostDialog");
+  }
+
+  void generateSeqHandler() {
+    _eventBusService.post("showSequenceDialog");
+  }
+
   void aboutHandler() {
-    this._eventBusService.post("showAboutDialog");
+    _eventBusService.post("showAboutDialog");
+  }
+
+  void removeLinesContaining() {
+    _eventBusService.post("showDeleteLinesDialog");
+  }
+
+  void replaceHandler() {
+    _eventBusService.post("showReplaceDialog");
   }
 
   void sampleHandler() {
@@ -152,16 +124,6 @@ class ToolbarComponent {
     _textareaDomService.setFocus();
   }
 
-  void replaceHandler() {
-    showReplaceDialog = true;
-    onShowReplaceDialogChange.add(showReplaceDialog);
-  }
-
-  void prePostHandler() {
-    showPrePostDialog = true;
-    onShowPrePostDialogChange.add(showPrePostDialog);
-  }
-
   void oneLineHandler() {
     note.updateAndSave(_textProcessingService.makeOneLine(note.text));
     _textareaDomService.setFocus();
@@ -175,11 +137,6 @@ class ToolbarComponent {
   void removeExtraBlankLinesHandler() {
     note.updateAndSave(_textProcessingService.removeExtraBlankLines(note.text));
     _textareaDomService.setFocus();
-  }
-
-  void removeLinesContaining() {
-    showDeleteLinesDialog = true;
-    onshowDeleteLinesDialogChange.add(showDeleteLinesDialog);
   }
 
   void doublespaceHandler() {

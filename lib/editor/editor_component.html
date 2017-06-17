@@ -1,12 +1,6 @@
 <div style="display: flex;  flex-flow: column;height: 100vh">
     <header>
         <editor-toolbar [(note)]="note"
-                        [(showAboutDialog)]="showAboutDialog"
-                        [(showGenerateDialog)]="showGenerateDialog"
-                        [(showSeqGenerateDialog)]="showSeqDialog"
-                        [(showReplaceDialog)]="showReplaceDialog"
-                        [(showPrePostDialog)]="showPrePostDialog"
-                        [(showDeleteLinesDialog)]="showDeleteLinesDialog"
                         [(showPreview)]="showPreview"></editor-toolbar>
     </header>
 
@@ -28,14 +22,15 @@
     </footer>
 
 </div>
+
 <about-dialog></about-dialog>
 
-<delete-lines-dialog [(showDialog)]="showDeleteLinesDialog" [note]="note"></delete-lines-dialog>
+<delete-lines-dialog [note]="note"></delete-lines-dialog>
 
-<generate-dialog [(showDialog)]="showGenerateDialog" [note]="note"></generate-dialog>
+<generate-dialog [note]="note"></generate-dialog>
 
-<replace-dialog [(showDialog)]="showReplaceDialog" [note]="note"></replace-dialog>
+<replace-dialog [note]="note"></replace-dialog>
 
-<prepost-dialog [(showDialog)]="showPrePostDialog" [note]="note"></prepost-dialog>
+<prepost-dialog [note]="note"></prepost-dialog>
 
-<sequence-dialog [(showDialog)]="showSeqDialog" [note]="note"></sequence-dialog>
+<sequence-dialog [note]="note"></sequence-dialog>
