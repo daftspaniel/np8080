@@ -31,8 +31,7 @@ import 'package:np8080/toolbar/toolbar_component.dart';
       DeleteLinesDialogComponent,
       PreviewComponent,
       NgFor, NgModel, NgStyle, NgIf, FORM_DIRECTIVES
-    ],
-    providers: const [TextareaDomService, TextProcessingService])
+    ])
 class EditorComponent {
   final TextareaDomService _textareaDomService;
   final TextProcessingService _textProcessingService;

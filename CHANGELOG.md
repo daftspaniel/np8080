@@ -4,6 +4,8 @@ v0.0.20
 
 Moved to use stringprocess package for all string operations.
 No confirmation required for Start items if note is blank.
+Dialogs now use Eventbus to trigger modal display.
+Services now at the application level.
 
 v0.0.19
 

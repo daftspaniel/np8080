@@ -8,7 +8,6 @@ import 'package:np8080/services/textprocessingservice.dart';
 @Component(
     selector: 'text-status',
     templateUrl: 'status_component.html',
-    providers: const [TextProcessingService],
     directives: const [NgIf],
     pipes: const [UpperCasePipe, DatePipe]
 )
