@@ -4,8 +4,9 @@
                         [(showPreview)]="showPreview"></editor-toolbar>
     </header>
 
+    <div style="flex:2;overflow: none;height: calc(100vh - 102px);">
+    <editable-label [(text)]="note.downloadName"></editable-label>
 
-    <div style="flex:2;overflow: none;height: calc(100vh - 60px);">
     <textarea [(ngModel)]="note.text" (keyup)="changeHandler()" (keydown)="keyHandler($event)"
               [ngStyle]="{width: showPreview ? '47%':'calc(100% - 18px)'}"
               tabindex="1" autofocus id="nptextbox"

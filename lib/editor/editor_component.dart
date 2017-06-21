@@ -10,6 +10,7 @@ import 'package:np8080/dialog/prepost/prepost_component.dart';
 import 'package:np8080/dialog/replace/replace_component.dart';
 import 'package:np8080/dialog/sequence/sequence_component.dart';
 import 'package:np8080/document/textdocument.dart';
+import 'package:np8080/editablelabel/editablelabel_component.dart';
 import 'package:np8080/editor/preview_component.dart';
 import 'package:np8080/editor/status_component.dart';
 import 'package:np8080/resources/resources.dart';
@@ -30,6 +31,7 @@ import 'package:np8080/toolbar/toolbar_component.dart';
       SequenceDialogComponent,
       DeleteLinesDialogComponent,
       PreviewComponent,
+      EditableLabelComponent,
       NgFor, NgModel, NgStyle, NgIf, FORM_DIRECTIVES
     ])
 class EditorComponent {

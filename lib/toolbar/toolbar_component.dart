@@ -2,7 +2,6 @@ import 'dart:async';
 import 'dart:html';
 import 'package:angular2/core.dart';
 import 'package:np8080/document/textdocument.dart';
-import 'package:np8080/editablelabel/editablelabel_component.dart';
 import 'package:np8080/resources/resources.dart';
 import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/textareadomservice.dart';
@@ -13,8 +12,7 @@ import 'package:np8080/toolbar/menu_definition.dart';
 @Component(
     selector: 'editor-toolbar',
     templateUrl: 'toolbar_component.html',
-    directives: const [ToolbarComponent,
-    EditableLabelComponent, MenuComponent
+    directives: const [ToolbarComponent, MenuComponent
     ])
 class ToolbarComponent {
 
