@@ -1,4 +1,4 @@
-<div style="display: flex;  flex-flow: column;height: 100vh">
+<div style="display: flex;  flex-flow: column;height: 100vh" [ngClass]="getClass()">
     <header>
         <editor-toolbar [(note)]="note"
                         [(showPreview)]="showPreview"></editor-toolbar>

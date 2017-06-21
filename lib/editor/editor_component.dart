@@ -1,7 +1,7 @@
 import 'dart:html';
 
 import 'package:angular2/angular2.dart'
-    show NgFor, NgModel, NgStyle, NgIf, FORM_DIRECTIVES;
+    show NgFor, NgModel, NgStyle, NgIf, NgClass, FORM_DIRECTIVES;
 import 'package:angular2/core.dart';
 import 'package:np8080/dialog/about/about_component.dart';
 import 'package:np8080/dialog/deletelines/deletelines_component.dart';
@@ -16,6 +16,7 @@ import 'package:np8080/editor/status_component.dart';
 import 'package:np8080/resources/resources.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
+import 'package:np8080/services/themeservice.dart';
 import 'package:np8080/toolbar/toolbar_component.dart';
 
 @Component(
@@ -32,15 +33,17 @@ import 'package:np8080/toolbar/toolbar_component.dart';
       DeleteLinesDialogComponent,
       PreviewComponent,
       EditableLabelComponent,
-      NgFor, NgModel, NgStyle, NgIf, FORM_DIRECTIVES
+      NgFor, NgModel, NgStyle, NgIf, NgClass, FORM_DIRECTIVES
     ])
 class EditorComponent {
   final TextareaDomService _textareaDomService;
   final TextProcessingService _textProcessingService;
+  final ThemeService _themeService;
 
   List<int> _undoPositions = new List<int>();
 
-  EditorComponent(this._textareaDomService, this._textProcessingService);
+  EditorComponent(this._textareaDomService, this._textProcessingService,
+      this._themeService);
 
   @Input()
   TextDocument note;
@@ -100,5 +103,9 @@ class EditorComponent {
 
   void storeStateForUndo(int cursorPos) {
     _undoPositions.add(cursorPos);
+  }
+
+  String getClass() {
+    return _themeService.getThemeClass();
   }
 }
