@@ -1,29 +1,32 @@
 import 'dart:async';
 import 'dart:html';
+import 'package:angular2/angular2.dart' show NgClass;
 import 'package:angular2/core.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/resources/resources.dart';
 import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
+import 'package:np8080/services/themeservice.dart';
 import 'package:np8080/toolbar/menu/menu.dart';
 import 'package:np8080/toolbar/menu_definition.dart';
 
 @Component(
     selector: 'editor-toolbar',
     templateUrl: 'toolbar_component.html',
-    directives: const [ToolbarComponent, MenuComponent
+    directives: const [NgClass, ToolbarComponent, MenuComponent
     ])
 class ToolbarComponent {
 
   final TextProcessingService _textProcessingService;
   final TextareaDomService _textareaDomService;
   final EventBusService _eventBusService;
+  final ThemeService _themeService;
 
   final MenuDefinition menus = new MenuDefinition();
 
   ToolbarComponent(this._textProcessingService, this._textareaDomService,
-      this._eventBusService) {
+      this._eventBusService, this._themeService) {
     menus.buildMenus(this);
   }
 
@@ -191,4 +194,7 @@ class ToolbarComponent {
     note.undo();
   }
 
+  String getClass() {
+    return _themeService.getMainClass();
+  }
 }

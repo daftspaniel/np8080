@@ -1,4 +1,4 @@
-<div class="edit-label">
+<div class="edit-label" [ngClass]="getTabsClass()">
     <input type="text" [(ngModel)]="text" [ngStyle]="{'height': editMode ? '20px':'0px'}"
            (keyup)="update()" (blur)="toggle()"
            tabindex="2" id="editbox" style="border:0px;padding: 0px;"/>

@@ -106,6 +106,7 @@ class EditorComponent {
   }
 
   String getClass() {
-    return _themeService.getThemeClass();
+    return _themeService.getMainClass();
   }
+
 }

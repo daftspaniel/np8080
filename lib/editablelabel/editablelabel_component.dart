@@ -1,17 +1,19 @@
 import 'dart:async';
 import 'dart:html';
 
-import 'package:angular2/angular2.dart' show NgModel, NgStyle, FORM_DIRECTIVES;
+import 'package:angular2/angular2.dart' show NgModel, NgStyle, NgClass, FORM_DIRECTIVES;
 import 'package:angular2/core.dart';
+import 'package:np8080/services/themeservice.dart';
 
 @Component(
     selector: 'editable-label',
     templateUrl: 'editablelabel_component.html',
-    directives: const [NgModel, NgStyle, FORM_DIRECTIVES]
+    directives: const [NgModel, NgStyle, NgClass, FORM_DIRECTIVES]
 )
 class EditableLabelComponent implements OnInit {
 
   final StreamController onTextChange = new StreamController();
+  final ThemeService _themeService;
 
   bool editMode = false;
   String outputText;
@@ -22,7 +24,7 @@ class EditableLabelComponent implements OnInit {
   @Output()
   Stream<String> get textChange => onTextChange.stream;
 
-  EditableLabelComponent() {
+  EditableLabelComponent(this._themeService) {
     editMode = false;
   }
 
@@ -48,6 +50,10 @@ class EditableLabelComponent implements OnInit {
         update();
       }
     }
+  }
+
+  String getTabsClass() {
+    return _themeService.getSecondaryClass();
   }
 
   @override

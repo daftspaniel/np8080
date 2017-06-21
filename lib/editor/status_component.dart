@@ -1,21 +1,23 @@
 import 'dart:html';
 
 import 'package:angular2/angular2.dart'
-    show UpperCasePipe, DatePipe, NgIf;
+    show UpperCasePipe, DatePipe, NgIf, NgClass;
 import 'package:angular2/core.dart';
 import 'package:np8080/services/textprocessingservice.dart';
+import 'package:np8080/services/themeservice.dart';
 
 @Component(
     selector: 'text-status',
     templateUrl: 'status_component.html',
-    directives: const [NgIf],
+    directives: const [NgIf, NgClass],
     pipes: const [UpperCasePipe, DatePipe]
 )
 class StatusComponent {
 
   final TextProcessingService _textProcessingService;
+  final ThemeService _themeService;
 
-  StatusComponent(this._textProcessingService);
+  StatusComponent(this._textProcessingService, this._themeService);
 
   @Input('text')
   String text;
@@ -31,5 +33,9 @@ class StatusComponent {
 
   bool isHttps() {
     return window.location.href.contains('https://');
+  }
+
+  String getClass() {
+    return _themeService.getMainClass();
   }
 }

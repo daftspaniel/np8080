@@ -257,7 +257,18 @@ button {
     border-top-right-radius: 3px;
 }
 
-.default-theme {
+/* default theme */
+.default-theme-1 {
     background-color: #3c763d;
+    color: #111111;
+}
+
+.default-theme-2 {
+    background-color: #82bc54;
+    color: #111111;
+}
+
+.default-document {
+    background-color: whitesmoke;
     color: #111111;
 }
