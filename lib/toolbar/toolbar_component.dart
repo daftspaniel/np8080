@@ -197,4 +197,8 @@ class ToolbarComponent {
   String getClass() {
     return _themeService.getMainClass();
   }
+
+  void darkThemeHandler() {
+    _themeService.theme = "dark";
+  }
 }

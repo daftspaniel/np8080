@@ -272,3 +272,19 @@ button {
     background-color: whitesmoke;
     color: #111111;
 }
+
+/* dark theme */
+.dark-theme-1 {
+    background-color: #111111;
+    color: #eeeeee;
+}
+
+.dark-theme-2 {
+    background-color: #333333;
+    color: #efefef;
+}
+
+.dark-document {
+    background-color: black;
+    color: #00DC00;
+}

@@ -83,7 +83,9 @@ class MenuDefinition {
 
     viewMenuItems = [
       new Menu("Markdown", toolbar.markdownHandler,
-          "Show a rendering of Markdown alongside the text.")
+          "Show a rendering of Markdown alongside the text.",true),
+      new Menu("Dark theme", toolbar.darkThemeHandler,
+          "Switch to a UI dark theme.",true)
     ];
 
     helpMenuItems = [

@@ -5,12 +5,18 @@ class ThemeService {
   String baseColor = "#FCFCFC";
   String textColor = "#000000";
 
+  String theme = 'default';
+
   String getMainClass() {
-    return 'default-theme-1';
+    return theme+'-theme-1';
   }
 
   String getSecondaryClass() {
-    return 'default-theme-2';
+    return theme+'-theme-2';
+  }
+
+  String getDocumentClass() {
+    return theme+'-document';
   }
 
 }
