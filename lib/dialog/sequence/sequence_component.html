@@ -1,8 +1,8 @@
 <div id="overlay" [hidden]="!showDialog">
-    <div class="dialogPanel  default-primary-color">
-        <div class="header">Generate Sequence</div>
+    <div class="dialogPanel">
+        <div class="header" [ngClass]="getHeaderClass()">Generate Sequence</div>
 
-        <div style="margin-left:150px;text-align: left;padding: 10px">
+        <div style="margin-left:150px;text-align: left;padding: 10px" [ngClass]="getClass()">
 
             <label style="min-width: 100px;display: inline-block">Start at</label>
             <input type="number" [(ngModel)]="startIndex" min="1" style="width: 100px"><br/>
@@ -12,14 +12,14 @@
 
             <label style="min-width: 100px;display: inline-block">adding</label>
             <input type="number" [(ngModel)]="increment" style="width: 100px"> each time<br/>
-        </div>
 
-        <div class="footer">
-            <button class="actionButton" (click)="insertCurrentPosition()">Insert</button>
-            <button class="actionButton" (click)="appendText()">Append</button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="closeButton" (click)="closeTheDialog()" style="visibility: hidden">Peek!</button>
-            <button class="closeButton light-primary-color" (click)="closeTheDialog()">Close</button>
+            <div class="footer">
+                <button class="actionButton" (click)="insertCurrentPosition()">Insert</button>
+                <button class="actionButton" (click)="appendText()">Append</button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="closeButton" (click)="closeTheDialog()" style="visibility: hidden">Peek!</button>
+                <button class="closeButton light-primary-color" (click)="closeTheDialog()">Close</button>
+            </div>
         </div>
     </div>
 </div>

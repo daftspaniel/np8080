@@ -1,10 +1,10 @@
 <div id="overlay" [hidden]="!showDialog">
-    <div class="dialogPanel">
-        <div class="header dark-primary-color">About Notepad 8080 v0.0.20</div>
-        <pre style="font-size: small">{{aboutText}}</pre>
+    <div class="dialogPanel" [ngClass]="getClass()">
+        <div class="header" [ngClass]="getHeaderClass()">About Notepad 8080 v0.0.20</div>
+        <pre style="font-size: small;text-align: left">{{aboutText}}</pre>
 
         <div class="footer">
-            <button class="closeButton light-primary-color" (click)="close()">Close</button>
+            <button class="closeButton" (click)="close()">Close</button>
         </div>
     </div>
 </div>

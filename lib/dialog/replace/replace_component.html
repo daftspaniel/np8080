@@ -1,8 +1,8 @@
 <div id="overlay" [hidden]="!showDialog">
-    <div class="dialogPanel default-primary-color">
-        <div class="header">Replace</div>
+    <div class="dialogPanel">
+        <div class="header" [ngClass]="getHeaderClass()">Replace</div>
 
-        <div style="text-align: center;padding: 10px">
+        <div style="text-align: center;padding: 10px" [ngClass]="getClass()">
 
             <label>Replace</label>
             <input type="text" placeholder="Type text here..." [(ngModel)]="textToReplace">

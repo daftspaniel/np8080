@@ -266,7 +266,7 @@ button {
 
 /* default theme */
 .default-theme-1 {
-    background-color: #bbd8f9;
+    background-color: #bbd8f9 !important;
     color: #111111;
 }
 

@@ -1,18 +1,20 @@
-import 'package:angular2/angular2.dart' show NgStyle, NgModel, FORM_DIRECTIVES;
+import 'package:angular2/angular2.dart';
 import 'package:angular2/core.dart';
 import 'package:np8080/dialog/common/dialog_base.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
+import 'package:np8080/services/themeservice.dart';
 
 @Component(
     selector: 'generate-dialog',
     templateUrl: 'generate_component.html',
-    directives: const [NgModel, NgStyle, FORM_DIRECTIVES])
+    directives: const [NgClass, NgModel, NgStyle, NgClass, FORM_DIRECTIVES])
 class GenerateDialogComponent extends DialogBase {
 
   final EventBusService _eventBusService;
+  final ThemeService _themeService;
 
   @Input()
   TextDocument note;
@@ -28,7 +30,7 @@ class GenerateDialogComponent extends DialogBase {
   final TextareaDomService _textareaDomService;
 
   GenerateDialogComponent(this._textProcessingService,
-      this._textareaDomService, this._eventBusService) {
+      this._textareaDomService, this._eventBusService, this._themeService) {
     this._eventBusService.subscribe("showGenerateDialog", show);
   }
 
@@ -67,4 +69,11 @@ class GenerateDialogComponent extends DialogBase {
     insertPos = cursorPos + _generatedText.length;
   }
 
+  String getClass() {
+    return _themeService.getMainClass();
+  }
+
+  String getHeaderClass() {
+    return _themeService.getSecondaryClass();
+  }
 }

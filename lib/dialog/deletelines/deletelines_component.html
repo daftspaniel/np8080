@@ -1,16 +1,16 @@
 <div id="overlay" [hidden]="!showDialog">
-    <div class="dialogPanel default-primary-color">
-        <div class="header">Delete Lines</div>
+    <div class="dialogPanel">
+        <div class="header" [ngClass]="getHeaderClass()">Delete Lines</div>
 
-        <div style="text-align: center;padding: 10px">
+        <div style="padding-top: 10px" [ngClass]="getClass()">
 
             <label>Delete lines containing:</label>
             <input type="text" placeholder="Type text here..." [(ngModel)]="markerText">
-        </div>
 
-        <div class="footer">
-            <button class="actionButton" (click)="performDelete()">Delete</button>
-            <button class="closeButton light-primary-color" (click)="closeTheDialog()">Close</button>
+            <div class="footer">
+                <button class="actionButton" (click)="performDelete()">Delete</button>
+                <button class="closeButton light-primary-color" (click)="closeTheDialog()">Close</button>
+            </div>
         </div>
     </div>
 </div>

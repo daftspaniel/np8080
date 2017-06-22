@@ -1,8 +1,8 @@
 <div id="overlay" [hidden]="!showDialog">
-    <div class="dialogPanel default-primary-color">
-        <div class="header">Prefix and Postfix Lines</div>
+    <div class="dialogPanel">
+        <div class="header" [ngClass]="getHeaderClass()">Prefix and Postfix Lines</div>
 
-        <div style="text-align: center;padding: 10px">
+        <div style="text-align: center;padding: 10px" [ngClass]="getClass()">
 
             <label>Add To Start</label>
             <input type="text" placeholder="Type text here..." [(ngModel)]="prefix">

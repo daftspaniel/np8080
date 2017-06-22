@@ -1,15 +1,16 @@
-import 'package:angular2/angular2.dart' show NgStyle, NgModel, FORM_DIRECTIVES;
+import 'package:angular2/angular2.dart';
 import 'package:angular2/core.dart';
 import 'package:np8080/dialog/common/dialog_base.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
+import 'package:np8080/services/themeservice.dart';
 
 @Component(
     selector: 'sequence-dialog',
     templateUrl: 'sequence_component.html',
-    directives: const [NgModel, NgStyle, FORM_DIRECTIVES])
+    directives: const [NgClass, NgModel, NgStyle, FORM_DIRECTIVES])
 class SequenceDialogComponent extends DialogBase {
 
   final EventBusService _eventBusService;
@@ -27,9 +28,10 @@ class SequenceDialogComponent extends DialogBase {
 
   final TextProcessingService _textProcessingService;
   final TextareaDomService _textareaDomService;
+  final ThemeService _themeService;
 
   SequenceDialogComponent(this._textProcessingService,
-      this._textareaDomService, this._eventBusService){
+      this._textareaDomService, this._eventBusService, this._themeService){
     this._eventBusService.subscribe("showSequenceDialog", show);
   }
 
@@ -66,6 +68,14 @@ class SequenceDialogComponent extends DialogBase {
   void saveAndUpdateState(String newNoteText, int cursorPos) {
     note.updateAndSave(newNoteText);
     insertPos = cursorPos + _generatedText.length;
+  }
+
+  String getClass() {
+    return _themeService.getMainClass();
+  }
+
+  String getHeaderClass() {
+    return _themeService.getSecondaryClass();
   }
 
 }
