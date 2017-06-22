@@ -186,7 +186,7 @@ class ToolbarComponent {
   }
 
   void timestampHandler() {
-    note.appendAndSave("\r\n" + new DateTime.now().toString());
+    note.appendAndSave("\n" + new DateTime.now().toString() + "\n");
     _textareaDomService.setFocus();
   }
 
@@ -200,5 +200,9 @@ class ToolbarComponent {
 
   void darkThemeHandler() {
     _themeService.theme = "dark";
+  }
+
+  void defaultThemeHandler() {
+    _themeService.theme = "default";
   }
 }

@@ -257,14 +257,21 @@ button {
     border-top-right-radius: 3px;
 }
 
+
+.mainEditorDisplay {
+    flex: 2;
+    overflow: none;
+    height: calc(100vh - 102px);
+}
+
 /* default theme */
 .default-theme-1 {
-    background-color: #3c763d;
+    background-color: #bbd8f9;
     color: #111111;
 }
 
 .default-theme-2 {
-    background-color: #82bc54;
+    background-color: #9ac0e9;
     color: #111111;
 }
 
@@ -276,12 +283,12 @@ button {
 /* dark theme */
 .dark-theme-1 {
     background-color: #111111;
-    color: #eeeeee;
+    color: #eee862;
 }
 
 .dark-theme-2 {
     background-color: #333333;
-    color: #efefef;
+    color: #eee862;
 }
 
 .dark-document {

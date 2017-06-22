@@ -85,7 +85,9 @@ class MenuDefinition {
       new Menu("Markdown", toolbar.markdownHandler,
           "Show a rendering of Markdown alongside the text.",true),
       new Menu("Dark theme", toolbar.darkThemeHandler,
-          "Switch to a UI dark theme.",true)
+          "Switch to a UI dark theme."),
+      new Menu("Default theme", toolbar.defaultThemeHandler,
+          "Switch to the default theme."),
     ];
 
     helpMenuItems = [

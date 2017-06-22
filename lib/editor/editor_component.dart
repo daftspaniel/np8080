@@ -43,7 +43,9 @@ class EditorComponent {
   List<int> _undoPositions = new List<int>();
 
   EditorComponent(this._textareaDomService, this._textProcessingService,
-      this._themeService);
+      this._themeService){
+   _themeService.load();
+  }
 
   @Input()
   TextDocument note;
@@ -107,6 +109,10 @@ class EditorComponent {
 
   String getClass() {
     return _themeService.getMainClass();
+  }
+
+  String getTextareaClass(){
+    return _themeService.getDocumentClass();
   }
 
 }
