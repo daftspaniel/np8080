@@ -40,11 +40,10 @@ textarea {
     width: 45%;
     font-size: 10pt;
     display: inline-block;
-    height: calc(100vh - 60px);
-    border: 0px;
-    padding: 0px;
+    height: calc(100vh - 100px);
+    border: 1px solid seashell;
+    padding: 5px;
     margin: 0px;
-    background-color: azure;
 }
 
 .toolbarButton {
@@ -103,12 +102,17 @@ textarea {
     top: 0px;
     left: 2px;
     font-size: small;
-    min-width: 180px;
+    max-width: 180px;
     margin-top: -16px;
     background-color: #8FABBC;
-    padding: 10px;
+    padding: 5px;
+    padding-left: 15px;
     text-align: left;
+    border-top-right-radius: 9px;
+    border-top-left-radius: 9px;
+
 }
+
 
 .toolbarField {
     font-size: 8pt;
@@ -224,7 +228,7 @@ button {
     border-bottom: solid 1px #606993;
     display: flex;
     height: 30px;
-    margin-left: -5px;
+    /*margin-left: -5px;*/
     margin-right: -12px;
     margin-bottom: 0px;
     padding: 1px;
@@ -250,13 +254,10 @@ button {
 }
 
 .edit-label {
-    height: 30px;
+    height: 29px;
     padding: 0px;
     margin-left: 5px;
-    width: calc(100% - 10px);
-    border-top-right-radius: 3px;
 }
-
 
 .mainEditorDisplay {
     flex: 2;
