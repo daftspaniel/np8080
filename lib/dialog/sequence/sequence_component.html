@@ -1,5 +1,6 @@
 <div id="overlay" [hidden]="!showDialog">
     <div class="dialogPanel">
+        <div (click)="close()" class="closeCross">X</div>
         <div class="header" [ngClass]="getHeaderClass()">Generate Sequence</div>
 
         <div style="padding-left: 150px;text-align: left" [ngClass]="getClass()">

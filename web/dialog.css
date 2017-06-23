@@ -25,6 +25,7 @@
     font-size: large;
     padding-top: 5px;
     padding-bottom: 5px;
+    border-radius: 2px;
 }
 
 #overlay .footer {
@@ -32,4 +33,15 @@
     width: 100%;
     padding: 15px;
     padding-top: 20px;
+}
+
+.closeCross {
+    float: right;
+    font-size: 19px;
+    padding: 3px;
+    background-color: orangered;
+    color: blanchedalmond;
+    text-align: center;
+    width: 22px;
+    border-radius: 4px;
 }
