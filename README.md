@@ -25,4 +25,4 @@ Run in development with:
 + pub serve
 
 Build for deployment with:
-+ pub build release
++ pub build release 

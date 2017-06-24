@@ -1,5 +1,8 @@
 Changelog
 
+v0.0.21
+ - Moved to use minibus package for all string operations.
+ 
 v0.0.20
 
  - Moved to use stringprocess package for all string operations.

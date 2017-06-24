@@ -13,7 +13,7 @@
     font-size: smaller;
     width: 700px;
     margin: 100px auto;
-    border: 1px solid whitesmoke;
+    border: 1px solid whitesmoke;//Move?
     z-index: 1010;
     text-align: center;
 }
