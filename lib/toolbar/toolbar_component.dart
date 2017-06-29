@@ -1,4 +1,4 @@
-import 'dart:async';
+  import 'dart:async';
 import 'dart:html';
 import 'package:angular2/angular2.dart' show NgClass;
 import 'package:angular2/core.dart';
@@ -204,5 +204,9 @@ class ToolbarComponent {
 
   void defaultThemeHandler() {
     _themeService.theme = "default";
+  }
+
+  void nb8080Handler() {
+    window.open("https://daftspaniel.github.io/demos/nb8080/", 'git');
   }
 }

@@ -94,7 +94,8 @@ class MenuDefinition {
       new Menu(
           "About", toolbar.aboutHandler, "Find out more about NP8080", true),
       new Menu("GitHub", toolbar.githubHandler, "Get the source code!"),
-      new Menu("Gitter Chat", toolbar.gitterHandler, "Gitter based Chatroom")
+      new Menu("Gitter Chat", toolbar.gitterHandler, "Gitter based Chatroom",true),
+      new Menu("Notesboard8080", toolbar.nb8080Handler, "Try the new Notes Board application")
     ];
   }
 }

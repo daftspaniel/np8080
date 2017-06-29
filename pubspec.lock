@@ -216,7 +216,7 @@ packages:
       name: minibus
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.1"
+    version: "0.0.2"
   package_config:
     description:
       name: package_config
@@ -306,7 +306,7 @@ packages:
       name: source_gen
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.5.9"
+    version: "0.5.10+1"
   source_map_stack_trace:
     description:
       name: source_map_stack_trace
@@ -360,7 +360,7 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.23"
+    version: "0.12.23+1"
   typed_data:
     description:
       name: typed_data
