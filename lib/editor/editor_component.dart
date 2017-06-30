@@ -9,6 +9,7 @@ import 'package:np8080/dialog/generate/generate_component.dart';
 import 'package:np8080/dialog/prepost/prepost_component.dart';
 import 'package:np8080/dialog/replace/replace_component.dart';
 import 'package:np8080/dialog/sequence/sequence_component.dart';
+import 'package:np8080/dialog/timestamp/timestamp_component.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/editablelabel/editablelabel_component.dart';
 import 'package:np8080/editor/preview_component.dart';
@@ -33,6 +34,7 @@ import 'package:np8080/toolbar/toolbar_component.dart';
       DeleteLinesDialogComponent,
       PreviewComponent,
       EditableLabelComponent,
+      TimestampDialogComponent,
       NgFor, NgModel, NgStyle, NgIf, NgClass, FORM_DIRECTIVES
     ])
 class EditorComponent {
@@ -43,8 +45,8 @@ class EditorComponent {
   List<int> _undoPositions = new List<int>();
 
   EditorComponent(this._textareaDomService, this._textProcessingService,
-      this._themeService){
-   _themeService.load();
+      this._themeService) {
+    _themeService.load();
   }
 
   @Input()
@@ -111,7 +113,7 @@ class EditorComponent {
     return _themeService.getMainClass();
   }
 
-  String getTextareaClass(){
+  String getTextareaClass() {
     return _themeService.getDocumentClass();
   }
 

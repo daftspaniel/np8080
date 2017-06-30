@@ -43,7 +43,9 @@ class MenuDefinition {
     addMenuItems = [
       new Menu(
           "Timestamp", toolbar.timestampHandler,
-          "Add a timestamp to the document.",
+          "Add a timestamp to the document."),
+      new Menu("Timestamp...", toolbar.timestampDlgHandler,
+          "Choose a timestamp to add to the document.",
           true),
       new Menu("Duplicate All", toolbar.duplicateHandler,
           "Append a copy of the entire text to itself."),
@@ -83,7 +85,7 @@ class MenuDefinition {
 
     viewMenuItems = [
       new Menu("Markdown", toolbar.markdownHandler,
-          "Show a rendering of Markdown alongside the text.",true),
+          "Show a rendering of Markdown alongside the text.", true),
       new Menu("Dark theme", toolbar.darkThemeHandler,
           "Switch to a UI dark theme."),
       new Menu("Default theme", toolbar.defaultThemeHandler,
@@ -94,8 +96,10 @@ class MenuDefinition {
       new Menu(
           "About", toolbar.aboutHandler, "Find out more about NP8080", true),
       new Menu("GitHub", toolbar.githubHandler, "Get the source code!"),
-      new Menu("Gitter Chat", toolbar.gitterHandler, "Gitter based Chatroom",true),
-      new Menu("Notesboard8080", toolbar.nb8080Handler, "Try the new Notes Board application")
+      new Menu(
+          "Gitter Chat", toolbar.gitterHandler, "Gitter based Chatroom", true),
+      new Menu("Notesboard8080", toolbar.nb8080Handler,
+          "Try the new Notes Board application")
     ];
   }
 }

@@ -190,6 +190,10 @@ class ToolbarComponent {
     _textareaDomService.setFocus();
   }
 
+  void timestampDlgHandler(){
+    _eventBusService.post("showTimestampDialog");
+  }
+
   void undoHandler() {
     note.undo();
   }
