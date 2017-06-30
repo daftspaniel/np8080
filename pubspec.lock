@@ -330,7 +330,7 @@ packages:
       name: stack_trace
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.7.3"
+    version: "1.7.4"
   stream_channel:
     description:
       name: stream_channel

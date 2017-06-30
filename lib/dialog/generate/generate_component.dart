@@ -49,6 +49,8 @@ class GenerateDialogComponent extends DialogBase {
   }
 
   String getGeneratedText() {
+    if (textToRepeat == null) return '';
+
     _generatedText = _textProcessingService.getRepeatedString(
         textToRepeat, repeatCount, newLine);
     return _generatedText;
@@ -67,6 +69,10 @@ class GenerateDialogComponent extends DialogBase {
   void saveAndUpdateState(String newNoteText, int cursorPos) {
     note.updateAndSave(newNoteText);
     insertPos = cursorPos + _generatedText.length;
+  }
+
+  String getPreview() {
+    return getGeneratedText();
   }
 
   String getClass() {
