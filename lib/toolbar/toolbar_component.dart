@@ -185,11 +185,6 @@ class ToolbarComponent {
     _textareaDomService.setFocus();
   }
 
-  void timestampHandler() {
-    note.appendAndSave("\n" + new DateTime.now().toString() + "\n");
-    _textareaDomService.setFocus();
-  }
-
   void timestampDlgHandler(){
     _eventBusService.post("showTimestampDialog");
   }

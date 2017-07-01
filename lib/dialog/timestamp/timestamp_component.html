@@ -1,24 +1,22 @@
 <div id="overlay" [hidden]="!showDialog">
-    <div class="dialogPanel">
+    <div class="dialogPanel" style="width: 500px">
         <div (click)="close()" class="closeCross">X</div>
         <div class="header" [ngClass]="getHeaderClass()">Timestamp</div>
 
         <div style="text-align: center;padding: 10px" [ngClass]="getClass()">
 
             <label>Select format:</label>
-
             <br/>
 
-            <select size="7" multiple="yes" style="padding:5px;width: 350px">
-                <option>{{ day }}</option>
-                <option>{{ day24 }}</option>
-                <option>{{ date }}</option>
-                <option>{{ ftime }}</option>
-                <option>{{ f24time }}</option>
-                <option>{{ basic }}</option>
+            <select size="10" multiple="yes" style="padding:5px;width: 350px"
+                    [(ngModel)]="timeStamp">
+                <option *ngFor="let time of times" [value]="time">{{time}}</option>
             </select>
-
+            <br/>
+            <button class="actionButton wideButton" (click)="updateTime()">Update Times</button>
+            <br/><br/>
             <div class="footer">
+                <button class="actionButton" (click)="prependText()">Prepend</button>
                 <button class="actionButton" (click)="insertCurrentPosition()">Insert</button>
                 <button class="actionButton" (click)="appendText()">Append</button>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

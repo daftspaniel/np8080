@@ -113,7 +113,6 @@ textarea {
 
 }
 
-
 .toolbarField {
     font-size: 8pt;
     width: 135px;
@@ -243,6 +242,10 @@ button {
     margin: 0px;
     font-weight: bold;
     height: 25px;
+}
+
+.wideButton {
+    width: 160px;
 }
 
 .menuSeparator {

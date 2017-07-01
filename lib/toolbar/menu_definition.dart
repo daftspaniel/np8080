@@ -41,9 +41,6 @@ class MenuDefinition {
     ];
 
     addMenuItems = [
-      new Menu(
-          "Timestamp", toolbar.timestampHandler,
-          "Add a timestamp to the document."),
       new Menu("Timestamp...", toolbar.timestampDlgHandler,
           "Choose a timestamp to add to the document.",
           true),

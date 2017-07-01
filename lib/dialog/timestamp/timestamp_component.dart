@@ -10,7 +10,7 @@ import 'package:np8080/services/themeservice.dart';
 @Component(
     selector: 'timestamp-dialog',
     templateUrl: 'timestamp_component.html',
-    directives: const [NgClass, NgModel, NgStyle, FORM_DIRECTIVES])
+    directives: const [NgFor, NgClass, NgModel, NgStyle, NgSelectOption, FORM_DIRECTIVES])
 class TimestampDialogComponent extends DialogBase {
 
   final EventBusService _eventBusService;
@@ -19,7 +19,9 @@ class TimestampDialogComponent extends DialogBase {
   @Input()
   TextDocument note;
 
-  String _generatedText;
+  List<String> times = new List<String>();
+
+  String timeStamp = '';
 
   int insertPos = -1;
 
@@ -28,7 +30,9 @@ class TimestampDialogComponent extends DialogBase {
   TimestampDialogComponent(this._textareaDomService,
       this._eventBusService,
       this._themeService) {
-    this._eventBusService.subscribe("showTimestampDialog", show);
+    _eventBusService.subscribe("showTimestampDialog", show);
+    updateTime();
+    timeStamp = times[0];
   }
 
   void closeTheDialog() {
@@ -44,24 +48,27 @@ class TimestampDialogComponent extends DialogBase {
     saveAndUpdateState(newText, note.text.length);
   }
 
-  String getSelectedTimestamp() {
-//    if (textToRepeat == null) return '';
-//
-//    _generatedText = _textProcessingService.getRepeatedString(
-//        textToRepeat, repeatCount, newLine);
-//    return _generatedText;
-    return "1234";
+  void prependText() {
+    String newText = getSelectedTimestamp() + '\n' + note.text;
+    saveAndUpdateState(newText, note.text.length);
   }
 
-  String basic = new DateTime.now().toString();
-  String day = new DateFormat('EEEE h:m').format(new DateTime.now());
-  String day24 = new DateFormat('EEEE H:m').format(new DateTime.now());
-  String date = new DateFormat('yyyy-MM-dd').format(new DateTime.now());
-  String ftime = new DateFormat('h:m:s').format(new DateTime.now());
-  String f24time = new DateFormat('Hms').format(new DateTime.now());
+  String getSelectedTimestamp() {
+    return timeStamp;
+  }
 
-  String getTimestamp() {
-    return basic;
+  void updateTime() {
+    DateTime ourtime = new DateTime.now();
+    times = [
+      ourtime.toString(),
+      new DateFormat('EEEE h:m a').format(ourtime),
+      new DateFormat('EEEE H:m').format(ourtime),
+      new DateFormat('yyyy-MM-dd').format(ourtime),
+      new DateFormat('h:m:ss').format(ourtime),
+      new DateFormat('H:m:ss').format(ourtime),
+      new DateFormat('EEEE H:m:ss').format(ourtime),
+      new DateFormat('EEEE h:m:ss a').format(ourtime),
+    ];
   }
 
   void insertCurrentPosition() {
@@ -76,11 +83,7 @@ class TimestampDialogComponent extends DialogBase {
 
   void saveAndUpdateState(String newNoteText, int cursorPos) {
     note.updateAndSave(newNoteText);
-    insertPos = cursorPos + _generatedText.length;
-  }
-
-  String getPreview() {
-    return getSelectedTimestamp();
+    insertPos = cursorPos + timeStamp.length;
   }
 
   String getClass() {
