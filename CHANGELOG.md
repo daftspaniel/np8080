@@ -1,7 +1,11 @@
 Changelog
 
 v0.0.21
- - Moved to use minibus package for all string operations.
+
+ - Moved to use minibus package for sending events.
+ - Link to NB8080 added.
+ - Preview for generate sequence added.
+ - Timestamp is now a dialog with a selection of formats.
  
 v0.0.20
 
