@@ -18,7 +18,6 @@ class SequenceDialogComponent extends DialogBase {
   @Input()
   TextDocument note;
 
-  String textToRepeat;
   String _generatedText;
 
   num startIndex = 10;
@@ -36,7 +35,6 @@ class SequenceDialogComponent extends DialogBase {
   }
 
   void closeTheDialog() {
-    textToRepeat = "";
     close();
     _textareaDomService.setFocus();
     if (insertPos > 0) {
@@ -74,6 +72,10 @@ class SequenceDialogComponent extends DialogBase {
     note.updateAndSave(newNoteText);
     insertPos = cursorPos + _generatedText.length;
     closeTheDialog();
+  }
+
+  String getPreview() {
+    return getGeneratedText();
   }
 
   String getClass() {

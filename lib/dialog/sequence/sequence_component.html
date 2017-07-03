@@ -1,7 +1,7 @@
 <div id="overlay" [hidden]="!showDialog">
     <div class="dialogPanel">
         <div (click)="close()" class="closeCross">X</div>
-        <div class="header" [ngClass]="getHeaderClass()">Generate Sequence</div>
+        <div class="header" [ngClass]="getHeaderClass()">Num Sequence</div>
 
         <div style="padding-left: 150px;text-align: left" [ngClass]="getClass()">
 
@@ -13,6 +13,9 @@
 
             <label style="min-width: 100px;display: inline-block">adding</label>
             <input type="number" [(ngModel)]="increment" style="width: 100px"> each time<br/>
+
+            <br/>
+            <textarea class="previewText" readonly [ngModel]="getPreview()"></textarea>
 
             <div class="footer">
                 <button class="actionButton" (click)="prependText()">Prepend</button>
