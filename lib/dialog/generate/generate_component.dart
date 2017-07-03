@@ -66,9 +66,15 @@ class GenerateDialogComponent extends DialogBase {
     saveAndUpdateState(newText, selInfo.start);
   }
 
+  void prependText() {
+    String newText = getGeneratedText() + '\n' + note.text;
+    saveAndUpdateState(newText, note.text.length);
+  }
+
   void saveAndUpdateState(String newNoteText, int cursorPos) {
     note.updateAndSave(newNoteText);
     insertPos = cursorPos + _generatedText.length;
+    closeTheDialog();
   }
 
   String getPreview() {

@@ -1,5 +1,5 @@
-# np8080 0.0.19
-15th May 2017
+# np8080 0.0.21
+3rd July 2017
 
 NP8080 is a simple notepad type app for the web with some text processing features.
 It is lightweight and fast to load. 100% functionality when offline so great for Chromebooks.

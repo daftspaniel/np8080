@@ -43,6 +43,7 @@ class PrePostDialogComponent extends DialogBase {
         txt = _textProcessingService.postfixLines(txt, postfix);
 
       note.updateAndSave(txt);
+      closeTheDialog();
     }
   }
 

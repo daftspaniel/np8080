@@ -44,6 +44,11 @@ class SequenceDialogComponent extends DialogBase {
     }
   }
 
+  void prependText() {
+    String newText = getGeneratedText() + '\n' + note.text;
+    saveAndUpdateState(newText, note.text.length);
+  }
+
   void appendText() {
     String newText = note.text + getGeneratedText();
     saveAndUpdateState(newText, note.text.length);
@@ -68,6 +73,7 @@ class SequenceDialogComponent extends DialogBase {
   void saveAndUpdateState(String newNoteText, int cursorPos) {
     note.updateAndSave(newNoteText);
     insertPos = cursorPos + _generatedText.length;
+    closeTheDialog();
   }
 
   String getClass() {

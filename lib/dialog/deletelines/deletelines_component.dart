@@ -43,6 +43,7 @@ class DeleteLinesDialogComponent extends DialogBase {
   void ammendText() {
     note.text = getUpdatedText();
     note.save();
+    closeTheDialog();
   }
 
   String getUpdatedText() {

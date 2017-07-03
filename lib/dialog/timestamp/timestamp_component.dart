@@ -10,7 +10,8 @@ import 'package:np8080/services/themeservice.dart';
 @Component(
     selector: 'timestamp-dialog',
     templateUrl: 'timestamp_component.html',
-    directives: const [NgFor, NgClass, NgModel, NgStyle, NgSelectOption, FORM_DIRECTIVES])
+    directives: const [
+      NgFor, NgClass, NgModel, NgStyle, NgSelectOption, FORM_DIRECTIVES])
 class TimestampDialogComponent extends DialogBase {
 
   final EventBusService _eventBusService;
@@ -84,7 +85,9 @@ class TimestampDialogComponent extends DialogBase {
   void saveAndUpdateState(String newNoteText, int cursorPos) {
     note.updateAndSave(newNoteText);
     insertPos = cursorPos + timeStamp.length;
+    closeTheDialog();
   }
+
 
   String getClass() {
     return _themeService.getMainClass();

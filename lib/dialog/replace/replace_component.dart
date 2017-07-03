@@ -61,6 +61,7 @@ class ReplaceDialogComponent extends DialogBase implements OnChanges {
       }
 
       note.updateAndSave(getUpdatedText());
+      closeTheDialog();
     }
   }
 
