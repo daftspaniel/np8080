@@ -1,5 +1,9 @@
 Changelog
 
+v0.0.22
+ 
+ - Persist markdown preview display on/off setting.
+
 v0.0.21
 
  - Moved to use minibus package for sending events.

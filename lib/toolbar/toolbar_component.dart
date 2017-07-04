@@ -1,4 +1,4 @@
-  import 'dart:async';
+import 'dart:async';
 import 'dart:html';
 import 'package:angular2/angular2.dart' show NgClass;
 import 'package:angular2/core.dart';
@@ -8,6 +8,8 @@ import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
 import 'package:np8080/services/themeservice.dart';
+import 'package:np8080/storage/localstorage.dart';
+import 'package:np8080/storage/storagekeys.dart';
 import 'package:np8080/toolbar/menu/menu.dart';
 import 'package:np8080/toolbar/menu_definition.dart';
 
@@ -42,6 +44,7 @@ class ToolbarComponent {
 
   void markdownHandler() {
     showPreview = !showPreview;
+    storeValue(MarkdownPreviewVisibleKey, showPreview ? "showMarkdown" : "");
     onShowPreviewChange.add(showPreview);
     _textareaDomService.setFocus();
   }
@@ -185,7 +188,7 @@ class ToolbarComponent {
     _textareaDomService.setFocus();
   }
 
-  void timestampDlgHandler(){
+  void timestampDlgHandler() {
     _eventBusService.post("showTimestampDialog");
   }
 

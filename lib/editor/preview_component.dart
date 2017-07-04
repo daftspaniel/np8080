@@ -10,7 +10,7 @@ import 'package:np8080/services/themeservice.dart';
     templateUrl: 'preview_component.html',
     directives: const [NgModel, NgStyle, NgClass]
 )
-class PreviewComponent implements OnChanges, OnInit {
+class PreviewComponent implements OnChanges {
 
   final NullTreeSanitizer _nullSanitizer = new NullTreeSanitizer();
   final TextProcessingService _textProcessingService;
@@ -25,11 +25,6 @@ class PreviewComponent implements OnChanges, OnInit {
 
   @Input('active')
   bool active;
-
-  @override
-  ngOnInit() {
-    active = false;
-  }
 
   @override
   ngOnChanges(Map<String, SimpleChange> changes) {
@@ -51,7 +46,6 @@ class PreviewComponent implements OnChanges, OnInit {
   String getHeaderClass() {
     return _themeService.getSecondaryClass();
   }
-
 }
 
 class NullTreeSanitizer implements NodeTreeSanitizer {

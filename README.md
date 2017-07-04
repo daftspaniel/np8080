@@ -1,4 +1,4 @@
-# np8080 0.0.21
+# np8080 0.0.22
 3rd July 2017
 
 NP8080 is a simple notepad type app for the web with some text processing features.

@@ -18,6 +18,8 @@ import 'package:np8080/resources/resources.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
 import 'package:np8080/services/themeservice.dart';
+import 'package:np8080/storage/localstorage.dart';
+import 'package:np8080/storage/storagekeys.dart';
 import 'package:np8080/toolbar/toolbar_component.dart';
 
 @Component(
@@ -42,11 +44,12 @@ class EditorComponent {
   final TextProcessingService _textProcessingService;
   final ThemeService _themeService;
 
-  List<int> _undoPositions = new List<int>();
+  final List<int> _undoPositions = new List<int>();
 
   EditorComponent(this._textareaDomService, this._textProcessingService,
       this._themeService) {
     _themeService.load();
+    showPreview = loadValue(MarkdownPreviewVisibleKey, "").length > 0;
   }
 
   @Input()
@@ -73,29 +76,7 @@ class EditorComponent {
   bool keyHandler(KeyboardEvent e) {
     // TAB key
     if (e.keyCode == 9) {
-      e.preventDefault();
-      TextareaSelection selInfo = _textareaDomService.getCurrentSelectionInfo();
-
-      if (selInfo.text.length > 0) {
-        String out = note.text.substring(0, selInfo.start);
-        String tabbedText = _textProcessingService.prefixLines(
-            selInfo.text, tab);
-        out += tabbedText;
-        out += note.text.substring(selInfo.end);
-        _textareaDomService.setText(out);
-        _textareaDomService.setCursorPosition(
-            selInfo.start + tabbedText.length);
-      }
-      else {
-        _textareaDomService.setText(
-            note.text.substring(0, selInfo.start) +
-                tab +
-                note.text.substring(selInfo.end));
-        _textareaDomService.setCursorPosition(selInfo.start + tab.length);
-      }
-
-      note.updateAndSave(_textareaDomService.getText());
-      return false;
+      return tabHandler(e);
     }
     else if (e.keyCode == 90 && e.ctrlKey == true) {
       note.undo();
@@ -103,6 +84,32 @@ class EditorComponent {
     }
 
     return true;
+  }
+
+  bool tabHandler(KeyboardEvent e) {
+    e.preventDefault();
+    TextareaSelection selInfo = _textareaDomService.getCurrentSelectionInfo();
+
+    if (selInfo.text.length > 0) {
+      String out = note.text.substring(0, selInfo.start);
+      String tabbedText = _textProcessingService.prefixLines(
+          selInfo.text, tab);
+      out += tabbedText;
+      out += note.text.substring(selInfo.end);
+      _textareaDomService.setText(out);
+      _textareaDomService.setCursorPosition(
+          selInfo.start + tabbedText.length);
+    }
+    else {
+      _textareaDomService.setText(
+          note.text.substring(0, selInfo.start) +
+              tab +
+              note.text.substring(selInfo.end));
+      _textareaDomService.setCursorPosition(selInfo.start + tab.length);
+    }
+
+    note.updateAndSave(_textareaDomService.getText());
+    return false;
   }
 
   void storeStateForUndo(int cursorPos) {
