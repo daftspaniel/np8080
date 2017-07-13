@@ -1,6 +1,6 @@
-import 'package:angular2/angular2.dart';
-import 'package:angular2/angular2.dart' show NgStyle, NgModel, NgIf;
-import 'package:angular2/core.dart';
+import 'package:angular/angular.dart';
+import 'package:angular/angular.dart' show NgStyle, NgModel, NgIf;
+import 'package:angular/core.dart';
 import 'package:np8080/services/themeservice.dart';
 
 @Component(

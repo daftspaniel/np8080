@@ -1,5 +1,5 @@
-import 'package:angular2/angular2.dart';
-import 'package:angular2/core.dart';
+import 'package:angular/angular.dart';
+import 'package:angular/core.dart';
 import 'package:np8080/dialog/common/dialog_base.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/services/eventbusservice.dart';
@@ -11,10 +11,7 @@ import 'package:np8080/services/themeservice.dart';
     selector: 'generate-dialog',
     templateUrl: 'generate_component.html',
     directives: const [NgClass, NgModel, NgStyle, NgClass, FORM_DIRECTIVES])
-class GenerateDialogComponent extends DialogBase {
-
-  final EventBusService _eventBusService;
-  final ThemeService _themeService;
+class GenerateDialogComponent extends NpEditDialogBase {
 
   @Input()
   TextDocument note;
@@ -26,20 +23,21 @@ class GenerateDialogComponent extends DialogBase {
   int insertPos = -1;
   bool newLine = false;
 
-  final TextProcessingService _textProcessingService;
-  final TextareaDomService _textareaDomService;
-
-  GenerateDialogComponent(this._textProcessingService,
-      this._textareaDomService, this._eventBusService, this._themeService) {
-    this._eventBusService.subscribe("showGenerateDialog", show);
+  GenerateDialogComponent(TextProcessingService newTextProcessingService,
+      TextareaDomService newTextareaDomService,
+      ThemeService newthemeService,
+      EventBusService newEventBusService)
+      :super(newTextProcessingService, newTextareaDomService, newthemeService,
+      newEventBusService)  {
+    eventBusService.subscribe("showGenerateDialog", show);
   }
 
   void closeTheDialog() {
     textToRepeat = "";
     close();
-    _textareaDomService.setFocus();
+    textareaDomService.setFocus();
     if (insertPos > 0) {
-      _textareaDomService.setCursorPosition(insertPos);
+      textareaDomService.setCursorPosition(insertPos);
     }
   }
 
@@ -51,13 +49,13 @@ class GenerateDialogComponent extends DialogBase {
   String getGeneratedText() {
     if (textToRepeat == null) return '';
 
-    _generatedText = _textProcessingService.getRepeatedString(
+    _generatedText = textProcessingService.getRepeatedString(
         textToRepeat, repeatCount, newLine);
     return _generatedText;
   }
 
   void insertCurrentPosition() {
-    TextareaSelection selInfo = _textareaDomService.getCurrentSelectionInfo();
+    TextareaSelection selInfo = textareaDomService.getCurrentSelectionInfo();
 
     String newText = note.text.substring(0, selInfo.start) +
         getGeneratedText() +
@@ -79,13 +77,5 @@ class GenerateDialogComponent extends DialogBase {
 
   String getPreview() {
     return getGeneratedText();
-  }
-
-  String getClass() {
-    return _themeService.getMainClass();
-  }
-
-  String getHeaderClass() {
-    return _themeService.getSecondaryClass();
   }
 }

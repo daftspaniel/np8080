@@ -14,7 +14,7 @@ final String welcomeText = """
 
   6. Click the Download button to save the text as a file to your computer.
 
-  7. Written in Angular Dart 3.
+  7. Written in Angular Dart 4.
 
   8. The application is constantly updated!
 

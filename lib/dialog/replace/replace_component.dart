@@ -1,5 +1,6 @@
-import 'package:angular2/angular2.dart';
-import 'package:angular2/core.dart';
+import 'dart:html';
+import 'package:angular/angular.dart';
+import 'package:angular/core.dart';
 import 'package:np8080/dialog/common/dialog_base.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/services/eventbusservice.dart';
@@ -11,12 +12,8 @@ import 'package:np8080/services/themeservice.dart';
     selector: 'replace-dialog',
     templateUrl: 'replace_component.html',
     directives: const [NgClass, NgModel, NgStyle, FORM_DIRECTIVES])
-class ReplaceDialogComponent extends DialogBase implements OnChanges {
-
-  final TextProcessingService _textProcessingService;
-  final TextareaDomService _textareaDomService;
-  final EventBusService _eventBusService;
-  final ThemeService _themeService;
+class ReplaceDialogComponent extends NpEditDialogBase
+    implements OnChanges, AfterViewInit {
 
   @Input()
   TextDocument note;
@@ -25,20 +22,48 @@ class ReplaceDialogComponent extends DialogBase implements OnChanges {
   String replacementText;
   bool newLine = false;
   String _updatedText;
-
+  DivElement comp;
   int insertPos = -1;
 
-  ReplaceDialogComponent(this._textProcessingService,
-      this._textareaDomService, this._eventBusService, this._themeService) {
-    this._eventBusService.subscribe("showReplaceDialog", show);
+  ReplaceDialogComponent(TextProcessingService newTextProcessingService,
+      TextareaDomService newTextareaDomService,
+      ThemeService newthemeService,
+      EventBusService newEventBusService)
+      :super(newTextProcessingService, newTextareaDomService, newthemeService,
+      newEventBusService) {
+    eventBusService.subscribe("showReplaceDialog", show);
   }
+
+  ngAfterViewInit() {
+    handling();
+  }
+
+  handling() {
+//    comp = querySelector("div[replacedialog]");
+//    print(comp);
+//    comp.onDragStart.listen((e) {
+//      print("Drags");
+//    });
+//
+//    comp.onDragEnd.listen((MouseEvent e) {
+//      print("Drage");
+//      print(e.client.x);
+//      print(e.client.y);
+//      move(e.client.x, e.client.y);
+//    });
+  }
+
+//  void move(int mx, int my) {
+//    comp.style.top = "${my}px";
+//    comp.style.left = "${mx}px";
+//  }
 
   void closeTheDialog() {
     textToReplace = "";
     close();
-    _textareaDomService.setFocus();
+    textareaDomService.setFocus();
     if (insertPos > 0) {
-      _textareaDomService.setCursorPosition(insertPos);
+      textareaDomService.setCursorPosition(insertPos);
     }
   }
 
@@ -48,7 +73,7 @@ class ReplaceDialogComponent extends DialogBase implements OnChanges {
   }
 
   String getUpdatedText() {
-    _updatedText = _textProcessingService.getReplaced(
+    _updatedText = textProcessingService.getReplaced(
         note.text, textToReplace, replacementText);
     return _updatedText;
   }
@@ -71,15 +96,8 @@ class ReplaceDialogComponent extends DialogBase implements OnChanges {
 
   @override
   ngOnChanges(Map<String, SimpleChange> changes) {
-    TextareaSelection selInfo = _textareaDomService.getCurrentSelectionInfo();
+    TextareaSelection selInfo = textareaDomService.getCurrentSelectionInfo();
     insertPos = selInfo.start;
   }
 
-  String getClass() {
-    return _themeService.getMainClass();
-  }
-
-  String getHeaderClass() {
-    return _themeService.getSecondaryClass();
-  }
 }

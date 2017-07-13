@@ -1,7 +1,7 @@
 // Copyright (c) 2016-17, Davy Mitchell. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
-import 'package:angular2/platform/browser.dart';
+import 'package:angular/angular.dart';
 import 'package:np8080/app_component.dart';
 import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/textareadomservice.dart';

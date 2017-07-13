@@ -2,7 +2,7 @@
 
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
-import 'package:angular2/core.dart';
+import 'package:angular/core.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/editor/editor_component.dart';
 

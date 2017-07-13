@@ -1,10 +1,11 @@
-import 'package:angular2/angular2.dart';
-import 'package:angular2/core.dart';
+import 'package:angular/angular.dart';
+import 'package:angular/core.dart';
 import 'package:intl/intl.dart';
 import 'package:np8080/dialog/common/dialog_base.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/textareadomservice.dart';
+import 'package:np8080/services/textprocessingservice.dart';
 import 'package:np8080/services/themeservice.dart';
 
 @Component(
@@ -12,10 +13,7 @@ import 'package:np8080/services/themeservice.dart';
     templateUrl: 'timestamp_component.html',
     directives: const [
       NgFor, NgClass, NgModel, NgStyle, NgSelectOption, FORM_DIRECTIVES])
-class TimestampDialogComponent extends DialogBase {
-
-  final EventBusService _eventBusService;
-  final ThemeService _themeService;
+class TimestampDialogComponent extends NpEditDialogBase {
 
   @Input()
   TextDocument note;
@@ -26,21 +24,22 @@ class TimestampDialogComponent extends DialogBase {
 
   int insertPos = -1;
 
-  final TextareaDomService _textareaDomService;
-
-  TimestampDialogComponent(this._textareaDomService,
-      this._eventBusService,
-      this._themeService) {
-    _eventBusService.subscribe("showTimestampDialog", show);
+  TimestampDialogComponent(TextProcessingService newTextProcessingService,
+      TextareaDomService newTextareaDomService,
+      ThemeService newthemeService,
+      EventBusService newEventBusService)
+      :super(newTextProcessingService, newTextareaDomService, newthemeService,
+      newEventBusService) {
+    eventBusService.subscribe("showTimestampDialog", show);
     updateTime();
     timeStamp = times[0];
   }
 
   void closeTheDialog() {
     close();
-    _textareaDomService.setFocus();
+    textareaDomService.setFocus();
     if (insertPos > 0) {
-      _textareaDomService.setCursorPosition(insertPos);
+      textareaDomService.setCursorPosition(insertPos);
     }
   }
 
@@ -59,21 +58,25 @@ class TimestampDialogComponent extends DialogBase {
   }
 
   void updateTime() {
-    DateTime ourtime = new DateTime.now();
+    DateTime currentTime = new DateTime.now();
     times = [
-      ourtime.toString(),
-      new DateFormat('EEEE h:m a').format(ourtime),
-      new DateFormat('EEEE H:m').format(ourtime),
-      new DateFormat('yyyy-MM-dd').format(ourtime),
-      new DateFormat('h:m:ss').format(ourtime),
-      new DateFormat('H:m:ss').format(ourtime),
-      new DateFormat('EEEE H:m:ss').format(ourtime),
-      new DateFormat('EEEE h:m:ss a').format(ourtime),
+      currentTime.toString(),
+      formatDateTime(currentTime,'EEEE h:m a'),
+      formatDateTime(currentTime,'EEEE H:m'),
+      formatDateTime(currentTime,'yyyy-MM-dd'),
+      formatDateTime(currentTime,'h:m:ss'),
+      formatDateTime(currentTime,'H:m:ss'),
+      formatDateTime(currentTime,'EEEE H:m:ss'),
+      formatDateTime(currentTime,'EEEE h:m:ss a')
     ];
   }
 
+  String formatDateTime(DateTime dateTime, String pattern){
+    return new DateFormat(pattern).format(dateTime);
+  }
+
   void insertCurrentPosition() {
-    TextareaSelection selInfo = _textareaDomService.getCurrentSelectionInfo();
+    TextareaSelection selInfo = textareaDomService.getCurrentSelectionInfo();
 
     String newText = note.text.substring(0, selInfo.start) +
         getSelectedTimestamp() +
@@ -86,14 +89,5 @@ class TimestampDialogComponent extends DialogBase {
     note.updateAndSave(newNoteText);
     insertPos = cursorPos + timeStamp.length;
     closeTheDialog();
-  }
-
-
-  String getClass() {
-    return _themeService.getMainClass();
-  }
-
-  String getHeaderClass() {
-    return _themeService.getSecondaryClass();
   }
 }

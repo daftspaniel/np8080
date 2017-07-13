@@ -8,7 +8,7 @@
   "display": "standalone",
   "orientation": "any",
   "theme_color": "#ffffff",
-  "background_color": "#ffffff",
+                                                                                                                                                                                                                            "background_color": "#ffffff",
   "__mock_values__icons": [
     {
       "src": "launcher-icon-1x.png",

@@ -1,6 +1,6 @@
 import 'dart:html';
 
-import 'package:angular2/core.dart';
+import 'package:angular/core.dart';
 
 @Injectable()
 class TextareaDomService {

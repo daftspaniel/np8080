@@ -1,5 +1,5 @@
-import 'package:angular2/angular2.dart';
-import 'package:angular2/core.dart';
+import 'package:angular/angular.dart';
+import 'package:angular/core.dart';
 import 'package:np8080/dialog/common/dialog_base.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/services/eventbusservice.dart';
@@ -11,12 +11,7 @@ import 'package:np8080/services/themeservice.dart';
     selector: 'prepost-dialog',
     templateUrl: 'prepost_component.html',
     directives: const [NgClass, NgModel, NgStyle, FORM_DIRECTIVES])
-class PrePostDialogComponent extends DialogBase {
-
-  final TextProcessingService _textProcessingService;
-  final TextareaDomService _textareaDomService;
-  final EventBusService _eventBusService;
-  final ThemeService _themeService;
+class PrePostDialogComponent extends NpEditDialogBase {
 
   @Input()
   TextDocument note;
@@ -24,34 +19,31 @@ class PrePostDialogComponent extends DialogBase {
   String prefix = "";
   String postfix = "";
 
-  PrePostDialogComponent(this._textProcessingService,
-      this._textareaDomService, this._eventBusService, this._themeService) {
-    this._eventBusService.subscribe("showPrePostDialog", show);
+  PrePostDialogComponent(TextProcessingService newTextProcessingService,
+      TextareaDomService newTextareaDomService,
+      ThemeService newthemeService,
+      EventBusService newEventBusService)
+      :super(newTextProcessingService, newTextareaDomService, newthemeService,
+      newEventBusService) {
+    eventBusService.subscribe("showPrePostDialog", show);
   }
 
   void closeTheDialog() {
     close();
-    _textareaDomService.setFocus();
+    textareaDomService.setFocus();
   }
 
-  performPrePost() {
+  void performPrePost() {
     if (prefix.length + postfix.length > 0) {
       String txt = note.text;
       if (prefix.length > 0)
-        txt = _textProcessingService.prefixLines(txt, prefix);
+        txt = textProcessingService.prefixLines(txt, prefix);
       if (postfix.length > 0)
-        txt = _textProcessingService.postfixLines(txt, postfix);
+        txt = textProcessingService.postfixLines(txt, postfix);
 
       note.updateAndSave(txt);
       closeTheDialog();
     }
   }
 
-  String getClass() {
-    return _themeService.getMainClass();
-  }
-
-  String getHeaderClass() {
-    return _themeService.getSecondaryClass();
-  }
 }

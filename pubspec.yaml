@@ -6,7 +6,7 @@ author: Davy Mitchell <daftspaniel@gmail.com>
 environment:
   sdk: '>=1.23.0 <2.0.0'
 dependencies:
-  angular2: ^3.1.0
+  angular: 4.0.0-alpha
   browser: ^0.10.0
   dart_to_js_script_rewriter: ^1.0.1
   test: ^0.12.23+1
@@ -15,8 +15,8 @@ dependencies:
   minibus: ^0.0.1
   intl: ^0.15.1
 transformers:
-- angular2:
-    angular2/transform/codegen:
+- angular:
+    angular/transform/codegen:
         use_analyzer: true
     entry_points: web/main.dart
 - dart_to_js_script_rewriter

@@ -1,4 +1,4 @@
-import 'package:angular2/core.dart';
+import 'package:angular/core.dart';
 import 'package:np8080/storage/localstorage.dart';
 import 'package:np8080/storage/storagekeys.dart';
 

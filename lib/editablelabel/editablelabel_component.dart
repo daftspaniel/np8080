@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:html';
 
-import 'package:angular2/angular2.dart' show NgModel, NgStyle, NgClass, FORM_DIRECTIVES;
-import 'package:angular2/core.dart';
+import 'package:angular/angular.dart' show NgModel, NgStyle, NgClass, FORM_DIRECTIVES;
+import 'package:angular/core.dart';
 import 'package:np8080/services/themeservice.dart';
 
 @Component(

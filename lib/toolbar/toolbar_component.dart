@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:html';
-import 'package:angular2/angular2.dart' show NgClass;
-import 'package:angular2/core.dart';
+import 'package:angular/angular.dart' show NgClass;
+import 'package:angular/core.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/resources/resources.dart';
 import 'package:np8080/services/eventbusservice.dart';

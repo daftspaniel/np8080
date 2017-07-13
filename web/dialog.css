@@ -17,6 +17,17 @@
     text-align: center;
 }
 
+.replaceDialogPanel {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    font-size: smaller;
+    width: 700px;
+    margin: 100px auto;
+    border: 1px solid whitesmoke;
+    text-align: center;
+}
+
 #overlay .header {
     text-align: center;
     width: 100%;
