@@ -1,7 +1,7 @@
 import 'package:angular/angular.dart';
 import 'package:angular/core.dart';
 import 'package:intl/intl.dart';
-import 'package:np8080/dialog/common/dialog_base.dart';
+import 'package:np8080/dialog/common/npdialogbase.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/textareadomservice.dart';
@@ -18,7 +18,7 @@ class TimestampDialogComponent extends NpEditDialogBase {
   @Input()
   TextDocument note;
 
-  List<String> times = new List<String>();
+  final List<String> times = new List<String>();
 
   String timeStamp = '';
 
@@ -59,19 +59,20 @@ class TimestampDialogComponent extends NpEditDialogBase {
 
   void updateTime() {
     DateTime currentTime = new DateTime.now();
-    times = [
+    times.clear();
+    times.addAll([
       currentTime.toString(),
-      formatDateTime(currentTime,'EEEE h:m a'),
-      formatDateTime(currentTime,'EEEE H:m'),
-      formatDateTime(currentTime,'yyyy-MM-dd'),
-      formatDateTime(currentTime,'h:m:ss'),
-      formatDateTime(currentTime,'H:m:ss'),
-      formatDateTime(currentTime,'EEEE H:m:ss'),
-      formatDateTime(currentTime,'EEEE h:m:ss a')
-    ];
+      formatDateTime(currentTime, 'EEEE h:m a'),
+      formatDateTime(currentTime, 'EEEE H:m'),
+      formatDateTime(currentTime, 'yyyy-MM-dd'),
+      formatDateTime(currentTime, 'h:m:ss'),
+      formatDateTime(currentTime, 'H:m:ss'),
+      formatDateTime(currentTime, 'EEEE H:m:ss'),
+      formatDateTime(currentTime, 'EEEE h:m:ss a')
+    ]);
   }
 
-  String formatDateTime(DateTime dateTime, String pattern){
+  String formatDateTime(DateTime dateTime, String pattern) {
     return new DateFormat(pattern).format(dateTime);
   }
 

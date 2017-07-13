@@ -15,9 +15,9 @@ class AboutDialogComponent extends DialogBase {
 
   final String aboutText = welcomeText;
 
-  AboutDialogComponent( ThemeService newthemeService, EventBusService newEventBusService)
-      :super(newthemeService,newEventBusService) {
-    themeService = newthemeService;
+  AboutDialogComponent(ThemeService newthemeService,
+      EventBusService newEventBusService)
+      :super(newthemeService, newEventBusService) {
     eventBusService.subscribe("showAboutDialog", show);
   }
 

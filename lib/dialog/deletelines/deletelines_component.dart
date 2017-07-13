@@ -1,6 +1,6 @@
 import 'package:angular/angular.dart';
 import 'package:angular/core.dart';
-import 'package:np8080/dialog/common/dialog_base.dart';
+import 'package:np8080/dialog/common/npdialogbase.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';

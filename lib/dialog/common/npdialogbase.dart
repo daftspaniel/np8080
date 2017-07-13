@@ -5,15 +5,13 @@ import 'package:np8080/services/themeservice.dart';
 import 'dialog_base.dart';
 
 abstract class NpEditDialogBase extends DialogBase {
-  TextProcessingService textProcessingService;
-  TextareaDomService textareaDomService;
+  final TextProcessingService textProcessingService;
+  final TextareaDomService textareaDomService;
 
-  NpEditDialogBase(TextProcessingService newTextProcessingService,
-      TextareaDomService newTextareaDomService,
+  NpEditDialogBase(this.textProcessingService,
+      this.textareaDomService,
       ThemeService newthemeService,
       EventBusService newEventBusService)
       :super(newthemeService, newEventBusService) {
-    textProcessingService = newTextProcessingService;
-    textareaDomService = newTextareaDomService;
   }
 }
