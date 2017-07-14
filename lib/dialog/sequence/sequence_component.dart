@@ -17,9 +17,9 @@ class SequenceDialogComponent extends NpEditDialogBase {
 
   SequenceDialogComponent(TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
-      ThemeService newthemeService,
+      ThemeService newThemeService,
       EventBusService newEventBusService)
-      :super(newTextProcessingService, newTextareaDomService, newthemeService,
+      :super(newTextProcessingService, newTextareaDomService, newThemeService,
       newEventBusService) {
     eventBusService.subscribe("showSequenceDialog", show);
   }

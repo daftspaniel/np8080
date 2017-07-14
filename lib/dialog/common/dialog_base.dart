@@ -8,19 +8,11 @@ abstract class DialogBase {
 
   DialogBase(this.themeService, this.eventBusService);
 
-  void show() {
-    showDialog = true;
-  }
+  void show() => showDialog = true;
 
-  void close() {
-    showDialog = false;
-  }
+  void close() => showDialog = false;
 
-  String getClass() {
-    return themeService.getMainClass();
-  }
+  String getClass() => themeService.getMainClass();
 
-  String getHeaderClass() {
-    return themeService.getSecondaryClass();
-  }
+  String getHeaderClass() => themeService.getSecondaryClass();
 }

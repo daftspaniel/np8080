@@ -17,9 +17,9 @@ class ReplaceDialogComponent extends NpEditDialogBase {
 
   ReplaceDialogComponent(TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
-      ThemeService newthemeService,
+      ThemeService newThemeService,
       EventBusService newEventBusService)
-      :super(newTextProcessingService, newTextareaDomService, newthemeService,
+      :super(newTextProcessingService, newTextareaDomService, newThemeService,
       newEventBusService) {
     eventBusService.subscribe("showReplaceDialog", initialiseAndShow);
   }
@@ -42,7 +42,7 @@ class ReplaceDialogComponent extends NpEditDialogBase {
         replacementText += "\n";
       }
 
-      ammendText();
+      amendText();
       closeTheDialog();
     }
   }

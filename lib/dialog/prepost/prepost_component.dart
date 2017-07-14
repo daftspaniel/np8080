@@ -17,9 +17,9 @@ class PrePostDialogComponent extends NpEditDialogBase {
 
   PrePostDialogComponent(TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
-      ThemeService newthemeService,
+      ThemeService newThemeService,
       EventBusService newEventBusService)
-      :super(newTextProcessingService, newTextareaDomService, newthemeService,
+      :super(newTextProcessingService, newTextareaDomService, newThemeService,
       newEventBusService) {
     eventBusService.subscribe("showPrePostDialog", show);
   }

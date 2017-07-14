@@ -18,9 +18,9 @@ class DeleteLinesDialogComponent extends NpEditDialogBase {
 
   DeleteLinesDialogComponent(TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
-      ThemeService newthemeService,
+      ThemeService newThemeService,
       EventBusService newEventBusService)
-      :super(newTextProcessingService, newTextareaDomService, newthemeService,
+      :super(newTextProcessingService, newTextareaDomService, newThemeService,
       newEventBusService) {
     eventBusService.subscribe("showDeleteLinesDialog", initialiseAndShow);
   }

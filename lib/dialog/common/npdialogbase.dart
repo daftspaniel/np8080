@@ -21,7 +21,7 @@ class NpEditDialogBase extends DialogBase {
   String generatedText;
 
   bool newLineAfter = false;
-  bool newLineBefore  = false;
+  bool newLineBefore = false;
 
   NpEditDialogBase(this.textProcessingService,
       this.textareaDomService,
@@ -38,14 +38,13 @@ class NpEditDialogBase extends DialogBase {
     }
   }
 
-  String getGeneratedText() {
-    return '';
-  }
-  String getUpdatedText() {
-    return '';
-  }
+  String getGeneratedText() => '';
 
-  void ammendText() {
+  String getUpdatedText() => '';
+
+  String getPreview() => getGeneratedText();
+
+  void amendText() {
     note.text = getUpdatedText();
     note.save();
   }
@@ -76,7 +75,4 @@ class NpEditDialogBase extends DialogBase {
     saveAndUpdateState(newText, selInfo.start);
   }
 
-  String getPreview() {
-    return getGeneratedText();
-  }
 }

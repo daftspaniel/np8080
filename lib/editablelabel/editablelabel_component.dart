@@ -51,11 +51,8 @@ class EditableLabelComponent implements OnInit {
     }
   }
 
-  String getTabsClass() {
-    return _themeService.getSecondaryClass();
-  }
+  String getTabsClass() => _themeService.getSecondaryClass();
 
-  @override
   ngOnInit() {
     formatText();
   }

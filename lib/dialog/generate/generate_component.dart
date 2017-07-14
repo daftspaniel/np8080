@@ -17,10 +17,10 @@ class GenerateDialogComponent extends NpEditDialogBase {
 
   GenerateDialogComponent(TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
-      ThemeService newthemeService,
+      ThemeService newThemeService,
       EventBusService newEventBusService)
       :super(newTextProcessingService,
-      newTextareaDomService, newthemeService,
+      newTextareaDomService, newThemeService,
       newEventBusService) {
     eventBusService.subscribe("showGenerateDialog", initialiseAndShow);
   }
