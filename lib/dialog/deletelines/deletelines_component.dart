@@ -1,7 +1,6 @@
 import 'package:angular/angular.dart';
 import 'package:angular/core.dart';
 import 'package:np8080/dialog/common/npdialogbase.dart';
-import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
 import 'package:np8080/services/eventbusservice.dart';
@@ -14,13 +13,8 @@ import 'package:np8080/services/themeservice.dart';
 )
 class DeleteLinesDialogComponent extends NpEditDialogBase {
 
-  @Input()
-  TextDocument note;
-
   String markerText;
-  String _updatedText;
-
-  int insertPos = -1;
+  String updatedText;
 
   DeleteLinesDialogComponent(TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
@@ -28,25 +22,18 @@ class DeleteLinesDialogComponent extends NpEditDialogBase {
       EventBusService newEventBusService)
       :super(newTextProcessingService, newTextareaDomService, newthemeService,
       newEventBusService) {
-    eventBusService.subscribe("showDeleteLinesDialog", show);
+    eventBusService.subscribe("showDeleteLinesDialog", initialiseAndShow);
   }
 
-  void closeTheDialog() {
+  void initialiseAndShow() {
     markerText = "";
-    close();
-    textareaDomService.setFocus();
-  }
-
-  void ammendText() {
-    note.text = getUpdatedText();
-    note.save();
-    closeTheDialog();
+    show();
   }
 
   String getUpdatedText() {
-    _updatedText = textProcessingService.deleteLinesContaining(
-        note.text, markerText);
-    return _updatedText;
+    updatedText =
+        textProcessingService.deleteLinesContaining(note.text, markerText);
+    return updatedText;
   }
 
   void performDelete() {
