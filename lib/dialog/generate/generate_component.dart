@@ -15,8 +15,6 @@ class GenerateDialogComponent extends NpEditDialogBase {
 
   num repeatCount = 10;
 
-  bool newLine = false;
-
   GenerateDialogComponent(TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newthemeService,
@@ -36,7 +34,7 @@ class GenerateDialogComponent extends NpEditDialogBase {
     if (textToRepeat == null) return '';
 
     generatedText = textProcessingService.getRepeatedString(
-        textToRepeat, repeatCount, newLine);
+        textToRepeat, repeatCount, newLineAfter);
     return generatedText;
   }
 

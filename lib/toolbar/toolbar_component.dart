@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:html';
-import 'package:angular/angular.dart' show NgClass;
-import 'package:angular/core.dart';
+import 'package:angular/angular.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/resources/resources.dart';
 import 'package:np8080/services/eventbusservice.dart';
@@ -169,11 +168,11 @@ class ToolbarComponent {
   }
 
   void githubHandler() {
-    window.location.href = "https://github.com/daftspaniel/np8080";
+    window.open("https://github.com/daftspaniel/np8080", 'github');
   }
 
   void gitterHandler() {
-    window.location.href = "https://gitter.im/np8080/Lobby";
+    window.open("https://gitter.im/np8080/Lobby", 'gitter');
   }
 
   void downloadHandler() {

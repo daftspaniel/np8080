@@ -20,6 +20,9 @@ class NpEditDialogBase extends DialogBase {
   int insertPos = -1;
   String generatedText;
 
+  bool newLineAfter = false;
+  bool newLineBefore  = false;
+
   NpEditDialogBase(this.textProcessingService,
       this.textareaDomService,
       ThemeService newthemeService,

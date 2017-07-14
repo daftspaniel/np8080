@@ -13,7 +13,6 @@ class ReplaceDialogComponent extends NpEditDialogBase {
 
   String textToReplace;
   String replacementText;
-  bool newLine = false;
   String updatedText;
 
   ReplaceDialogComponent(TextProcessingService newTextProcessingService,
@@ -39,7 +38,7 @@ class ReplaceDialogComponent extends NpEditDialogBase {
   void performReplace() {
     if (textToReplace.length > 0) {
       replacementText ??= "";
-      if (newLine) {
+      if (newLineAfter) {
         replacementText += "\n";
       }
 

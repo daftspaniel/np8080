@@ -1,8 +1,7 @@
 import 'dart:html';
 
-import 'package:angular/angular.dart'
-    show NgFor, NgModel, NgStyle, NgIf, NgClass, FORM_DIRECTIVES;
-import 'package:angular/core.dart';
+import 'package:angular/angular.dart';
+
 import 'package:np8080/dialog/about/about_component.dart';
 import 'package:np8080/dialog/deletelines/deletelines_component.dart';
 import 'package:np8080/dialog/generate/generate_component.dart';

@@ -46,6 +46,7 @@ class TimestampDialogComponent extends NpEditDialogBase {
       formatDateTime(currentTime, 'EEEE H:m:ss'),
       formatDateTime(currentTime, 'EEEE h:m:ss a')
     ]);
+    timeStamp = currentTime.toString();
   }
 
   String formatDateTime(DateTime dateTime, String pattern) {

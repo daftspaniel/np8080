@@ -1,11 +1,11 @@
-import 'package:angular/core.dart';
+import 'package:angular/angular.dart';
 import 'package:np8080/storage/localstorage.dart';
 import 'package:np8080/storage/storagekeys.dart';
 
 @Injectable()
 class ThemeService {
 
-
+  String _theme = 'default';
 
   String get theme {
     return _theme;
@@ -15,8 +15,6 @@ class ThemeService {
     _theme = newTheme;
     storeValue(SelectedThemeKey, newTheme);
   }
-
-  String _theme = 'default';
 
   String getMainClass() {
     return _theme + '-theme-1';

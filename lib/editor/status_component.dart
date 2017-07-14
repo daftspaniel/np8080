@@ -1,8 +1,6 @@
 import 'dart:html';
 
-import 'package:angular/angular.dart'
-    show UpperCasePipe, DatePipe, NgIf, NgClass;
-import 'package:angular/core.dart';
+import 'package:angular/angular.dart';
 import 'package:np8080/services/textprocessingservice.dart';
 import 'package:np8080/services/themeservice.dart';
 

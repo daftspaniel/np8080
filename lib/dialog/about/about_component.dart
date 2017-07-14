@@ -1,7 +1,7 @@
 import '../../resources/resources.dart';
 
 import 'package:angular/angular.dart';
-import 'package:angular/core.dart';
+
 import 'package:np8080/dialog/common/dialog_base.dart';
 import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/themeservice.dart';

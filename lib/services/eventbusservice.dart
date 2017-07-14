@@ -1,4 +1,4 @@
-import 'package:angular/core.dart';
+import 'package:angular/angular.dart';
 import 'package:minibus/minibus.dart';
 
 @Injectable()
