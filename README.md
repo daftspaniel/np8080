@@ -9,7 +9,7 @@ as switching tabs is far smoother than switching applications.
 
 You can [try it out here](https://daftspaniel.github.io/demos/np8080/). 
 
-Feature requests and pull requests welcome!
+Feature requests, bug reports and pull requests welcome!
 
 ## Development Details
 
