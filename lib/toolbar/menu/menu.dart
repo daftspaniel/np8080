@@ -6,7 +6,6 @@ import 'package:np8080/services/themeservice.dart';
     directives: const [NgFor, NgModel, NgStyle, NgIf, NgClass],
     templateUrl: 'menu_template.html')
 class MenuComponent {
-
   final ThemeService _themeService;
   String display = "none";
 
@@ -23,7 +22,6 @@ class MenuComponent {
   void show() => display = "block";
 
   String getClass() => _themeService.getMainClass();
-
 }
 
 class Menu {

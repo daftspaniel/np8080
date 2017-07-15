@@ -11,16 +11,16 @@ import 'package:np8080/services/themeservice.dart';
     templateUrl: 'prepost_component.html',
     directives: const [NgClass, NgModel, NgStyle, FORM_DIRECTIVES])
 class PrePostDialogComponent extends NpEditDialogBase {
-
   String prefix = "";
   String postfix = "";
 
-  PrePostDialogComponent(TextProcessingService newTextProcessingService,
+  PrePostDialogComponent(
+      TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,
       EventBusService newEventBusService)
-      :super(newTextProcessingService, newTextareaDomService, newThemeService,
-      newEventBusService) {
+      : super(newTextProcessingService, newTextareaDomService, newThemeService,
+            newEventBusService) {
     eventBusService.subscribe("showPrePostDialog", show);
   }
 
@@ -36,5 +36,4 @@ class PrePostDialogComponent extends NpEditDialogBase {
       closeTheDialog();
     }
   }
-
 }

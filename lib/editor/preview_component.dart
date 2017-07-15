@@ -7,10 +7,8 @@ import 'package:np8080/services/themeservice.dart';
 @Component(
     selector: 'markdown-preview',
     templateUrl: 'preview_component.html',
-    directives: const [NgModel, NgStyle, NgClass]
-)
+    directives: const [NgModel, NgStyle, NgClass])
 class PreviewComponent implements OnChanges {
-
   final NullTreeSanitizer _nullSanitizer = new NullTreeSanitizer();
   final TextProcessingService _textProcessingService;
   final ThemeService _themeService;
@@ -27,8 +25,7 @@ class PreviewComponent implements OnChanges {
 
   @override
   ngOnChanges(Map<String, SimpleChange> changes) {
-    if (active || changes.containsKey("active"))
-      updatePreview();
+    if (active || changes.containsKey("active")) updatePreview();
   }
 
   void updatePreview() {

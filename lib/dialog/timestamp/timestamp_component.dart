@@ -10,19 +10,25 @@ import 'package:np8080/services/themeservice.dart';
     selector: 'timestamp-dialog',
     templateUrl: 'timestamp_component.html',
     directives: const [
-      NgFor, NgClass, NgModel, NgStyle, NgSelectOption, FORM_DIRECTIVES])
+      NgFor,
+      NgClass,
+      NgModel,
+      NgStyle,
+      NgSelectOption,
+      FORM_DIRECTIVES
+    ])
 class TimestampDialogComponent extends NpEditDialogBase {
-
   final List<String> times = new List<String>();
 
   String timeStamp = '';
 
-  TimestampDialogComponent(TextProcessingService newTextProcessingService,
+  TimestampDialogComponent(
+      TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,
       EventBusService newEventBusService)
-      :super(newTextProcessingService, newTextareaDomService, newThemeService,
-      newEventBusService) {
+      : super(newTextProcessingService, newTextareaDomService, newThemeService,
+            newEventBusService) {
     eventBusService.subscribe("showTimestampDialog", show);
     updateTime();
     timeStamp = times[0];

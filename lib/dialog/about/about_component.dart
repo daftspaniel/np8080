@@ -9,16 +9,13 @@ import 'package:np8080/services/themeservice.dart';
 @Component(
     selector: 'about-dialog',
     templateUrl: 'about_component.html',
-    directives: const [NgClass]
-)
+    directives: const [NgClass])
 class AboutDialogComponent extends ComponentBase {
-
   final String aboutText = welcomeText;
 
-  AboutDialogComponent(ThemeService newthemeService,
-      EventBusService newEventBusService)
-      :super(newthemeService, newEventBusService) {
+  AboutDialogComponent(
+      ThemeService newthemeService, EventBusService newEventBusService)
+      : super(newthemeService, newEventBusService) {
     eventBusService.subscribe("showAboutDialog", show);
   }
-
 }

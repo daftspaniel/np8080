@@ -7,10 +7,8 @@ import 'package:np8080/services/themeservice.dart';
 @Component(
     selector: 'editable-label',
     templateUrl: 'editablelabel_component.html',
-    directives: const [NgModel, NgStyle, NgClass, FORM_DIRECTIVES]
-)
+    directives: const [NgModel, NgStyle, NgClass, FORM_DIRECTIVES])
 class EditableLabelComponent implements OnInit {
-
   final StreamController onTextChange = new StreamController();
   final ThemeService _themeService;
 
@@ -42,8 +40,7 @@ class EditableLabelComponent implements OnInit {
     if (editMode) {
       TextInputElement tb = querySelector("#editbox");
       tb.focus();
-    }
-    else {
+    } else {
       if (text.length == 0) {
         text = "np8080.txt";
         update();

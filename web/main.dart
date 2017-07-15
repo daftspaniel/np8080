@@ -11,7 +11,10 @@ import 'package:pwa/client.dart' as pwa;
 
 main() {
   new pwa.Client();
-  bootstrap(
-      AppComponent, [EventBusService, TextProcessingService, TextareaDomService, ThemeService
+  bootstrap(AppComponent, [
+    EventBusService,
+    TextProcessingService,
+    TextareaDomService,
+    ThemeService
   ]);
 }

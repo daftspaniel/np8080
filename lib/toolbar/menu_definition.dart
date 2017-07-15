@@ -2,7 +2,6 @@ import 'package:np8080/toolbar/menu/menu.dart';
 import 'package:np8080/toolbar/toolbar_component.dart';
 
 class MenuDefinition {
-
   List<Menu> initMenuItems;
   List<Menu> modifyMenuItems;
   List<Menu> addMenuItems;
@@ -11,39 +10,36 @@ class MenuDefinition {
   List<Menu> viewMenuItems;
   List<Menu> helpMenuItems;
 
-
   void buildMenus(ToolbarComponent toolbar) {
     initMenuItems = [
-      new Menu(
-          "Clear Text", toolbar.clearHandler, "Start again with an empty file.",
-          true),
+      new Menu("Clear Text", toolbar.clearHandler,
+          "Start again with an empty file.", true),
       new Menu("Welcome Text", toolbar.sampleHandler,
           "Put sample text into the file."),
       new Menu("Sample Markdown", toolbar.markdownSampleHandler,
           "Put sample Markdown into the file.")
     ];
 
-    modifyMenuItems =
-    [ new Menu("Replace...", toolbar.replaceHandler,
-        "Replace some text with some other text."),
-    new Menu("Pre/Post...", toolbar.prePostHandler,
-        "Add text to start and/or end of lines.", true),
-    new Menu(
-      "Doublespace", toolbar.doublespaceHandler, "Double space the lines.",
-    ),
-    new Menu(
-        "Make One Line", toolbar.oneLineHandler,
-        "Put all the text onto one line.",
-        true),
-    new Menu("Reverse", toolbar.reverseHandler, "Reverse line order."),
-    new Menu("Randomise", toolbar.randomHandler, "Random line order."),
-    new Menu("Sort", toolbar.sortHandler, "Alphabetically sort lines.")
+    modifyMenuItems = [
+      new Menu("Replace...", toolbar.replaceHandler,
+          "Replace some text with some other text."),
+      new Menu("Pre/Post...", toolbar.prePostHandler,
+          "Add text to start and/or end of lines.", true),
+      new Menu(
+        "Doublespace",
+        toolbar.doublespaceHandler,
+        "Double space the lines.",
+      ),
+      new Menu("Make One Line", toolbar.oneLineHandler,
+          "Put all the text onto one line.", true),
+      new Menu("Reverse", toolbar.reverseHandler, "Reverse line order."),
+      new Menu("Randomise", toolbar.randomHandler, "Random line order."),
+      new Menu("Sort", toolbar.sortHandler, "Alphabetically sort lines.")
     ];
 
     addMenuItems = [
       new Menu("Timestamp...", toolbar.timestampDlgHandler,
-          "Choose a timestamp to add to the document.",
-          true),
+          "Choose a timestamp to add to the document.", true),
       new Menu("Duplicate All", toolbar.duplicateHandler,
           "Append a copy of the entire text to itself."),
       new Menu("Duplicate lines", toolbar.dupeHandler,
@@ -55,15 +51,11 @@ class MenuDefinition {
     ];
 
     removeMenuItems = [
-      new Menu(
-          "Trim", toolbar.trimFileHandler,
+      new Menu("Trim", toolbar.trimFileHandler,
           "Remove proceeding and trailing whitespace from file."),
-      new Menu(
-          "Trim Lines", toolbar.trimLinesHandler,
-          "Remove proceeding and trailing whitespace from each line.",
-          true),
-      new Menu(
-          "Blank Lines", toolbar.removeBlankLinesHandler,
+      new Menu("Trim Lines", toolbar.trimLinesHandler,
+          "Remove proceeding and trailing whitespace from each line.", true),
+      new Menu("Blank Lines", toolbar.removeBlankLinesHandler,
           "Remove all blank lines."),
       new Menu("Extra Blank Lines", toolbar.removeExtraBlankLinesHandler,
           "Remove extra blank lines.", true),
@@ -76,15 +68,14 @@ class MenuDefinition {
           "Encode the text for use in a Uri."),
       new Menu("Uri Decode", toolbar.uriDecodeHandler,
           "Decode the text from a Uri.", true),
-      new Menu("Unescape HTML", toolbar.htmlUnescapeHandler,
-          "Unescape HTML."),
+      new Menu("Unescape HTML", toolbar.htmlUnescapeHandler, "Unescape HTML."),
     ];
 
     viewMenuItems = [
       new Menu("Markdown", toolbar.markdownHandler,
           "Show a rendering of Markdown alongside the text.", true),
-      new Menu("Dark theme", toolbar.darkThemeHandler,
-          "Switch to a UI dark theme."),
+      new Menu(
+          "Dark theme", toolbar.darkThemeHandler, "Switch to a UI dark theme."),
       new Menu("Default theme", toolbar.defaultThemeHandler,
           "Switch to the default theme."),
     ];

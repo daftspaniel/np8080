@@ -10,17 +10,17 @@ import 'package:np8080/services/themeservice.dart';
     templateUrl: 'sequence_component.html',
     directives: const [NgClass, NgModel, NgStyle, FORM_DIRECTIVES])
 class SequenceDialogComponent extends NpEditDialogBase {
-
   num startIndex = 10;
   num repeatCount = 10;
   num increment = 10;
 
-  SequenceDialogComponent(TextProcessingService newTextProcessingService,
+  SequenceDialogComponent(
+      TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,
       EventBusService newEventBusService)
-      :super(newTextProcessingService, newTextareaDomService, newThemeService,
-      newEventBusService) {
+      : super(newTextProcessingService, newTextareaDomService, newThemeService,
+            newEventBusService) {
     eventBusService.subscribe("showSequenceDialog", show);
   }
 
@@ -29,5 +29,4 @@ class SequenceDialogComponent extends NpEditDialogBase {
         startIndex, repeatCount, increment);
     return generatedText;
   }
-
 }

@@ -3,7 +3,6 @@ import 'dart:html';
 import '../resources/resources.dart';
 
 class TextDocument {
-
   int id = 1;
   String text = '';
   String _downloadName;

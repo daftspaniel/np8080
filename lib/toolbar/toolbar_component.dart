@@ -15,10 +15,8 @@ import 'package:np8080/toolbar/menu_definition.dart';
 @Component(
     selector: 'editor-toolbar',
     templateUrl: 'toolbar_component.html',
-    directives: const [NgClass, ToolbarComponent, MenuComponent
-    ])
+    directives: const [NgClass, ToolbarComponent, MenuComponent])
 class ToolbarComponent {
-
   final TextProcessingService _textProcessingService;
   final TextareaDomService _textareaDomService;
   final EventBusService _eventBusService;
@@ -73,16 +71,18 @@ class ToolbarComponent {
   }
 
   void sampleHandler() {
-    if (note.empty || window.confirm(
-        "Are you sure you want to clear the current document?")) {
+    if (note.empty ||
+        window
+            .confirm("Are you sure you want to clear the current document?")) {
       note.updateAndSave(welcomeText);
     }
     _textareaDomService.setFocus();
   }
 
   void markdownSampleHandler() {
-    if (note.empty || window.confirm(
-        "Are you sure you want to clear the current document?")) {
+    if (note.empty ||
+        window
+            .confirm("Are you sure you want to clear the current document?")) {
       note.updateAndSave(markdownSampler);
       onShowPreviewChange.add(true);
     }
@@ -90,8 +90,9 @@ class ToolbarComponent {
   }
 
   void clearHandler() {
-    if (note.empty || window.confirm(
-        "Are you sure you want to clear the current document?")) {
+    if (note.empty ||
+        window
+            .confirm("Are you sure you want to clear the current document?")) {
       note.updateAndSave("");
     }
     _textareaDomService.setFocus();
@@ -179,8 +180,8 @@ class ToolbarComponent {
     note.save();
 
     document.createElement('a')
-      ..attributes['href'] = 'data:text/plain;charset=utf-8,' +
-          Uri.encodeComponent(note.text)
+      ..attributes['href'] =
+          'data:text/plain;charset=utf-8,' + Uri.encodeComponent(note.text)
       ..attributes['download'] = note.downloadName
       ..click();
 

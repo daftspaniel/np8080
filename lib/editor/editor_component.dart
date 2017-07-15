@@ -37,7 +37,12 @@ import 'package:np8080/toolbar/toolbar_component.dart';
       PreviewComponent,
       EditableLabelComponent,
       TimestampDialogComponent,
-      NgFor, NgModel, NgStyle, NgIf, NgClass, FORM_DIRECTIVES
+      NgFor,
+      NgModel,
+      NgStyle,
+      NgIf,
+      NgClass,
+      FORM_DIRECTIVES
     ])
 class EditorComponent {
   final TextareaDomService _textareaDomService;
@@ -78,12 +83,10 @@ class EditorComponent {
     // TAB key
     if (e.keyCode == 9) {
       return tabHandler(e);
-    }
-    else if (e.keyCode == 90 && e.ctrlKey == true) {
+    } else if (e.keyCode == 90 && e.ctrlKey == true) {
       note.undo();
       return false;
-    }
-    else if (e.keyCode == 81 && e.ctrlKey == true) {
+    } else if (e.keyCode == 81 && e.ctrlKey == true) {
       _eventBusService.post("showReplaceDialog");
     }
 
@@ -96,19 +99,15 @@ class EditorComponent {
 
     if (selInfo.text.length > 0) {
       String out = note.text.substring(0, selInfo.start);
-      String tabbedText = _textProcessingService.prefixLines(
-          selInfo.text, tab);
+      String tabbedText = _textProcessingService.prefixLines(selInfo.text, tab);
       out += tabbedText;
       out += note.text.substring(selInfo.end);
       _textareaDomService.setText(out);
-      _textareaDomService.setCursorPosition(
-          selInfo.start + tabbedText.length);
-    }
-    else {
-      _textareaDomService.setText(
-          note.text.substring(0, selInfo.start) +
-              tab +
-              note.text.substring(selInfo.end));
+      _textareaDomService.setCursorPosition(selInfo.start + tabbedText.length);
+    } else {
+      _textareaDomService.setText(note.text.substring(0, selInfo.start) +
+          tab +
+          note.text.substring(selInfo.end));
       _textareaDomService.setCursorPosition(selInfo.start + tab.length);
     }
 
@@ -121,5 +120,4 @@ class EditorComponent {
   String getClass() => _themeService.getMainClass();
 
   String getTextareaClass() => _themeService.getDocumentClass();
-
 }

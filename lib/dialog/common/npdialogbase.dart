@@ -6,11 +6,11 @@ import 'package:np8080/services/textprocessingservice.dart';
 import 'package:np8080/services/themeservice.dart';
 import 'componentbase.dart';
 
-@Component(selector: 'base_dialog',
+@Component(
+    selector: 'base_dialog',
     templateUrl: '../about/about_component.html',
     directives: const [NgClass, NgModel, NgStyle, FORM_DIRECTIVES])
 class NpEditDialogBase extends ComponentBase {
-
   final TextProcessingService textProcessingService;
   final TextareaDomService textareaDomService;
 
@@ -25,12 +25,9 @@ class NpEditDialogBase extends ComponentBase {
   bool newLineAfter = false;
   bool newLineBefore = false;
 
-  NpEditDialogBase(this.textProcessingService,
-      this.textareaDomService,
-      ThemeService newthemeService,
-      EventBusService newEventBusService)
-      :super(newthemeService, newEventBusService) {
-  }
+  NpEditDialogBase(this.textProcessingService, this.textareaDomService,
+      ThemeService newthemeService, EventBusService newEventBusService)
+      : super(newthemeService, newEventBusService) {}
 
   void closeTheDialog() {
     close();
@@ -76,5 +73,4 @@ class NpEditDialogBase extends ComponentBase {
 
     saveAndUpdateState(newText, selInfo.start);
   }
-
 }

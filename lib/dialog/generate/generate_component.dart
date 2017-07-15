@@ -10,18 +10,17 @@ import 'package:np8080/services/themeservice.dart';
     templateUrl: 'generate_component.html',
     directives: const [NgClass, NgModel, NgStyle, NgClass, FORM_DIRECTIVES])
 class GenerateDialogComponent extends NpEditDialogBase {
-
   String textToRepeat;
 
   num repeatCount = 10;
 
-  GenerateDialogComponent(TextProcessingService newTextProcessingService,
+  GenerateDialogComponent(
+      TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,
       EventBusService newEventBusService)
-      :super(newTextProcessingService,
-      newTextareaDomService, newThemeService,
-      newEventBusService) {
+      : super(newTextProcessingService, newTextareaDomService, newThemeService,
+            newEventBusService) {
     eventBusService.subscribe("showGenerateDialog", initialiseAndShow);
   }
 
@@ -37,5 +36,4 @@ class GenerateDialogComponent extends NpEditDialogBase {
         textToRepeat, repeatCount, newLineAfter);
     return generatedText;
   }
-
 }

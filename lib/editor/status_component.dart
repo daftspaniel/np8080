@@ -8,10 +8,8 @@ import 'package:np8080/services/themeservice.dart';
     selector: 'text-status',
     templateUrl: 'status_component.html',
     directives: const [NgIf, NgClass],
-    pipes: const [UpperCasePipe, DatePipe]
-)
+    pipes: const [UpperCasePipe, DatePipe])
 class StatusComponent {
-
   final TextProcessingService _textProcessingService;
   final ThemeService _themeService;
 

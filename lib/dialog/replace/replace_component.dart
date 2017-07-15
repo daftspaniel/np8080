@@ -10,7 +10,6 @@ import 'package:np8080/services/themeservice.dart';
     templateUrl: 'replace_component.html',
     directives: const [NgClass, NgModel, NgStyle, FORM_DIRECTIVES])
 class ReplaceDialogComponent extends NpEditDialogBase {
-
   String textToReplace;
   String replacementText;
   String updatedText;
@@ -19,12 +18,13 @@ class ReplaceDialogComponent extends NpEditDialogBase {
 
   String get positionClass => _positionClass;
 
-  ReplaceDialogComponent(TextProcessingService newTextProcessingService,
+  ReplaceDialogComponent(
+      TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,
       EventBusService newEventBusService)
-      :super(newTextProcessingService, newTextareaDomService, newThemeService,
-      newEventBusService) {
+      : super(newTextProcessingService, newTextareaDomService, newThemeService,
+            newEventBusService) {
     eventBusService.subscribe("showReplaceDialog", initialiseAndShow);
   }
 
@@ -55,5 +55,4 @@ class ReplaceDialogComponent extends NpEditDialogBase {
 
   void moveTheDialog(bool moveDown) =>
       _positionClass = moveDown ? 'defaultpos' : 'leftpos';
-
 }

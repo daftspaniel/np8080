@@ -4,7 +4,6 @@ import 'package:np8080/storage/storagekeys.dart';
 
 @Injectable()
 class ThemeService {
-
   String _theme = 'default';
 
   String get theme {
@@ -31,5 +30,4 @@ class ThemeService {
   void load() {
     _theme = loadValue(SelectedThemeKey, 'default');
   }
-
 }

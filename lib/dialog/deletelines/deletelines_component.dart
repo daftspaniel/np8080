@@ -9,19 +9,18 @@ import 'package:np8080/services/themeservice.dart';
 @Component(
     selector: 'delete-lines-dialog',
     templateUrl: 'deletelines_component.html',
-    directives: const[NgModel, NgClass, FORM_DIRECTIVES]
-)
+    directives: const [NgModel, NgClass, FORM_DIRECTIVES])
 class DeleteLinesDialogComponent extends NpEditDialogBase {
-
   String markerText;
   String updatedText;
 
-  DeleteLinesDialogComponent(TextProcessingService newTextProcessingService,
+  DeleteLinesDialogComponent(
+      TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,
       EventBusService newEventBusService)
-      :super(newTextProcessingService, newTextareaDomService, newThemeService,
-      newEventBusService) {
+      : super(newTextProcessingService, newTextareaDomService, newThemeService,
+            newEventBusService) {
     eventBusService.subscribe("showDeleteLinesDialog", initialiseAndShow);
   }
 
