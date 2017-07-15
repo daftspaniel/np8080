@@ -14,6 +14,7 @@ import 'package:np8080/editablelabel/editablelabel_component.dart';
 import 'package:np8080/editor/preview_component.dart';
 import 'package:np8080/editor/status_component.dart';
 import 'package:np8080/resources/resources.dart';
+import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
 import 'package:np8080/services/themeservice.dart';
@@ -42,11 +43,12 @@ class EditorComponent {
   final TextareaDomService _textareaDomService;
   final TextProcessingService _textProcessingService;
   final ThemeService _themeService;
+  final EventBusService _eventBusService;
 
   final List<int> _undoPositions = new List<int>();
 
   EditorComponent(this._textareaDomService, this._textProcessingService,
-      this._themeService) {
+      this._themeService, this._eventBusService) {
     _themeService.load();
     showPreview = loadValue(MarkdownPreviewVisibleKey, "").length > 0;
   }
@@ -81,6 +83,9 @@ class EditorComponent {
       note.undo();
       return false;
     }
+    else if (e.keyCode == 81 && e.ctrlKey == true) {
+      _eventBusService.post("showReplaceDialog");
+    }
 
     return true;
   }
@@ -111,16 +116,10 @@ class EditorComponent {
     return false;
   }
 
-  void storeStateForUndo(int cursorPos) {
-    _undoPositions.add(cursorPos);
-  }
+  void storeStateForUndo(int cursorPos) => _undoPositions.add(cursorPos);
 
-  String getClass() {
-    return _themeService.getMainClass();
-  }
+  String getClass() => _themeService.getMainClass();
 
-  String getTextareaClass() {
-    return _themeService.getDocumentClass();
-  }
+  String getTextareaClass() => _themeService.getDocumentClass();
 
 }

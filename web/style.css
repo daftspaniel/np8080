@@ -57,7 +57,21 @@ textarea {
 }
 
 .miniToolbarButton {
-    width: 30px;
+    width: 60px;
+    color: #9ed3d9;
+    background-color: #2B2926;
+    border: 0px;
+    margin: 0px;
+    height: 26px;
+    text-align: center;
+    font-size: 10pt;
+    min-width: 40px;
+    border-radius: 4px;
+    margin-top: 2px;
+    margin-right: 5px;
+}
+.wideToolbarButton {
+    width: 90px;
     color: #9ed3d9;
     background-color: #2B2926;
     border: 0px;
