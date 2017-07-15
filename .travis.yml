@@ -4,6 +4,6 @@ dart:
   - dev
 sudo: false
 dart_task:
-  - test: dartanalyzer: true
+  dartanalyzer: true
   - test: --platform firefox
   - test: --platform chrome
