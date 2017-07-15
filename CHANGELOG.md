@@ -10,7 +10,7 @@ v0.0.22
  - Replace dialog non-modal and can be moved with buttons in header bar.
  - Replace dialog can insert a newline before the replace also.
  - Update pubspec for 'Dart 2.0' dev releases.
- - Added shortcut [Ctrl-Q] to display Replace dialog.
+ - Added first shortcut [Ctrl-Q] to display Replace dialog.
  
 v0.0.21
 
