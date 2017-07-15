@@ -4,15 +4,17 @@ import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
 import 'package:np8080/services/themeservice.dart';
-import 'dialog_base.dart';
+import 'componentbase.dart';
 
 @Component(selector: 'base_dialog',
     templateUrl: '../about/about_component.html',
     directives: const [NgClass, NgModel, NgStyle, FORM_DIRECTIVES])
-class NpEditDialogBase extends DialogBase {
+class NpEditDialogBase extends ComponentBase {
 
   final TextProcessingService textProcessingService;
   final TextareaDomService textareaDomService;
+
+  bool get showDialog => showComponent;
 
   @Input()
   TextDocument note;

@@ -1,16 +1,16 @@
 import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/themeservice.dart';
 
-abstract class DialogBase {
+abstract class ComponentBase {
   final ThemeService themeService;
   final EventBusService eventBusService;
-  bool showDialog = false;
+  bool showComponent = false;
 
-  DialogBase(this.themeService, this.eventBusService);
+  ComponentBase(this.themeService, this.eventBusService);
 
-  void show() => showDialog = true;
+  void show() => showComponent = true;
 
-  void close() => showDialog = false;
+  void close() => showComponent = false;
 
   String getClass() => themeService.getMainClass();
 

@@ -2,7 +2,7 @@ import '../../resources/resources.dart';
 
 import 'package:angular/angular.dart';
 
-import 'package:np8080/dialog/common/dialog_base.dart';
+import 'package:np8080/dialog/common/componentbase.dart';
 import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/themeservice.dart';
 
@@ -11,7 +11,7 @@ import 'package:np8080/services/themeservice.dart';
     templateUrl: 'about_component.html',
     directives: const [NgClass]
 )
-class AboutDialogComponent extends DialogBase {
+class AboutDialogComponent extends ComponentBase {
 
   final String aboutText = welcomeText;
 
