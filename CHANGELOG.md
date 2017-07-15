@@ -1,9 +1,15 @@
 Changelog
 
 v0.0.22
- 
- - Persist markdown preview display on/off setting.
 
+ - Moved to Angular Dart 4 Alpha.
+ - Angular package import changed to 'angular'.
+ - Persist markdown preview display on/off setting.
+ - Dialogs refactored with common base class.
+ - Styling updates to dialog headers.
+ - Replace dialog non-modal and can be moved with buttons in header bar.
+ - Replace dialog can insert a newline before the replace also.
+ 
 v0.0.21
 
  - Moved to use minibus package for sending events.

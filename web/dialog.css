@@ -28,15 +28,38 @@
     text-align: center;
 }
 
-#overlay .header {
+.replaceDialogHeader {
     text-align: center;
-    width: 100%;
+    width: calc(100% + 4px);
     color: whitesmoke;
     font-size: large;
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 2px;
     margin-left: -2px;
+    margin-top: -2px;
+}
+
+.defaultpos {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.leftpos {
+    margin-top: 40%;
+    margin-left: 40%;
+}
+
+#overlay .header {
+    text-align: center;
+    width: calc(100% + 4px);
+    color: whitesmoke;
+    font-size: large;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 2px;
+    margin-left: -2px;
+    margin-top: -2px;
 }
 
 #overlay .footer {
@@ -48,17 +71,41 @@
 
 .closeCross {
     float: right;
-    font-size: 19px;
+    font-size: 16px;
     padding: 3px;
     background-color: orangered;
     color: blanchedalmond;
     text-align: center;
-    width: 22px;
-    border-radius: 4px;
+    width: 18px;
+    border-radius: 6px;
 }
 
 .previewText {
     height: 100px;
     width: 70%;
     background-color: cornsilk;
+}
+
+.actionButton {
+    background-color: #58c800;
+    width: 80px;
+    color: white;
+    border: 0px;
+    margin: 0px;
+    font-weight: bold;
+    height: 25px;
+}
+
+.miniActionButton {
+    background-color: #58c800;
+    width: 20px;
+    color: white;
+    border: 0px;
+    margin: 0px;
+    font-weight: bold;
+    height: 16px;
+}
+
+.wideButton {
+    width: 160px;
 }

@@ -1,5 +1,4 @@
-
-final String welcomeText = """
+const String welcomeText = """
   Welcome to Notepad 8080 a clutter-free text editor in your browser.
 
   1. It is 100% free to use, no adverts and Open Source software.
@@ -16,7 +15,7 @@ final String welcomeText = """
 
   7. Written in Angular Dart 4.
 
-  8. The application is constantly updated!
+  8. The application is constantly updated! Hit Refresh to make sure you are on the latest!
 
   9. NP8080 can be hosted on any web server - just HTML/CSS/JS!
 
@@ -25,7 +24,7 @@ final String welcomeText = """
 
 """;
 
-final String markdownSampler = """
+const String markdownSampler = """
 
 # Heading 1
 ## Heading 2
@@ -54,4 +53,4 @@ Web Links
 
 """;
 
-final String tab = "    ";
+const String tab = "    ";

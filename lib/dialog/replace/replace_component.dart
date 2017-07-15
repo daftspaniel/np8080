@@ -15,6 +15,10 @@ class ReplaceDialogComponent extends NpEditDialogBase {
   String replacementText;
   String updatedText;
 
+  String _positionClass = "defaultpos";
+
+  String get positionClass => _positionClass;
+
   ReplaceDialogComponent(TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,
@@ -41,10 +45,15 @@ class ReplaceDialogComponent extends NpEditDialogBase {
       if (newLineAfter) {
         replacementText += "\n";
       }
+      if (newLineBefore) {
+        replacementText = "\n$replacementText";
+      }
 
       amendText();
-      closeTheDialog();
     }
   }
+
+  void moveTheDialog(bool moveDown) =>
+      _positionClass = moveDown ? 'defaultpos' : 'leftpos';
 
 }

@@ -1,6 +1,6 @@
-<div replacedialog class="replaceDialogPanel" [hidden]="!showDialog">
+<div replacedialog class="replaceDialogPanel" [hidden]="!showDialog" [ngClass]="positionClass">
     <div (click)="close()" class="closeCross">X</div>
-    <div class="header" [ngClass]="getHeaderClass()">Replace</div>
+    <div class="replaceDialogHeader" [ngClass]="getHeaderClass()">Replace</div>
 
     <div style="text-align: center;padding: 10px" [ngClass]="getClass()">
 
@@ -10,11 +10,18 @@
         <input type="text" placeholder="Type text here..." [(ngModel)]="replacementText">
         <br/>
         <input type="checkbox" [(ngModel)]="newLineAfter"> Add a newline after each replacement
-
+        <br/>
+        <input type="checkbox" [(ngModel)]="newLineBefore"> Add a newline before each replacement
+        <br/>
+        <br/>
 
         <div class="footer">
             <button class="actionButton" (click)="performReplace()">Replace</button>
             <button class="closeButton light-primary-color" (click)="closeTheDialog()">Close</button>
         </div>
+    </div>
+    <div style="position: absolute;top:0px;left:0px;float: right;margin-bottom: 0px;padding: 3px;">
+        <button class="miniActionButton" (click)="moveTheDialog(true)">&#8598;</button>
+        <button class="miniActionButton" (click)="moveTheDialog(false)">&#8600;</button>
     </div>
 </div>

@@ -233,20 +233,6 @@ button {
     width: 110%;
 }
 
-.actionButton {
-    background-color: #58c800;
-    width: 80px;
-    color: white;
-    border: 0px;
-    margin: 0px;
-    font-weight: bold;
-    height: 25px;
-}
-
-.wideButton {
-    width: 160px;
-}
-
 .menuSeparator {
     background-color: white;
     width: 130px;

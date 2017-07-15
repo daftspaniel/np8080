@@ -18,17 +18,11 @@ class MenuComponent {
   @Input('items')
   List<Menu> items;
 
-  void hide() {
-    display = "none";
-  }
+  void hide() => display = "none";
 
-  void show() {
-    display = "block";
-  }
+  void show() => display = "block";
 
-  String getClass() {
-    return _themeService.getMainClass();
-  }
+  String getClass() => _themeService.getMainClass();
 
 }
 
