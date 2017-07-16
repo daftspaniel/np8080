@@ -1,5 +1,7 @@
 Changelog
 
+v0.0.23
+
 v0.0.22
 
  - Moved to Angular Dart 4 Alpha.

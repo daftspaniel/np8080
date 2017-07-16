@@ -124,7 +124,7 @@ class ToolbarComponent {
   }
 
   void duplicateHandler() {
-    note.updateAndSave(_textProcessingService.getRepeatedString(note.text, 2));
+    note.updateAndSave(_textProcessingService.generateRepeatedString(note.text, 2));
     _textareaDomService.setFocus();
   }
 

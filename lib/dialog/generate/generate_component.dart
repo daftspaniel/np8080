@@ -32,7 +32,7 @@ class GenerateDialogComponent extends NpEditDialogBase {
   String getGeneratedText() {
     if (textToRepeat == null) return '';
 
-    generatedText = textProcessingService.getRepeatedString(
+    generatedText = textProcessingService.generateRepeatedString(
         textToRepeat, repeatCount, newLineAfter);
     return generatedText;
   }

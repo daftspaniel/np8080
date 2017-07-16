@@ -1,4 +1,4 @@
-# np8080 0.0.22
+# np8080 0.0.23
 15th July 2017
 
 NP8080 is a simple notepad type app for the web with some text processing features.
@@ -18,11 +18,15 @@ hosted on any web server as it is client-side. Find out more about [Dart](https:
 
 [![Build Status](https://travis-ci.org/daftspaniel/np8080.svg?branch=master)](https://travis-ci.org/daftspaniel/np8080)
 
-Run tests with:
+Run tests with (note tests mostly moved to sub-packages):
 + pub run test test/textprocess_tests.dart -p dartium
+
 
 Run in development with:
 + pub serve
 
 Build for deployment with:
 + pub build --mode=release --output=build
+
+Check source code formatting:
++ dartfmt -n .

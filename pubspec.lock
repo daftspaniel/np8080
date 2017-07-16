@@ -216,7 +216,7 @@ packages:
       name: minibus
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.2"
+    version: "0.0.3"
   node_preamble:
     description:
       name: node_preamble
@@ -354,7 +354,7 @@ packages:
       name: stringprocess
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.1"
+    version: "0.0.3"
   term_glyph:
     description:
       name: term_glyph

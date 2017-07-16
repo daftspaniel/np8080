@@ -25,7 +25,7 @@ class SequenceDialogComponent extends NpEditDialogBase {
   }
 
   String getGeneratedText() {
-    generatedText = textProcessingService.getSequenceString(
+    generatedText = textProcessingService.generateSequenceString(
         startIndex, repeatCount, increment);
     return generatedText;
   }

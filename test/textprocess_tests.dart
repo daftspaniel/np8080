@@ -7,8 +7,8 @@ void main() {
   // Testing now in stringprocess package. 1 test remaining to test Service version.
   group('Generate:', () {
     test('getRepeatedString', () {
-      expect(tps.getRepeatedString("Moo", 4), "MooMooMooMoo");
-      expect(tps.getRepeatedString("Moo", 0), "");
+      expect(tps.generateRepeatedString("Moo", 4), "MooMooMooMoo");
+      expect(tps.generateRepeatedString("Moo", 0), "");
     });
   });
 }
