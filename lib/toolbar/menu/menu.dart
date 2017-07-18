@@ -17,7 +17,6 @@ class MenuComponent extends ComponentBase {
 
   @Input('items')
   List<Menu> items;
-
 }
 
 class Menu {
