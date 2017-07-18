@@ -1,15 +1,16 @@
 import 'package:angular/angular.dart';
+import 'package:np8080/dialog/common/componentbase.dart';
+import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/themeservice.dart';
 
 @Component(
     selector: 'menu',
     directives: const [NgFor, NgModel, NgStyle, NgIf, NgClass],
     templateUrl: 'menu_template.html')
-class MenuComponent {
-  final ThemeService _themeService;
-  String display = "none";
-
-  MenuComponent(this._themeService);
+class MenuComponent extends ComponentBase {
+  MenuComponent(
+      ThemeService newthemeService, EventBusService newEventBusService)
+      : super(newthemeService, newEventBusService);
 
   @Input('menutitle')
   String menutitle;
@@ -17,18 +18,13 @@ class MenuComponent {
   @Input('items')
   List<Menu> items;
 
-  void hide() => display = "none";
-
-  void show() => display = "block";
-
-  String getClass() => _themeService.getMainClass();
 }
 
 class Menu {
-  String name;
-  String tooltip;
-  Function handler;
-  bool separator;
+  final String name;
+  final String tooltip;
+  final Function handler;
+  final bool separator;
 
   Menu(this.name, this.handler, this.tooltip, [this.separator = false]);
 }

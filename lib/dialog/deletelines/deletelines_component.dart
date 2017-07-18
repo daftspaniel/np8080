@@ -1,6 +1,6 @@
 import 'package:angular/angular.dart';
 
-import 'package:np8080/dialog/common/npdialogbase.dart';
+import 'package:np8080/dialog/common/editorcomponentbase.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
 import 'package:np8080/services/eventbusservice.dart';
@@ -10,7 +10,7 @@ import 'package:np8080/services/themeservice.dart';
     selector: 'delete-lines-dialog',
     templateUrl: 'deletelines_component.html',
     directives: const [NgModel, NgClass, FORM_DIRECTIVES])
-class DeleteLinesDialogComponent extends NpEditDialogBase {
+class DeleteLinesDialogComponent extends EditorComponentBase {
   String markerText;
   String updatedText;
 

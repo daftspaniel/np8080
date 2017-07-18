@@ -1,4 +1,4 @@
-<div (mouseenter)="show()" (mouseleave)="hide()" style="z-index: 999;">
+<div (mouseenter)="show()" (mouseleave)="close()" style="z-index: 999;">
     <button class="toolbarMenu" [ngClass]="getClass()">{{menutitle}}</button>
 
     <div class="menuItem dark-primary-color" [ngStyle]="{'display':  display, 'width':'130px'}">

@@ -1,6 +1,6 @@
 import 'package:angular/angular.dart';
 import 'package:intl/intl.dart';
-import 'package:np8080/dialog/common/npdialogbase.dart';
+import 'package:np8080/dialog/common/editorcomponentbase.dart';
 import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
@@ -17,7 +17,7 @@ import 'package:np8080/services/themeservice.dart';
       NgSelectOption,
       FORM_DIRECTIVES
     ])
-class TimestampDialogComponent extends NpEditDialogBase {
+class TimestampDialogComponent extends EditorComponentBase {
   final List<String> times = new List<String>();
 
   String timeStamp = '';

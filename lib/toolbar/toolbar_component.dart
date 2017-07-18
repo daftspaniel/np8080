@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:html';
 import 'package:angular/angular.dart';
+import 'package:np8080/dialog/common/editorcomponentbase.dart';
 import 'package:np8080/document/textdocument.dart';
 import 'package:np8080/resources/resources.dart';
 import 'package:np8080/services/eventbusservice.dart';
@@ -16,16 +17,16 @@ import 'package:np8080/toolbar/menu_definition.dart';
     selector: 'editor-toolbar',
     templateUrl: 'toolbar_component.html',
     directives: const [NgClass, ToolbarComponent, MenuComponent])
-class ToolbarComponent {
-  final TextProcessingService _textProcessingService;
-  final TextareaDomService _textareaDomService;
-  final EventBusService _eventBusService;
-  final ThemeService _themeService;
-
+class ToolbarComponent extends EditorComponentBase {
   final MenuDefinition menus = new MenuDefinition();
 
-  ToolbarComponent(this._textProcessingService, this._textareaDomService,
-      this._eventBusService, this._themeService) {
+  ToolbarComponent(
+      TextProcessingService newTextProcessingService,
+      TextareaDomService newTextareaDomService,
+      ThemeService newThemeService,
+      EventBusService newEventBusService)
+      : super(newTextProcessingService, newTextareaDomService, newThemeService,
+            newEventBusService) {
     menus.buildMenus(this);
   }
 
@@ -43,32 +44,20 @@ class ToolbarComponent {
     showPreview = !showPreview;
     storeValue(MarkdownPreviewVisibleKey, showPreview ? "showMarkdown" : "");
     onShowPreviewChange.add(showPreview);
-    _textareaDomService.setFocus();
+    textareaDomService.setFocus();
   }
 
-  void generateHandler() {
-    _eventBusService.post("showGenerateDialog");
-  }
+  void generateHandler() => eventBusService.post("showGenerateDialog");
 
-  void prePostHandler() {
-    _eventBusService.post("showPrePostDialog");
-  }
+  void prePostHandler() => eventBusService.post("showPrePostDialog");
 
-  void generateSeqHandler() {
-    _eventBusService.post("showSequenceDialog");
-  }
+  void generateSeqHandler() => eventBusService.post("showSequenceDialog");
 
-  void aboutHandler() {
-    _eventBusService.post("showAboutDialog");
-  }
+  void aboutHandler() => eventBusService.post("showAboutDialog");
 
-  void removeLinesContaining() {
-    _eventBusService.post("showDeleteLinesDialog");
-  }
+  void removeLinesContaining() => eventBusService.post("showDeleteLinesDialog");
 
-  void replaceHandler() {
-    _eventBusService.post("showReplaceDialog");
-  }
+  void replaceHandler() => eventBusService.post("showReplaceDialog");
 
   void sampleHandler() {
     if (note.empty ||
@@ -76,7 +65,7 @@ class ToolbarComponent {
             .confirm("Are you sure you want to clear the current document?")) {
       note.updateAndSave(welcomeText);
     }
-    _textareaDomService.setFocus();
+    textareaDomService.setFocus();
   }
 
   void markdownSampleHandler() {
@@ -86,7 +75,7 @@ class ToolbarComponent {
       note.updateAndSave(markdownSampler);
       onShowPreviewChange.add(true);
     }
-    _textareaDomService.setFocus();
+    textareaDomService.setFocus();
   }
 
   void clearHandler() {
@@ -95,78 +84,78 @@ class ToolbarComponent {
             .confirm("Are you sure you want to clear the current document?")) {
       note.updateAndSave("");
     }
-    _textareaDomService.setFocus();
+    textareaDomService.setFocus();
   }
 
   void trimFileHandler() {
-    note.updateAndSave(_textProcessingService.trimText(note.text));
-    _textareaDomService.setFocus();
+    note.updateAndSave(textProcessingService.trimText(note.text));
+    textareaDomService.setFocus();
   }
 
   void trimLinesHandler() {
-    note.updateAndSave(_textProcessingService.trimLines(note.text));
-    _textareaDomService.setFocus();
+    note.updateAndSave(textProcessingService.trimLines(note.text));
+    textareaDomService.setFocus();
   }
 
   void sortHandler() {
-    note.updateAndSave(_textProcessingService.sort(note.text));
-    _textareaDomService.setFocus();
+    note.updateAndSave(textProcessingService.sort(note.text));
+    textareaDomService.setFocus();
   }
 
   void reverseHandler() {
-    note.updateAndSave(_textProcessingService.reverse(note.text));
-    _textareaDomService.setFocus();
+    note.updateAndSave(textProcessingService.reverse(note.text));
+    textareaDomService.setFocus();
   }
 
   void randomHandler() {
-    note.updateAndSave(_textProcessingService.randomiseLines(note.text));
-    _textareaDomService.setFocus();
+    note.updateAndSave(textProcessingService.randomiseLines(note.text));
+    textareaDomService.setFocus();
   }
 
   void duplicateHandler() {
     note.updateAndSave(
-        _textProcessingService.generateRepeatedString(note.text, 2));
-    _textareaDomService.setFocus();
+        textProcessingService.generateRepeatedString(note.text, 2));
+    textareaDomService.setFocus();
   }
 
   void oneLineHandler() {
-    note.updateAndSave(_textProcessingService.makeOneLine(note.text));
-    _textareaDomService.setFocus();
+    note.updateAndSave(textProcessingService.makeOneLine(note.text));
+    textareaDomService.setFocus();
   }
 
   void removeBlankLinesHandler() {
-    note.updateAndSave(_textProcessingService.removeBlankLines(note.text));
-    _textareaDomService.setFocus();
+    note.updateAndSave(textProcessingService.removeBlankLines(note.text));
+    textareaDomService.setFocus();
   }
 
   void removeExtraBlankLinesHandler() {
-    note.updateAndSave(_textProcessingService.removeExtraBlankLines(note.text));
-    _textareaDomService.setFocus();
+    note.updateAndSave(textProcessingService.removeExtraBlankLines(note.text));
+    textareaDomService.setFocus();
   }
 
   void doublespaceHandler() {
-    note.updateAndSave(_textProcessingService.doubleSpaceLines(note.text));
-    _textareaDomService.setFocus();
+    note.updateAndSave(textProcessingService.doubleSpaceLines(note.text));
+    textareaDomService.setFocus();
   }
 
   void uriEncodeHandler() {
-    note.updateAndSave(_textProcessingService.uriEncode(note.text));
-    _textareaDomService.setFocus();
+    note.updateAndSave(textProcessingService.uriEncode(note.text));
+    textareaDomService.setFocus();
   }
 
   void uriDecodeHandler() {
-    note.updateAndSave(_textProcessingService.uriDecode(note.text));
-    _textareaDomService.setFocus();
+    note.updateAndSave(textProcessingService.uriDecode(note.text));
+    textareaDomService.setFocus();
   }
 
   void htmlUnescapeHandler() {
-    note.updateAndSave(_textProcessingService.htmlUnescape(note.text));
-    _textareaDomService.setFocus();
+    note.updateAndSave(textProcessingService.htmlUnescape(note.text));
+    textareaDomService.setFocus();
   }
 
   void dupeHandler() {
-    note.updateAndSave(_textProcessingService.dupeLines(note.text));
-    _textareaDomService.setFocus();
+    note.updateAndSave(textProcessingService.dupeLines(note.text));
+    textareaDomService.setFocus();
   }
 
   void githubHandler() {
@@ -186,30 +175,17 @@ class ToolbarComponent {
       ..attributes['download'] = note.downloadName
       ..click();
 
-    _textareaDomService.setFocus();
+    textareaDomService.setFocus();
   }
 
-  void timestampDlgHandler() {
-    _eventBusService.post("showTimestampDialog");
-  }
+  void timestampDlgHandler() => eventBusService.post("showTimestampDialog");
 
-  void undoHandler() {
-    note.undo();
-  }
+  void undoHandler() => note.undo();
 
-  String getClass() {
-    return _themeService.getMainClass();
-  }
+  void darkThemeHandler() => themeService.theme = "dark";
 
-  void darkThemeHandler() {
-    _themeService.theme = "dark";
-  }
+  void defaultThemeHandler() => themeService.theme = "default";
 
-  void defaultThemeHandler() {
-    _themeService.theme = "default";
-  }
-
-  void nb8080Handler() {
-    window.open("https://daftspaniel.github.io/demos/nb8080/", 'git');
-  }
+  void nb8080Handler() =>
+      window.open("https://daftspaniel.github.io/demos/nb8080/", 'git');
 }

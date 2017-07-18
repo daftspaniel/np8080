@@ -4,6 +4,7 @@ import 'package:np8080/services/themeservice.dart';
 abstract class ComponentBase {
   final ThemeService themeService;
   final EventBusService eventBusService;
+
   bool showComponent = false;
 
   ComponentBase(this.themeService, this.eventBusService);
@@ -12,7 +13,11 @@ abstract class ComponentBase {
 
   void close() => showComponent = false;
 
-  String getClass() => themeService.getMainClass();
+  String get display => showComponent ? 'block' : 'none';
 
-  String getHeaderClass() => themeService.getSecondaryClass();
+  String getClass() => themeService.mainClass;
+
+  String getHeaderClass() => themeService.secondaryClass;
+
+  String getDocumentClass() => themeService.documentClass;
 }

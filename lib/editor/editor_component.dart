@@ -3,6 +3,7 @@ import 'dart:html';
 import 'package:angular/angular.dart';
 
 import 'package:np8080/dialog/about/about_component.dart';
+import 'package:np8080/dialog/common/editorcomponentbase.dart';
 import 'package:np8080/dialog/deletelines/deletelines_component.dart';
 import 'package:np8080/dialog/generate/generate_component.dart';
 import 'package:np8080/dialog/prepost/prepost_component.dart';
@@ -44,17 +45,17 @@ import 'package:np8080/toolbar/toolbar_component.dart';
       NgClass,
       FORM_DIRECTIVES
     ])
-class EditorComponent {
-  final TextareaDomService _textareaDomService;
-  final TextProcessingService _textProcessingService;
-  final ThemeService _themeService;
-  final EventBusService _eventBusService;
-
+class EditorComponent extends EditorComponentBase {
   final List<int> _undoPositions = new List<int>();
 
-  EditorComponent(this._textareaDomService, this._textProcessingService,
-      this._themeService, this._eventBusService) {
-    _themeService.load();
+  EditorComponent(
+      TextProcessingService newTextProcessingService,
+      TextareaDomService newTextareaDomService,
+      ThemeService newThemeService,
+      EventBusService newEventBusService)
+      : super(newTextProcessingService, newTextareaDomService, newThemeService,
+            newEventBusService) {
+    themeService.load();
     showPreview = loadValue(MarkdownPreviewVisibleKey, "").length > 0;
   }
 
@@ -75,9 +76,9 @@ class EditorComponent {
 
   bool showDeleteLinesDialog = false;
 
-  void changeHandler() {
-    note.save();
-  }
+  void changeHandler() => note.save();
+
+  void storeStateForUndo(int cursorPos) => _undoPositions.add(cursorPos);
 
   bool keyHandler(KeyboardEvent e) {
     // TAB key
@@ -87,7 +88,7 @@ class EditorComponent {
       note.undo();
       return false;
     } else if (e.keyCode == 81 && e.ctrlKey == true) {
-      _eventBusService.post("showReplaceDialog");
+      eventBusService.post("showReplaceDialog");
     }
 
     return true;
@@ -95,29 +96,23 @@ class EditorComponent {
 
   bool tabHandler(KeyboardEvent e) {
     e.preventDefault();
-    TextareaSelection selInfo = _textareaDomService.getCurrentSelectionInfo();
+    TextareaSelection selInfo = textareaDomService.getCurrentSelectionInfo();
 
     if (selInfo.text.length > 0) {
       String out = note.text.substring(0, selInfo.start);
-      String tabbedText = _textProcessingService.prefixLines(selInfo.text, tab);
+      String tabbedText = textProcessingService.prefixLines(selInfo.text, tab);
       out += tabbedText;
       out += note.text.substring(selInfo.end);
-      _textareaDomService.setText(out);
-      _textareaDomService.setCursorPosition(selInfo.start + tabbedText.length);
+      textareaDomService.setText(out);
+      textareaDomService.setCursorPosition(selInfo.start + tabbedText.length);
     } else {
-      _textareaDomService.setText(note.text.substring(0, selInfo.start) +
+      textareaDomService.setText(note.text.substring(0, selInfo.start) +
           tab +
           note.text.substring(selInfo.end));
-      _textareaDomService.setCursorPosition(selInfo.start + tab.length);
+      textareaDomService.setCursorPosition(selInfo.start + tab.length);
     }
 
-    note.updateAndSave(_textareaDomService.getText());
+    note.updateAndSave(textareaDomService.getText());
     return false;
   }
-
-  void storeStateForUndo(int cursorPos) => _undoPositions.add(cursorPos);
-
-  String getClass() => _themeService.getMainClass();
-
-  String getTextareaClass() => _themeService.getDocumentClass();
 }

@@ -1,6 +1,9 @@
 import 'dart:html';
 
 import 'package:angular/angular.dart';
+import 'package:np8080/dialog/common/editorcomponentbase.dart';
+import 'package:np8080/services/eventbusservice.dart';
+import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
 import 'package:np8080/services/themeservice.dart';
 
@@ -9,11 +12,14 @@ import 'package:np8080/services/themeservice.dart';
     templateUrl: 'status_component.html',
     directives: const [NgIf, NgClass],
     pipes: const [UpperCasePipe, DatePipe])
-class StatusComponent {
-  final TextProcessingService _textProcessingService;
-  final ThemeService _themeService;
-
-  StatusComponent(this._textProcessingService, this._themeService);
+class StatusComponent extends EditorComponentBase {
+  StatusComponent(
+      TextProcessingService newTextProcessingService,
+      TextareaDomService newTextareaDomService,
+      ThemeService newThemeService,
+      EventBusService newEventBusService)
+      : super(newTextProcessingService, newTextareaDomService, newThemeService,
+            newEventBusService);
 
   @Input('text')
   String text;
@@ -23,15 +29,11 @@ class StatusComponent {
 
   String get length => text.length.toString();
 
-  String get wordCount => _textProcessingService.getWordCount(text).toString();
+  String get wordCount => textProcessingService.getWordCount(text).toString();
 
-  String get lineCount => _textProcessingService.getLineCount(text).toString();
+  String get lineCount => textProcessingService.getLineCount(text).toString();
 
   bool isHttps() {
     return window.location.href.contains('https://');
-  }
-
-  String getClass() {
-    return _themeService.getMainClass();
   }
 }

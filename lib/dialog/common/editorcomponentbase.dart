@@ -10,7 +10,7 @@ import 'componentbase.dart';
     selector: 'base_dialog',
     templateUrl: '../about/about_component.html',
     directives: const [NgClass, NgModel, NgStyle, FORM_DIRECTIVES])
-class NpEditDialogBase extends ComponentBase {
+class EditorComponentBase extends ComponentBase {
   final TextProcessingService textProcessingService;
   final TextareaDomService textareaDomService;
 
@@ -25,7 +25,7 @@ class NpEditDialogBase extends ComponentBase {
   bool newLineAfter = false;
   bool newLineBefore = false;
 
-  NpEditDialogBase(this.textProcessingService, this.textareaDomService,
+  EditorComponentBase(this.textProcessingService, this.textareaDomService,
       ThemeService newthemeService, EventBusService newEventBusService)
       : super(newthemeService, newEventBusService) {}
 

@@ -1,5 +1,5 @@
 import 'package:angular/angular.dart';
-import 'package:np8080/dialog/common/npdialogbase.dart';
+import 'package:np8080/dialog/common/editorcomponentbase.dart';
 import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
@@ -9,7 +9,7 @@ import 'package:np8080/services/themeservice.dart';
     selector: 'replace-dialog',
     templateUrl: 'replace_component.html',
     directives: const [NgClass, NgModel, NgStyle, FORM_DIRECTIVES])
-class ReplaceDialogComponent extends NpEditDialogBase {
+class ReplaceDialogComponent extends EditorComponentBase {
   String textToReplace;
   String replacementText;
   String updatedText;

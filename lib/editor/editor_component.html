@@ -2,7 +2,6 @@
     <header>
         <editor-toolbar [(note)]="note"
                         [(showPreview)]="showPreview"
-
         ></editor-toolbar>
     </header>
 
@@ -13,7 +12,7 @@
                   [ngStyle]="{width: showPreview ? '47%':'calc(100% - 18px)'}"
                   tabindex="1" autofocus id="nptextbox"
                   class="primary-text-color"
-                  [ngClass]="getTextareaClass()"
+                  [ngClass]="getDocumentClass()"
         ></textarea>
 
         <markdown-preview [content]="note.text" [active]="showPreview"></markdown-preview>
@@ -27,18 +26,18 @@
     </footer>
 
 
-<about-dialog></about-dialog>
+    <about-dialog></about-dialog>
 
-<delete-lines-dialog [note]="note"></delete-lines-dialog>
+    <delete-lines-dialog [note]="note"></delete-lines-dialog>
 
-<generate-dialog [note]="note"></generate-dialog>
+    <generate-dialog [note]="note"></generate-dialog>
 
-<replace-dialog [note]="note"></replace-dialog>
+    <replace-dialog [note]="note"></replace-dialog>
 
-<prepost-dialog [note]="note"></prepost-dialog>
+    <prepost-dialog [note]="note"></prepost-dialog>
 
-<sequence-dialog [note]="note"></sequence-dialog>
+    <sequence-dialog [note]="note"></sequence-dialog>
 
-<timestamp-dialog [note]="note"></timestamp-dialog>
+    <timestamp-dialog [note]="note"></timestamp-dialog>
 
 </div>

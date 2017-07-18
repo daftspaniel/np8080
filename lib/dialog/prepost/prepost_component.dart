@@ -1,6 +1,6 @@
 import 'package:angular/angular.dart';
 
-import 'package:np8080/dialog/common/npdialogbase.dart';
+import 'package:np8080/dialog/common/editorcomponentbase.dart';
 import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
@@ -10,7 +10,7 @@ import 'package:np8080/services/themeservice.dart';
     selector: 'prepost-dialog',
     templateUrl: 'prepost_component.html',
     directives: const [NgClass, NgModel, NgStyle, FORM_DIRECTIVES])
-class PrePostDialogComponent extends NpEditDialogBase {
+class PrePostDialogComponent extends EditorComponentBase {
   String prefix = "";
   String postfix = "";
 

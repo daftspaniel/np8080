@@ -3,7 +3,7 @@ import 'package:angular/angular.dart';
 
 @Injectable()
 class TextareaDomService {
-  String _id = '#nptextbox';
+  final String _id = '#nptextbox';
 
   TextareaSelection getCurrentSelectionInfo() {
     TextAreaElement nptb = querySelector(_id);

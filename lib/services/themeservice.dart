@@ -6,28 +6,18 @@ import 'package:np8080/storage/storagekeys.dart';
 class ThemeService {
   String _theme = 'default';
 
-  String get theme {
-    return _theme;
-  }
+  String get theme => _theme;
+
+  String get mainClass => _theme + '-theme-1';
+
+  String get secondaryClass => _theme + '-theme-2';
+
+  String get documentClass => _theme + '-document';
+
+  void load() => _theme = loadValue(SelectedThemeKey, 'default');
 
   set theme(String newTheme) {
     _theme = newTheme;
     storeValue(SelectedThemeKey, newTheme);
-  }
-
-  String getMainClass() {
-    return _theme + '-theme-1';
-  }
-
-  String getSecondaryClass() {
-    return _theme + '-theme-2';
-  }
-
-  String getDocumentClass() {
-    return _theme + '-document';
-  }
-
-  void load() {
-    _theme = loadValue(SelectedThemeKey, 'default');
   }
 }

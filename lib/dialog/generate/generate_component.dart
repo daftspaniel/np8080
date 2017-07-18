@@ -1,5 +1,5 @@
 import 'package:angular/angular.dart';
-import 'package:np8080/dialog/common/npdialogbase.dart';
+import 'package:np8080/dialog/common/editorcomponentbase.dart';
 import 'package:np8080/services/eventbusservice.dart';
 import 'package:np8080/services/textareadomservice.dart';
 import 'package:np8080/services/textprocessingservice.dart';
@@ -9,7 +9,7 @@ import 'package:np8080/services/themeservice.dart';
     selector: 'generate-dialog',
     templateUrl: 'generate_component.html',
     directives: const [NgClass, NgModel, NgStyle, NgClass, FORM_DIRECTIVES])
-class GenerateDialogComponent extends NpEditDialogBase {
+class GenerateDialogComponent extends EditorComponentBase {
   String textToRepeat;
 
   num repeatCount = 10;
