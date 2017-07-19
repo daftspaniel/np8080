@@ -87,30 +87,20 @@ class ToolbarComponent extends EditorComponentBase {
     textareaDomService.setFocus();
   }
 
-  void trimFileHandler() {
-    note.updateAndSave(textProcessingService.trimText(note.text));
+  void operation(Function action) {
+    note.updateAndSave(action(note.text));
     textareaDomService.setFocus();
   }
 
-  void trimLinesHandler() {
-    note.updateAndSave(textProcessingService.trimLines(note.text));
-    textareaDomService.setFocus();
-  }
+  void trimFileHandler() => operation(textProcessingService.trimText);
 
-  void sortHandler() {
-    note.updateAndSave(textProcessingService.sort(note.text));
-    textareaDomService.setFocus();
-  }
+  void trimLinesHandler() => operation(textProcessingService.trimLines);
 
-  void reverseHandler() {
-    note.updateAndSave(textProcessingService.reverse(note.text));
-    textareaDomService.setFocus();
-  }
+  void sortHandler() => operation(textProcessingService.sort);
 
-  void randomHandler() {
-    note.updateAndSave(textProcessingService.randomiseLines(note.text));
-    textareaDomService.setFocus();
-  }
+  void reverseHandler() => operation(textProcessingService.reverse);
+
+  void randomHandler() => operation(textProcessingService.randomiseLines);
 
   void duplicateHandler() {
     note.updateAndSave(
@@ -118,53 +108,24 @@ class ToolbarComponent extends EditorComponentBase {
     textareaDomService.setFocus();
   }
 
-  void oneLineHandler() {
-    note.updateAndSave(textProcessingService.makeOneLine(note.text));
-    textareaDomService.setFocus();
-  }
+  void oneLineHandler() => operation(textProcessingService.makeOneLine);
 
-  void removeBlankLinesHandler() {
-    note.updateAndSave(textProcessingService.removeBlankLines(note.text));
-    textareaDomService.setFocus();
-  }
+  void removeBlankLinesHandler() =>
+      operation(textProcessingService.removeBlankLines);
 
-  void removeExtraBlankLinesHandler() {
-    note.updateAndSave(textProcessingService.removeExtraBlankLines(note.text));
-    textareaDomService.setFocus();
-  }
+  void removeExtraBlankLinesHandler() =>
+      operation(textProcessingService.removeExtraBlankLines);
 
-  void doublespaceHandler() {
-    note.updateAndSave(textProcessingService.doubleSpaceLines(note.text));
-    textareaDomService.setFocus();
-  }
+  void doublespaceHandler() =>
+      operation(textProcessingService.doubleSpaceLines);
 
-  void uriEncodeHandler() {
-    note.updateAndSave(textProcessingService.uriEncode(note.text));
-    textareaDomService.setFocus();
-  }
+  void uriEncodeHandler() => operation(textProcessingService.uriEncode);
 
-  void uriDecodeHandler() {
-    note.updateAndSave(textProcessingService.uriDecode(note.text));
-    textareaDomService.setFocus();
-  }
+  void uriDecodeHandler() => operation(textProcessingService.uriDecode);
 
-  void htmlUnescapeHandler() {
-    note.updateAndSave(textProcessingService.htmlUnescape(note.text));
-    textareaDomService.setFocus();
-  }
+  void htmlUnescapeHandler() => operation(textProcessingService.htmlUnescape);
 
-  void dupeHandler() {
-    note.updateAndSave(textProcessingService.dupeLines(note.text));
-    textareaDomService.setFocus();
-  }
-
-  void githubHandler() {
-    window.open("https://github.com/daftspaniel/np8080", 'github');
-  }
-
-  void gitterHandler() {
-    window.open("https://gitter.im/np8080/Lobby", 'gitter');
-  }
+  void dupeHandler() => operation(textProcessingService.dupeLines);
 
   void downloadHandler() {
     note.save();
@@ -188,4 +149,12 @@ class ToolbarComponent extends EditorComponentBase {
 
   void nb8080Handler() =>
       window.open("https://daftspaniel.github.io/demos/nb8080/", 'git');
+
+  void githubHandler() {
+    window.open("https://github.com/daftspaniel/np8080", 'github');
+  }
+
+  void gitterHandler() {
+    window.open("https://gitter.im/np8080/Lobby", 'gitter');
+  }
 }

@@ -42,7 +42,7 @@ class MenuDefinition {
           "Choose a timestamp to add to the document.", true),
       new Menu("Duplicate All", toolbar.duplicateHandler,
           "Append a copy of the entire text to itself."),
-      new Menu("Duplicate lines", toolbar.dupeHandler,
+      new Menu("Duplicate Lines", toolbar.dupeHandler,
           "Add a copy of a line to itself.", true),
       new Menu("Generate Text...", toolbar.generateHandler,
           "Add generated text to put into document."),
