@@ -1,5 +1,5 @@
 import 'package:pwa/worker.dart';
-import 'package:np8080/pwa/offline_urls.g.dart' as offline;
+import 'package:np8080/src/pwa/offline_urls.g.dart' as offline;
 
 /// The Progressive Web Application's entry point.
 void main() {

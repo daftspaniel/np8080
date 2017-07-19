@@ -1,4 +1,4 @@
-import 'package:np8080/services/textprocessingservice.dart';
+import 'package:np8080/src/services/textprocessingservice.dart';
 import 'package:test/test.dart';
 
 void main() {
