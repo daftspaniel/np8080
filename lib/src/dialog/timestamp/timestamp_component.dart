@@ -21,6 +21,10 @@ class TimestampDialogComponent extends EditorComponentBase {
   final List<String> times = new List<String>();
 
   String timeStamp = '';
+  String customTimeStamp = '';
+  bool useCustomFormat = false;
+  final String defaultCustomFormat = 'yyyy-MM-dd EEEE h:m:ss a';
+  String customFormat;
 
   TimestampDialogComponent(
       TextProcessingService newTextProcessingService,
@@ -32,11 +36,16 @@ class TimestampDialogComponent extends EditorComponentBase {
     eventBusService.subscribe("showTimestampDialog", show);
     updateTime();
     timeStamp = times[0];
+    customFormat = defaultCustomFormat;
+  }
+
+  String customFormattedDate() {
+    return formatDateTime(new DateTime.now(), customFormat);
   }
 
   String getGeneratedText() {
-    generatedText = timeStamp;
-    return timeStamp;
+    generatedText = useCustomFormat ? customTimeStamp : timeStamp;
+    return generatedText;
   }
 
   void updateTime() {
@@ -53,9 +62,24 @@ class TimestampDialogComponent extends EditorComponentBase {
       formatDateTime(currentTime, 'EEEE h:m:ss a')
     ]);
     timeStamp = currentTime.toString();
+    updateCustom(true);
+  }
+
+  void updateCustom([bool initialising = false]) {
+    try {
+      if (!initialising) useCustomFormat = true;
+      customTimeStamp = customFormattedDate();
+    } catch (Exception) {
+      customTimeStamp = 'Error in format string.';
+    }
   }
 
   String formatDateTime(DateTime dateTime, String pattern) {
     return new DateFormat(pattern).format(dateTime);
+  }
+
+  void resetCustomFormat() {
+    customFormat = defaultCustomFormat;
+    updateCustom();
   }
 }

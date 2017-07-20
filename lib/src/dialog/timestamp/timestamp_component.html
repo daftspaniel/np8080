@@ -1,27 +1,51 @@
 <div id="overlay" [hidden]="!showDialog">
-    <div class="dialogPanel" style="width: 500px">
+    <div class="timestampDialogPanel" [ngClass]="getClass()">
         <div (click)="close()" class="closeCross">X</div>
         <div class="header" [ngClass]="getHeaderClass()">Timestamp</div>
 
-        <div style="text-align: center;padding: 10px" [ngClass]="getClass()">
+        <div style="text-align: center" >
+            <div style="margin-left: 60px;text-align: left">
 
-            <label>Select format:</label>
-            <br/>
+                <div>
+                    <br/>
 
-            <select size="10" multiple="yes" style="padding:5px;width: 350px"
-                    [(ngModel)]="timeStamp">
-                <option *ngFor="let time of times" [value]="time">{{time}}</option>
-            </select>
-            <br/>
-            <button class="actionButton wideButton" (click)="updateTime()">Update Times</button>
-            <br/><br/>
-            <div class="footer">
-                <button class="actionButton" (click)="prependText()">Prepend</button>
-                <button class="actionButton" (click)="insertCurrentPosition()">Insert</button>
-                <button class="actionButton" (click)="appendText()">Append</button>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button class="closeButton  light-primary-color" (click)="closeTheDialog()">Close</button>
+                    <select size="10" multiple="yes" style="padding:5px;width: 350px"
+                            [(ngModel)]="timeStamp">
+                        <option *ngFor="let time of times" [value]="time">{{time}}</option>
+                    </select>
+                    <br/>
+                    <button class="actionButton wideButton" (click)="updateTime()">Update Times</button>
+                    <br/><br/>
+                </div>
+
             </div>
+
+            <br/>
+
+            <input type="checkbox" [(ngModel)]="useCustomFormat"/> Custom date/time format
+
+            <br/>
+
+            <div>
+                <input type="text" placeholder="Type text here..."
+                       [(ngModel)]="customFormat"
+                       (keyup)="updateCustom()"
+                       style="height:30px;width:50%">
+                <button (click)="resetCustomFormat()" class="actionButton">Reset</button>
+                <br/>
+                <br/>
+
+                <textarea class="previewText" style="height:30px;width:60%"
+                          readonly>{{customTimeStamp}}</textarea>
+            </div>
+        </div>
+
+        <div class="footer">
+            <button class="actionButton" (click)="prependText()">Prepend</button>
+            <button class="actionButton" (click)="insertCurrentPosition()">Insert</button>
+            <button class="actionButton" (click)="appendText()">Append</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="closeButton  light-primary-color" (click)="closeTheDialog()">Close</button>
         </div>
     </div>
 </div>

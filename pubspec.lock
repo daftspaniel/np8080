@@ -12,7 +12,7 @@ packages:
       name: angular
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.0-alpha"
+    version: "4.0.0-alpha+1"
   angular_compiler:
     description:
       name: angular_compiler
@@ -60,7 +60,7 @@ packages:
       name: build_barback
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.2"
+    version: "0.3.0"
   charcode:
     description:
       name: charcode
@@ -90,7 +90,7 @@ packages:
       name: collection
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.14.2"
+    version: "1.14.3"
   convert:
     description:
       name: convert
@@ -102,7 +102,7 @@ packages:
       name: crypto
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.1"
+    version: "2.0.2"
   csslib:
     description:
       name: csslib
@@ -150,7 +150,7 @@ packages:
       name: http
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.11.3+13"
+    version: "0.11.3+14"
   http_multi_server:
     description:
       name: http_multi_server
@@ -204,7 +204,7 @@ packages:
       name: meta
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.0"
+    version: "1.1.1"
   mime:
     description:
       name: mime
@@ -228,7 +228,7 @@ packages:
       name: package_config
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.1"
+    version: "1.0.2"
   package_resolver:
     description:
       name: package_resolver
