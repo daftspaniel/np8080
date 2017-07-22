@@ -2,6 +2,10 @@ Changelog
 
 v0.0.23
 
+ - Custom time/date format in Timestamp dialog. 
+ - Moved to Angular Dart 4 Alpha 1.
+ - Can now Delete lines that do not contain a string. 
+
 v0.0.22
 
  - Moved to Angular Dart 4 Alpha.
