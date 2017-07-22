@@ -1,3 +1,4 @@
+import 'package:np8080/src/resources/resources.dart';
 import 'package:np8080/src/toolbar/menu/menu.dart';
 import 'package:np8080/src/toolbar/toolbar_component.dart';
 
@@ -82,12 +83,60 @@ class MenuDefinition {
 
     helpMenuItems.addAll([
       new Menu(
-          "About", toolbar.aboutHandler, "Find out more about NP8080", true),
+          "About", toolbar.aboutHandler, "Find out more about NP8080"),
+      new Menu("Manual", toolbar.manualHandler, "Read the NP8080 manual", true),
       new Menu("GitHub", toolbar.githubHandler, "Get the source code!"),
       new Menu(
           "Gitter Chat", toolbar.gitterHandler, "Gitter based Chatroom", true),
       new Menu("Notesboard8080", toolbar.nb8080Handler,
           "Try the new Notes Board application")
     ]);
+
+    buildManual();
   }
+
+  void buildManual() {
+    List<Menu> allMenus = new List<Menu>();
+
+    Menu blank = new Menu(" ", null, '');
+    allMenus.add(new Menu("Start Menu", null, ''));
+    allMenus.add(blank);
+    allMenus.addAll(startMenuItems);
+    allMenus.add(blank);
+
+    allMenus.add(new Menu("Add Menu", null, ''));
+    allMenus.add(blank);
+    allMenus.addAll(addMenuItems);
+    allMenus.add(blank);
+
+    allMenus.add(new Menu("Modify Menu", null, ''));
+    allMenus.add(blank);
+    allMenus.addAll(modifyMenuItems);
+    allMenus.add(blank);
+
+    allMenus.add(new Menu("Remove Menu", null, ''));
+    allMenus.add(blank);
+    allMenus.addAll(removeMenuItems);
+    allMenus.add(blank);
+
+    allMenus.add(new Menu("Advanced Menu", null, ''));
+    allMenus.add(blank);
+    allMenus.addAll(advancedMenuItems);
+    allMenus.add(blank);
+
+    allMenus.add(new Menu("View Menu", null, ''));
+    allMenus.add(blank);
+    allMenus.addAll(viewMenuItems);
+    allMenus.add(blank);
+
+    allMenus.add(new Menu("Help Menu", null, ''));
+    allMenus.add(blank);
+    allMenus.addAll(helpMenuItems);
+
+    np8080Manual = '';
+    allMenus.forEach((Menu menu) {
+      np8080Manual += menu.name.padRight(20) + menu.tooltip + '\r\n';
+    });
+  }
+
 }

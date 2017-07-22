@@ -19,6 +19,16 @@ import 'package:np8080/src/toolbar/menu_definition.dart';
     directives: const [NgClass, ToolbarComponent, MenuComponent])
 class ToolbarComponent extends EditorComponentBase {
   final MenuDefinition menus = new MenuDefinition();
+  final StreamController onShowPreviewChange = new StreamController();
+
+  @Input()
+  TextDocument note;
+
+  @Input()
+  bool showPreview;
+
+  @Output()
+  Stream<bool> get showPreviewChange => onShowPreviewChange.stream;
 
   ToolbarComponent(
       TextProcessingService newTextProcessingService,
@@ -29,16 +39,6 @@ class ToolbarComponent extends EditorComponentBase {
             newEventBusService) {
     menus.buildMenus(this);
   }
-
-  @Input()
-  TextDocument note;
-
-  @Input()
-  bool showPreview;
-
-  @Output()
-  Stream<bool> get showPreviewChange => onShowPreviewChange.stream;
-  final StreamController onShowPreviewChange = new StreamController();
 
   void markdownHandler() {
     showPreview = !showPreview;
@@ -133,6 +133,8 @@ class ToolbarComponent extends EditorComponentBase {
   }
 
   void timestampDlgHandler() => eventBusService.post("showTimestampDialog");
+
+  void manualHandler()  => eventBusService.post("showManualDialog");
 
   void undoHandler() => note.undo();
 

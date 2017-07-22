@@ -1,7 +1,9 @@
 const String welcomeText = """
   Welcome to Notepad 8080 a clutter-free text editor in your browser.
+  
+  For information on the application's features, click on Manual in the Help menu.
 
-  1. It is 100% free to use, no adverts and Open Source software.
+  1. Free/Libre Open Source software. It is 100% free to use, contains no advertising or tracking.
 
   2. Your data is automatically stored in your web browser's local storage and NOT on any server.
 
@@ -9,11 +11,11 @@ const String welcomeText = """
 
   4. You can change the filename by clicking on the name in the top left.
 
-  5. 100% functionality when offline (PWA) - great for Chromebooks!
+  5. 100% functionality when offline (PWA) - great for when you are on the move!
 
   6. Click the Download button to save the text as a file to your computer.
 
-  7. Written in Angular Dart 4.
+  7. Written in Angular Dart 4 - Google's enterprise web framework.
 
   8. The application is constantly updated! Hit Refresh to make sure you are on the latest!
 
@@ -54,3 +56,5 @@ Web Links
 """;
 
 const String tab = "    ";
+
+String np8080Manual = 'If you can read this, the manual build failed!';
