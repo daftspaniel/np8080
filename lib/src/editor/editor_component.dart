@@ -2,7 +2,6 @@ import 'dart:html';
 
 import 'package:angular/angular.dart';
 
-
 import 'package:np8080/src/dialog/common/editorcomponentbase.dart';
 import 'package:np8080/src/dialog/deletelines/deletelines_component.dart';
 import 'package:np8080/src/dialog/generate/generate_component.dart';

@@ -134,7 +134,7 @@ class ToolbarComponent extends EditorComponentBase {
 
   void timestampDlgHandler() => eventBusService.post("showTimestampDialog");
 
-  void manualHandler()  => eventBusService.post("showManualDialog");
+  void manualHandler() => eventBusService.post("showManualDialog");
 
   void undoHandler() => note.undo();
 

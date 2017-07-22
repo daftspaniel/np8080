@@ -82,8 +82,7 @@ class MenuDefinition {
     ]);
 
     helpMenuItems.addAll([
-      new Menu(
-          "About", toolbar.aboutHandler, "Find out more about NP8080"),
+      new Menu("About", toolbar.aboutHandler, "Find out more about NP8080"),
       new Menu("Manual", toolbar.manualHandler, "Read the NP8080 manual", true),
       new Menu("GitHub", toolbar.githubHandler, "Get the source code!"),
       new Menu(
@@ -138,5 +137,4 @@ class MenuDefinition {
       np8080Manual += menu.name.padRight(20) + menu.tooltip + '\r\n';
     });
   }
-
 }
