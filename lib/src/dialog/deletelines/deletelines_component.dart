@@ -13,6 +13,7 @@ import 'package:np8080/src/services/themeservice.dart';
 class DeleteLinesDialogComponent extends EditorComponentBase {
   String markerText;
   String updatedText;
+  String containOption = 'containing';
 
   DeleteLinesDialogComponent(
       TextProcessingService newTextProcessingService,
@@ -30,8 +31,13 @@ class DeleteLinesDialogComponent extends EditorComponentBase {
   }
 
   String getUpdatedText() {
-    updatedText =
-        textProcessingService.deleteLinesContaining(note.text, markerText);
+    if (containOption.indexOf('NOT') < 0) {
+      updatedText =
+          textProcessingService.deleteLinesContaining(note.text, markerText);
+    } else {
+      updatedText =
+          textProcessingService.deleteLinesNotContaining(note.text, markerText);
+    }
     return updatedText;
   }
 

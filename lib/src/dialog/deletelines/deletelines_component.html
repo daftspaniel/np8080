@@ -5,7 +5,7 @@
 
         <div style="padding-top: 10px" [ngClass]="getClass()">
 
-            <label>Delete lines containing:</label>
+            <label>Delete lines <select [(ngModel)]="containOption"><option>containing</option><option>NOT containing</option></select> :</label>
             <input type="text" placeholder="Type text here..." [(ngModel)]="markerText">
 
             <div class="footer">
