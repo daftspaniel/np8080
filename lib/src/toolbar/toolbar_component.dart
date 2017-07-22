@@ -59,14 +59,7 @@ class ToolbarComponent extends EditorComponentBase {
 
   void replaceHandler() => eventBusService.post("showReplaceDialog");
 
-  void sampleHandler() {
-    if (note.empty ||
-        window
-            .confirm("Are you sure you want to clear the current document?")) {
-      note.updateAndSave(welcomeText);
-    }
-    textareaDomService.setFocus();
-  }
+  void sampleHandler() => eventBusService.post("resetTextToSample");
 
   void markdownSampleHandler() {
     if (note.empty ||

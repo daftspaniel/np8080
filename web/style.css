@@ -299,3 +299,14 @@ button {
     background-color: black;
     color: #00DC00;
 }
+
+.closeEditorTabX {
+    float: right;
+    background-color: #C3D0B9;
+    border-radius: 4px;
+    padding: 1px;
+    font-size: smaller;
+    width: 10px;
+    text-align: center;
+    color: rebeccapurple;
+}

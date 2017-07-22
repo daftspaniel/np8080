@@ -48,6 +48,11 @@ import 'package:np8080/src/toolbar/toolbar_component.dart';
 class EditorComponent extends EditorComponentBase {
   final List<int> _undoPositions = new List<int>();
 
+  @Input()
+  TextDocument note;
+
+  bool showPreview = false;
+
   EditorComponent(
       TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
@@ -57,24 +62,10 @@ class EditorComponent extends EditorComponentBase {
             newEventBusService) {
     themeService.load();
     showPreview = loadValue(MarkdownPreviewVisibleKey, "").length > 0;
+
+    eventBusService.subscribe('closeEditorTabPrompt', closeEditorTabHandler);
+    eventBusService.subscribe('resetTextToSample', sampleHandler);
   }
-
-  @Input()
-  TextDocument note;
-
-  bool showAboutDialog = false;
-
-  bool showGenerateDialog = false;
-
-  bool showSeqDialog = false;
-
-  bool showReplaceDialog = false;
-
-  bool showPreview = false;
-
-  bool showPrePostDialog = false;
-
-  bool showDeleteLinesDialog = false;
 
   void changeHandler() => note.save();
 
@@ -114,5 +105,17 @@ class EditorComponent extends EditorComponentBase {
 
     note.updateAndSave(textareaDomService.getText());
     return false;
+  }
+
+  void closeEditorTabHandler() => sampleHandler(true);
+
+  void sampleHandler([bool resetFilename = true]) {
+    if (note.empty ||
+        window
+            .confirm("Are you sure you want to clear the current document?")) {
+      note.updateAndSave(welcomeText);
+      if (resetFilename) eventBusService.post('resetEditableTable');
+    }
+    textareaDomService.setFocus();
   }
 }

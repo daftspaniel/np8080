@@ -2,15 +2,16 @@ import 'dart:async';
 import 'dart:html';
 
 import 'package:angular/angular.dart';
+import 'package:np8080/src/dialog/common/componentbase.dart';
+import 'package:np8080/src/services/eventbusservice.dart';
 import 'package:np8080/src/services/themeservice.dart';
 
 @Component(
     selector: 'editable-label',
     templateUrl: 'editablelabel_component.html',
     directives: const [NgModel, NgStyle, NgClass, FORM_DIRECTIVES])
-class EditableLabelComponent implements OnInit {
+class EditableLabelComponent extends ComponentBase implements OnInit {
   final StreamController onTextChange = new StreamController();
-  final ThemeService _themeService;
 
   bool editMode = false;
   String outputText;
@@ -21,9 +22,14 @@ class EditableLabelComponent implements OnInit {
   @Output()
   Stream<String> get textChange => onTextChange.stream;
 
-  EditableLabelComponent(this._themeService) {
+  EditableLabelComponent(
+      ThemeService newthemeService, EventBusService newEventBusService)
+      : super(newthemeService, newEventBusService) {
     editMode = false;
+    eventBusService.subscribe('resetEditableTable', reset);
   }
+
+  ngOnInit() => formatText();
 
   void update() {
     onTextChange.add(text);
@@ -40,17 +46,17 @@ class EditableLabelComponent implements OnInit {
     if (editMode) {
       TextInputElement tb = querySelector("#editbox");
       tb.focus();
-    } else {
-      if (text.length == 0) {
-        text = "np8080.txt";
-        update();
-      }
+    } else if (text.length == 0) {
+      reset();
     }
   }
 
-  String getTabsClass() => _themeService.secondaryClass;
-
-  ngOnInit() {
-    formatText();
+  void reset() {
+    text = "np8080.txt";
+    update();
   }
+
+  void clickTabXHandler() => eventBusService.post("closeEditorTabPrompt");
+
+  String getTabsClass() => themeService.secondaryClass;
 }

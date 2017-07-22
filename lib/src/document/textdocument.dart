@@ -37,6 +37,11 @@ class TextDocument {
     if (_downloadName == null) downloadName = "np8080.txt";
   }
 
+  void reset() {
+    downloadName = "np8080.txt";
+    updateModifiedDate();
+  }
+
   void initLastModifiedDate() {
     String lms = window.localStorage['lm1'];
 
@@ -45,9 +50,7 @@ class TextDocument {
     }
   }
 
-  void updateModifiedDate() {
-    lastModified = new DateTime.now();
-  }
+  void updateModifiedDate() => lastModified = new DateTime.now();
 
   void updateAndSave(String newText) {
     text = newText;
