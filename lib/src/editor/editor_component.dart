@@ -111,8 +111,8 @@ class EditorComponent extends EditorComponentBase {
     if (note.empty ||
         window
             .confirm("Are you sure you want to clear the current document?")) {
-      note.updateAndSave(welcomeText);
       if (resetFilename) eventBusService.post('resetEditableTable');
+      note.updateAndSave(welcomeText);
     }
     textareaDomService.setFocus();
   }

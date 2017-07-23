@@ -63,8 +63,9 @@ class TextDocument {
   }
 
   void save() {
-    if (text == storedText) return;
-    updateUndoBuffer();
+    if (text != storedText) {
+      updateUndoBuffer();
+    }
     performSave();
   }
 
