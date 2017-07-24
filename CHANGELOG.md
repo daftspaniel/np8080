@@ -1,5 +1,10 @@
 Changelog
 
+v0.0.24
+ - Added normalise.css and reorganised CSS.
+ - Updated About dialog to match Manual.
+ - Refactor textdocument class.
+
 v0.0.23
 
  - Custom time/date format in Timestamp dialog. 

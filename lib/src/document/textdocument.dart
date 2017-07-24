@@ -3,10 +3,21 @@ import 'dart:html';
 import '../resources/resources.dart';
 
 class TextDocument {
-  int id = 1;
-  String text = '';
+  int _id = 1;
+  String _text = '';
   String _downloadName;
   DateTime lastModified;
+
+  bool get empty => _text.length == 0;
+
+  String get downloadName => _downloadName;
+  String get text => _text;
+  String get storedText => window.localStorage['id1'];
+
+  set downloadName(String value) {
+    _downloadName = value;
+    save();
+  }
 
   final List<String> _undoText = new List<String>();
 
@@ -16,20 +27,9 @@ class TextDocument {
     initDownloadName();
   }
 
-  bool get empty => text.length == 0;
-
-  String get downloadName => _downloadName;
-
-  String get storedText => window.localStorage['id1'];
-
-  set downloadName(String value) {
-    _downloadName = value;
-    save();
-  }
-
   void initText() {
-    text = storedText;
-    if (text == null) text = welcomeText;
+    _text = storedText;
+    if (_text == null) _text = welcomeText;
   }
 
   void initDownloadName() {
@@ -53,17 +53,17 @@ class TextDocument {
   void updateModifiedDate() => lastModified = new DateTime.now();
 
   void updateAndSave(String newText) {
-    text = newText;
+    _text = newText;
     save();
   }
 
   void appendAndSave(String additionalText) {
-    text += additionalText;
+    _text += additionalText;
     save();
   }
 
   void save() {
-    if (text != storedText) {
+    if (_text != storedText) {
       updateUndoBuffer();
     }
     performSave();
@@ -79,13 +79,13 @@ class TextDocument {
 
   void performSave() {
     updateModifiedDate();
-    window.localStorage['id' + id.toString()] = text;
-    window.localStorage['dn' + id.toString()] = _downloadName;
-    window.localStorage['lm' + id.toString()] = lastModified.toIso8601String();
+    window.localStorage['id' + _id.toString()] = _text;
+    window.localStorage['dn' + _id.toString()] = _downloadName;
+    window.localStorage['lm' + _id.toString()] = lastModified.toIso8601String();
   }
 
   void undo() {
-    text = _undoText.removeLast();
+    _text = _undoText.removeLast();
     performSave();
   }
 }

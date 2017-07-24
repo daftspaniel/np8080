@@ -1,9 +1,10 @@
-<div id="overlay" [hidden]="!showComponent">
+<div id="overlay" style="margin-top:-85px;" [hidden]="!showComponent">
     <div class="dialogPanel" [ngClass]="getClass()">
         <div (click)="close()" class="closeCross">X</div>
-        <div class="header" [ngClass]="getHeaderClass()">About Notepad 8080 v0.0.23</div>
+        <div class="header" [ngClass]="getHeaderClass()">About Notepad 8080 v0.0.24</div>
         <div [ngClass]="getClass()">
-            <pre style="font-size: small;text-align: left">{{aboutText}}</pre>
+            <br/>
+            <textarea readonly cols="85" style="height:350px;font-size: small;text-align: left">{{aboutText}}</textarea>
         </div>
         <div class="footer">
             <button class="closeButton" (click)="close()">Close</button>

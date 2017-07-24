@@ -43,10 +43,7 @@ class EditorComponentBase extends ComponentBase {
 
   String getPreview() => getGeneratedText();
 
-  void amendText() {
-    note.text = getUpdatedText();
-    note.save();
-  }
+  void amendText() => note.updateAndSave(getUpdatedText());
 
   void appendText() {
     String newText = note.text + getGeneratedText();
