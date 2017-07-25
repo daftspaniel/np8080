@@ -30,6 +30,7 @@ class ReplaceDialogComponent extends EditorComponentBase {
 
   void initialiseAndShow() {
     textToReplace = "";
+    textToReplace = textareaDomService.getCurrentSelectionInfo().text;
     show();
   }
 

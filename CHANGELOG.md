@@ -1,9 +1,11 @@
 Changelog
 
 v0.0.24
+ 
  - Added normalise.css and reorganised CSS.
- - Updated About dialog to match Manual.
+ - Updated About dialog to match Manual & Updated Welcome text.
  - Refactor textdocument class.
+ - Menus now close afterclick on item rather than relying on MouseOut.
 
 v0.0.23
 
