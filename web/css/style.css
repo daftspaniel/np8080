@@ -29,6 +29,7 @@ html, body {
     margin: 0px;
     font-weight: bold;
     height: 25px;
+    box-shadow: 2px 2px 2px #888888;
 }
 
 textarea {

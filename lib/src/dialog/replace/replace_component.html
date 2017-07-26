@@ -3,18 +3,23 @@
     <div class="replaceDialogHeader" [ngClass]="getHeaderClass()">Replace</div>
 
     <div style="text-align: center;padding: 10px" [ngClass]="getClass()">
-
-        <label>Replace</label>
-        <input type="text" placeholder="Type text here..." [(ngModel)]="textToReplace">
-        <label> with </label>
-        <input type="text" placeholder="Type text here..." [(ngModel)]="replacementText">
-        <br/>
-        <input type="checkbox" [(ngModel)]="newLineAfter"> Add a newline after each replacement
-        <br/>
-        <input type="checkbox" [(ngModel)]="newLineBefore"> Add a newline before each replacement
-        <br/>
-        <br/>
-
+        <div style="margin-left: 60px;text-align: left">
+            <label>Replace</label>
+            <input type="text" placeholder="Type text here..."
+                   tabindex="221"
+                   [(ngModel)]="textToReplace"/>
+            <label> with </label>
+            <input type="text" placeholder="Type text here..."
+                   tabindex="222"
+                   [(ngModel)]="replacementText" id="replaceTextbox"/>
+            <br/>
+            <br/>
+            <input type="checkbox" tabindex="223" [(ngModel)]="newLineAfter"> Add a newline after each replacement
+            <br/>
+            <input type="checkbox" tabindex="224" [(ngModel)]="newLineBefore"> Add a newline before each replacement
+            <br/>
+            <br/>
+        </div>
         <div class="footer">
             <button class="actionButton" (click)="performReplace()">Replace</button>
             <button class="closeButton light-primary-color" (click)="closeTheDialog()">Close</button>

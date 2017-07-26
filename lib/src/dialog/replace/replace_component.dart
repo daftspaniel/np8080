@@ -1,3 +1,4 @@
+import 'dart:html';
 import 'package:angular/angular.dart';
 import 'package:np8080/src/dialog/common/editorcomponentbase.dart';
 import 'package:np8080/src/services/eventbusservice.dart';
@@ -29,9 +30,18 @@ class ReplaceDialogComponent extends EditorComponentBase {
   }
 
   void initialiseAndShow() {
+    InputElement replaceField;
     textToReplace = "";
-    textToReplace = textareaDomService.getCurrentSelectionInfo().text;
+
+    TextareaSelection tas = textareaDomService.getCurrentSelectionInfo();
+    if (tas.text.length > 0) {
+      textToReplace = tas.text;
+      replaceField = querySelector('#replaceTextbox');
+      print(replaceField);
+    }
+
     show();
+    replaceField?.focus();
   }
 
   String getUpdatedText() {
