@@ -1,7 +1,7 @@
-import 'dart:html';
 import 'package:angular/angular.dart';
 import 'package:np8080/src/dialog/common/editorcomponentbase.dart';
 import 'package:np8080/src/services/eventbusservice.dart';
+import 'package:np8080/src/services/inputfocusservice.dart';
 import 'package:np8080/src/services/textareadomservice.dart';
 import 'package:np8080/src/services/textprocessingservice.dart';
 import 'package:np8080/src/services/themeservice.dart';
@@ -11,6 +11,7 @@ import 'package:np8080/src/services/themeservice.dart';
     templateUrl: 'replace_component.html',
     directives: const [NgClass, NgModel, NgStyle, FORM_DIRECTIVES])
 class ReplaceDialogComponent extends EditorComponentBase {
+  InputFocusService inputFocusService;
   String textToReplace;
   String replacementText;
   String updatedText;
@@ -20,6 +21,7 @@ class ReplaceDialogComponent extends EditorComponentBase {
   String get positionClass => _positionClass;
 
   ReplaceDialogComponent(
+      InputFocusService newInputFocusService,
       TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,
@@ -27,21 +29,19 @@ class ReplaceDialogComponent extends EditorComponentBase {
       : super(newTextProcessingService, newTextareaDomService, newThemeService,
             newEventBusService) {
     eventBusService.subscribe("showReplaceDialog", initialiseAndShow);
+    inputFocusService = newInputFocusService;
   }
 
   void initialiseAndShow() {
-    InputElement replaceField;
     textToReplace = "";
 
     TextareaSelection tas = textareaDomService.getCurrentSelectionInfo();
     if (tas.text.length > 0) {
       textToReplace = tas.text;
-      replaceField = querySelector('#replaceTextbox');
-      print(replaceField);
+      inputFocusService.setFocus('#replaceTextbox');
     }
 
     show();
-    replaceField?.focus();
   }
 
   String getUpdatedText() {
