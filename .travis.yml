@@ -6,5 +6,4 @@ sudo: false
 dart_task:
   - dartanalyzer: true
   - test: --platform firefox
-  - test: --platform chrome
   - dartfmt
