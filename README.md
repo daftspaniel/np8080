@@ -21,7 +21,6 @@ hosted on any web server as it is client-side. Find out more about [Dart](https:
 Run tests with (note tests mostly moved to sub-packages):
 + pub run test test/textprocess_tests.dart -p dartium
 
-
 Run in development with:
 + pub serve
 
