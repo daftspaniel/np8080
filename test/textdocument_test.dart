@@ -4,9 +4,11 @@ import 'package:np8080/src/resources/resources.dart';
 import 'package:test/test.dart';
 
 void main() {
-  TextDocument tdoc = new TextDocument();
-
   group('Document core:', () {
+    TextDocument tdoc;
+    setUp(() {
+      tdoc = new TextDocument();
+    });
     test('default not empty', () {
       expect(tdoc.empty, false);
     });
