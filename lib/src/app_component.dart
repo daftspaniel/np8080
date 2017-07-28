@@ -14,5 +14,5 @@ import 'package:np8080/src/dialog/manual/manualDialog.dart';
     templateUrl: 'app_component.html',
     directives: const [EditorComponent, AboutDialogComponent, ManualDialog])
 class AppComponent {
-  TextDocument note1 = new TextDocument();
+  TextDocument activeNote = new TextDocument();
 }

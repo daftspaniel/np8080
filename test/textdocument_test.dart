@@ -19,12 +19,20 @@ void main() {
       expect(tdoc.downloadName, 'np8080.txt');
     });
     test('text can be set', () {
-      tdoc.updateAndSave('Hello world!');
+      tdoc.text = 'Hello world!';
       expect(tdoc.text, 'Hello world!');
+    });
+    test('text can be updated and saved', () {
+      tdoc.updateAndSave('Hello world again!');
+      expect(tdoc.text, 'Hello world again!');
     });
     test('downloadname can be set', () {
       tdoc.downloadName = 'testnp8080.doc';
       expect(tdoc.downloadName, 'testnp8080.doc');
+    });
+    test('document can be reset to default', () {
+      tdoc.reset();
+      expect(tdoc.downloadName, 'np8080.txt');
     });
   });
 }

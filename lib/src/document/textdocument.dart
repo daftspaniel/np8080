@@ -2,16 +2,28 @@ import 'dart:html';
 
 import '../resources/resources.dart';
 
+import 'package:np8080/src/storage/localstorage.dart';
+
 class TextDocument {
+  final List<String> _undoText = new List<String>();
+
   int _id = 1;
   String _text = '';
   String _downloadName;
   DateTime lastModified;
 
+  TextDocument() {
+    initText();
+    initLastModifiedDate();
+    initDownloadName();
+  }
+
   bool get empty => _text.length == 0;
 
   String get downloadName => _downloadName;
+
   String get text => _text;
+
   String get storedText => window.localStorage['id1'];
 
   set downloadName(String value) {
@@ -19,12 +31,9 @@ class TextDocument {
     save();
   }
 
-  final List<String> _undoText = new List<String>();
-
-  TextDocument() {
-    initText();
-    initLastModifiedDate();
-    initDownloadName();
+  set text(String value) {
+    _text = value;
+    save();
   }
 
   void initText() {
@@ -82,6 +91,9 @@ class TextDocument {
     window.localStorage['id' + _id.toString()] = _text;
     window.localStorage['dn' + _id.toString()] = _downloadName;
     window.localStorage['lm' + _id.toString()] = lastModified.toIso8601String();
+    storeValue('id' + _id.toString(), _text);
+    storeValue('lm' + _id.toString(), lastModified.toIso8601String());
+    storeValue('dn' + _id.toString(), _downloadName);
   }
 
   void undo() {

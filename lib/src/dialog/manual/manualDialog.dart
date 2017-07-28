@@ -15,11 +15,9 @@ class ManualDialog extends ComponentBase {
   ManualDialog(ThemeService newthemeService, EventBusService newEventBusService)
       : super(newthemeService, newEventBusService) {
     eventBusService.subscribe("showManualDialog", showManual);
-    print('helllo');
   }
 
   void showManual() {
-    print('adsfsad');
     manualText = np8080Manual;
     show();
   }

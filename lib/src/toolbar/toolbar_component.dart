@@ -66,6 +66,8 @@ class ToolbarComponent extends EditorComponentBase {
         window
             .confirm("Are you sure you want to clear the current document?")) {
       note.updateAndSave(markdownSampler);
+      showPreview = true;
+      storeValue(MarkdownPreviewVisibleKey, showPreview ? "showMarkdown" : "");
       onShowPreviewChange.add(true);
     }
     textareaDomService.setFocus();
