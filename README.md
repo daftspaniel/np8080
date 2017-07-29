@@ -4,6 +4,8 @@
 NP8080 is a simple notepad type app for the web with some text processing features.
 It is lightweight and fast to load. 100% functionality when offline so great for Chromebooks.
  
+![NP8080 Screenshot](np8080.png) 
+ 
 I use it daily as a scratchpad, a markdown editor and for notes. Particularly handy when working in the context of a web browser
 as switching tabs is far smoother than switching applications.
 
