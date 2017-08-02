@@ -152,4 +152,8 @@ class ToolbarComponent extends EditorComponentBase {
 
   void gitterHandler() =>
       window.open("https://gitter.im/np8080/Lobby", 'gitter');
+
+  void whatsNewHandler()  =>
+      window.open("https://github.com/daftspaniel/np8080/blob/master/CHANGELOG.md", 'CHANGELOG');
+
 }

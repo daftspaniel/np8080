@@ -21,7 +21,7 @@ hosted on any web server as it is client-side. Find out more about [Dart](https:
 [![Build Status](https://travis-ci.org/daftspaniel/np8080.svg?branch=master)](https://travis-ci.org/daftspaniel/np8080)
 
 Run tests with (note tests mostly moved to sub-packages):
-+ pub run test test/textprocess_tests.dart -p dartium
++ pub run test -p chrome
 
 Run in development with:
 + pub serve

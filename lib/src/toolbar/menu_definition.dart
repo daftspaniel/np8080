@@ -83,7 +83,8 @@ class MenuDefinition {
 
     helpMenuItems.addAll([
       new Menu("About", toolbar.aboutHandler, "Find out more about NP8080"),
-      new Menu("Manual", toolbar.manualHandler, "Read the NP8080 manual", true),
+      new Menu("What's New?", toolbar.whatsNewHandler, "Find out what's changed!", true),
+      new Menu("Manual", toolbar.manualHandler, "Read the NP8080 manual"),
       new Menu("GitHub", toolbar.githubHandler, "Get the source code!"),
       new Menu(
           "Gitter Chat", toolbar.gitterHandler, "Gitter based Chatroom", true),
