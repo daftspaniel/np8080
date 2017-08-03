@@ -8,6 +8,7 @@ import 'package:np8080/src/dialog/generate/generate_component.dart';
 import 'package:np8080/src/dialog/prepost/prepost_component.dart';
 import 'package:np8080/src/dialog/replace/replace_component.dart';
 import 'package:np8080/src/dialog/sequence/sequence_component.dart';
+import 'package:np8080/src/dialog/split/splitdialog.dart';
 import 'package:np8080/src/dialog/timestamp/timestamp_component.dart';
 import 'package:np8080/src/document/textdocument.dart';
 import 'package:np8080/src/editablelabel/editablelabel_component.dart';
@@ -36,6 +37,7 @@ import 'package:np8080/src/toolbar/toolbar_component.dart';
       PreviewComponent,
       EditableLabelComponent,
       TimestampDialogComponent,
+      SplitDialog,
       NgFor,
       NgModel,
       NgStyle,

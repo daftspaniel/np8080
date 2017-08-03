@@ -11,7 +11,7 @@ dependencies:
   dart_to_js_script_rewriter: ^1.0.1
   test: ^0.12.23+1
   pwa: ^0.1.7
-  stringprocess: ^0.0.4
+  stringprocess: ^0.0.5
   minibus: ^0.0.3
   intl: ^0.15.1
 transformers:

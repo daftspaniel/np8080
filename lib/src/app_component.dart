@@ -7,7 +7,7 @@ import 'package:np8080/src/document/textdocument.dart';
 import 'package:np8080/src/editor/editor_component.dart';
 
 import 'package:np8080/src/dialog/about/about_component.dart';
-import 'package:np8080/src/dialog/manual/manualDialog.dart';
+import 'package:np8080/src/dialog/manual/manualdialog.dart';
 
 @Component(
     selector: 'np8080-app',

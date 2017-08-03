@@ -47,19 +47,19 @@ class ToolbarComponent extends EditorComponentBase {
     textareaDomService.setFocus();
   }
 
-  void generateHandler() => eventBusService.post("showGenerateDialog");
+  void generateHandler() => post("showGenerateDialog");
 
-  void prePostHandler() => eventBusService.post("showPrePostDialog");
+  void prePostHandler() => post("showPrePostDialog");
 
-  void generateSeqHandler() => eventBusService.post("showSequenceDialog");
+  void generateSeqHandler() => post("showSequenceDialog");
 
-  void aboutHandler() => eventBusService.post("showAboutDialog");
+  void aboutHandler() => post("showAboutDialog");
 
-  void removeLinesContaining() => eventBusService.post("showDeleteLinesDialog");
+  void removeLinesContaining() => post("showDeleteLinesDialog");
 
-  void replaceHandler() => eventBusService.post("showReplaceDialog");
+  void replaceHandler() => post("showReplaceDialog");
 
-  void sampleHandler() => eventBusService.post("resetTextToSample");
+  void sampleHandler() => post("resetTextToSample");
 
   void markdownSampleHandler() {
     if (note.empty ||
@@ -134,9 +134,13 @@ class ToolbarComponent extends EditorComponentBase {
     textareaDomService.setFocus();
   }
 
-  void timestampDlgHandler() => eventBusService.post("showTimestampDialog");
+  void timestampDlgHandler() => post("showTimestampDialog");
 
-  void manualHandler() => eventBusService.post("showManualDialog");
+  void manualHandler() => post("showManualDialog");
+
+  void splitHandler() => post("showSplitDialog");
+
+  void post(String msg) => eventBusService.post(msg);
 
   void undoHandler() => note.undo();
 
