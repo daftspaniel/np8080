@@ -34,17 +34,18 @@ class SplitDialog extends EditorComponentBase {
     TextareaSelection tas = textareaDomService.getCurrentSelectionInfo();
     if (tas.text.length > 0) {
       delimiter = tas.text;
-      inputFocusService.setFocus('#delimiterTextbox');
     }
-
+    inputFocusService.setFocus('#delimiterTextbox');
     show();
   }
 
   String getUpdatedText() {
-    updatedText = textProcessingService.getReplaced(
-        note.text, delimiter, replacementText);
+    updatedText = textProcessingService.split(note.text, delimiter);
     return updatedText;
   }
 
-  void performSplit() {}
+  void performSplit() {
+    note.updateAndSave(getUpdatedText());
+    closeTheDialog();
+  }
 }
