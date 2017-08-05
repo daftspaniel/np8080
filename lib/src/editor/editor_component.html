@@ -11,7 +11,6 @@
         <textarea [(ngModel)]="note.text" (keyup)="changeHandler()" (keydown)="keyHandler($event)"
                   [ngStyle]="{width: showPreview ? '47%':'calc(100% - 18px)'}"
                   tabindex="1" autofocus id="nptextbox"
-                  class="primary-text-color"
                   [ngClass]="getDocumentClass()"
         ></textarea>
 

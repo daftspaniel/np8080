@@ -1,0 +1,8 @@
+<div class="fullScreenViewPanel" [hidden]="!showComponent" [ngClass]="getClass()">
+
+    <div (click)="close()" class="closeCross">X</div>
+    <div class="header" [ngClass]="getHeaderClass()">Reader View - {{note.downloadName}}</div>
+    <textarea [ngClass]="getDocumentClass()"
+              style="width:calc(100% - 30px);height:calc(100% - 50px);" readonly>{{note.text}}</textarea>
+
+</div>

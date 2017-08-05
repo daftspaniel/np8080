@@ -73,7 +73,9 @@ class MenuDefinition {
 
     viewMenuItems.addAll([
       new Menu("Markdown", toolbar.markdownHandler,
-          "Show a rendering of Markdown alongside the text.", true),
+          "Show a rendering of Markdown alongside the text."),
+      new Menu("Reader", toolbar.readerHandler,
+          "Show a full screen readonly view of the text.", true),
       new Menu(
           "Dark theme", toolbar.darkThemeHandler, "Switch to a UI dark theme."),
       new Menu("Default theme", toolbar.defaultThemeHandler,

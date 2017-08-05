@@ -148,6 +148,8 @@ class ToolbarComponent extends EditorComponentBase {
 
   void defaultThemeHandler() => themeService.theme = "default";
 
+  void readerHandler() => post("showReaderView");
+
   void nb8080Handler() =>
       window.open("https://daftspaniel.github.io/demos/nb8080/", 'git');
 

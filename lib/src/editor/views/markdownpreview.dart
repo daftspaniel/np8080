@@ -9,14 +9,14 @@ import 'package:np8080/src/services/themeservice.dart';
 
 @Component(
     selector: 'markdown-preview',
-    templateUrl: 'preview_component.html',
+    templateUrl: 'markdownpreview.html',
     directives: const [NgModel, NgStyle, NgClass])
-class PreviewComponent extends EditorComponentBase implements OnChanges {
+class MarkdownPreview extends EditorComponentBase implements OnChanges {
   final NullTreeSanitizer _nullSanitizer = new NullTreeSanitizer();
 
   DivElement _htmlDiv;
 
-  PreviewComponent(
+  MarkdownPreview(
       TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,

@@ -8,11 +8,17 @@ import 'package:np8080/src/editor/editor_component.dart';
 
 import 'package:np8080/src/dialog/about/about_component.dart';
 import 'package:np8080/src/dialog/manual/manualdialog.dart';
+import 'package:np8080/src/editor/views/readerview.dart';
 
 @Component(
     selector: 'np8080-app',
     templateUrl: 'app_component.html',
-    directives: const [EditorComponent, AboutDialogComponent, ManualDialog])
+    directives: const [
+      EditorComponent,
+      AboutDialogComponent,
+      ManualDialog,
+      ReaderView
+    ])
 class AppComponent {
   TextDocument activeNote = new TextDocument();
 }

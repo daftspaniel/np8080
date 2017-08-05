@@ -6,6 +6,9 @@ v0.0.24
  - Updated About dialog to match Manual & Updated Welcome text.
  - Refactor textdocument class.
  - Menus now close afterclick on item rather than relying on MouseOut.
+ - Added Split (by a specified delimiter) feature under modify.
+ - Added Reader option to View menu.
+ - Refactoring of 'component' name.
 
 v0.0.23
 
