@@ -9,7 +9,7 @@ import 'package:np8080/src/services/themeservice.dart';
 @Component(
     selector: 'replace-dialog',
     templateUrl: 'replace_component.html',
-    directives: const [NgClass, NgModel, NgStyle, FORM_DIRECTIVES])
+    directives: const [NgClass, NgModel, NgStyle, formDirectives])
 class ReplaceDialogComponent extends EditorComponentBase {
   InputFocusService inputFocusService;
   String textToReplace;

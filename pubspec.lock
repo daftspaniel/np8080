@@ -12,13 +12,13 @@ packages:
       name: angular
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.0-alpha+1"
+    version: "4.0.0-alpha+2"
   angular_compiler:
     description:
       name: angular_compiler
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.1"
+    version: "0.2.0"
   args:
     description:
       name: args
@@ -312,7 +312,7 @@ packages:
       name: source_gen
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.1+1"
+    version: "0.7.0"
   source_map_stack_trace:
     description:
       name: source_map_stack_trace

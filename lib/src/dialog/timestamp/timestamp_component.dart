@@ -15,7 +15,7 @@ import 'package:np8080/src/services/themeservice.dart';
       NgModel,
       NgStyle,
       NgSelectOption,
-      FORM_DIRECTIVES
+      formDirectives
     ])
 class TimestampDialogComponent extends EditorComponentBase {
   final List<String> times = new List<String>();

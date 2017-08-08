@@ -16,7 +16,5 @@ dependencies:
   intl: ^0.15.1
 transformers:
 - angular:
-    angular/transform/codegen:
-        use_analyzer: true
     entry_points: web/main.dart
 - dart_to_js_script_rewriter

@@ -9,7 +9,7 @@ import 'componentbase.dart';
 @Component(
     selector: 'base_dialog',
     templateUrl: '../about/about_component.html',
-    directives: const [NgClass, NgModel, NgStyle, FORM_DIRECTIVES])
+    directives: const [NgClass, NgModel, NgStyle, formDirectives])
 class EditorComponentBase extends ComponentBase {
   final TextProcessingService textProcessingService;
   final TextareaDomService textareaDomService;

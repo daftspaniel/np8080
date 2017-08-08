@@ -34,5 +34,11 @@ void main() {
       tdoc.reset();
       expect(tdoc.downloadName, 'np8080.txt');
     });
+    test('modifed date is updated on save', () {
+      DateTime dt = tdoc.lastModified;
+      tdoc.text = "The dog is barking";
+      tdoc.save();
+      expect(tdoc.lastModified, isNot(dt));
+    });
   });
 }

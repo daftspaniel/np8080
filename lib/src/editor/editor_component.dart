@@ -43,7 +43,7 @@ import 'package:np8080/src/toolbar/toolbar_component.dart';
       NgStyle,
       NgIf,
       NgClass,
-      FORM_DIRECTIVES
+      formDirectives
     ])
 class EditorComponent extends EditorComponentBase {
   final List<int> _undoPositions = new List<int>();

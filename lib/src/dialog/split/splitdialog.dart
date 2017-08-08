@@ -9,7 +9,7 @@ import 'package:np8080/src/services/themeservice.dart';
 @Component(
     selector: 'split-dialog',
     templateUrl: 'splitdialog.tpl.html',
-    directives: const [NgClass, NgModel, NgStyle, FORM_DIRECTIVES])
+    directives: const [NgClass, NgModel, NgStyle, formDirectives])
 class SplitDialog extends EditorComponentBase {
   InputFocusService inputFocusService;
   String delimiter;
