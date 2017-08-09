@@ -9,9 +9,9 @@ import 'package:np8080/src/services/themeservice.dart';
 
 @Component(
     selector: 'editable-label',
-    templateUrl: 'editablelabel_component.html',
+    templateUrl: 'editablelabel.html',
     directives: const [NgModel, NgStyle, NgClass, formDirectives])
-class EditableLabelComponent extends ComponentBase implements OnInit {
+class EditableLabel extends ComponentBase implements OnInit {
   final StreamController onTextChange = new StreamController();
 
   bool editMode = false;
@@ -23,7 +23,7 @@ class EditableLabelComponent extends ComponentBase implements OnInit {
   @Output()
   Stream<String> get textChange => onTextChange.stream;
 
-  EditableLabelComponent(
+  EditableLabel(
       ThemeService newthemeService, EventBusService newEventBusService)
       : super(newthemeService, newEventBusService) {
     editMode = false;

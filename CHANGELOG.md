@@ -1,5 +1,9 @@
 Changelog
 
+v0.0.25
+
+ - Editing a document name can be confirm by pressing return.
+
 v0.0.24
  
  - Added normalise.css and reorganised CSS.

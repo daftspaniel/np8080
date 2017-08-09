@@ -2,6 +2,7 @@
     <div style="font-size:2pt" [hidden]="!editMode">&nbsp;</div>
     <input type="text" [(ngModel)]="text" [ngStyle]="{'height': editMode ? '20px':'0px'}"
            (keyup)="update()" (blur)="toggle()"
+           (keyup.enter)="toggle()"
            tabindex="2" id="editbox" style="border:0px;padding: 0px;"/>
     <div class="labelReadOnly" [ngClass]="getTabsClass()" [hidden]="editMode" title="{{text}}">
         <span (click)="toggle()">{{outputText}}</span>

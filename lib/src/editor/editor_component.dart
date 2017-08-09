@@ -11,9 +11,9 @@ import 'package:np8080/src/dialog/sequence/sequence_component.dart';
 import 'package:np8080/src/dialog/split/splitdialog.dart';
 import 'package:np8080/src/dialog/timestamp/timestamp_component.dart';
 import 'package:np8080/src/document/textdocument.dart';
-import 'package:np8080/src/editablelabel/editablelabel_component.dart';
+import 'package:np8080/src/editablelabel/editablelabel.dart';
 import 'package:np8080/src/editor/views/markdownpreview.dart';
-import 'package:np8080/src/editor/status_component.dart';
+import 'package:np8080/src/editor/statuspanel.dart';
 import 'package:np8080/src/resources/resources.dart';
 import 'package:np8080/src/services/eventbusservice.dart';
 import 'package:np8080/src/services/textareadomservice.dart';
@@ -27,7 +27,7 @@ import 'package:np8080/src/toolbar/toolbar_component.dart';
     selector: 'plain-editor',
     templateUrl: 'editor_component.html',
     directives: const [
-      StatusComponent,
+      StatusPanel,
       ToolbarComponent,
       GenerateDialogComponent,
       ReplaceDialogComponent,
@@ -35,7 +35,7 @@ import 'package:np8080/src/toolbar/toolbar_component.dart';
       SequenceDialogComponent,
       DeleteLinesDialogComponent,
       MarkdownPreview,
-      EditableLabelComponent,
+      EditableLabel,
       TimestampDialogComponent,
       SplitDialog,
       NgFor,
