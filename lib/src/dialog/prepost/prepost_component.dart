@@ -2,6 +2,7 @@ import 'package:angular/angular.dart';
 
 import 'package:np8080/src/dialog/common/editorcomponentbase.dart';
 import 'package:np8080/src/services/eventbusservice.dart';
+import 'package:np8080/src/services/inputfocusservice.dart';
 import 'package:np8080/src/services/textareadomservice.dart';
 import 'package:np8080/src/services/textprocessingservice.dart';
 import 'package:np8080/src/services/themeservice.dart';
@@ -13,15 +14,22 @@ import 'package:np8080/src/services/themeservice.dart';
 class PrePostDialogComponent extends EditorComponentBase {
   String prefix = "";
   String postfix = "";
-
+  InputFocusService inputFocusService;
   PrePostDialogComponent(
+      InputFocusService newInputFocusService,
       TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,
       EventBusService newEventBusService)
       : super(newTextProcessingService, newTextareaDomService, newThemeService,
             newEventBusService) {
-    eventBusService.subscribe("showPrePostDialog", show);
+    eventBusService.subscribe("showPrePostDialog", initialiseAndShow);
+    inputFocusService = newInputFocusService;
+  }
+
+  void initialiseAndShow() {
+    show();
+    inputFocusService.setFocus('#preTextbox');
   }
 
   void performPrePost() {

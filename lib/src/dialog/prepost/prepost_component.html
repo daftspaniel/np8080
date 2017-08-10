@@ -6,10 +6,10 @@
         <div style="text-align: center;padding: 10px" [ngClass]="getClass()">
 
             <label>Add To Start</label>
-            <input type="text" placeholder="Type text here..." [(ngModel)]="prefix">
+            <input type="text" placeholder="Type text here..." [(ngModel)]="prefix" id="preTextbox" />
             <br/>
             <label>Add To End</label>
-            <input type="text" placeholder="Type text here..." [(ngModel)]="postfix">
+            <input type="text" placeholder="Type text here..." [(ngModel)]="postfix" />
 
             <div class="footer">
                 <button class="actionButton" (click)="performPrePost()">Do it!</button>

@@ -39,8 +39,9 @@ class ReplaceDialogComponent extends EditorComponentBase {
     if (tas.text.length > 0) {
       textToReplace = tas.text;
       inputFocusService.setFocus('#replaceTextbox');
+    } else {
+      inputFocusService.setFocus('#targetTextbox');
     }
-
     show();
   }
 
