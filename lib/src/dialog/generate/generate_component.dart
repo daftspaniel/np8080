@@ -26,6 +26,7 @@ class GenerateDialogComponent extends EditorComponentBase {
 
   void initialiseAndShow() {
     textToRepeat = "";
+    setFocus("#repeatTextbox");
     show();
   }
 

@@ -1,3 +1,5 @@
+import 'dart:async';
+import 'dart:html';
 import 'package:np8080/src/services/eventbusservice.dart';
 import 'package:np8080/src/services/themeservice.dart';
 
@@ -20,4 +22,9 @@ abstract class ComponentBase {
   String getHeaderClass() => themeService.secondaryClass;
 
   String getDocumentClass() => themeService.documentClass;
+
+  void setFocus(String id) {
+    new Timer(
+        new Duration(milliseconds: 454), () => querySelector(id)?.focus());
+  }
 }

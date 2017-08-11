@@ -4,7 +4,6 @@
 import 'package:angular/angular.dart';
 import 'package:np8080/src/app_component.dart';
 import 'package:np8080/src/services/eventbusservice.dart';
-import 'package:np8080/src/services/inputfocusservice.dart';
 import 'package:np8080/src/services/textareadomservice.dart';
 import 'package:np8080/src/services/textprocessingservice.dart';
 import 'package:np8080/src/services/themeservice.dart';
@@ -14,7 +13,6 @@ main() {
   new pwa.Client();
   bootstrap(AppComponent, [
     EventBusService,
-    InputFocusService,
     TextProcessingService,
     TextareaDomService,
     ThemeService

@@ -1,7 +1,6 @@
 import 'package:angular/angular.dart';
 import 'package:np8080/src/dialog/common/editorcomponentbase.dart';
 import 'package:np8080/src/services/eventbusservice.dart';
-import 'package:np8080/src/services/inputfocusservice.dart';
 import 'package:np8080/src/services/textareadomservice.dart';
 import 'package:np8080/src/services/textprocessingservice.dart';
 import 'package:np8080/src/services/themeservice.dart';
@@ -11,13 +10,11 @@ import 'package:np8080/src/services/themeservice.dart';
     templateUrl: 'splitdialog.tpl.html',
     directives: const [NgClass, NgModel, NgStyle, formDirectives])
 class SplitDialog extends EditorComponentBase {
-  InputFocusService inputFocusService;
   String delimiter;
   String replacementText;
   String updatedText;
 
   SplitDialog(
-      InputFocusService newInputFocusService,
       TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,
@@ -25,7 +22,6 @@ class SplitDialog extends EditorComponentBase {
       : super(newTextProcessingService, newTextareaDomService, newThemeService,
             newEventBusService) {
     eventBusService.subscribe("showSplitDialog", initialiseAndShow);
-    inputFocusService = newInputFocusService;
   }
 
   void initialiseAndShow() {
@@ -35,7 +31,7 @@ class SplitDialog extends EditorComponentBase {
     if (tas.text.length > 0) {
       delimiter = tas.text;
     }
-    inputFocusService.setFocus('#delimiterTextbox');
+    setFocus('#delimiterTextbox');
     show();
   }
 

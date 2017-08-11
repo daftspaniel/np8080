@@ -6,12 +6,12 @@
         <div style="text-align: center;padding: 10px" [ngClass]="getClass()">
 
             <label>Repeat</label>
-            <input type="text" placeholder="Type text here..." [(ngModel)]="textToRepeat">
+            <input type="text" placeholder="Type text here..." [(ngModel)]="textToRepeat" id="repeatTextbox">
             <input type="number" [(ngModel)]="repeatCount" min="1"> Times
             <br/>
             <input type="checkbox" [(ngModel)]="newLineAfter"> Add a newline after each item
             <br/>
-            <textarea class="previewText" readonly [ngModel]="getPreview()"></textarea>
+            <textarea class="previewText" readonly [ngModel]="getPreview()" placeholder="Preview will appear here"></textarea>
 
             <div class="footer">
                 <button class="actionButton" (click)="prependText()">Prepend</button>

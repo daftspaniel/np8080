@@ -33,10 +33,15 @@ class TimestampDialogComponent extends EditorComponentBase {
       EventBusService newEventBusService)
       : super(newTextProcessingService, newTextareaDomService, newThemeService,
             newEventBusService) {
-    eventBusService.subscribe("showTimestampDialog", show);
+    eventBusService.subscribe("showTimestampDialog", initialiseAndShow);
     updateTime();
     timeStamp = times[0];
     customFormat = defaultCustomFormat;
+  }
+
+  void initialiseAndShow() {
+    show();
+    setFocus('#patternSelect');
   }
 
   String customFormattedDate() {

@@ -21,7 +21,12 @@ class SequenceDialogComponent extends EditorComponentBase {
       EventBusService newEventBusService)
       : super(newTextProcessingService, newTextareaDomService, newThemeService,
             newEventBusService) {
-    eventBusService.subscribe("showSequenceDialog", show);
+    eventBusService.subscribe("showSequenceDialog", initialiseAndShow);
+  }
+
+  void initialiseAndShow() {
+    setFocus("#startTextbox");
+    show();
   }
 
   String getGeneratedText() {
