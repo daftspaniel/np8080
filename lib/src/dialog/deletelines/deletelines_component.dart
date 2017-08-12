@@ -27,6 +27,7 @@ class DeleteLinesDialogComponent extends EditorComponentBase {
 
   void initialiseAndShow() {
     markerText = "";
+    setFocus("#markerTextbox");
     show();
   }
 
