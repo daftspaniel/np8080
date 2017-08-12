@@ -22,6 +22,10 @@ class MenuComponent extends ComponentBase {
     close();
     handler();
   }
+
+  String getMenuClass() {
+    return themeService.mainClass + " " + themeService.highlightClass;
+  }
 }
 
 class Menu {

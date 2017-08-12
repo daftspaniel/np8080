@@ -23,6 +23,8 @@ abstract class ComponentBase {
 
   String getDocumentClass() => themeService.documentClass;
 
+  String getHighlightClass() => themeService.highlightClass;
+
   void setFocus(String id) {
     new Timer(
         new Duration(milliseconds: 454), () => querySelector(id)?.focus());

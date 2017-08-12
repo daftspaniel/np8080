@@ -5,7 +5,7 @@
         <span *ngFor="let menuItem of items">
             <button
                     class="toolbarButton toolbarMenuButton"
-                    [ngClass]="getClass()"
+                    [ngClass]="getMenuClass()"
                     (click)="menuClick(menuItem.handler)"
                     title="{{menuItem.tooltip}}">{{menuItem.name}}
             </button>

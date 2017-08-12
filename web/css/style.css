@@ -12,13 +12,14 @@ html, body {
     border: groove 1px;
     border-bottom: 0px;
 }
-.menuFooter{
+
+.menuFooter {
     z-index: 999;
     border: groove 1px;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     background-color: #eee862;
-    border-top:0px;
+    border-top: 0px;
     height: 5px;
 }
 
@@ -119,10 +120,6 @@ textarea {
 .toolbarMenuButton {
     margin-left: 0px;
     padding-left: 10px;
-}
-
-.toolbarMenuButton:hover {
-    background-color: cornflowerblue;
 }
 
 .labelReadOnly {
@@ -282,7 +279,7 @@ button {
 
 /* default theme */
 .default-theme-1 {
-    background-color: #bbd8f9 !important;
+    background-color: #bbd8f9;
     color: #111111;
 }
 
@@ -294,6 +291,10 @@ button {
 .default-document {
     background-color: whitesmoke;
     color: #111111;
+}
+
+.default-highlight:hover {
+    background-color: lightgreen;
 }
 
 /* dark theme */
@@ -310,6 +311,10 @@ button {
 .dark-document {
     background-color: black;
     color: #00DC00;
+}
+
+.dark-highlight:hover {
+    background-color: rgb(10, 102, 112);
 }
 
 .closeEditorTabX {

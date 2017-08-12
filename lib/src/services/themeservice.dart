@@ -14,6 +14,8 @@ class ThemeService {
 
   String get documentClass => _theme + '-document';
 
+  String get highlightClass => _theme + '-highlight';
+
   void load() => _theme = loadValue(SelectedThemeKey, 'default');
 
   set theme(String newTheme) {
