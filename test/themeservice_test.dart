@@ -20,6 +20,9 @@ void main() {
     test('highlightClass', () {
       expect(tps.highlightClass, "default-highlight");
     });
+    test('borderClass', () {
+      expect(tps.borderClass, "default-border");
+    });
   });
 
   group('Main: dark theme.', () {
@@ -40,6 +43,9 @@ void main() {
     });
     test('highlightClass', () {
       expect(tps.highlightClass, "dark-highlight");
+    });
+    test('borderClass', () {
+      expect(tps.borderClass, "dark-border");
     });
   });
 

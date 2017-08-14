@@ -16,6 +16,8 @@ class ThemeService {
 
   String get highlightClass => _theme + '-highlight';
 
+  String get borderClass => _theme + '-border';
+
   void load() => _theme = loadValue(SelectedThemeKey, 'default');
 
   set theme(String newTheme) {

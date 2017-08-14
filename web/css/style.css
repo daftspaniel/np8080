@@ -277,46 +277,6 @@ button {
     height: calc(100vh - 102px);
 }
 
-/* default theme */
-.default-theme-1 {
-    background-color: #bbd8f9;
-    color: #111111;
-}
-
-.default-theme-2 {
-    background-color: #9ac0e9;
-    color: #111111;
-}
-
-.default-document {
-    background-color: whitesmoke;
-    color: #111111;
-}
-
-.default-highlight:hover {
-    background-color: lightgreen;
-}
-
-/* dark theme */
-.dark-theme-1 {
-    background-color: #111111;
-    color: #eee862;
-}
-
-.dark-theme-2 {
-    background-color: #333333;
-    color: #eee862;
-}
-
-.dark-document {
-    background-color: black;
-    color: #00DC00;
-}
-
-.dark-highlight:hover {
-    background-color: rgb(10, 102, 112);
-}
-
 .closeEditorTabX {
     float: right;
     background-color: #C3D0B9;

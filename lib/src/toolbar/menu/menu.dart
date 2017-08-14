@@ -2,6 +2,7 @@ import 'package:angular/angular.dart';
 import 'package:np8080/src/dialog/common/componentbase.dart';
 import 'package:np8080/src/services/eventbusservice.dart';
 import 'package:np8080/src/services/themeservice.dart';
+import 'package:np8080/src/toolbar/menu_definition.dart';
 
 @Component(
     selector: 'menu',
@@ -23,16 +24,7 @@ class MenuComponent extends ComponentBase {
     handler();
   }
 
-  String getMenuClass() {
-    return themeService.mainClass + " " + themeService.highlightClass;
-  }
-}
-
-class Menu {
-  final String name;
-  final String tooltip;
-  final Function handler;
-  final bool separator;
-
-  Menu(this.name, this.handler, this.tooltip, [this.separator = false]);
+  String getMenuClass() =>
+      themeService.mainClass + " " + themeService.highlightClass;
+  String getBorderClass() => themeService.borderClass;
 }

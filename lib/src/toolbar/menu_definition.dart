@@ -2,6 +2,15 @@ import 'package:np8080/src/resources/resources.dart';
 import 'package:np8080/src/toolbar/menu/menu.dart';
 import 'package:np8080/src/toolbar/toolbar_component.dart';
 
+class Menu {
+  final String name;
+  final String tooltip;
+  final Function handler;
+  final bool separator;
+
+  Menu(this.name, this.handler, this.tooltip, [this.separator = false]);
+}
+
 class MenuDefinition {
   final List<Menu> startMenuItems = new List<Menu>();
   final List<Menu> modifyMenuItems = new List<Menu>();
