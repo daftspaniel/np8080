@@ -26,5 +26,9 @@ class MenuComponent extends ComponentBase {
 
   String getMenuClass() =>
       themeService.mainClass + " " + themeService.highlightClass;
+
+  String getFooterClass() =>
+      themeService.mainClass + " " + themeService.borderClass;
+
   String getBorderClass() => themeService.borderClass;
 }

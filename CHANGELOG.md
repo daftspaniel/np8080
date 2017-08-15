@@ -3,6 +3,9 @@ Changelog
 v0.0.25
 
  - Editing a document name can be confirm by pressing return.
+ - Improved theming of Menus.
+ - More Unit tests.
+ - Focus set on default dialog inputs.
 
 v0.0.24
  

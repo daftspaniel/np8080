@@ -19,7 +19,7 @@
 }
 
 .default-border {
-    background-color: #94b1ff;
+    border-color: #94b1ff;
 }
 
 /* dark theme */
@@ -43,5 +43,5 @@
 }
 
 .dark-border {
-    background-color: #d0ff87;
+    border-color: #d0ff87;
 }

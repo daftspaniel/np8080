@@ -1,7 +1,7 @@
 <div (mouseenter)="show()" (mouseleave)="close()" style="z-index: 999;">
     <button class="toolbarMenu" [ngClass]="getClass()">{{menutitle}}</button>
 
-    <div class="menuItem" [ngStyle]="{'display':  display, 'width':'130px'}">
+    <div class="menuItem" [ngStyle]="{'display':  display, 'width':'130px'}" [ngClass]="getBorderClass()">
         <span *ngFor="let menuItem of items">
             <button
                     class="toolbarButton toolbarMenuButton"
@@ -12,6 +12,6 @@
             <div *ngIf="menuItem.separator" class="menuSeparator" [ngClass]="getBorderClass()">&nbsp;</div>
         </span>
     </div>
-    <div class="menuFooter" [ngClass]="getClass()"
+    <div class="menuFooter" [ngClass]="getFooterClass()"
          [ngStyle]="{'display':  display, 'width':'130px'}">&nbsp;</div>
 </div>

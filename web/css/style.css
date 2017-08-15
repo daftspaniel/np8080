@@ -9,16 +9,15 @@ html, body {
 
 .menuItem {
     z-index: 999;
-    border: groove 1px;
+    border: solid 1px;
     border-bottom: 0px;
 }
 
 .menuFooter {
     z-index: 999;
-    border: groove 1px;
+    border: solid 1px;
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
-    background-color: #eee862;
     border-top: 0px;
     height: 5px;
 }
@@ -85,7 +84,7 @@ textarea {
 }
 
 .wideToolbarButton {
-    width: 90px;
+    width: 95px;
     color: #9ed3d9;
     background-color: #2B2926;
     border: 0px;
@@ -258,11 +257,11 @@ button {
 }
 
 .menuSeparator {
-    background-color: #fffad9;
     width: 130px;
-    height: 1px;
+    height: 0px;
     padding: 0px;
     margin: 0px;
+    border-bottom: solid 1px red;
 }
 
 .edit-label {
