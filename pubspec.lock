@@ -12,13 +12,19 @@ packages:
       name: angular
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.0-alpha+2"
+    version: "4.0.0-alpha+3"
   angular_compiler:
     description:
       name: angular_compiler
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.0"
+    version: "0.2.1"
+  angular_forms:
+    description:
+      name: angular_forms
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.0"
   args:
     description:
       name: args
@@ -54,13 +60,13 @@ packages:
       name: build
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.9.3"
+    version: "0.10.0"
   build_barback:
     description:
       name: build_barback
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.0"
+    version: "0.4.0"
   charcode:
     description:
       name: charcode
@@ -312,7 +318,7 @@ packages:
       name: source_gen
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.7.0"
+    version: "0.7.1"
   source_map_stack_trace:
     description:
       name: source_map_stack_trace
