@@ -12,6 +12,7 @@ import 'package:np8080/src/editor/views/readerview.dart';
 
 @Component(
     selector: 'np8080-app',
+    visibility: Visibility.none,
     templateUrl: 'app_component.html',
     directives: const [
       EditorComponent,
