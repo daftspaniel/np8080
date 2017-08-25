@@ -8,6 +8,7 @@ import 'package:np8080/src/services/themeservice.dart';
 
 @Component(
     selector: 'prepost-dialog',
+    visibility: Visibility.none,
     templateUrl: 'prepost_component.html',
     directives: const [NgClass, NgModel, NgStyle, formDirectives])
 class PrePostDialogComponent extends EditorComponentBase {

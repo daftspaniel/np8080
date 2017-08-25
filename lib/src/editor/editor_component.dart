@@ -26,6 +26,7 @@ import 'package:np8080/src/toolbar/toolbar_component.dart';
 @Component(
     selector: 'plain-editor',
     templateUrl: 'editor_component.html',
+    visibility: Visibility.none,
     directives: const [
       StatusPanel,
       ToolbarComponent,

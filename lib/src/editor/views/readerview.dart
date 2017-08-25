@@ -8,6 +8,7 @@ import 'package:np8080/src/services/themeservice.dart';
 @Component(
     selector: 'reader-view',
     templateUrl: 'readerview.html',
+    visibility: Visibility.none,
     directives: const [NgModel, NgStyle, NgClass])
 class ReaderView extends ComponentBase {
   ReaderView(ThemeService newthemeService, EventBusService newEventBusService)

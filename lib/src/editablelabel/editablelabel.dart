@@ -10,6 +10,7 @@ import 'package:np8080/src/services/themeservice.dart';
 
 @Component(
     selector: 'editable-label',
+    visibility: Visibility.none,
     templateUrl: 'editablelabel.html',
     directives: const [NgModel, NgStyle, NgClass, formDirectives])
 class EditableLabel extends ComponentBase implements OnInit {

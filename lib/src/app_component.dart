@@ -20,5 +20,5 @@ import 'package:np8080/src/editor/views/readerview.dart';
       ReaderView
     ])
 class AppComponent {
-  TextDocument activeNote = new TextDocument();
+  final TextDocument activeNote = new TextDocument();
 }

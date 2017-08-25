@@ -8,6 +8,7 @@ import 'package:np8080/src/services/themeservice.dart';
 
 @Component(
     selector: 'delete-lines-dialog',
+    visibility: Visibility.none,
     templateUrl: 'deletelines_component.html',
     directives: const [NgModel, NgClass, formDirectives])
 class DeleteLinesDialogComponent extends EditorComponentBase {

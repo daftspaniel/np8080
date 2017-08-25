@@ -8,6 +8,7 @@ import 'package:np8080/src/services/themeservice.dart';
 
 @Component(
     selector: 'sequence-dialog',
+    visibility: Visibility.none,
     templateUrl: 'sequence_component.html',
     directives: const [NgClass, NgModel, NgStyle, formDirectives])
 class SequenceDialogComponent extends EditorComponentBase {

@@ -11,6 +11,7 @@ import 'package:np8080/src/services/themeservice.dart';
 @Component(
     selector: 'markdown-preview',
     templateUrl: 'markdownpreview.html',
+    visibility: Visibility.none,
     directives: const [NgModel, NgStyle, NgClass])
 class MarkdownPreview extends EditorComponentBase implements OnChanges {
   final NullTreeSanitizer _nullSanitizer = new NullTreeSanitizer();
