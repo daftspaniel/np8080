@@ -2,10 +2,13 @@ Changelog
 
 v0.0.25
 
- - Editing a document name can be confirm by pressing return.
+ - Editing a document name can be confirmed by pressing return.
+ - Selecting a timestamp can made by pressing return.
  - Improved theming of Menus.
+ - Border of editor now matches theme.
  - More Unit tests.
  - Focus set on default dialog inputs.
+ - Moved to Angular Dart Beta.
 
 v0.0.24
  
