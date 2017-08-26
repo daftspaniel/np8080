@@ -11,7 +11,7 @@
         <textarea [(ngModel)]="note.text" (keyup)="changeHandler()" (keydown)="keyHandler($event)"
                   [ngStyle]="{width: showPreview ? '47%':'calc(100% - 18px)'}"
                   tabindex="1" autofocus id="nptextbox"
-                  [ngClass]="getDocumentClass()"
+                  [ngClass]="getDocumentClass()+' '+getBorderClass()"
         ></textarea>
 
         <markdown-preview [content]="note.text" [active]="showPreview"></markdown-preview>
