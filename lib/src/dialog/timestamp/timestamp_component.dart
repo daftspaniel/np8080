@@ -29,12 +29,13 @@ class TimestampDialogComponent extends EditorComponentBase {
   final String defaultCustomFormat = 'yyyy-MM-dd EEEE h:m:ss a';
   String customFormat;
 
-  TimestampDialogComponent(TextProcessingService newTextProcessingService,
+  TimestampDialogComponent(
+      TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,
       EventBusService newEventBusService)
       : super(newTextProcessingService, newTextareaDomService, newThemeService,
-      newEventBusService) {
+            newEventBusService) {
     eventBusService.subscribe("showTimestampDialog", initialiseAndShow);
     updateTime();
     timeStamp = times[0];
