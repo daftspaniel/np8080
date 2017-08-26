@@ -1,3 +1,4 @@
+import 'dart:html';
 import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:intl/intl.dart';
@@ -28,13 +29,12 @@ class TimestampDialogComponent extends EditorComponentBase {
   final String defaultCustomFormat = 'yyyy-MM-dd EEEE h:m:ss a';
   String customFormat;
 
-  TimestampDialogComponent(
-      TextProcessingService newTextProcessingService,
+  TimestampDialogComponent(TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,
       EventBusService newEventBusService)
       : super(newTextProcessingService, newTextareaDomService, newThemeService,
-            newEventBusService) {
+      newEventBusService) {
     eventBusService.subscribe("showTimestampDialog", initialiseAndShow);
     updateTime();
     timeStamp = times[0];
@@ -53,6 +53,14 @@ class TimestampDialogComponent extends EditorComponentBase {
   String getGeneratedText() {
     generatedText = useCustomFormat ? customTimeStamp : timeStamp;
     return generatedText;
+  }
+
+  bool keyHandler(KeyboardEvent e) {
+    // TAB key
+    if (e.keyCode == 13) {
+      appendText();
+    }
+    return true;
   }
 
   void updateTime() {

@@ -9,7 +9,9 @@
                 <div>
                     <br/>
                     <select id="patternSelect" size="8" multiple="yes" style="padding:5px;width: 350px"
-                            [(ngModel)]="timeStamp">
+                            [(ngModel)]="timeStamp"
+                            (keydown)="keyHandler($event)"
+                    >
                         <option *ngFor="let time of times" [value]="time">{{time}}</option>
                     </select>
                     <br/>
