@@ -24,7 +24,7 @@ abstract class ComponentBase {
   String getDocumentClass() => themeService.documentClass;
 
   String getHighlightClass() => themeService.highlightClass;
-  
+
   String getBorderClass() => themeService.borderClass;
 
   void setFocus(String id) {
