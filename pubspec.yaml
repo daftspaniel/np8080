@@ -1,12 +1,12 @@
 name: np8080
 description: A web based Text editor built with Angular Dart.
-version: 0.0.25
+version: 0.0.26
 homepage: https://github.com/daftspaniel/np8080
 author: Davy Mitchell <daftspaniel@gmail.com>
 environment:
   sdk: '>=1.24.2 <2.0.0-dev.infinity'
 dependencies:
-  angular: ^4.0.0-beta
+  angular: ^4.0.0
   angular_forms: ^0.1.0
   browser: ^0.10.0
   dart_to_js_script_rewriter: ^1.0.1

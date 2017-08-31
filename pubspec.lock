@@ -12,7 +12,7 @@ packages:
       name: angular
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.0-beta"
+    version: "4.0.0"
   angular_compiler:
     description:
       name: angular_compiler
@@ -204,7 +204,7 @@ packages:
       name: matcher
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.1+1"
+    version: "0.12.1+2"
   meta:
     description:
       name: meta
@@ -294,13 +294,13 @@ packages:
       name: shelf
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.8"
+    version: "0.7.0"
   shelf_packages_handler:
     description:
       name: shelf_packages_handler
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.1"
+    version: "1.0.2"
   shelf_static:
     description:
       name: shelf_static
