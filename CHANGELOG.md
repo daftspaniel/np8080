@@ -3,6 +3,7 @@ Changelog
 v0.0.26
 
  - Moved to Angular Dart 4.0.0 release.
+ - Improved Reader view a) Removed dialog header and b) use theme border colour.
 
 v0.0.25
 
