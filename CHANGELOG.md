@@ -1,5 +1,9 @@
 Changelog
 
+v0.0.26
+
+ - Moved to Angular Dart 4.0.0 release.
+
 v0.0.25
 
  - Editing a document name can be confirmed by pressing return.

@@ -7,3 +7,4 @@ dart_task:
   - dartanalyzer: true
   - test: --platform firefox
   - dartfmt
+  - pub build --mode=release --output=build

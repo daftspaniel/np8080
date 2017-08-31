@@ -20,7 +20,6 @@ class ReaderView extends ComponentBase {
   TextDocument note;
 
   void showReader() {
-    print("SHOW");
     show();
   }
 }
