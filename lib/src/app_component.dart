@@ -6,7 +6,7 @@ import 'package:angular/angular.dart';
 import 'package:np8080/src/document/textdocument.dart';
 import 'package:np8080/src/editor/editor_component.dart';
 
-import 'package:np8080/src/dialog/about/about_component.dart';
+import 'package:np8080/src/dialog/about/aboutdialog.dart';
 import 'package:np8080/src/dialog/manual/manualdialog.dart';
 import 'package:np8080/src/editor/views/readerview.dart';
 

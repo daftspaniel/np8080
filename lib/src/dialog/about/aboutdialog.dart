@@ -9,7 +9,7 @@ import 'package:np8080/src/services/themeservice.dart';
 @Component(
     selector: 'about-dialog',
     visibility: Visibility.none,
-    templateUrl: 'about_component.html',
+    templateUrl: 'aboutdialog.html',
     directives: const [NgClass])
 class AboutDialogComponent extends ComponentBase {
   final String aboutText = welcomeText;

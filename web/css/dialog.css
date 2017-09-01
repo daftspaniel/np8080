@@ -36,6 +36,14 @@
     border: 1px solid whitesmoke;
     text-align: center;
 }
+#overlay .prepostDialogPanel {
+    top: 0px;
+    font-size: smaller;
+    width: 475px;
+    margin: 100px auto;
+    border: 1px solid whitesmoke;
+    text-align: center;
+}
 
 .replaceDialogPanel {
     position: absolute;
