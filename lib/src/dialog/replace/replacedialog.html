@@ -1,4 +1,4 @@
-<div replacedialog class="replaceDialogPanel" [hidden]="!showDialog" [ngClass]="positionClass">
+<div replacedialog class="replaceDialogPanel" [hidden]="!showDialog" [ngClass]="positionClass+' '+getBorderClass()">
     <div (click)="close()" class="closeCross">X</div>
     <div class="replaceDialogHeader" [ngClass]="getHeaderClass()">Replace</div>
 

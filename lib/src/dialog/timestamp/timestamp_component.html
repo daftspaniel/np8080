@@ -1,5 +1,5 @@
 <div id="overlay" [hidden]="!showDialog">
-    <div class="timestampDialogPanel" [ngClass]="getClass()">
+    <div class="timestampDialogPanel" [ngClass]="getClass()+' '+getBorderClass()">
         <div (click)="close()" class="closeCross">X</div>
         <div class="header" [ngClass]="getHeaderClass()">Timestamp</div>
 

@@ -1,5 +1,5 @@
 <div id="overlay" [hidden]="!showDialog">
-    <div class="dialogPanel">
+    <div class="dialogPanel" [ngClass]="getClass()+' '+getBorderClass()">
         <div (click)="close()" class="closeCross">X</div>
         <div class="header" [ngClass]="getHeaderClass()">Generate Text</div>
 

@@ -19,7 +19,7 @@
 }
 
 .default-border {
-    border-color: #94b1ff;
+    border-color: #94b1ff !important;
 }
 
 /* dark theme */
@@ -43,5 +43,5 @@
 }
 
 .dark-border {
-    border-color: #A8A5A8;
+    border-color: #A8A5A8 !important;
 }

@@ -96,10 +96,7 @@ class MenuDefinition {
           "Find out what's changed!", true),
       new Menu("Manual", toolbar.manualHandler, "Read the NP8080 manual"),
       new Menu("GitHub", toolbar.githubHandler, "Get the source code!"),
-      new Menu(
-          "Gitter Chat", toolbar.gitterHandler, "Gitter based Chatroom", true),
-      new Menu("Notesboard8080", toolbar.nb8080Handler,
-          "Try the new Notes Board application")
+      new Menu("Gitter Chat", toolbar.gitterHandler, "Gitter based Chatroom")
     ]);
 
     buildManual();

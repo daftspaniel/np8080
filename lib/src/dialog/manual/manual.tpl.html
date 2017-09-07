@@ -1,5 +1,5 @@
 <div id="overlay" style="margin-top:-85px;" [hidden]="!showComponent">
-    <div class="dialogPanel" [ngClass]="getClass()">
+    <div class="dialogPanel" [ngClass]="getClass()+' '+getBorderClass()">
         <div (click)="close()" class="closeCross">X</div>
         <div class="header" [ngClass]="getHeaderClass()">Notepad 8080</div>
 <br/>

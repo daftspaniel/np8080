@@ -6,7 +6,7 @@ import 'package:np8080/src/dialog/common/editorcomponentbase.dart';
 import 'package:np8080/src/dialog/deletelines/deletelinesdialog.dart';
 import 'package:np8080/src/dialog/generate/generate_component.dart';
 import 'package:np8080/src/dialog/prepost/prepostdialog.dart';
-import 'package:np8080/src/dialog/replace/replace_component.dart';
+import 'package:np8080/src/dialog/replace/replacedialog.dart';
 import 'package:np8080/src/dialog/sequence/sequence_component.dart';
 import 'package:np8080/src/dialog/split/splitdialog.dart';
 import 'package:np8080/src/dialog/timestamp/timestamp_component.dart';
