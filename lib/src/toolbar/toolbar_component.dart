@@ -163,4 +163,6 @@ class ToolbarComponent extends EditorComponentBase {
   void whatsNewHandler() => window.open(
       "https://github.com/daftspaniel/np8080/blob/master/CHANGELOG.md",
       'CHANGELOG');
+
+  void numberHandler() => operation(textProcessingService.addNumbering);
 }

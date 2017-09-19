@@ -60,7 +60,7 @@ packages:
       name: build
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.10.0+1"
+    version: "0.10.1"
   build_barback:
     description:
       name: build_barback
@@ -108,7 +108,7 @@ packages:
       name: crypto
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.2"
+    version: "2.0.2+1"
   csslib:
     description:
       name: csslib
@@ -342,7 +342,7 @@ packages:
       name: stack_trace
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.0"
+    version: "1.8.1"
   stream_channel:
     description:
       name: stream_channel
@@ -360,7 +360,7 @@ packages:
       name: stringprocess
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.6"
+    version: "0.0.7"
   term_glyph:
     description:
       name: term_glyph
@@ -372,7 +372,7 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.24+2"
+    version: "0.12.24+6"
   tuple:
     description:
       name: tuple

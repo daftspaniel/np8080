@@ -42,7 +42,8 @@ class MenuDefinition {
           "Put all the text onto one line.", true),
       new Menu("Reverse", toolbar.reverseHandler, "Reverse line order."),
       new Menu("Randomise", toolbar.randomHandler, "Random line order."),
-      new Menu("Sort", toolbar.sortHandler, "Alphabetically sort lines.")
+      new Menu("Sort", toolbar.sortHandler, "Alphabetically sort lines."),
+      new Menu("Number", toolbar.numberHandler, "Number non-blank lines.")
     ]);
 
     addMenuItems.addAll([
@@ -111,14 +112,14 @@ class MenuDefinition {
     allMenus.addAll(startMenuItems);
     allMenus.add(blank);
 
-    allMenus.add(new Menu("Add Menu", null, ''));
-    allMenus.add(blank);
-    allMenus.addAll(addMenuItems);
-    allMenus.add(blank);
-
     allMenus.add(new Menu("Modify Menu", null, ''));
     allMenus.add(blank);
     allMenus.addAll(modifyMenuItems);
+    allMenus.add(blank);
+
+    allMenus.add(new Menu("Add Menu", null, ''));
+    allMenus.add(blank);
+    allMenus.addAll(addMenuItems);
     allMenus.add(blank);
 
     allMenus.add(new Menu("Remove Menu", null, ''));
