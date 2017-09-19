@@ -5,6 +5,8 @@ v0.0.26
  - Moved to Angular Dart 4.0.0 release.
  - Improved Reader view a) Removed dialog header and b) use theme border colour.
  - Added Numbering entry to Modify menu.
+ - Fixed ordering of Manual content to match menu order.
+ - Removed link to Notesboard 8080.
 
 v0.0.25
 
