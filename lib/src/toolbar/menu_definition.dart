@@ -7,7 +7,8 @@ class Menu {
   final Function handler;
   final bool separator;
 
-  Menu(this.name, [this.handler=null, this.tooltip='', this.separator = false]);
+  Menu(this.name,
+      [this.handler = null, this.tooltip = '', this.separator = false]);
 }
 
 class MenuDefinition {
@@ -41,7 +42,8 @@ class MenuDefinition {
       new Menu("Single Line", toolbar.oneLineHandler,
           "Put all the text onto one line.", true),
       new Menu("Reverse", toolbar.reverseHandler, "Reverse the line order."),
-      new Menu("Randomise", toolbar.randomHandler, "Randomise the line order.", true),
+      new Menu("Randomise", toolbar.randomHandler, "Randomise the line order.",
+          true),
       new Menu("Sort", toolbar.sortHandler, "Alphabetically sort lines."),
       new Menu("Number", toolbar.numberHandler, "Number non-blank lines.")
     ]);
@@ -85,19 +87,22 @@ class MenuDefinition {
           "Show a rendering of Markdown alongside the text."),
       new Menu("Reader", toolbar.readerHandler,
           "Show a full screen readonly view of the text.", true),
-      new Menu(
-          "Dark theme", toolbar.darkThemeHandler, "Switch app colours to a dark theme."),
+      new Menu("Dark theme", toolbar.darkThemeHandler,
+          "Switch app colours to a dark theme."),
       new Menu("Default theme", toolbar.defaultThemeHandler,
           "Switch app colours to the default theme."),
     ]);
 
     helpMenuItems.addAll([
       new Menu("About", toolbar.aboutHandler, "Find out more about NP8080."),
-      new Menu("Manual", toolbar.manualHandler, "Read the NP8080 manual.", true),
+      new Menu(
+          "Manual", toolbar.manualHandler, "Read the NP8080 manual.", true),
       new Menu("What's New?", toolbar.whatsNewHandler,
           "Find out what's changed! - Hosted on Github.com.", true),
-      new Menu("GitHub", toolbar.githubHandler, "Get the source code - Hosted on Github.com."),
-      new Menu("Gitter Chat", toolbar.gitterHandler, "Gitter based Chatroom - Hosted on Gitter.com.")
+      new Menu("GitHub", toolbar.githubHandler,
+          "Get the source code - Hosted on Github.com."),
+      new Menu("Gitter Chat", toolbar.gitterHandler,
+          "Gitter based Chatroom - Hosted on Gitter.com.")
     ]);
 
     buildManual();
