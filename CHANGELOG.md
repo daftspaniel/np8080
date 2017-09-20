@@ -1,5 +1,9 @@
 Changelog
 
+v0.0.27
+
+ -
+
 v0.0.26
 
  - Moved to Angular Dart 4.0.0 release.

@@ -1,5 +1,5 @@
 import 'package:np8080/src/resources/resources.dart';
-import 'package:np8080/src/toolbar/toolbar_component.dart';
+import 'package:np8080/src/toolbar/toolbar.dart';
 
 class Menu {
   final String name;

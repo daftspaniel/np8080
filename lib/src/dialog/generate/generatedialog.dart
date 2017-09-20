@@ -7,33 +7,36 @@ import 'package:np8080/src/services/textprocessingservice.dart';
 import 'package:np8080/src/services/themeservice.dart';
 
 @Component(
-    selector: 'sequence-dialog',
+    selector: 'generate-dialog',
     visibility: Visibility.none,
-    templateUrl: 'sequence_component.html',
-    directives: const [NgClass, NgModel, NgStyle, formDirectives])
-class SequenceDialogComponent extends EditorComponentBase {
-  num startIndex = 10;
-  num repeatCount = 10;
-  num increment = 10;
+    templateUrl: 'generatedialog.html',
+    directives: const [NgClass, NgModel, NgStyle, NgClass, formDirectives])
+class GenerateDialogComponent extends EditorComponentBase {
+  String textToRepeat;
 
-  SequenceDialogComponent(
+  num repeatCount = 10;
+
+  GenerateDialogComponent(
       TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,
       EventBusService newEventBusService)
       : super(newTextProcessingService, newTextareaDomService, newThemeService,
             newEventBusService) {
-    eventBusService.subscribe("showSequenceDialog", initialiseAndShow);
+    eventBusService.subscribe("showGenerateDialog", initialiseAndShow);
   }
 
   void initialiseAndShow() {
-    setFocus("#startTextbox");
+    textToRepeat = "";
+    setFocus("#repeatTextbox");
     show();
   }
 
   String getGeneratedText() {
-    generatedText = textProcessingService.generateSequenceString(
-        startIndex, repeatCount, increment);
+    if (textToRepeat == null) return '';
+
+    generatedText = textProcessingService.generateRepeatedString(
+        textToRepeat, repeatCount, newLineAfter);
     return generatedText;
   }
 }

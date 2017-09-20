@@ -4,12 +4,12 @@ import 'package:angular/angular.dart';
 import 'package:angular_forms/angular_forms.dart';
 import 'package:np8080/src/dialog/common/editorcomponentbase.dart';
 import 'package:np8080/src/dialog/deletelines/deletelinesdialog.dart';
-import 'package:np8080/src/dialog/generate/generate_component.dart';
+import 'package:np8080/src/dialog/generate/generatedialog.dart';
 import 'package:np8080/src/dialog/prepost/prepostdialog.dart';
 import 'package:np8080/src/dialog/replace/replacedialog.dart';
-import 'package:np8080/src/dialog/sequence/sequence_component.dart';
+import 'package:np8080/src/dialog/sequence/sequencedialog.dart';
 import 'package:np8080/src/dialog/split/splitdialog.dart';
-import 'package:np8080/src/dialog/timestamp/timestamp_component.dart';
+import 'package:np8080/src/dialog/timestamp/timestampdialog.dart';
 import 'package:np8080/src/document/textdocument.dart';
 import 'package:np8080/src/editablelabel/editablelabel.dart';
 import 'package:np8080/src/editor/views/markdownpreview.dart';
@@ -21,11 +21,11 @@ import 'package:np8080/src/services/textprocessingservice.dart';
 import 'package:np8080/src/services/themeservice.dart';
 import 'package:np8080/src/storage/localstorage.dart';
 import 'package:np8080/src/storage/storagekeys.dart';
-import 'package:np8080/src/toolbar/toolbar_component.dart';
+import 'package:np8080/src/toolbar/toolbar.dart';
 
 @Component(
     selector: 'plain-editor',
-    templateUrl: 'editor_component.html',
+    templateUrl: 'editor.html',
     visibility: Visibility.none,
     directives: const [
       StatusPanel,
