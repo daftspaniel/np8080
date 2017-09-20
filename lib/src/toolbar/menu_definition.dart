@@ -41,7 +41,7 @@ class MenuDefinition {
       new Menu("Make One Line", toolbar.oneLineHandler,
           "Put all the text onto one line.", true),
       new Menu("Reverse", toolbar.reverseHandler, "Reverse line order."),
-      new Menu("Randomise", toolbar.randomHandler, "Random line order."),
+      new Menu("Randomise", toolbar.randomHandler, "Random line order.", true),
       new Menu("Sort", toolbar.sortHandler, "Alphabetically sort lines."),
       new Menu("Number", toolbar.numberHandler, "Number non-blank lines.")
     ]);
