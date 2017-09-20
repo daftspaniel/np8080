@@ -7,7 +7,7 @@ class Menu {
   final Function handler;
   final bool separator;
 
-  Menu(this.name, this.handler, this.tooltip, [this.separator = false]);
+  Menu(this.name, [this.handler=null, this.tooltip='', this.separator = false]);
 }
 
 class MenuDefinition {
@@ -25,23 +25,23 @@ class MenuDefinition {
           "Start again with an empty file.", true),
       new Menu("Welcome Text", toolbar.sampleHandler,
           "Put sample text into the file."),
-      new Menu("Sample Markdown", toolbar.markdownSampleHandler,
+      new Menu("Markdown", toolbar.markdownSampleHandler,
           "Put sample Markdown into the file.")
     ]);
 
     modifyMenuItems.addAll([
       new Menu("Replace...", toolbar.replaceHandler,
-          "Replace some text with some other text."),
+          "Replace some text with some other text.\tShortcut - Ctrl + Q"),
       new Menu("Pre/Post...", toolbar.prePostHandler,
           "Add text to start and/or end of lines.", true),
       new Menu("Doublespace", toolbar.doublespaceHandler,
           "Double space the lines.", true),
       new Menu("Split...", toolbar.splitHandler,
           "Split into separate lines by a delimiter."),
-      new Menu("Make One Line", toolbar.oneLineHandler,
+      new Menu("Single Line", toolbar.oneLineHandler,
           "Put all the text onto one line.", true),
-      new Menu("Reverse", toolbar.reverseHandler, "Reverse line order."),
-      new Menu("Randomise", toolbar.randomHandler, "Random line order.", true),
+      new Menu("Reverse", toolbar.reverseHandler, "Reverse the line order."),
+      new Menu("Randomise", toolbar.randomHandler, "Randomise the line order.", true),
       new Menu("Sort", toolbar.sortHandler, "Alphabetically sort lines."),
       new Menu("Number", toolbar.numberHandler, "Number non-blank lines.")
     ]);
@@ -54,7 +54,7 @@ class MenuDefinition {
       new Menu("Duplicate Lines", toolbar.dupeHandler,
           "Add a copy of a line to itself.", true),
       new Menu("Generate Text...", toolbar.generateHandler,
-          "Add generated text to put into document."),
+          "Add generated text into document."),
       new Menu("Num Sequence...", toolbar.generateSeqHandler,
           "Add generated number sequence to document.")
     ]);
@@ -86,18 +86,18 @@ class MenuDefinition {
       new Menu("Reader", toolbar.readerHandler,
           "Show a full screen readonly view of the text.", true),
       new Menu(
-          "Dark theme", toolbar.darkThemeHandler, "Switch to a UI dark theme."),
+          "Dark theme", toolbar.darkThemeHandler, "Switch app colours to a dark theme."),
       new Menu("Default theme", toolbar.defaultThemeHandler,
-          "Switch to the default theme."),
+          "Switch app colours to the default theme."),
     ]);
 
     helpMenuItems.addAll([
-      new Menu("About", toolbar.aboutHandler, "Find out more about NP8080"),
+      new Menu("About", toolbar.aboutHandler, "Find out more about NP8080."),
+      new Menu("Manual", toolbar.manualHandler, "Read the NP8080 manual.", true),
       new Menu("What's New?", toolbar.whatsNewHandler,
-          "Find out what's changed!", true),
-      new Menu("Manual", toolbar.manualHandler, "Read the NP8080 manual"),
-      new Menu("GitHub", toolbar.githubHandler, "Get the source code!"),
-      new Menu("Gitter Chat", toolbar.gitterHandler, "Gitter based Chatroom")
+          "Find out what's changed! - Hosted on Github.com.", true),
+      new Menu("GitHub", toolbar.githubHandler, "Get the source code - Hosted on Github.com."),
+      new Menu("Gitter Chat", toolbar.gitterHandler, "Gitter based Chatroom - Hosted on Gitter.com.")
     ]);
 
     buildManual();
@@ -106,38 +106,38 @@ class MenuDefinition {
   void buildManual() {
     List<Menu> allMenus = new List<Menu>();
 
-    Menu blank = new Menu(" ", null, '');
-    allMenus.add(new Menu("Start Menu", null, ''));
+    Menu blank = new Menu(" ");
+    allMenus.add(new Menu("Start Menu"));
     allMenus.add(blank);
     allMenus.addAll(startMenuItems);
     allMenus.add(blank);
 
-    allMenus.add(new Menu("Modify Menu", null, ''));
+    allMenus.add(new Menu("Modify Menu"));
     allMenus.add(blank);
     allMenus.addAll(modifyMenuItems);
     allMenus.add(blank);
 
-    allMenus.add(new Menu("Add Menu", null, ''));
+    allMenus.add(new Menu("Add Menu"));
     allMenus.add(blank);
     allMenus.addAll(addMenuItems);
     allMenus.add(blank);
 
-    allMenus.add(new Menu("Remove Menu", null, ''));
+    allMenus.add(new Menu("Remove Menu"));
     allMenus.add(blank);
     allMenus.addAll(removeMenuItems);
     allMenus.add(blank);
 
-    allMenus.add(new Menu("Advanced Menu", null, ''));
+    allMenus.add(new Menu("Advanced Menu"));
     allMenus.add(blank);
     allMenus.addAll(advancedMenuItems);
     allMenus.add(blank);
 
-    allMenus.add(new Menu("View Menu", null, ''));
+    allMenus.add(new Menu("View Menu"));
     allMenus.add(blank);
     allMenus.addAll(viewMenuItems);
     allMenus.add(blank);
 
-    allMenus.add(new Menu("Help Menu", null, ''));
+    allMenus.add(new Menu("Help Menu"));
     allMenus.add(blank);
     allMenus.addAll(helpMenuItems);
 
