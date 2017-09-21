@@ -58,3 +58,14 @@ Web Links
 const String tab = "    ";
 
 String np8080Manual = 'If you can read this, the manual build failed!';
+
+const String np8080ManualIntro = """
+Notepad 8080 is a text editor in your browser. It is 100% free to use, contains
+no advertising or tracking. Your data is automatically stored in your web 
+browser's local storage and NOT on any server.
+
+100% operational when offline - great for when you are on the move.
+The application is constantly updated! Hit Refresh to make sure you 
+are on the latest.
+
+""";

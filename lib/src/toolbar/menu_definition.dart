@@ -146,7 +146,7 @@ class MenuDefinition {
     allMenus.add(blank);
     allMenus.addAll(helpMenuItems);
 
-    np8080Manual = '';
+    np8080Manual = np8080ManualIntro;
     allMenus.forEach((Menu menu) {
       np8080Manual += menu.name.padRight(20) + menu.tooltip + '\r\n';
     });
