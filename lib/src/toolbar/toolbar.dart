@@ -165,4 +165,6 @@ class ToolbarComponent extends EditorComponentBase {
       'CHANGELOG');
 
   void numberHandler() => operation(textProcessingService.addNumbering);
+
+  void mateThemeHandler() => themeService.theme = "umate";
 }

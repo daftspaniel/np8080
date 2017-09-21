@@ -91,6 +91,8 @@ class MenuDefinition {
           "Switch app colours to a dark theme."),
       new Menu("Default theme", toolbar.defaultThemeHandler,
           "Switch app colours to the default theme."),
+      new Menu("Mate theme", toolbar.mateThemeHandler,
+          "Switch app colours to the Mate theme."),
     ]);
 
     helpMenuItems.addAll([

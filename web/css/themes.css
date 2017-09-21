@@ -45,3 +45,28 @@
 .dark-border {
     border-color: #A8A5A8 !important;
 }
+
+/* umate theme */
+.umate-theme-1 {
+    background-color: #45443F;
+    color: #87A556;
+}
+
+.umate-theme-2 {
+    background-color: #65645F;
+    color: #87A556;
+}
+
+.umate-document {
+    background-color: #F4F4F4;
+    color: #5A5A5A;
+}
+
+.umate-highlight:hover {
+    background-color: #DF4D1A;
+    color: #d0ff87;
+}
+
+.umate-border {
+    border-color: #3D3D3D !important;
+}
