@@ -49,12 +49,12 @@
 /* umate theme */
 .umate-theme-1 {
     background-color: #45443F;
-    color: #87A556;
+    color: #90ff4c;
 }
 
 .umate-theme-2 {
     background-color: #65645F;
-    color: #87A556;
+    color: #ffff4e;
 }
 
 .umate-document {
@@ -64,9 +64,9 @@
 
 .umate-highlight:hover {
     background-color: #DF4D1A;
-    color: #d0ff87;
+    color: #d7ffcf;
 }
 
 .umate-border {
-    border-color: #3D3D3D !important;
+    border-color: #9d9d9d !important;
 }
