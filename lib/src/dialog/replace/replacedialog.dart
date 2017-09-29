@@ -11,7 +11,7 @@ import 'package:np8080/src/services/themeservice.dart';
     visibility: Visibility.none,
     templateUrl: 'replacedialog.html',
     directives: const [NgClass, NgModel, NgStyle, formDirectives])
-class ReplaceDialogComponent extends EditorComponentBase {
+class ReplaceDialog extends EditorComponentBase {
   String textToReplace;
   String replacementText;
   String updatedText;
@@ -20,7 +20,7 @@ class ReplaceDialogComponent extends EditorComponentBase {
 
   String get positionClass => _positionClass;
 
-  ReplaceDialogComponent(
+  ReplaceDialog(
       TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,

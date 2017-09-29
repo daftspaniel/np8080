@@ -11,12 +11,12 @@ import 'package:np8080/src/services/themeservice.dart';
     visibility: Visibility.none,
     templateUrl: 'deletelinesdialog.html',
     directives: const [NgModel, NgClass, formDirectives])
-class DeleteLinesDialogComponent extends EditorComponentBase {
+class DeleteLinesDialog extends EditorComponentBase {
   String markerText;
   String updatedText;
   String containOption = 'containing';
 
-  DeleteLinesDialogComponent(
+  DeleteLinesDialog(
       TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,

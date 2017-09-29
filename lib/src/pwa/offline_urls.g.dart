@@ -1,7 +1,6 @@
 /// URLs for offline cache.
 final List<String> offlineUrls = [
   './',
-  './dialog.css',
   './favicon.ico',
   './img/background.png',
   './img/github.png',
@@ -18,4 +17,4 @@ final List<String> offlineUrls = [
 ];
 
 /// Last modified timestamp of the files
-final String lastModified = '2017-08-08T18:40:31.999Z';
+final String lastModified = '2017-09-28T18:40:31.999Z';

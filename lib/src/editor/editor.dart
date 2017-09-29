@@ -9,6 +9,7 @@ import 'package:np8080/src/dialog/prepost/prepostdialog.dart';
 import 'package:np8080/src/dialog/replace/replacedialog.dart';
 import 'package:np8080/src/dialog/sequence/sequencedialog.dart';
 import 'package:np8080/src/dialog/split/splitdialog.dart';
+import 'package:np8080/src/dialog/themes/themesdialog.dart';
 import 'package:np8080/src/dialog/timestamp/timestampdialog.dart';
 import 'package:np8080/src/document/textdocument.dart';
 import 'package:np8080/src/editablelabel/editablelabel.dart';
@@ -29,15 +30,16 @@ import 'package:np8080/src/toolbar/toolbar.dart';
     visibility: Visibility.none,
     directives: const [
       StatusPanel,
-      ToolbarComponent,
-      GenerateDialogComponent,
-      ReplaceDialogComponent,
-      PrePostDialogComponent,
-      SequenceDialogComponent,
-      DeleteLinesDialogComponent,
+      Toolbar,
+      GenerateDialog,
+      ReplaceDialog,
+      PrePostDialog,
+      SequenceDialog,
+      DeleteLinesDialog,
       MarkdownPreview,
       EditableLabel,
-      TimestampDialogComponent,
+      TimestampDialog,
+      ThemesDialog,
       SplitDialog,
       NgFor,
       NgModel,

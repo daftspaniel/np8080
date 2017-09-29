@@ -20,16 +20,17 @@ import 'package:np8080/src/services/themeservice.dart';
       NgSelectOption,
       formDirectives
     ])
-class TimestampDialogComponent extends EditorComponentBase {
+class TimestampDialog extends EditorComponentBase {
   final List<String> times = new List<String>();
+  final String defaultCustomFormat = 'yyyy-MM-dd EEEE h:m:ss a';
 
   String timeStamp = '';
   String customTimeStamp = '';
-  bool useCustomFormat = false;
-  final String defaultCustomFormat = 'yyyy-MM-dd EEEE h:m:ss a';
   String customFormat;
 
-  TimestampDialogComponent(
+  bool useCustomFormat = false;
+
+  TimestampDialog(
       TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,

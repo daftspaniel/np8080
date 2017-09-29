@@ -11,12 +11,12 @@ import 'package:np8080/src/services/themeservice.dart';
     visibility: Visibility.none,
     templateUrl: 'sequencedialog.html',
     directives: const [NgClass, NgModel, NgStyle, formDirectives])
-class SequenceDialogComponent extends EditorComponentBase {
+class SequenceDialog extends EditorComponentBase {
   num startIndex = 10;
   num repeatCount = 10;
   num increment = 10;
 
-  SequenceDialogComponent(
+  SequenceDialog(
       TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,

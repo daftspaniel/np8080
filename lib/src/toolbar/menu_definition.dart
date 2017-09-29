@@ -20,7 +20,7 @@ class MenuDefinition {
   final List<Menu> viewMenuItems = new List<Menu>();
   final List<Menu> helpMenuItems = new List<Menu>();
 
-  void buildMenus(ToolbarComponent toolbar) {
+  void buildMenus(Toolbar toolbar) {
     startMenuItems.addAll([
       new Menu("Clear Text", toolbar.clearHandler,
           "Start again with an empty file.", true),
@@ -87,12 +87,8 @@ class MenuDefinition {
           "Show a rendering of Markdown alongside the text."),
       new Menu("Reader", toolbar.readerHandler,
           "Show a full screen readonly view of the text.", true),
-      new Menu("Dark theme", toolbar.darkThemeHandler,
-          "Switch app colours to a dark theme."),
-      new Menu("Default theme", toolbar.defaultThemeHandler,
-          "Switch app colours to the default theme."),
-      new Menu("Mate theme", toolbar.mateThemeHandler,
-          "Switch app colours to the Mate theme."),
+      new Menu("Themes...", toolbar.themesHandler,
+          "Choose a colour theme for NP8080.")
     ]);
 
     helpMenuItems.addAll([

@@ -11,12 +11,12 @@ import 'package:np8080/src/services/themeservice.dart';
     visibility: Visibility.none,
     templateUrl: 'generatedialog.html',
     directives: const [NgClass, NgModel, NgStyle, NgClass, formDirectives])
-class GenerateDialogComponent extends EditorComponentBase {
+class GenerateDialog extends EditorComponentBase {
   String textToRepeat;
 
   num repeatCount = 10;
 
-  GenerateDialogComponent(
+  GenerateDialog(
       TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,

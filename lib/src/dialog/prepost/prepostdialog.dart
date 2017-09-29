@@ -11,11 +11,11 @@ import 'package:np8080/src/services/themeservice.dart';
     visibility: Visibility.none,
     templateUrl: 'prepostdialog.html',
     directives: const [NgClass, NgModel, NgStyle, formDirectives])
-class PrePostDialogComponent extends EditorComponentBase {
+class PrePostDialog extends EditorComponentBase {
   String prefix = "";
   String postfix = "";
 
-  PrePostDialogComponent(
+  PrePostDialog(
       TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,

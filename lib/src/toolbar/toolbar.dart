@@ -17,8 +17,8 @@ import 'package:np8080/src/toolbar/menu_definition.dart';
     selector: 'editor-toolbar',
     visibility: Visibility.none,
     templateUrl: 'toolbar.html',
-    directives: const [NgClass, ToolbarComponent, MenuComponent])
-class ToolbarComponent extends EditorComponentBase {
+    directives: const [NgClass, Toolbar, MenuComponent])
+class Toolbar extends EditorComponentBase {
   final MenuDefinition menus = new MenuDefinition();
   final StreamController onShowPreviewChange = new StreamController();
 
@@ -31,7 +31,7 @@ class ToolbarComponent extends EditorComponentBase {
   @Output()
   Stream<bool> get showPreviewChange => onShowPreviewChange.stream;
 
-  ToolbarComponent(
+  Toolbar(
       TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,
@@ -145,10 +145,6 @@ class ToolbarComponent extends EditorComponentBase {
 
   void undoHandler() => note.undo();
 
-  void darkThemeHandler() => themeService.theme = "dark";
-
-  void defaultThemeHandler() => themeService.theme = "default";
-
   void readerHandler() => post("showReaderView");
 
   void nb8080Handler() =>
@@ -166,5 +162,5 @@ class ToolbarComponent extends EditorComponentBase {
 
   void numberHandler() => operation(textProcessingService.addNumbering);
 
-  void mateThemeHandler() => themeService.theme = "umate";
+  void themesHandler() => post("showThemesDialog");
 }

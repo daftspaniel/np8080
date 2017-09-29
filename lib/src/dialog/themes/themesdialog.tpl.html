@@ -1,0 +1,22 @@
+<div id="overlay" [hidden]="!showComponent">
+    <div class="dialogPanel" style="width: 275px" [ngClass]="getClass()+' '+getBorderClass()">
+        <div (click)="close()" class="closeCross">X</div>
+        <div [ngClass]="getHeaderClass()">Themes</div>
+
+        <div style="text-align: center;padding: 10px" [ngClass]="getClass()">
+            <div style="margin-left: 60px;text-align: left">
+                <br/>
+                <select style="width: 150px" id="themeselect" [(ngModel)]="theme" size="6" multiple="yes">
+                    <option value="default">Default</option>
+                    <option value="dark">Dark</option>
+                    <option value="umate">MATE</option>
+                </select>
+                <br/>
+            </div>
+            <div class="footer">
+                <button class="actionButton" (click)="change()">Change</button>
+                <button class="closeButton light-primary-color" (click)="close()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

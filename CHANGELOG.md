@@ -1,8 +1,9 @@
 Changelog
 
 v0.0.27
-
- -
+ - Added MATE theme.
+ - Improved Manual and tidied help menu.
+ - Themes dialog.
 
 v0.0.26
 
