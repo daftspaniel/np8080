@@ -44,7 +44,7 @@ class MenuDefinition {
       new Menu("Reverse", toolbar.reverseHandler, "Reverse the line order."),
       new Menu("Randomise", toolbar.randomHandler, "Randomise the line order.",
           true),
-      new Menu("Sort", toolbar.sortHandler, "Alphabetically sort lines."),
+      new Menu("Sort A-Z", toolbar.sortHandler, "Alphabetically sort lines."),
       new Menu("Number", toolbar.numberHandler, "Number non-blank lines.")
     ]);
 

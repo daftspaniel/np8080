@@ -1,7 +1,7 @@
 <div id="overlay" [hidden]="!showComponent">
-    <div class="dialogPanel" style="width: 275px" [ngClass]="getClass()+' '+getBorderClass()">
+    <div class="themesDialogPanel" [ngClass]="getClass()+' '+getBorderClass()">
         <div (click)="close()" class="closeCross">X</div>
-        <div [ngClass]="getHeaderClass()">Themes</div>
+        <div class="header" [ngClass]="getHeaderClass()">Themes</div>
 
         <div style="text-align: center;padding: 10px" [ngClass]="getClass()">
             <div style="margin-left: 60px;text-align: left">
