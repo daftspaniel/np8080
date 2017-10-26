@@ -1,4 +1,11 @@
-<plain-editor [note]="activeNote"></plain-editor>
+<div [ngClass]="themeService.tertiaryClass">
+<editor-toolbar [(note)]="documentService.note"
+                [(showPreview)]="showPreview"
+></editor-toolbar>
+<editable-label [(text)]="note1.downloadName" [id]="note1.id"></editable-label>
+<editable-label [(text)]="note2.downloadName" [id]="note2.id"></editable-label>
+<plain-editor [note]="documentService.note"></plain-editor>
 <about-dialog></about-dialog>
 <manual-dialog></manual-dialog>
-<reader-view  [note]="activeNote"></reader-view>
+<reader-view  [note]="documentService.note"></reader-view>
+</div>

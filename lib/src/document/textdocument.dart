@@ -5,16 +5,18 @@ import '../resources/resources.dart';
 import 'package:np8080/src/storage/localstorage.dart';
 
 const String defaultDownloadName = 'np8080.txt';
+const String defaultFilename = 'np8080';
+const String defaultFileExtension = 'txt';
 
 class TextDocument {
   final List<String> _undoText = new List<String>();
 
-  int _id = 1;
+  final int _id;
   String _text = '';
   String _downloadName;
   DateTime _lastModified;
 
-  TextDocument() {
+  TextDocument(this._id) {
     initText();
     initLastModifiedDate();
     initDownloadName();
@@ -31,6 +33,8 @@ class TextDocument {
   String get downloadName => _downloadName;
 
   String get text => _text;
+
+  int get id => _id;
 
   String get storedText => window.localStorage['id$_id'];
 
@@ -51,7 +55,8 @@ class TextDocument {
 
   void initDownloadName() {
     _downloadName = window.localStorage['dn$_id'];
-    if (_downloadName == null) downloadName = defaultDownloadName;
+    if (_downloadName == null)
+      downloadName = '$defaultDownloadName-$_id.$defaultFileExtension';
   }
 
   void reset() {

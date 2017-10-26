@@ -1,26 +1,19 @@
-<div style="display: flex;  flex-flow: column;height: 100vh" [ngClass]="getClass()">
-    <header>
-        <editor-toolbar [(note)]="note"
-                        [(showPreview)]="showPreview"
-        ></editor-toolbar>
-    </header>
+<div style="display: flex;  flex-flow: column;height: 100vh;" [ngClass]="getClass()">
 
     <div class="mainEditorDisplay">
-        <editable-label [(text)]="note.downloadName"></editable-label>
-
         <textarea [(ngModel)]="note.text" (keyup)="changeHandler()" (keydown)="keyHandler($event)"
                   [ngStyle]="{width: showPreview ? '47%':'calc(100% - 18px)'}"
-                  tabindex="1" autofocus id="nptextbox"
+                  tabindex="1" id="nptextbox"
                   [ngClass]="getDocumentClass()+' '+getBorderClass()"
         ></textarea>
 
-        <markdown-preview [content]="note.text" [active]="showPreview"></markdown-preview>
+        <markdown-preview [content]="note.text"></markdown-preview>
     </div>
 
-    <footer style="flex:1;">
-        <div style="padding-left:4px;position: absolute;bottom: 1px;min-height: 20px;width: 100%;vertical-align: bottom">
+    <footer style="position: absolute;bottom: 1px;height: 10px;padding: 8px;width: 100%" [ngClass]="getBackgroundClass()">
+        <!--<div style="padding-left:4px;position: absolute;bottom: 1px;min-height: 10px;width: 100%;vertical-align: bottom">-->
             <text-status [text]="note.text" [modified]="note.lastModified"></text-status>
-        </div>
+        <!--</div>-->
     </footer>
 
     <delete-lines-dialog [note]="note"></delete-lines-dialog>

@@ -151,6 +151,13 @@ textarea {
     margin-top: 2px;
 }
 
+.np-fade {
+    opacity: 0.25;
+}
+.np-nofade {
+    opacity: 1;
+}
+
 button {
     background-color: #9ed3d9;
 }
@@ -265,15 +272,16 @@ button {
 }
 
 .edit-label {
-    height: 28px;
+    height: 26px;
     padding: 0px;
     margin-left: 5px;
+    display: inline-block;
 }
 
 .mainEditorDisplay {
     flex: 2;
     overflow: none;
-    height: calc(100vh - 102px);
+    height: calc(100vh - 22px);
 }
 
 .closeEditorTabX {

@@ -35,6 +35,7 @@ class StatusPanel extends EditorComponentBase {
   String get lineCount => textProcessingService.getLineCount(text).toString();
 
   bool isHttps() {
-    return window.location.href.contains('https://');
+    return window.location.href.contains('https://') ||
+        window.location.href.contains('localhost');
   }
 }

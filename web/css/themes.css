@@ -9,6 +9,11 @@
     color: #111111;
 }
 
+.default-theme-3 {
+    background-color: #c0deff;
+    color: #111111;
+}
+
 .default-document {
     background-color: whitesmoke;
     color: #111111;
@@ -30,6 +35,11 @@
 
 .dark-theme-2 {
     background-color: #333333;
+    color: #eee862;
+}
+
+.dark-theme-3 {
+    background-color: #222222;
     color: #eee862;
 }
 
@@ -55,6 +65,11 @@
 .umate-theme-2 {
     background-color: #65645F;
     color: #ffff4e;
+}
+
+.umate-theme-3 {
+    background-color: #cadb9b;
+    color: #111111;
 }
 
 .umate-document {

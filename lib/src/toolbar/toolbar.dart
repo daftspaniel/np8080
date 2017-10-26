@@ -4,6 +4,7 @@ import 'package:angular/angular.dart';
 import 'package:np8080/src/dialog/common/editorcomponentbase.dart';
 import 'package:np8080/src/document/textdocument.dart';
 import 'package:np8080/src/resources/resources.dart';
+import 'package:np8080/src/services/documentservice.dart';
 import 'package:np8080/src/services/eventbusservice.dart';
 import 'package:np8080/src/services/textareadomservice.dart';
 import 'package:np8080/src/services/textprocessingservice.dart';
@@ -22,6 +23,8 @@ class Toolbar extends EditorComponentBase {
   final MenuDefinition menus = new MenuDefinition();
   final StreamController onShowPreviewChange = new StreamController();
 
+  DocumentService documentService;
+
   @Input()
   TextDocument note;
 
@@ -35,16 +38,26 @@ class Toolbar extends EditorComponentBase {
       TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,
-      EventBusService newEventBusService)
+      EventBusService newEventBusService,
+      DocumentService newdocumentService)
       : super(newTextProcessingService, newTextareaDomService, newThemeService,
             newEventBusService) {
     menus.buildMenus(this);
+    documentService = newdocumentService;
+    eventBusService.subscribe('tabFocusDone1', () => documentService.swap());
+    eventBusService.subscribe('tabFocusDone2', () => documentService.swap());
   }
 
   void markdownHandler() {
     showPreview = !showPreview;
+    print('showPreview');
+    print(showPreview);
     storeValue(MarkdownPreviewVisibleKey, showPreview ? "showMarkdown" : "");
     onShowPreviewChange.add(showPreview);
+    if (showPreview)
+      eventBusService.post('ShowMarkdownPreview');
+    else
+      eventBusService.post('HideMarkdownPreview');
     textareaDomService.setFocus();
   }
 

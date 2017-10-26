@@ -12,6 +12,8 @@ class ThemeService {
 
   String get secondaryClass => _theme + '-theme-2';
 
+  String get tertiaryClass => _theme + '-theme-3';
+
   String get documentClass => _theme + '-document';
 
   String get highlightClass => _theme + '-highlight';

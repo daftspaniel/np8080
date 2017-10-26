@@ -48,7 +48,7 @@ import 'package:np8080/src/toolbar/toolbar.dart';
       NgClass,
       formDirectives
     ])
-class EditorComponent extends EditorComponentBase {
+class EditorComponent extends EditorComponentBase implements AfterContentInit {
   final List<int> _undoPositions = new List<int>();
 
   @Input()
@@ -68,6 +68,9 @@ class EditorComponent extends EditorComponentBase {
 
     eventBusService.subscribe('closeEditorTabPrompt', closeEditorTabHandler);
     eventBusService.subscribe('resetTextToSample', sampleHandler);
+    //eventBusService.subscribe('ShowMarkdownPreview', showMarkDownHandler);
+    eventBusService.subscribe('ShowMarkdownPreview', () => showPreview = true);
+    eventBusService.subscribe('HideMarkdownPreview', () => showPreview = false);
   }
 
   void changeHandler() => note.save();
@@ -121,4 +124,12 @@ class EditorComponent extends EditorComponentBase {
     }
     textareaDomService.setFocus();
   }
+
+  void ngAfterContentInit() {
+    eventBusService.post("tabFocus1");
+  }
+//
+//  showMarkDownHandler() {
+//    showPreview = true;
+//  }
 }

@@ -21,6 +21,8 @@ abstract class ComponentBase {
 
   String getHeaderClass() => themeService.secondaryClass;
 
+  String getBackgroundClass() => themeService.tertiaryClass;
+
   String getDocumentClass() => themeService.documentClass;
 
   String getHighlightClass() => themeService.highlightClass;

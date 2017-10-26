@@ -17,10 +17,14 @@ class EditableLabel extends ComponentBase implements OnInit {
   final StreamController onTextChange = new StreamController();
 
   bool editMode = false;
+  bool tabFocused = false;
   String outputText;
 
   @Input()
   String text;
+
+  @Input()
+  int id;
 
   @Output()
   Stream<String> get textChange => onTextChange.stream;
@@ -32,7 +36,11 @@ class EditableLabel extends ComponentBase implements OnInit {
     eventBusService.subscribe('resetEditableTable', reset);
   }
 
-  ngOnInit() => formatText();
+  ngOnInit() {
+    formatText();
+    eventBusService.subscribe('tabFocus$id', tabFocus);
+    eventBusService.subscribe('tabFocusDone${id == 1 ? 2 : 1}', tabBlur);
+  }
 
   void update() {
     onTextChange.add(text);
@@ -42,6 +50,24 @@ class EditableLabel extends ComponentBase implements OnInit {
   void formatText() {
     outputText = text.length < 18 ? text : text.substring(0, 15) + "...";
     document.title = text;
+  }
+
+  void giveTabFocus() {
+    tabFocus();
+    eventBusService.post("tabFocusDone$id");
+  }
+
+  void tabFocus() {
+    tabFocused = true;
+    print('tabFocused $id');
+    print(tabFocused);
+  }
+
+  void tabBlur() {
+    tabFocused = false;
+    print('tabBlur $id');
+    print(tabFocused);
+    //eventBusService.post("tab$id");
   }
 
   void toggle() {

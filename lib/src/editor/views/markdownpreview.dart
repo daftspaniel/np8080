@@ -24,16 +24,19 @@ class MarkdownPreview extends EditorComponentBase implements OnChanges {
       ThemeService newThemeService,
       EventBusService newEventBusService)
       : super(newTextProcessingService, newTextareaDomService, newThemeService,
-            newEventBusService);
+            newEventBusService) {
+    eventBusService.subscribe('ShowMarkdownPreview', () => active = true);
+    eventBusService.subscribe('HideMarkdownPreview', () => active = false);
+  }
+
   @Input('content')
   String content = "";
 
-  @Input('active')
-  bool active;
+  bool active = false;
 
-  @override
   ngOnChanges(Map<String, SimpleChange> changes) {
-    if (active || changes.containsKey("active")) updatePreview();
+    updatePreview();
+    print('active $active');
   }
 
   void updatePreview() {

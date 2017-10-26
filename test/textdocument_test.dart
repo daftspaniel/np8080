@@ -7,7 +7,7 @@ void main() {
   group('Document core:', () {
     TextDocument tdoc;
     setUp(() {
-      tdoc = new TextDocument();
+      tdoc = new TextDocument(5);
     });
     test('default not empty', () {
       expect(tdoc.empty, false);
@@ -16,7 +16,7 @@ void main() {
       expect(tdoc.text, welcomeText);
     });
     test('default filename is set', () {
-      expect(tdoc.downloadName, 'np8080.txt');
+      expect(tdoc.downloadName, 'np8080.txt-5.txt');
     });
     test('text can be set', () {
       tdoc.text = 'Hello world!';
