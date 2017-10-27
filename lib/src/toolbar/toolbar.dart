@@ -21,43 +21,31 @@ import 'package:np8080/src/toolbar/menu_definition.dart';
     directives: const [NgClass, Toolbar, MenuComponent])
 class Toolbar extends EditorComponentBase {
   final MenuDefinition menus = new MenuDefinition();
-  final StreamController onShowPreviewChange = new StreamController();
-
-  DocumentService documentService;
+  final DocumentService documentService;
 
   @Input()
   TextDocument note;
 
-  @Input()
-  bool showPreview;
-
-  @Output()
-  Stream<bool> get showPreviewChange => onShowPreviewChange.stream;
+  bool showPreview = false;
 
   Toolbar(
       TextProcessingService newTextProcessingService,
       TextareaDomService newTextareaDomService,
       ThemeService newThemeService,
       EventBusService newEventBusService,
-      DocumentService newdocumentService)
+      this.documentService)
       : super(newTextProcessingService, newTextareaDomService, newThemeService,
             newEventBusService) {
     menus.buildMenus(this);
-    documentService = newdocumentService;
     eventBusService.subscribe('tabFocusDone1', () => documentService.swap());
     eventBusService.subscribe('tabFocusDone2', () => documentService.swap());
   }
 
   void markdownHandler() {
     showPreview = !showPreview;
-    print('showPreview');
-    print(showPreview);
     storeValue(MarkdownPreviewVisibleKey, showPreview ? "showMarkdown" : "");
-    onShowPreviewChange.add(showPreview);
-    if (showPreview)
-      eventBusService.post('ShowMarkdownPreview');
-    else
-      eventBusService.post('HideMarkdownPreview');
+    eventBusService
+        .post(showPreview ? 'ShowMarkdownPreview' : 'HideMarkdownPreview');
     textareaDomService.setFocus();
   }
 
@@ -81,8 +69,8 @@ class Toolbar extends EditorComponentBase {
             .confirm("Are you sure you want to clear the current document?")) {
       note.updateAndSave(markdownSampler);
       showPreview = true;
-      storeValue(MarkdownPreviewVisibleKey, showPreview ? "showMarkdown" : "");
-      onShowPreviewChange.add(true);
+      storeValue(MarkdownPreviewVisibleKey, showPreview ? "showMarkdown" : '');
+      eventBusService.post('ShowMarkdownPreview');
     }
     textareaDomService.setFocus();
   }

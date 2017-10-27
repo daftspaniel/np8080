@@ -53,6 +53,10 @@ class EditableLabel extends ComponentBase implements OnInit {
   }
 
   void giveTabFocus() {
+    if (tabFocused) {
+      print('$id already focussed');
+      return;
+    }
     tabFocus();
     eventBusService.post("tabFocusDone$id");
   }
@@ -65,15 +69,12 @@ class EditableLabel extends ComponentBase implements OnInit {
 
   void tabBlur() {
     tabFocused = false;
-    print('tabBlur $id');
-    print(tabFocused);
-    //eventBusService.post("tab$id");
   }
 
   void toggle() {
     editMode = !editMode;
     if (editMode) {
-      TextInputElement tb = querySelector("#editbox");
+      TextInputElement tb = querySelector("#editbox$id");
       tb.focus();
     } else if (text.length == 0) {
       reset();

@@ -10,10 +10,9 @@
         <markdown-preview [content]="note.text"></markdown-preview>
     </div>
 
-    <footer style="position: absolute;bottom: 1px;height: 10px;padding: 8px;width: 100%" [ngClass]="getBackgroundClass()">
-        <!--<div style="padding-left:4px;position: absolute;bottom: 1px;min-height: 10px;width: 100%;vertical-align: bottom">-->
-            <text-status [text]="note.text" [modified]="note.lastModified"></text-status>
-        <!--</div>-->
+    <footer style="position: absolute;bottom: 1px;height: 10px;padding: 8px;width: 100%"
+            [ngClass]="getBackgroundClass()">
+        <text-status [text]="note.text" [modified]="note.lastModified"></text-status>
     </footer>
 
     <delete-lines-dialog [note]="note"></delete-lines-dialog>

@@ -56,7 +56,7 @@ class TextDocument {
   void initDownloadName() {
     _downloadName = window.localStorage['dn$_id'];
     if (_downloadName == null)
-      downloadName = '$defaultDownloadName-$_id.$defaultFileExtension';
+      downloadName = '$defaultFilename-$_id.$defaultFileExtension';
   }
 
   void reset() {

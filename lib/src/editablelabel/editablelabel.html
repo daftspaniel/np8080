@@ -3,9 +3,9 @@
     <input type="text" [(ngModel)]="text" [ngStyle]="{'height': editMode ? '20px':'0px'}"
            (keyup)="update()" (blur)="toggle()"
            (keyup.enter)="toggle()"
-           tabindex="2" id="editbox" style="border:0px;padding: 0px;"/>
+           tabindex="2" id="editbox{{id}}" style="background-color:beige;width:100%;border:0px;padding: 0px;"/>
     <div class="labelReadOnly" [ngClass]="getTabsClass()" [hidden]="editMode" title="{{text}}" (click)="giveTabFocus()">
-        <span (dblclick)="toggle()">{{outputText}}</span>
+        <div (dblclick)="toggle()" style="width:calc(100% - 15px);display: inline-block">{{outputText}}</div>
         <span class="closeEditorTabX" (click)="clickTabXHandler()">X</span>
     </div>
 </div>

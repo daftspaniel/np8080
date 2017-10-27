@@ -16,7 +16,7 @@ void main() {
       expect(tdoc.text, welcomeText);
     });
     test('default filename is set', () {
-      expect(tdoc.downloadName, 'np8080.txt-5.txt');
+      expect(tdoc.downloadName, 'np8080-5.txt');
     });
     test('text can be set', () {
       tdoc.text = 'Hello world!';

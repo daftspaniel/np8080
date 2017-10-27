@@ -64,11 +64,10 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
       : super(newTextProcessingService, newTextareaDomService, newThemeService,
             newEventBusService) {
     themeService.load();
-    showPreview = loadValue(MarkdownPreviewVisibleKey, "").length > 0;
+    showPreview = loadValue(MarkdownPreviewVisibleKey, '').length > 0;
 
     eventBusService.subscribe('closeEditorTabPrompt', closeEditorTabHandler);
     eventBusService.subscribe('resetTextToSample', sampleHandler);
-    //eventBusService.subscribe('ShowMarkdownPreview', showMarkDownHandler);
     eventBusService.subscribe('ShowMarkdownPreview', () => showPreview = true);
     eventBusService.subscribe('HideMarkdownPreview', () => showPreview = false);
   }
@@ -98,8 +97,7 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
     if (selInfo.text.length > 0) {
       String out = note.text.substring(0, selInfo.start);
       String tabbedText = textProcessingService.prefixLines(selInfo.text, tab);
-      out += tabbedText;
-      out += note.text.substring(selInfo.end);
+      out += tabbedText + note.text.substring(selInfo.end);
       textareaDomService.setText(out);
       textareaDomService.setCursorPosition(selInfo.start + tabbedText.length);
     } else {
@@ -126,10 +124,7 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
   }
 
   void ngAfterContentInit() {
+    if (showPreview) eventBusService.post('ShowMarkdownPreview');
     eventBusService.post("tabFocus1");
   }
-//
-//  showMarkDownHandler() {
-//    showPreview = true;
-//  }
 }

@@ -1,7 +1,5 @@
 <div [ngClass]="themeService.tertiaryClass">
-<editor-toolbar [(note)]="documentService.note"
-                [(showPreview)]="showPreview"
-></editor-toolbar>
+<editor-toolbar [(note)]="documentService.note"></editor-toolbar>
 <editable-label [(text)]="note1.downloadName" [id]="note1.id"></editable-label>
 <editable-label [(text)]="note2.downloadName" [id]="note2.id"></editable-label>
 <plain-editor [note]="documentService.note"></plain-editor>
