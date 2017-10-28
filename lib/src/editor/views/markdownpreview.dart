@@ -36,7 +36,6 @@ class MarkdownPreview extends EditorComponentBase implements OnChanges {
 
   ngOnChanges(Map<String, SimpleChange> changes) {
     updatePreview();
-    print('active $active');
   }
 
   void updatePreview() {

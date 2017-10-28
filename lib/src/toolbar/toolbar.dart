@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'dart:html';
 import 'package:angular/angular.dart';
 import 'package:np8080/src/dialog/common/editorcomponentbase.dart';
@@ -37,6 +36,7 @@ class Toolbar extends EditorComponentBase {
       : super(newTextProcessingService, newTextareaDomService, newThemeService,
             newEventBusService) {
     menus.buildMenus(this);
+    showPreview = loadValue(MarkdownPreviewVisibleKey, '').length > 0;
     eventBusService.subscribe('tabFocusDone1', () => documentService.swap());
     eventBusService.subscribe('tabFocusDone2', () => documentService.swap());
   }

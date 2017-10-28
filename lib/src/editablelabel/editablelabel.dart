@@ -53,23 +53,17 @@ class EditableLabel extends ComponentBase implements OnInit {
   }
 
   void giveTabFocus() {
-    if (tabFocused) {
-      print('$id already focussed');
-      return;
-    }
+    if (tabFocused) return;
+
     tabFocus();
     eventBusService.post("tabFocusDone$id");
   }
 
-  void tabFocus() {
-    tabFocused = true;
-    print('tabFocused $id');
-    print(tabFocused);
-  }
+  void tabFocus() => tabFocused = true;
 
-  void tabBlur() {
-    tabFocused = false;
-  }
+  void tabBlur() => tabFocused = false;
+
+  String getTabsClass() => themeService.secondaryClass;
 
   void toggle() {
     editMode = !editMode;
@@ -85,8 +79,4 @@ class EditableLabel extends ComponentBase implements OnInit {
     text = defaultDownloadName;
     update();
   }
-
-  void clickTabXHandler() => eventBusService.post("closeEditorTabPrompt");
-
-  String getTabsClass() => themeService.secondaryClass;
 }

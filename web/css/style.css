@@ -118,7 +118,7 @@ textarea {
 
 .toolbarMenuButton {
     margin-left: 0px;
-    padding-left: 10px;
+    padding-left: 5px;
 }
 
 .labelReadOnly {
@@ -282,15 +282,4 @@ button {
     flex: 2;
     overflow: none;
     height: calc(100vh - 22px);
-}
-
-.closeEditorTabX {
-    float: right;
-    background-color: #C3D0B9;
-    border-radius: 4px;
-    padding: 1px;
-    font-size: smaller;
-    width: 10px;
-    text-align: center;
-    color: rebeccapurple;
 }

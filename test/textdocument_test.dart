@@ -15,6 +15,9 @@ void main() {
     test('default welcome text', () {
       expect(tdoc.text, welcomeText);
     });
+    test('id has been set', () {
+      expect(tdoc.id, 5);
+    });
     test('default filename is set', () {
       expect(tdoc.downloadName, 'np8080-5.txt');
     });
@@ -32,7 +35,7 @@ void main() {
     });
     test('document can be reset to default', () {
       tdoc.reset();
-      expect(tdoc.downloadName, 'np8080.txt');
+      expect(tdoc.downloadName, 'np8080-5.txt');
     });
     test('modifed date is updated on save', () {
       DateTime dt = tdoc.lastModified;

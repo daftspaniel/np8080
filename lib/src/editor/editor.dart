@@ -67,7 +67,7 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
     showPreview = loadValue(MarkdownPreviewVisibleKey, '').length > 0;
 
     eventBusService.subscribe('closeEditorTabPrompt', closeEditorTabHandler);
-    eventBusService.subscribe('resetTextToSample', sampleHandler);
+    eventBusService.subscribe('resetTextToSample', closeHandler);
     eventBusService.subscribe('ShowMarkdownPreview', () => showPreview = true);
     eventBusService.subscribe('HideMarkdownPreview', () => showPreview = false);
   }
@@ -111,9 +111,10 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
     return false;
   }
 
-  void closeEditorTabHandler() => sampleHandler(true);
+  void closeEditorTabHandler() => closeHandler(true);
 
-  void sampleHandler([bool resetFilename = true]) {
+  void closeHandler([bool resetFilename = true]) {
+    print('hclos');
     if (note.empty ||
         window
             .confirm("Are you sure you want to clear the current document?")) {
@@ -124,7 +125,8 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
   }
 
   void ngAfterContentInit() {
-    if (showPreview) eventBusService.post('ShowMarkdownPreview');
+    eventBusService
+        .post(showPreview ? 'ShowMarkdownPreview' : 'HideMarkdownPreview');
     eventBusService.post("tabFocus1");
   }
 }
