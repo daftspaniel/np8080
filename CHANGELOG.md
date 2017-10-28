@@ -1,9 +1,12 @@
 Changelog
 
 v0.0.27
- - Added MATE theme.
+ - Added MATE theme - inspired by the green of Ubuntu MATE.
  - Improved Manual and tidied help menu.
  - Themes dialog.
+ - Remove X button from tabs.
+ - Added second tab.
+ - UT updates.
 
 v0.0.26
 
