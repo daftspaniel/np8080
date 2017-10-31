@@ -1,5 +1,9 @@
 Changelog
 
+v0.0.28 - Under Development
+ - Improved dialog close X.
+ - Dual reader text view.
+
 v0.0.27
  - Added MATE theme - inspired by the green of Ubuntu MATE.
  - Improved Manual and tidied help menu.

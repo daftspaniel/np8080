@@ -111,14 +111,27 @@
 .closeCross {
     float: right;
     font-size: 14px;
+    font-weight: bold;
     padding: 3px;
-    margin-top: 3px;
-    margin-right: 3px;
+    margin-top: 2px;
+    margin-right: 2px;
     background-color: #a20c12;
     color: blanchedalmond;
     text-align: center;
     width: 18px;
     border-radius: 3px;
+}
+.closeTextButton {
+    float: right;
+    font-size: 12px;
+    font-weight: bolder;
+    padding: 3px;
+    margin-top: 2px;
+    margin-right: 32px;
+    color: #a09482;
+    border-radius: 7px;
+    background: transparent;
+    border: 1px solid silver;
 }
 
 .previewText {

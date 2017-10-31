@@ -148,6 +148,8 @@ class Toolbar extends EditorComponentBase {
 
   void readerHandler() => post("showReaderView");
 
+  void dualReaderHandler() => post("showDualReaderView");
+
   void nb8080Handler() =>
       window.open("https://daftspaniel.github.io/demos/nb8080/", 'git');
 

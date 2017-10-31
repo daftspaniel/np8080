@@ -9,6 +9,7 @@ import 'package:np8080/src/editor/editor.dart';
 
 import 'package:np8080/src/dialog/about/aboutdialog.dart';
 import 'package:np8080/src/dialog/manual/manualdialog.dart';
+import 'package:np8080/src/editor/views/dualreaderview.dart';
 import 'package:np8080/src/editor/views/readerview.dart';
 import 'package:np8080/src/services/documentservice.dart';
 import 'package:np8080/src/services/themeservice.dart';
@@ -25,7 +26,8 @@ import 'package:np8080/src/toolbar/toolbar.dart';
       ReaderView,
       Toolbar,
       EditableLabel,
-      NgClass
+      NgClass,
+      DualReaderView
     ])
 class AppComponent {
   final TextDocument note1 = new TextDocument(1);
