@@ -4,9 +4,11 @@
         <input type="checkbox" [(ngModel)]="lockScrolling"> Lock scrolling
     </div>
     <div style="padding-top: 5px;height:100%;">
-    <textarea [ngClass]="getDocumentClass()+' '+getBorderClass()"
+    <textarea id="leftText" [ngClass]="getDocumentClass()+' '+getBorderClass()"
+              (scroll)="scrollLeft($event)"
               style="width:calc(47%);height:calc(100% - 50px);display: inline-block" readonly>{{note1.text}}</textarea>
-        <textarea [ngClass]="getDocumentClass()+ ' '+getBorderClass()"
+        <textarea id="rightText" [ngClass]="getDocumentClass()+ ' '+getBorderClass()"
+                  (scroll)="scrollRight($event)"
                   style="width:calc(47%);height:calc(100% - 50px);display: inline-block"
                   readonly>{{note2.text}}</textarea>
     </div>

@@ -114,7 +114,6 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
   void closeEditorTabHandler() => closeHandler(true);
 
   void closeHandler([bool resetFilename = true]) {
-    print('hclos');
     if (note.empty ||
         window
             .confirm("Are you sure you want to clear the current document?")) {

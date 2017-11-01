@@ -4,13 +4,14 @@ import 'package:np8080/src/dialog/common/componentbase.dart';
 import 'package:np8080/src/document/textdocument.dart';
 import 'package:np8080/src/services/eventbusservice.dart';
 import 'package:np8080/src/services/themeservice.dart';
+import 'dart:html';
 
 @Component(
     selector: 'dualreader-view',
     templateUrl: 'dualreaderview.html',
     visibility: Visibility.none,
     directives: const [NgModel, NgStyle, NgClass, formDirectives])
-class DualReaderView extends ComponentBase {
+class DualReaderView extends ComponentBase implements AfterContentInit {
   DualReaderView(
       ThemeService newthemeService, EventBusService newEventBusService)
       : super(newthemeService, newEventBusService) {
@@ -24,8 +25,21 @@ class DualReaderView extends ComponentBase {
   TextDocument note2;
 
   bool lockScrolling = true;
+  TextAreaElement rightText;
+  TextAreaElement leftText;
 
-  void showReader() {
-    show();
+  void showReader() => show();
+
+  scrollLeft(var e) {
+    if (lockScrolling) rightText.scrollTop = leftText.scrollTop;
+  }
+
+  scrollRight(var e) {
+    if (lockScrolling) leftText.scrollTop = rightText.scrollTop;
+  }
+
+  void ngAfterContentInit() {
+    rightText = querySelector('#rightText');
+    leftText = querySelector('#leftText');
   }
 }
