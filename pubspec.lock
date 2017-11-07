@@ -127,6 +127,12 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.3"
+  diff:
+    description:
+      name: diff
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.1"
   func:
     description:
       name: func
@@ -324,7 +330,7 @@ packages:
       name: source_gen
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.7.2"
+    version: "0.7.2+1"
   source_map_stack_trace:
     description:
       name: source_map_stack_trace
@@ -348,7 +354,7 @@ packages:
       name: stack_trace
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.3"
+    version: "1.9.0"
   stream_channel:
     description:
       name: stream_channel
@@ -378,7 +384,7 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.26"
+    version: "0.12.27"
   tuple:
     description:
       name: tuple

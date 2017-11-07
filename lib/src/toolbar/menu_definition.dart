@@ -83,14 +83,14 @@ class MenuDefinition {
     ]);
 
     viewMenuItems.addAll([
+      new Menu("Themes...", toolbar.themesHandler,
+          "Choose a colour theme for NP8080."),
       new Menu("Markdown", toolbar.markdownHandler,
-          "Show a rendering of Markdown alongside the text."),
+          "Show a rendering of Markdown alongside the text.", true),
       new Menu("Side By side", toolbar.dualReaderHandler,
           "Show texts alongside each other."),
       new Menu("Reader", toolbar.readerHandler,
-          "Show a full screen readonly view of the text.", true),
-      new Menu("Themes...", toolbar.themesHandler,
-          "Choose a colour theme for NP8080.")
+          "Show a full screen readonly view of the text.")
     ]);
 
     helpMenuItems.addAll([
