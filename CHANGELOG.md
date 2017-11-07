@@ -1,6 +1,6 @@
 Changelog
 
-v0.0.28 - Under Development
+v0.0.28
  - Improved dialog close X.
  - Dual reader text view.
 
