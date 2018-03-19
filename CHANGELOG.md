@@ -1,5 +1,8 @@
 Changelog
 
+v0.0.20
+ - Angular 5 (Alpha)
+ 
 v0.0.28
  - Improved dialog close X.
  - Dual reader text view.

@@ -8,7 +8,7 @@ String getNp8080Store() {
   return result == null ? "{}" : result;
 }
 
-void saveStore(Map store) => window.localStorage[np8080] = JSON.encode(store);
+void saveStore(Map store) => window.localStorage[np8080] = json.encode(store);
 
 String loadValue(String key, String defaultValue) {
   Map store = getStorageAsMap();
@@ -20,7 +20,7 @@ String loadValue(String key, String defaultValue) {
 }
 
 Map getStorageAsMap() {
-  Map store = JSON.decode(getNp8080Store());
+  Map store = json.decode(getNp8080Store());
   return store;
 }
 

@@ -9,7 +9,6 @@ import 'componentbase.dart';
 
 @Component(
     selector: 'base_dialog',
-    visibility: Visibility.none,
     template: '',
     directives: const [NgClass, NgModel, NgStyle, formDirectives])
 class EditorComponentBase extends ComponentBase {

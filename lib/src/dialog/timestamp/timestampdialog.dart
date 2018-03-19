@@ -10,7 +10,6 @@ import 'package:np8080/src/services/themeservice.dart';
 
 @Component(
     selector: 'timestamp-dialog',
-    visibility: Visibility.none,
     templateUrl: 'timestampdialog.html',
     directives: const [
       NgFor,

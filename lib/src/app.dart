@@ -17,7 +17,6 @@ import 'package:np8080/src/toolbar/toolbar.dart';
 
 @Component(
     selector: 'np8080-app',
-    visibility: Visibility.none,
     templateUrl: 'app.html',
     directives: const [
       EditorComponent,

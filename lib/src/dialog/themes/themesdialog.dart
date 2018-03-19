@@ -6,7 +6,6 @@ import 'package:np8080/src/services/themeservice.dart';
 
 @Component(
     selector: 'themes-dialog',
-    visibility: Visibility.none,
     templateUrl: 'themesdialog.tpl.html',
     directives: const [NgClass, NgModel, NgStyle, formDirectives])
 class ThemesDialog extends ComponentBase {

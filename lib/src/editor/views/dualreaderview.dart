@@ -9,7 +9,6 @@ import 'dart:html';
 @Component(
     selector: 'dualreader-view',
     templateUrl: 'dualreaderview.html',
-    visibility: Visibility.none,
     directives: const [NgModel, NgStyle, NgClass, formDirectives])
 class DualReaderView extends ComponentBase implements AfterContentInit {
   DualReaderView(

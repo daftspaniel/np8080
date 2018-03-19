@@ -8,7 +8,6 @@ import 'package:np8080/src/services/themeservice.dart';
 
 @Component(
     selector: 'about-dialog',
-    visibility: Visibility.none,
     templateUrl: 'aboutdialog.html',
     directives: const [NgClass])
 class AboutDialogComponent extends ComponentBase {

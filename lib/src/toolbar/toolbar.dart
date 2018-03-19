@@ -1,7 +1,6 @@
 import 'dart:html';
 import 'package:angular/angular.dart';
 import 'package:np8080/src/dialog/common/editorcomponentbase.dart';
-import 'package:np8080/src/document/textdocument.dart';
 import 'package:np8080/src/resources/resources.dart';
 import 'package:np8080/src/services/documentservice.dart';
 import 'package:np8080/src/services/eventbusservice.dart';
@@ -15,15 +14,11 @@ import 'package:np8080/src/toolbar/menu_definition.dart';
 
 @Component(
     selector: 'editor-toolbar',
-    visibility: Visibility.none,
     templateUrl: 'toolbar.html',
     directives: const [NgClass, Toolbar, MenuComponent])
 class Toolbar extends EditorComponentBase {
   final MenuDefinition menus = new MenuDefinition();
   final DocumentService documentService;
-
-  @Input()
-  TextDocument note;
 
   bool showPreview = false;
 

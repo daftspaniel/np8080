@@ -8,15 +8,21 @@ import 'package:np8080/src/services/eventbusservice.dart';
 import 'package:np8080/src/services/textareadomservice.dart';
 import 'package:np8080/src/services/textprocessingservice.dart';
 import 'package:np8080/src/services/themeservice.dart';
-import 'package:pwa/client.dart' as pwa;
+
+//import 'package:pwa/client.dart' as pwa;
+// ignore: uri_has_not_been_generated
+import 'main.template.dart' as ng_generated;
 
 main() {
-  new pwa.Client();
-  bootstrap(AppComponent, [
-    EventBusService,
-    TextProcessingService,
-    TextareaDomService,
-    ThemeService,
-    DocumentService
-  ]);
+  //new pwa.Client();
+  bootstrapStatic(
+      AppComponent,
+      [
+        EventBusService,
+        TextProcessingService,
+        TextareaDomService,
+        ThemeService,
+        DocumentService
+      ],
+      ng_generated.initReflector);
 }

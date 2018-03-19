@@ -7,7 +7,6 @@ import 'package:np8080/src/toolbar/menu_definition.dart';
 
 @Component(
     selector: 'menu',
-    visibility: Visibility.none,
     directives: const [NgFor, NgModel, NgStyle, NgIf, NgClass],
     templateUrl: 'menu_template.html')
 class MenuComponent extends ComponentBase {
