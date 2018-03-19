@@ -15,19 +15,16 @@ import 'package:np8080/src/services/documentservice.dart';
 import 'package:np8080/src/services/themeservice.dart';
 import 'package:np8080/src/toolbar/toolbar.dart';
 
-@Component(
-    selector: 'np8080-app',
-    templateUrl: 'app.html',
-    directives: const [
-      EditorComponent,
-      AboutDialogComponent,
-      ManualDialog,
-      ReaderView,
-      Toolbar,
-      EditableLabel,
-      NgClass,
-      DualReaderView
-    ])
+@Component(selector: 'np8080-app', templateUrl: 'app.html', directives: const [
+  EditorComponent,
+  AboutDialogComponent,
+  ManualDialog,
+  ReaderView,
+  Toolbar,
+  EditableLabel,
+  NgClass,
+  DualReaderView
+])
 class AppComponent {
   final TextDocument note1 = new TextDocument(1);
   final TextDocument note2 = new TextDocument(2);
