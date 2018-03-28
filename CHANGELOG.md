@@ -1,6 +1,6 @@
 Changelog
 
-v0.0.20
+v0.0.29
  - Angular 5 (Alpha)
  
 v0.0.28

@@ -66,6 +66,8 @@ class MenuDefinition {
           "Remove proceeding and trailing whitespace from file."),
       new Menu("Trim Lines", toolbar.trimLinesHandler,
           "Remove proceeding and trailing whitespace from each line.", true),
+      new Menu("Trim & Squash", toolbar.trimSquashHandler,
+          "Trim lines and squash whitespace in each line.", true),
       new Menu("Blank Lines", toolbar.removeBlankLinesHandler,
           "Remove all blank lines."),
       new Menu("Extra Blank Lines", toolbar.removeExtraBlankLinesHandler,

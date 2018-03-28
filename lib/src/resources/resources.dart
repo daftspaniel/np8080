@@ -15,7 +15,7 @@ const String welcomeText = """
 
   6. The application is constantly updated! Hit Refresh to make sure you are on the latest!
 
-  7. Written in Angular Dart 4 - Google's enterprise web framework.
+  7. Written in Angular Dart 5 - Google's enterprise web framework.
 
   8. Lightweight and fast to load!
 

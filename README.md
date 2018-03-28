@@ -1,4 +1,6 @@
-# np8080 0.0.27
+# np8080 0.0.29
+
+*NOTE : NP8080 is moving to Dart 2 and Angular 5 - things will be bumpy!*
 
 NP8080 is a simple notepad type app for the web with some text processing features.
 It is lightweight and fast to load. 100% functionality when offline so great for Chromebooks.
@@ -19,14 +21,14 @@ hosted on any web server as it is client-side. Find out more about [Dart](https:
 
 [![Build Status](https://travis-ci.org/daftspaniel/np8080.svg?branch=master)](https://travis-ci.org/daftspaniel/np8080)
 
-Run tests with (note tests mostly moved to sub-packages):
-+ pub run test -p chrome
+*Currently not running* Run tests with (note tests mostly moved to sub-packages):
++ pub run test
 
 Run in development with:
-+ pub serve
++ pub run build_runner serve
 
 Build for deployment with:
-+ pub build --mode=release --output=build
++ pub run build_runner serve --config=release
 
 Check source code formatting:
 + dartfmt -n .

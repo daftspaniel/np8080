@@ -88,6 +88,8 @@ class Toolbar extends EditorComponentBase {
 
   void trimLinesHandler() => operation(textProcessingService.trimLines);
 
+  void trimSquashHandler() => operation(textProcessingService.trimAllSpaces);
+
   void sortHandler() => operation(textProcessingService.sort);
 
   void reverseHandler() => operation(textProcessingService.reverse);
