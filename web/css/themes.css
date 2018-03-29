@@ -85,3 +85,33 @@
 .umate-border {
     border-color: #9d9d9d !important;
 }
+
+/* amber theme */
+.amber-theme-1 {
+    background-color: #050107;
+    color: #ff7418;
+}
+
+.amber-theme-2 {
+    background-color: #63281b;
+    color: #fef680;
+}
+
+.amber-theme-3 {
+    background-color: #050107;
+    color: #fef680;
+}
+
+.amber-document {
+    background-color: #060201;
+    color: #ff671f;
+}
+
+.amber-highlight:hover {
+    background-color: #ff7418;
+    color: #050107;
+}
+
+.amber-border {
+    border-color: #c47429 !important;
+}
