@@ -10,6 +10,7 @@ import 'package:np8080/src/services/themeservice.dart';
 
 @Component(
     selector: 'timestamp-dialog',
+    preserveWhitespace: true,
     templateUrl: 'timestampdialog.html',
     directives: const [
       NgFor,

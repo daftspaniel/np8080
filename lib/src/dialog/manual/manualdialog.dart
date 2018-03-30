@@ -7,6 +7,7 @@ import 'package:np8080/src/services/themeservice.dart';
 
 @Component(
     selector: 'manual-dialog',
+    preserveWhitespace: true,
     templateUrl: 'manual.tpl.html',
     directives: const [NgClass])
 class ManualDialog extends ComponentBase {

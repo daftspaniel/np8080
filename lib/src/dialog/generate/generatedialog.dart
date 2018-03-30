@@ -8,6 +8,7 @@ import 'package:np8080/src/services/themeservice.dart';
 
 @Component(
     selector: 'generate-dialog',
+    preserveWhitespace: true,
     templateUrl: 'generatedialog.html',
     directives: const [NgClass, NgModel, NgStyle, NgClass, formDirectives])
 class GenerateDialog extends EditorComponentBase {
