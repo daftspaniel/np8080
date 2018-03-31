@@ -1,7 +1,7 @@
 #overlay {
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -11,8 +11,8 @@
 
 .fullScreenViewPanel {
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
     text-align: center;
@@ -28,7 +28,7 @@
 }
 
 #overlay .timestampDialogPanel {
-    top: 0px;
+    top: 0;
     height: 450px;
     font-size: smaller;
     width: 475px;
@@ -38,7 +38,7 @@
 }
 
 #overlay .themesDialogPanel {
-    top: 0px;
+    top: 0;
     height: 250px;
     font-size: smaller;
     width: 275px;
@@ -48,7 +48,16 @@
 }
 
 #overlay .prepostDialogPanel {
-    top: 0px;
+    top: 0;
+    font-size: smaller;
+    width: 475px;
+    margin: 100px auto;
+    border: 1px solid whitesmoke;
+    text-align: center;
+}
+
+#overlay .spliceDialogPanel {
+    top: 0;
     font-size: smaller;
     width: 475px;
     margin: 100px auto;
@@ -58,8 +67,8 @@
 
 .replaceDialogPanel {
     position: absolute;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     font-size: smaller;
     width: 700px;
     margin: 100px auto;
@@ -144,8 +153,8 @@
     background-color: #58c800;
     width: 80px;
     color: white;
-    border: 0px;
-    margin: 0px;
+    border: 0;
+    margin: 0;
     font-weight: bold;
     height: 25px;
     box-shadow: 2px 2px 2px #888888;
@@ -155,8 +164,8 @@
     background-color: #58c800;
     width: 20px;
     color: white;
-    border: 0px;
-    margin: 0px;
+    border: 0;
+    margin: 0;
     font-weight: bold;
     height: 16px;
 }

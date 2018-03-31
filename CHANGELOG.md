@@ -1,7 +1,9 @@
 Changelog
 
-v0.0.29
- - Angular 5 (Alpha)
+v0.0.29 - UNDER DEVELOPMENT
+ - Angular 5 (Alpha) and Dart 2
+ - Trim All Option
+ - Splice tool
  
 v0.0.28
  - Improved dialog close X.

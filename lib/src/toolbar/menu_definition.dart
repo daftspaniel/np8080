@@ -62,12 +62,14 @@ class MenuDefinition {
     ]);
 
     removeMenuItems.addAll([
-      new Menu("Trim", toolbar.trimFileHandler,
+      new Menu("Trim File", toolbar.trimFileHandler,
           "Remove proceeding and trailing whitespace from file."),
       new Menu("Trim Lines", toolbar.trimLinesHandler,
-          "Remove proceeding and trailing whitespace from each line.", true),
+          "Remove proceeding and trailing whitespace from each line."),
       new Menu("Trim & Squash", toolbar.trimSquashHandler,
           "Trim lines and squash whitespace in each line.", true),
+      new Menu("Splice...", toolbar.spliceHandler,
+          "Chops a number of characters of start and end of each line.", true),
       new Menu("Blank Lines", toolbar.removeBlankLinesHandler,
           "Remove all blank lines."),
       new Menu("Extra Blank Lines", toolbar.removeExtraBlankLinesHandler,

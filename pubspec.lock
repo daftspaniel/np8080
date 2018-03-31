@@ -119,7 +119,7 @@ packages:
       name: build_web_compilers
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.4+2"
+    version: "0.3.5"
   built_collection:
     dependency: transitive
     description:
@@ -532,7 +532,7 @@ packages:
       name: stringprocess
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.0.9"
+    version: "1.0.1"
   term_glyph:
     dependency: transitive
     description:

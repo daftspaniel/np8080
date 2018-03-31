@@ -8,6 +8,7 @@ import 'package:np8080/src/dialog/generate/generatedialog.dart';
 import 'package:np8080/src/dialog/prepost/prepostdialog.dart';
 import 'package:np8080/src/dialog/replace/replacedialog.dart';
 import 'package:np8080/src/dialog/sequence/sequencedialog.dart';
+import 'package:np8080/src/dialog/splice/splicedialog.dart';
 import 'package:np8080/src/dialog/split/splitdialog.dart';
 import 'package:np8080/src/dialog/themes/themesdialog.dart';
 import 'package:np8080/src/dialog/timestamp/timestampdialog.dart';
@@ -40,6 +41,7 @@ import 'package:np8080/src/toolbar/toolbar.dart';
       TimestampDialog,
       ThemesDialog,
       SplitDialog,
+      SpliceDialog,
       NgFor,
       NgModel,
       NgStyle,
