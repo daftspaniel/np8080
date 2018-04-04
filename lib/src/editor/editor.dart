@@ -69,6 +69,7 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
 
     eventBusService.subscribe('closeEditorTabPrompt', closeEditorTabHandler);
     eventBusService.subscribe('resetTextToSample', closeHandler);
+    eventBusService.subscribe('resetTextToTodo', todoHandler);
     eventBusService.subscribe('ShowMarkdownPreview', () => showPreview = true);
     eventBusService.subscribe('HideMarkdownPreview', () => showPreview = false);
   }
@@ -120,6 +121,16 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
             .confirm("Are you sure you want to clear the current document?")) {
       if (resetFilename) eventBusService.post('resetEditableTable');
       note.updateAndSave(welcomeText);
+    }
+    textareaDomService.setFocus();
+  }
+
+  void todoHandler([bool resetFilename = true]) {
+    if (note.empty ||
+        window
+            .confirm("Are you sure you want to clear the current document?")) {
+      if (resetFilename) eventBusService.post('resetEditableTable');
+      note.updateAndSave(TodoTemplate);
     }
     textareaDomService.setFocus();
   }

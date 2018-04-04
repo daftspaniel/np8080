@@ -58,6 +58,8 @@ class Toolbar extends EditorComponentBase {
 
   void sampleHandler() => post("resetTextToSample");
 
+  void todoHandler() => post("resetTextToTodo");
+
   void spliceHandler() => post("showSpliceDialog");
 
   void markdownSampleHandler() {

@@ -55,6 +55,18 @@ Web Links
 
 """;
 
+const String TodoTemplate = """
+GOAL:
+
+INFO:
+
+TODO:
+
+IN PROGRESS:
+
+DONE:
+""";
+
 const String tab = "    ";
 
 String np8080Manual = 'If you can read this, the manual build failed!';

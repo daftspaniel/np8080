@@ -6,10 +6,10 @@
             <div style="margin-left: 20px;text-align: left">
                 <div>Number of Characters To Remove</div>
                 <label style="display:inline-block;width: 130px">From Start</label>
-                <input type="number" placeholder="Type text here..." [(ngModel)]="startSplice" id="preTextbox"/>
+                <input type="number" placeholder="Type text here..." [(ngModel)]="startSplice" id="preTextbox" min="0"/>
                 <br/>
                 <label style="display:inline-block;width: 130px">From End</label>
-                <input type="number" placeholder="Type text here..." [(ngModel)]="endSplice"/>
+                <input type="number" placeholder="Type text here..." [(ngModel)]="endSplice" min="0"/>
 
                 <div class="footer">
                     <button class="actionButton" (click)="performSplice()">Splice</button>
