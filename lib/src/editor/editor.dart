@@ -70,6 +70,8 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
     eventBusService.subscribe('closeEditorTabPrompt', closeEditorTabHandler);
     eventBusService.subscribe('resetTextToSample', closeHandler);
     eventBusService.subscribe('resetTextToTodo', todoHandler);
+    eventBusService.subscribe('resetTextToPMI', pmiHandler);
+    eventBusService.subscribe('resetTextToSMART', smartHandler);
     eventBusService.subscribe('ShowMarkdownPreview', () => showPreview = true);
     eventBusService.subscribe('HideMarkdownPreview', () => showPreview = false);
   }
@@ -115,25 +117,27 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
 
   void closeEditorTabHandler() => closeHandler(true);
 
-  void closeHandler([bool resetFilename = true]) {
+  void resetToTemplate(String templateContent, bool resetFilename) {
     if (note.empty ||
         window
             .confirm("Are you sure you want to clear the current document?")) {
       if (resetFilename) eventBusService.post('resetEditableTable');
-      note.updateAndSave(welcomeText);
+      note.updateAndSave(templateContent);
     }
     textareaDomService.setFocus();
   }
 
-  void todoHandler([bool resetFilename = true]) {
-    if (note.empty ||
-        window
-            .confirm("Are you sure you want to clear the current document?")) {
-      if (resetFilename) eventBusService.post('resetEditableTable');
-      note.updateAndSave(TodoTemplate);
-    }
-    textareaDomService.setFocus();
-  }
+  void closeHandler([bool resetFilename = true]) =>
+      resetToTemplate(welcomeText, resetFilename);
+
+  void todoHandler([bool resetFilename = true]) =>
+      resetToTemplate(TodoTemplate, resetFilename);
+
+  void pmiHandler([bool resetFilename = true]) =>
+      resetToTemplate(PMITemplate, resetFilename);
+
+  void smartHandler([bool resetFilename = true]) =>
+      resetToTemplate(SMARTTemplate, resetFilename);
 
   void ngAfterContentInit() {
     eventBusService

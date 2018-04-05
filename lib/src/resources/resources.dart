@@ -67,6 +67,36 @@ IN PROGRESS:
 DONE:
 """;
 
+const String PMITemplate = """
+IDEA:
+
+PLUS POINTS:
+
+MINUS POINTS:
+
+INTERESTING POINTS:
+""";
+
+const String SMARTTemplate = """
+GOAL:
+
+
+SPECIFIC:
+
+
+MEASURABLE:
+
+
+ACTIONABLE:
+
+
+REALISTIC:
+
+
+TIMEBOUND:
+
+""";
+
 const String tab = "    ";
 
 String np8080Manual = 'If you can read this, the manual build failed!';

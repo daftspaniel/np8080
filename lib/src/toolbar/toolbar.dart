@@ -60,6 +60,10 @@ class Toolbar extends EditorComponentBase {
 
   void todoHandler() => post("resetTextToTodo");
 
+  void pmiHandler() => post("resetTextToPMI");
+
+  void smartHandler() => post("resetTextToSMART");
+
   void spliceHandler() => post("showSpliceDialog");
 
   void markdownSampleHandler() {

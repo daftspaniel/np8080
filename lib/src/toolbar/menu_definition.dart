@@ -27,9 +27,13 @@ class MenuDefinition {
       new Menu("Welcome Text", toolbar.sampleHandler,
           "Put sample text into the file."),
       new Menu("Markdown", toolbar.markdownSampleHandler,
-          "Put sample Markdown into the file."),
+          "Put sample Markdown into the file.", true),
       new Menu("Todo Template", toolbar.todoHandler,
-          "Put a Todo list template into the file.")
+          "Put a Todo list template into the file."),
+      new Menu("PMI Template", toolbar.pmiHandler,
+          "Put a PMI list template into the file."),
+      new Menu("SMART Goal", toolbar.smartHandler,
+          "Put a SMART Goal template into the file.")
     ]);
 
     modifyMenuItems.addAll([
