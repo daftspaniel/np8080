@@ -115,3 +115,33 @@
 .amber-border {
     border-color: #c47429 !important;
 }
+
+/* silverblue theme */
+.silverblue-theme-1 {
+    background-color: #0f1054;
+    color: #fff4f4;
+}
+
+.silverblue-theme-2 {
+    background-color: #283f91;
+    color: #c8f5f4;
+}
+
+.silverblue-theme-3 {
+    background-color: #0e0938;
+    color: #84c8c7;
+}
+
+.silverblue-document {
+    background-color: #0f1054;
+    color: #fff4f4;
+}
+
+.silverblue-highlight:hover {
+    background-color: #283f91;
+    color: #84c8c7;
+}
+
+.silverblue-border {
+    border-color: #3096c4 !important;
+}
