@@ -28,7 +28,7 @@ Run in development with:
 + pub run build_runner serve
 
 Build for deployment with:
-+ pub run build_runner serve --config=release
++ pub run build_runner build --config=release -o build
 
 Check source code formatting:
 + dartfmt -n .

@@ -84,6 +84,9 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
     // TAB key
     if (e.keyCode == 9) {
       return tabHandler(e);
+    } else if (e.keyCode == 33 || e.keyCode == 34) {
+      e.stopPropagation();
+      return false;
     } else if (e.keyCode == 90 && e.ctrlKey == true) {
       note.undo();
       return false;

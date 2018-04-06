@@ -1,7 +1,7 @@
 <div style="display: flex;  flex-flow: column;height: 100vh;" [ngClass]="getClass()">
 
     <div class="mainEditorDisplay">
-        <textarea [(ngModel)]="note.text" (keyup)="changeHandler()" (keydown)="keyHandler($event)"
+        <textarea onkeydown="if(event.keyCode===33||event.keyCode===34){event.stopPropagation();return false;}" [(ngModel)]="note.text" (keyup)="changeHandler()" (keydown)="keyHandler($event)"
                   [ngStyle]="{width: showPreview ? '47%':'calc(100% - 18px)'}"
                   tabindex="1" id="nptextbox"
                   [ngClass]="getDocumentClass()+' '+getBorderClass()"
