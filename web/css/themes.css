@@ -145,3 +145,19 @@
 .silverblue-border {
     border-color: #3096c4 !important;
 }
+
+::-webkit-scrollbar {
+    width: 11px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f0f0f0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #777;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #444;
+}
