@@ -10,7 +10,7 @@ import 'package:np8080/src/services/themeservice.dart';
     selector: 'replace-dialog',
     preserveWhitespace: true,
     templateUrl: 'replacedialog.html',
-    directives: const [NgClass, NgModel, NgStyle, formDirectives])
+    directives: [NgClass, NgModel, NgStyle, formDirectives])
 class ReplaceDialog extends EditorComponentBase {
   String textToReplace;
   String replacementText;

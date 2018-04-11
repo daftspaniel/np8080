@@ -10,7 +10,7 @@ import 'package:np8080/src/services/themeservice.dart';
     selector: 'split-dialog',
     preserveWhitespace: true,
     templateUrl: 'splitdialog.tpl.html',
-    directives: const [NgClass, NgModel, NgStyle, formDirectives])
+    directives: [NgClass, NgModel, NgStyle, formDirectives])
 class SplitDialog extends EditorComponentBase {
   String delimiter;
   String replacementText;

@@ -10,7 +10,7 @@ import 'package:np8080/src/services/themeservice.dart';
     selector: 'splice-dialog',
     preserveWhitespace: true,
     templateUrl: 'splicedialog.html',
-    directives: const [NgClass, NgModel, NgStyle, formDirectives])
+    directives: [NgClass, NgModel, NgStyle, formDirectives])
 class SpliceDialog extends EditorComponentBase {
   int startSplice = 0;
   int endSplice = 0;

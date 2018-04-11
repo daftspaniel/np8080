@@ -1,4 +1,4 @@
-const String welcomeText = """
+const welcomeText = """
   Welcome to Notepad 8080 a clutter-free text editor in your browser.
   
   For information on the application's features, click on Manual in the Help menu.
@@ -26,7 +26,7 @@ const String welcomeText = """
 
 """;
 
-const String markdownSampler = """
+const markdownSampler = """
 
 # Heading 1
 ## Heading 2
@@ -55,7 +55,7 @@ Web Links
 
 """;
 
-const String TodoTemplate = """
+const TodoTemplate = """
 GOAL:
 
 INFO:
@@ -67,7 +67,7 @@ IN PROGRESS:
 DONE:
 """;
 
-const String PMITemplate = """
+const PMITemplate = """
 IDEA:
 
 PLUS POINTS:
@@ -77,7 +77,7 @@ MINUS POINTS:
 INTERESTING POINTS:
 """;
 
-const String SMARTTemplate = """
+const SMARTTemplate = """
 GOAL:
 
 
@@ -97,11 +97,11 @@ TIMEBOUND:
 
 """;
 
-const String tab = "    ";
+const tab = "    ";
 
 String np8080Manual = 'If you can read this, the manual build failed!';
 
-const String np8080ManualIntro = """
+const np8080ManualIntro = """
 Notepad 8080 is a text editor in your browser. It is 100% free to use, contains
 no advertising or tracking. Your data is automatically stored in your web 
 browser's local storage and NOT on any server.

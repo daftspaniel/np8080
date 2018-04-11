@@ -2,7 +2,7 @@ import 'package:np8080/src/services/themeservice.dart';
 import 'package:test/test.dart';
 
 void main() {
-  ThemeService tps = new ThemeService();
+  ThemeService tps = ThemeService();
 
   group('Main: default theme.', () {
     test('theme', () {
@@ -53,7 +53,7 @@ void main() {
     test('Ensure changed theme is changed and stored.', () {
       tps.theme = "TEST";
 
-      tps = new ThemeService();
+      tps = ThemeService();
       tps.load();
       expect(tps.theme, "TEST");
     });

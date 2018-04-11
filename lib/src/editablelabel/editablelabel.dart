@@ -11,9 +11,9 @@ import 'package:np8080/src/services/themeservice.dart';
 @Component(
     selector: 'editable-label',
     templateUrl: 'editablelabel.html',
-    directives: const [NgModel, NgStyle, NgClass, formDirectives])
+    directives: [NgModel, NgStyle, NgClass, formDirectives])
 class EditableLabel extends ComponentBase implements OnInit {
-  final StreamController onTextChange = new StreamController<String>();
+  final onTextChange = StreamController<String>();
 
   bool editMode = false;
   bool tabFocused = false;

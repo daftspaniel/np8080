@@ -7,7 +7,7 @@ class TextareaDomService {
 
   TextareaSelection getCurrentSelectionInfo() {
     TextAreaElement nptb = querySelector(_id);
-    TextareaSelection sel = new TextareaSelection();
+    TextareaSelection sel = TextareaSelection();
     sel
       ..start = nptb.selectionStart
       ..end = nptb.selectionEnd

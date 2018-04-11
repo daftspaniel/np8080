@@ -7,7 +7,7 @@ void main() {
   group('Document core:', () {
     TextDocument tdoc;
     setUp(() {
-      tdoc = new TextDocument(5);
+      tdoc = TextDocument(5);
     });
     test('default not empty', () {
       expect(tdoc.empty, false);

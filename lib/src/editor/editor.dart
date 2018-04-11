@@ -25,32 +25,29 @@ import 'package:np8080/src/storage/localstorage.dart';
 import 'package:np8080/src/storage/storagekeys.dart';
 import 'package:np8080/src/toolbar/toolbar.dart';
 
-@Component(
-    selector: 'plain-editor',
-    templateUrl: 'editor.html',
-    directives: const [
-      StatusPanel,
-      Toolbar,
-      GenerateDialog,
-      ReplaceDialog,
-      PrePostDialog,
-      SequenceDialog,
-      DeleteLinesDialog,
-      MarkdownPreview,
-      EditableLabel,
-      TimestampDialog,
-      ThemesDialog,
-      SplitDialog,
-      SpliceDialog,
-      NgFor,
-      NgModel,
-      NgStyle,
-      NgIf,
-      NgClass,
-      formDirectives
-    ])
+@Component(selector: 'plain-editor', templateUrl: 'editor.html', directives: [
+  StatusPanel,
+  Toolbar,
+  GenerateDialog,
+  ReplaceDialog,
+  PrePostDialog,
+  SequenceDialog,
+  DeleteLinesDialog,
+  MarkdownPreview,
+  EditableLabel,
+  TimestampDialog,
+  ThemesDialog,
+  SplitDialog,
+  SpliceDialog,
+  NgFor,
+  NgModel,
+  NgStyle,
+  NgIf,
+  NgClass,
+  formDirectives
+])
 class EditorComponent extends EditorComponentBase implements AfterContentInit {
-  final List<int> _undoPositions = new List<int>();
+  final _undoPositions = List<int>();
 
   @Input()
   TextDocument note;

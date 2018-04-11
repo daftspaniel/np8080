@@ -10,8 +10,8 @@ import 'package:np8080/src/services/themeservice.dart';
 @Component(
     selector: 'text-status',
     templateUrl: 'statuspanel.html',
-    directives: const [NgIf, NgClass],
-    pipes: const [UpperCasePipe, DatePipe])
+    directives: [NgIf, NgClass],
+    pipes: [UpperCasePipe, DatePipe])
 class StatusPanel extends EditorComponentBase {
   StatusPanel(
       TextProcessingService newTextProcessingService,

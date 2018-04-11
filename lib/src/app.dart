@@ -1,5 +1,4 @@
-// (c) 2016-17, Davy Mitchell. All rights reserved. Use of this source code
-
+// (c) 2016-18, Davy Mitchell. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
 import 'package:angular/angular.dart';
@@ -15,7 +14,7 @@ import 'package:np8080/src/services/documentservice.dart';
 import 'package:np8080/src/services/themeservice.dart';
 import 'package:np8080/src/toolbar/toolbar.dart';
 
-@Component(selector: 'np8080-app', templateUrl: 'app.html', directives: const [
+@Component(selector: 'np8080-app', templateUrl: 'app.html', directives: [
   EditorComponent,
   AboutDialogComponent,
   ManualDialog,
@@ -26,12 +25,12 @@ import 'package:np8080/src/toolbar/toolbar.dart';
   DualReaderView
 ])
 class AppComponent {
-  final TextDocument note1 = new TextDocument(1);
-  final TextDocument note2 = new TextDocument(2);
+  final note1 = TextDocument(1);
+  final note2 = TextDocument(2);
   final DocumentService documentService;
   final ThemeService themeService;
 
-  bool showPreview = false;
+  var showPreview = false;
 
   AppComponent(this.documentService, this.themeService) {
     documentService.note = note1;

@@ -5,7 +5,7 @@ import 'package:np8080/src/pwa/offline_urls.g.dart' as offline;
 void main() {
   //   The Worker handles the low-level code for initialization, fetch API
   //   routing and (later) messaging.
-  Worker worker = new Worker();
+  Worker worker = Worker();
 
   // The static assets that need to be in the cache for offline mode.
   // By default it uses the automatically generated list from the output of

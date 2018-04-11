@@ -9,7 +9,7 @@ import 'dart:html';
 @Component(
     selector: 'dualreader-view',
     templateUrl: 'dualreaderview.html',
-    directives: const [NgModel, NgStyle, NgClass, formDirectives])
+    directives: [NgModel, NgStyle, NgClass, formDirectives])
 class DualReaderView extends ComponentBase implements AfterContentInit {
   DualReaderView(
       ThemeService newthemeService, EventBusService newEventBusService)

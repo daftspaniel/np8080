@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:html';
 
-const String np8080 = 'np8080';
+const np8080 = 'np8080';
 
 String getNp8080Store() {
   String result = window.localStorage[np8080];

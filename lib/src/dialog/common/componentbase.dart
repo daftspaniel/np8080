@@ -1,11 +1,9 @@
 import 'dart:async';
 import 'dart:html';
-import 'package:np8080/src/services/eventbusservice.dart';
-import 'package:np8080/src/services/themeservice.dart';
 
 abstract class ComponentBase {
-  final ThemeService themeService;
-  final EventBusService eventBusService;
+  final themeService;
+  final eventBusService;
 
   bool showComponent = false;
 
@@ -30,7 +28,6 @@ abstract class ComponentBase {
   String getBorderClass() => themeService.borderClass;
 
   void setFocus(String id) {
-    new Timer(
-        new Duration(milliseconds: 454), () => querySelector(id)?.focus());
+    Timer(Duration(milliseconds: 454), () => querySelector(id)?.focus());
   }
 }

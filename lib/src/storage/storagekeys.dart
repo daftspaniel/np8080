@@ -1,2 +1,2 @@
-const String SelectedThemeKey = 'SelectedTheme';
-const String MarkdownPreviewVisibleKey = 'MarkdownPreviewVisible';
+const SelectedThemeKey = 'SelectedTheme';
+const MarkdownPreviewVisibleKey = 'MarkdownPreviewVisible';

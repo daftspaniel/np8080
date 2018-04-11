@@ -15,9 +15,9 @@ import 'package:np8080/src/toolbar/menu_definition.dart';
 @Component(
     selector: 'editor-toolbar',
     templateUrl: 'toolbar.html',
-    directives: const [NgClass, Toolbar, MenuComponent])
+    directives: [NgClass, Toolbar, MenuComponent])
 class Toolbar extends EditorComponentBase {
-  final MenuDefinition menus = new MenuDefinition();
+  final menus = MenuDefinition();
   final DocumentService documentService;
 
   bool showPreview = false;

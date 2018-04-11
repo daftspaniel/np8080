@@ -2,12 +2,12 @@ import '../resources/resources.dart';
 
 import 'package:np8080/src/storage/localstorage.dart';
 
-const String defaultDownloadName = 'np8080.txt';
-const String defaultFilename = 'np8080';
-const String defaultFileExtension = 'txt';
+const defaultDownloadName = 'np8080.txt';
+const defaultFilename = 'np8080';
+const defaultFileExtension = 'txt';
 
 class TextDocument {
-  final List<String> _undoText = new List<String>();
+  final _undoText = List<String>();
 
   final int _id;
   String _text = '';
@@ -73,7 +73,7 @@ class TextDocument {
     }
   }
 
-  void updateModifiedDate() => lastModified = new DateTime.now();
+  void updateModifiedDate() => lastModified = DateTime.now();
 
   void updateAndSave(String newText) {
     _text = newText;

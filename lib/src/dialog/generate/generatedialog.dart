@@ -10,7 +10,7 @@ import 'package:np8080/src/services/themeservice.dart';
     selector: 'generate-dialog',
     preserveWhitespace: true,
     templateUrl: 'generatedialog.html',
-    directives: const [NgClass, NgModel, NgStyle, NgClass, formDirectives])
+    directives: [NgClass, NgModel, NgStyle, NgClass, formDirectives])
 class GenerateDialog extends EditorComponentBase {
   String textToRepeat;
 

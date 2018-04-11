@@ -10,7 +10,7 @@ import 'package:np8080/src/services/themeservice.dart';
     selector: 'delete-lines-dialog',
     preserveWhitespace: true,
     templateUrl: 'deletelinesdialog.html',
-    directives: const [NgModel, NgClass, formDirectives])
+    directives: [NgModel, NgClass, formDirectives])
 class DeleteLinesDialog extends EditorComponentBase {
   String markerText;
   String updatedText;

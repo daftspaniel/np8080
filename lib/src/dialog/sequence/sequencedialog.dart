@@ -10,7 +10,7 @@ import 'package:np8080/src/services/themeservice.dart';
     selector: 'sequence-dialog',
     templateUrl: 'sequencedialog.html',
     preserveWhitespace: true,
-    directives: const [NgClass, NgModel, NgStyle, formDirectives])
+    directives: [NgClass, NgModel, NgStyle, formDirectives])
 class SequenceDialog extends EditorComponentBase {
   num startIndex = 10;
   num repeatCount = 10;

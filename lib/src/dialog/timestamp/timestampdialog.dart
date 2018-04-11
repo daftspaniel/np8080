@@ -12,7 +12,7 @@ import 'package:np8080/src/services/themeservice.dart';
     selector: 'timestamp-dialog',
     preserveWhitespace: true,
     templateUrl: 'timestampdialog.html',
-    directives: const [
+    directives: [
       NgFor,
       NgClass,
       NgModel,
@@ -21,8 +21,8 @@ import 'package:np8080/src/services/themeservice.dart';
       formDirectives
     ])
 class TimestampDialog extends EditorComponentBase {
-  final List<String> times = new List<String>();
-  final String defaultCustomFormat = 'yyyy-MM-dd EEEE h:m:ss a';
+  final times = List<String>();
+  final defaultCustomFormat = 'yyyy-MM-dd EEEE h:m:ss a';
 
   String timeStamp = '';
   String customTimeStamp = '';
@@ -49,7 +49,7 @@ class TimestampDialog extends EditorComponentBase {
   }
 
   String customFormattedDate() {
-    return formatDateTime(new DateTime.now(), customFormat);
+    return formatDateTime(DateTime.now(), customFormat);
   }
 
   String getGeneratedText() {
@@ -66,7 +66,7 @@ class TimestampDialog extends EditorComponentBase {
   }
 
   void updateTime() {
-    DateTime currentTime = new DateTime.now();
+    DateTime currentTime = DateTime.now();
     times.clear();
     times.addAll([
       currentTime.toString(),
@@ -91,9 +91,8 @@ class TimestampDialog extends EditorComponentBase {
     }
   }
 
-  String formatDateTime(DateTime dateTime, String pattern) {
-    return new DateFormat(pattern).format(dateTime);
-  }
+  String formatDateTime(DateTime dateTime, String pattern) =>
+      DateFormat(pattern).format(dateTime);
 
   void resetCustomFormat() {
     customFormat = defaultCustomFormat;

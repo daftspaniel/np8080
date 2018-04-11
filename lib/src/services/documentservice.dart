@@ -16,13 +16,9 @@ class DocumentService {
     _inactiveNote = newInactiveNote;
   }
 
-  get note {
-    return _activeNote;
-  }
+  get note => _activeNote;
 
-  get InactiveNote {
-    return _inactiveNote;
-  }
+  get InactiveNote => _inactiveNote;
 
   void swap() {
     if (_activeNote == null || _inactiveNote == null) return;
@@ -30,7 +26,5 @@ class DocumentService {
     temp = _activeNote;
     _activeNote = _inactiveNote;
     _inactiveNote = temp;
-    print('Active note ${_activeNote.downloadName}');
-    print('Inactive note ${_inactiveNote.downloadName}');
   }
 }
