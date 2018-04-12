@@ -266,7 +266,7 @@ packages:
       name: intl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.15.5"
+    version: "0.15.6"
   io:
     dependency: transitive
     description:

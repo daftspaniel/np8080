@@ -1,9 +1,12 @@
 Changelog
 
-v0.0.29 - UNDER DEVELOPMENT
- - Angular 5 (Alpha) and Dart 2
- - Trim All Option
- - Splice tool
+v0.0.29
+ - 2 New Themes - Amber and 64 Blue
+ - New Templates - Todo, PMI and SMART
+ - New Trim & Squash Option
+ - New Splice tool to remove a specified no. of characters from start/end of line
+ - Minor Menu and status bar improvements
+ - Build with Angular 5 (Alpha 10) and Dart 2
  
 v0.0.28
  - Improved dialog close X.
