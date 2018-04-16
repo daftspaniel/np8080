@@ -1,5 +1,8 @@
 Changelog
 
+v0.0.30
+ - Underway
+
 v0.0.29
  - 2 New Themes - Amber and 64 Blue
  - New Templates - Todo, PMI and SMART

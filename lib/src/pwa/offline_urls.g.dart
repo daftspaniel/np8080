@@ -1,5 +1,5 @@
 /// URLs for offline cache.
-final List<String> offlineUrls = [
+final offlineUrls = [
   './',
   './favicon.ico',
   './img/background.png',
@@ -11,10 +11,10 @@ final List<String> offlineUrls = [
   './main.dart.js',
   './pwa.dart.js',
   './manifest.json',
-  './css/style.css',
-  './css/dialog.css',
-  './css/normalize.css',
+  './css/style.css?v0.0.30',
+  './css/dialog.css?v0.0.30',
+  './css/normalize.css?v0.0.30',
 ];
 
 /// Last modified timestamp of the files
-final String lastModified = '2018-03-25T18:40:31.999Z';
+final String lastModified = '2018-04-16T18:40:31.999Z';
