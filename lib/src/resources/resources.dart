@@ -55,48 +55,6 @@ Web Links
 
 """;
 
-const TodoTemplate = """
-GOAL:
-
-INFO:
-
-TODO:
-
-IN PROGRESS:
-
-DONE:
-""";
-
-const PMITemplate = """
-IDEA:
-
-PLUS POINTS:
-
-MINUS POINTS:
-
-INTERESTING POINTS:
-""";
-
-const SMARTTemplate = """
-GOAL:
-
-
-SPECIFIC:
-
-
-MEASURABLE:
-
-
-ACTIONABLE:
-
-
-REALISTIC:
-
-
-TIMEBOUND:
-
-""";
-
 const tab = "    ";
 
 String np8080Manual = 'If you can read this, the manual build failed!';

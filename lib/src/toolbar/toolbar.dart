@@ -64,6 +64,8 @@ class Toolbar extends EditorComponentBase {
 
   void smartHandler() => post("resetTextToSMART");
 
+  void htmlHandler() => post("resetTextToHTML");
+
   void spliceHandler() => post("showSpliceDialog");
 
   void markdownSampleHandler() {

@@ -17,6 +17,7 @@ import 'package:np8080/src/editablelabel/editablelabel.dart';
 import 'package:np8080/src/editor/views/markdownpreview.dart';
 import 'package:np8080/src/editor/statuspanel.dart';
 import 'package:np8080/src/resources/resources.dart';
+import 'package:np8080/src/resources/templates.dart';
 import 'package:np8080/src/services/eventbusservice.dart';
 import 'package:np8080/src/services/textareadomservice.dart';
 import 'package:np8080/src/services/textprocessingservice.dart';
@@ -69,6 +70,7 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
     eventBusService.subscribe('resetTextToTodo', todoHandler);
     eventBusService.subscribe('resetTextToPMI', pmiHandler);
     eventBusService.subscribe('resetTextToSMART', smartHandler);
+    eventBusService.subscribe('resetTextToHTML', htmlHandler);
     eventBusService.subscribe('ShowMarkdownPreview', () => showPreview = true);
     eventBusService.subscribe('HideMarkdownPreview', () => showPreview = false);
   }
@@ -138,6 +140,9 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
 
   void smartHandler([bool resetFilename = true]) =>
       resetToTemplate(SMARTTemplate, resetFilename);
+
+  void htmlHandler([bool resetFilename = true]) =>
+      resetToTemplate(WebStarterHtml, resetFilename);
 
   void ngAfterContentInit() {
     eventBusService
