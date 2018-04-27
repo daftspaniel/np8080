@@ -10,7 +10,7 @@ class TextDocument {
   final _undoText = List<String>();
 
   final int _id;
-  String _text = '';
+  var _text = '';
   String _downloadName;
   DateTime _lastModified;
 
@@ -66,7 +66,7 @@ class TextDocument {
   }
 
   void initLastModifiedDate() {
-    String lms = loadValue('lm$_id', null);
+    var lms = loadValue('lm$_id', null);
 
     if (lms != null) {
       lastModified = DateTime.parse(lms);

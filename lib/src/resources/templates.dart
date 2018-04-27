@@ -45,10 +45,13 @@ const WebStarterHtml = """
 <html>
 
   <head>
+  
     <title>TITLE</title>
+    
   </head>
 
   <body>
+  
     <h1>HEADING</h1>
     
     <p>PARAGRAPH</p>

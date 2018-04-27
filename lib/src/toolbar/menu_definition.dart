@@ -34,7 +34,7 @@ class MenuDefinition {
           "Put a PMI list template into the file."),
       Menu("SMART Goal", toolbar.smartHandler,
           "Put a SMART Goal template into the file.",true),
-      Menu("HTML", toolbar.htmlHandler,
+      Menu("HTML Starter", toolbar.htmlHandler,
           "Put an HTML template into the file.")
     ]);
 
