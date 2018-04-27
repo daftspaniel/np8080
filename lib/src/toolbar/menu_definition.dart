@@ -33,16 +33,17 @@ class MenuDefinition {
       Menu("PMI Template", toolbar.pmiHandler,
           "Put a PMI list template into the file."),
       Menu("SMART Goal", toolbar.smartHandler,
-          "Put a SMART Goal template into the file.",true),
+          "Put a SMART Goal template into the file.", true),
       Menu("HTML Starter", toolbar.htmlHandler,
           "Put an HTML template into the file.")
     ]);
 
     modifyMenuItems.addAll([
       Menu("Replace...", toolbar.replaceHandler,
-          "Replace some text with some other text.\tShortcut - Ctrl + Q"),
+          "Replace text with different text.\tShortcut - Ctrl + Q"),
       Menu("Pre/Post...", toolbar.prePostHandler,
           "Add text to start and/or end of lines.", true),
+      Menu("Number", toolbar.numberHandler, "Number non-blank lines."),
       Menu("Doublespace", toolbar.doublespaceHandler, "Double space the lines.",
           true),
       Menu("Split...", toolbar.splitHandler,
@@ -52,8 +53,9 @@ class MenuDefinition {
       Menu("Reverse", toolbar.reverseHandler, "Reverse the line order."),
       Menu("Randomise", toolbar.randomHandler, "Randomise the line order.",
           true),
-      Menu("Sort A-Z", toolbar.sortHandler, "Alphabetically sort lines."),
-      Menu("Number", toolbar.numberHandler, "Number non-blank lines.")
+      Menu("Sort A-Z", toolbar.sortAZHandler, "Alphabetically sort lines."),
+      Menu("Sort by line length", toolbar.sortLineLengthHandler,
+          "Sort lines by length - shortest to longest.")
     ]);
 
     addMenuItems.addAll([
@@ -159,7 +161,7 @@ class MenuDefinition {
 
     np8080Manual = np8080ManualIntro;
     allMenus.forEach((Menu menu) {
-      np8080Manual += menu.name.padRight(20) + menu.tooltip + '\r\n';
+      np8080Manual += menu.name.padRight(25) + menu.tooltip + '\r\n';
     });
   }
 }
