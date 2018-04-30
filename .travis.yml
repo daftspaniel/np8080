@@ -2,7 +2,3 @@ language: dart
 dart:
   - dev
 sudo: false
-dart_task:
-  - dartanalyzer: true
-  - test: --platform chrome
-  - dartfmt

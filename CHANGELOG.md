@@ -1,7 +1,13 @@
 Changelog
 
+v0.0.31
+ - Not started.
+
 v0.0.30
- - Underway
+ - Add HTML page template to Start menu
+ - Add Sort by line length to Modify menu
+ - Build with Angular 5 (Alpha 11) and Dart 2
+ - General tweaks and code tidying
 
 v0.0.29
  - 2 New Themes - Amber and 64 Blue
