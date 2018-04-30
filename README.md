@@ -1,4 +1,4 @@
-# np8080 0.0.29
+# np8080 0.0.30
 
 *NOTE : NP8080 is moving to Dart 2 and Angular 5 - things will be bumpy!*
 
