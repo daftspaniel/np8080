@@ -9,8 +9,8 @@ import 'package:np8080/src/services/textprocessingservice.dart';
 import 'package:np8080/src/services/themeservice.dart';
 import 'package:np8080/src/storage/localstorage.dart';
 import 'package:np8080/src/storage/storagekeys.dart';
-import 'package:np8080/src/toolbar/menu/menu.dart';
-import 'package:np8080/src/toolbar/menu_definition.dart';
+import 'package:np8080/src/toolbar/menu/menu_component.dart';
+import 'package:np8080/src/toolbar/menu/menu_definition.dart';
 
 @Component(
     selector: 'editor-toolbar',
@@ -20,7 +20,7 @@ class Toolbar extends EditorComponentBase {
   final menus = MenuDefinition();
   final DocumentService documentService;
 
-  bool showPreview = false;
+  var showPreview = false;
 
   Toolbar(
       TextProcessingService newTextProcessingService,

@@ -11,9 +11,9 @@ final offlineUrls = [
   './main.dart.js',
   './pwa.dart.js',
   './manifest.json',
-  './css/style.css?v0.0.30',
-  './css/dialog.css?v0.0.30',
-  './css/normalize.css?v0.0.30',
+  './css/style.css?v0.0.31',
+  './css/dialog.css?v0.0.31',
+  './css/normalize.css?v0.0.31',
 ];
 
 /// Last modified timestamp of the files

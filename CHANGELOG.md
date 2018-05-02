@@ -1,7 +1,7 @@
 Changelog
 
-v0.0.31
- - Not started.
+v0.0.31 - In Development
+ - Added globe to external links in Help menu.
 
 v0.0.30
  - Add HTML page template to Start menu

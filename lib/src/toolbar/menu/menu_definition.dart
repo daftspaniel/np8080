@@ -1,15 +1,6 @@
 import 'package:np8080/src/resources/resources.dart';
+import 'package:np8080/src/toolbar/menu/menu.dart';
 import 'package:np8080/src/toolbar/toolbar.dart';
-
-class Menu {
-  final String name;
-  final String tooltip;
-  final Function handler;
-  final bool separator;
-
-  Menu(this.name,
-      [this.handler = null, this.tooltip = '', this.separator = false]);
-}
 
 class MenuDefinition {
   final startMenuItems = List<Menu>();
@@ -110,11 +101,11 @@ class MenuDefinition {
     helpMenuItems.addAll([
       Menu("About...", toolbar.aboutHandler, "Find out more about NP8080."),
       Menu("Manual...", toolbar.manualHandler, "Read the NP8080 manual.", true),
-      Menu("What's New?", toolbar.whatsNewHandler,
+      Menu("🌎 What's New?", toolbar.whatsNewHandler,
           "Find out what's changed! - Hosted on Github.com.", true),
-      Menu("GitHub", toolbar.githubHandler,
+      Menu("🌎 GitHub", toolbar.githubHandler,
           "Get the source code - Hosted on Github.com."),
-      Menu("Gitter Chat", toolbar.gitterHandler,
+      Menu("🌎 Gitter Chat", toolbar.gitterHandler,
           "Gitter based Chatroom - Hosted on Gitter.com.")
     ]);
 
@@ -123,8 +114,8 @@ class MenuDefinition {
 
   void buildManual() {
     var allMenus = List<Menu>();
+    var blank = Menu(' ');
 
-    Menu blank = Menu(" ");
     allMenus.add(Menu("Start Menu"));
     allMenus.add(blank);
     allMenus.addAll(startMenuItems);
