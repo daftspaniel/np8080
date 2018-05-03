@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:angular/angular.dart';
 import 'package:np8080/src/document/textdocument.dart';
 
@@ -22,9 +24,9 @@ class DocumentService {
 
   void swap() {
     if (_activeNote == null || _inactiveNote == null) return;
-    TextDocument temp;
-    temp = _activeNote;
+    var temp = _activeNote;
     _activeNote = _inactiveNote;
     _inactiveNote = temp;
+    document.title = _activeNote.downloadName;
   }
 }
