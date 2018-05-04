@@ -50,6 +50,8 @@ class MenuDefinition {
     ]);
 
     addMenuItems.addAll([
+      Menu("Lorem Ipsum", toolbar.loremIpsumHandler, "Add Lorem Ipsum text.",
+          true),
       Menu("Timestamp...", toolbar.timestampDlgHandler,
           "Choose a timestamp to add to the document.", true),
       Menu("Duplicate All", toolbar.duplicateHandler,

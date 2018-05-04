@@ -1,7 +1,9 @@
 Changelog
 
 v0.0.31 - In Development
- - Added globe to external links in Help menu.
+ - Added globe to external links in Help menu
+ - Tab title reflects active document
+ - Added Lorem Ipsum to Add menu
 
 v0.0.30
  - Add HTML page template to Start menu

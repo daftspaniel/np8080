@@ -175,4 +175,16 @@ class Toolbar extends EditorComponentBase {
   void numberHandler() => operation(textProcessingService.addNumbering);
 
   void themesHandler() => post("showThemesDialog");
+
+  void loremIpsumHandler() {
+    TextareaSelection selInfo = textareaDomService.getCurrentSelectionInfo();
+
+    String newText = note.text.substring(0, selInfo.start) +
+        loremIpsum +
+        '\n\n' +
+        note.text.substring(selInfo.start);
+
+    saveAndUpdateState(newText, selInfo.start);
+    //note.updateAndSave(note.text + loremIpsum + '\n\n');
+  }
 }

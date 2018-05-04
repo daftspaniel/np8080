@@ -3,7 +3,9 @@
             &nbsp;&nbsp;&nbsp;&nbsp;
         Lines: {{lineCount}}
             &nbsp;&nbsp;&nbsp;&nbsp;
-        Words: {{wordCount}} &nbsp;</span>
+        Words: {{wordCount}}
+            &nbsp;&nbsp;&nbsp;&nbsp;
+        Sentences: {{sentenceCount}} </span>
     <span [hidden]="isHttps()" style="background-color:#119011;color:white">WARNING : Please download your doc & update the Url to HTTPS!</span>
     <span class="rhsStatus" *ngIf="modified!=null">Modified: {{modified|  date:'mediumTime' | uppercase }}</span>
 </div>
