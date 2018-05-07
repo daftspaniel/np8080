@@ -123,7 +123,7 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
     if (note.empty ||
         window
             .confirm("Are you sure you want to clear the current document?")) {
-      if (resetFilename) eventBusService.post('resetEditableTable');
+      if (resetFilename) eventBusService.post('resetEditableLabel');
       note.updateAndSave(templateContent);
     }
     textareaDomService.setFocus();

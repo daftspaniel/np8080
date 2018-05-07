@@ -32,7 +32,7 @@ class EditableLabel extends ComponentBase implements OnInit {
       ThemeService newthemeService, EventBusService newEventBusService)
       : super(newthemeService, newEventBusService) {
     editMode = false;
-    eventBusService.subscribe('resetEditableTable', reset);
+    eventBusService.subscribe('resetEditableLabel', reset);
   }
 
   ngOnInit() {
