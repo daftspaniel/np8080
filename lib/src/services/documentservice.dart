@@ -12,6 +12,7 @@ class DocumentService {
 
   set note(TextDocument newActiveNote) {
     _activeNote = newActiveNote;
+    document.title = _activeNote.downloadName;
   }
 
   set inActiveNote(TextDocument newInactiveNote) {

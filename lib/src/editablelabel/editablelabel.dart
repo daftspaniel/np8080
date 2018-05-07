@@ -48,7 +48,9 @@ class EditableLabel extends ComponentBase implements OnInit {
 
   void formatText() {
     outputText = text.length < 18 ? text : text.substring(0, 15) + "...";
-    document.title = text;
+    if (tabFocused) {
+      document.title = text;
+    }
   }
 
   void giveTabFocus() {
