@@ -60,3 +60,35 @@ const WebStarterHtml = """
 
 </html>
 """;
+
+const WeekPlanner = """
+
+Week Beginning:
+
+This Week I want to:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ SUNDAY:
+
+
+ MONDAY:
+
+
+ TUESDAY:
+
+
+ WEDNESDAY:
+
+
+ THURSDAY:
+
+
+ FRIDAY:
+
+
+ SATURDAY:
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+""";

@@ -67,6 +67,8 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
 
     eventBusService.subscribe('closeEditorTabPrompt', closeEditorTabHandler);
     eventBusService.subscribe('resetTextToSample', closeHandler);
+
+    eventBusService.subscribe('resetTextToWeekPlanner', weekPlannerHandler);
     eventBusService.subscribe('resetTextToTodo', todoHandler);
     eventBusService.subscribe('resetTextToPMI', pmiHandler);
     eventBusService.subscribe('resetTextToSMART', smartHandler);
@@ -131,6 +133,9 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
 
   void closeHandler([bool resetFilename = true]) =>
       resetToTemplate(welcomeText, resetFilename);
+
+  void weekPlannerHandler([bool resetFilename = true]) =>
+      resetToTemplate(WeekPlanner, resetFilename);
 
   void todoHandler([bool resetFilename = true]) =>
       resetToTemplate(TodoTemplate, resetFilename);

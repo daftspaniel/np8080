@@ -58,6 +58,8 @@ class Toolbar extends EditorComponentBase {
 
   void sampleHandler() => post("resetTextToSample");
 
+  void weekPlannerHandler() => post("resetTextToWeekPlanner");
+
   void todoHandler() => post("resetTextToTodo");
 
   void pmiHandler() => post("resetTextToPMI");
@@ -185,6 +187,5 @@ class Toolbar extends EditorComponentBase {
         note.text.substring(selInfo.start);
 
     saveAndUpdateState(newText, selInfo.start);
-    //note.updateAndSave(note.text + loremIpsum + '\n\n');
   }
 }

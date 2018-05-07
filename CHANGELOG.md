@@ -1,17 +1,22 @@
 Changelog
 
 v0.0.31 - In Development
+
  - Added globe to external links in Help menu
  - Tab title reflects active document
  - Added Lorem Ipsum to Add menu
+ - Added Week Planner Template
+ - Changed font in menus
 
 v0.0.30
+
  - Add HTML page template to Start menu
  - Add Sort by line length to Modify menu
  - Build with Angular 5 (Alpha 11) and Dart 2
  - General tweaks and code tidying
 
 v0.0.29
+
  - 2 New Themes - Amber and 64 Blue
  - New Templates - Todo, PMI and SMART
  - New Trim & Squash Option
@@ -20,10 +25,12 @@ v0.0.29
  - Build with Angular 5 (Alpha 10) and Dart 2
  
 v0.0.28
+
  - Improved dialog close X.
  - Dual reader text view.
 
 v0.0.27
+
  - Added MATE theme - inspired by the green of Ubuntu MATE.
  - Improved Manual and tidied help menu.
  - Themes dialog.
