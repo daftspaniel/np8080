@@ -179,9 +179,11 @@ class Toolbar extends EditorComponentBase {
   void themesHandler() => post("showThemesDialog");
 
   void loremIpsumHandler() {
-    TextareaSelection selInfo = textareaDomService.getCurrentSelectionInfo();
+    var selInfo = textareaDomService.getCurrentSelectionInfo();
 
-    String newText = note.text.substring(0, selInfo.start) +
+    generatedText = loremIpsum;
+
+    var newText = note.text.substring(0, selInfo.start) +
         loremIpsum +
         '\n\n' +
         note.text.substring(selInfo.start);

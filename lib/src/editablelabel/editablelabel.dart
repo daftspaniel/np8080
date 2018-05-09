@@ -55,21 +55,30 @@ class EditableLabel extends ComponentBase implements OnInit {
 
   void giveTabFocus() {
     if (tabFocused) return;
-
     tabFocus();
     eventBusService.post("tabFocusDone$id");
   }
 
-  void tabFocus() => tabFocused = true;
+  void tabFocus() {
+    tabFocused = true;
+    editMode = false;
+  }
 
-  void tabBlur() => tabFocused = false;
+  void tabBlur() {
+    tabFocused = false;
+    editMode = false;
+  }
 
   String getTabsClass() => themeService.secondaryClass;
+
+  void exitEdit() {
+    editMode = false;
+  }
 
   void toggle() {
     editMode = !editMode;
     if (editMode) {
-      TextInputElement tb = querySelector("#editbox$id");
+      var tb = querySelector("#editbox$id");
       tb.focus();
     } else if (text.length == 0) {
       reset();

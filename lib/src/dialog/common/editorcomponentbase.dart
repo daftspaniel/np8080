@@ -47,7 +47,7 @@ class EditorComponentBase extends ComponentBase {
   void amendText() => note.updateAndSave(getUpdatedText());
 
   void appendText() {
-    String newText = note.text + getGeneratedText();
+    var newText = note.text + getGeneratedText();
     saveAndUpdateState(newText, note.text.length);
   }
 
@@ -63,9 +63,9 @@ class EditorComponentBase extends ComponentBase {
   }
 
   void insertCurrentPosition() {
-    TextareaSelection selInfo = textareaDomService.getCurrentSelectionInfo();
+    var selInfo = textareaDomService.getCurrentSelectionInfo();
 
-    String newText = note.text.substring(0, selInfo.start) +
+    var newText = note.text.substring(0, selInfo.start) +
         getGeneratedText() +
         note.text.substring(selInfo.start);
 
