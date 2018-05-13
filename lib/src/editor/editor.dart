@@ -53,7 +53,7 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
   @Input()
   TextDocument note;
 
-  bool showPreview = false;
+  var showPreview = false;
 
   EditorComponent(
       TextProcessingService newTextProcessingService,

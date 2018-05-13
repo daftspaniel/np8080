@@ -12,8 +12,8 @@ import 'package:np8080/src/services/themeservice.dart';
     templateUrl: 'prepostdialog.html',
     directives: [NgClass, NgModel, NgStyle, formDirectives])
 class PrePostDialog extends EditorComponentBase {
-  String prefix = "";
-  String postfix = "";
+  var prefix = "";
+  var postfix = "";
 
   PrePostDialog(
       TextProcessingService newTextProcessingService,
@@ -32,7 +32,7 @@ class PrePostDialog extends EditorComponentBase {
 
   void performPrePost() {
     if (prefix.length + postfix.length > 0) {
-      String txt = note.text;
+      var txt = note.text;
       if (prefix.length > 0)
         txt = textProcessingService.prefixLines(txt, prefix);
       if (postfix.length > 0)

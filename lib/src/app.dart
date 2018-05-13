@@ -27,6 +27,10 @@ import 'package:np8080/src/toolbar/toolbar.dart';
 class AppComponent {
   final note1 = TextDocument(1);
   final note2 = TextDocument(2);
+  final note3 = TextDocument(3);
+  final note4 = TextDocument(4);
+  final note5 = TextDocument(5);
+  final note6 = TextDocument(6);
   final DocumentService documentService;
   final ThemeService themeService;
 

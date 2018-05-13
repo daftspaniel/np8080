@@ -15,8 +15,8 @@ import 'package:np8080/src/services/themeservice.dart';
 class EditableLabel extends ComponentBase implements OnInit {
   final onTextChange = StreamController<String>();
 
-  bool editMode = false;
-  bool tabFocused = false;
+  var editMode = false;
+  var tabFocused = false;
   String outputText;
 
   @Input()

@@ -23,7 +23,7 @@ class DualReaderView extends ComponentBase implements AfterContentInit {
   @Input()
   TextDocument note2;
 
-  bool lockScrolling = true;
+  var lockScrolling = true;
   TextAreaElement rightText;
   TextAreaElement leftText;
 

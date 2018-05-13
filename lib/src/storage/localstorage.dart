@@ -11,7 +11,7 @@ String getNp8080Store() {
 void saveStore(Map store) => window.localStorage[np8080] = json.encode(store);
 
 String loadValue(String key, String defaultValue) {
-  Map store = getStorageAsMap();
+  var store = getStorageAsMap();
   String value = store[key];
   if (value == null) {
     value = defaultValue;
@@ -20,12 +20,12 @@ String loadValue(String key, String defaultValue) {
 }
 
 Map getStorageAsMap() {
-  Map store = json.decode(getNp8080Store());
+  var store = json.decode(getNp8080Store());
   return store;
 }
 
 void deleteStoredValue(String key) {
-  Map store = getStorageAsMap();
+  var store = getStorageAsMap();
   store.remove(key);
   saveStore(store);
 }

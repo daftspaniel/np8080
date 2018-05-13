@@ -46,7 +46,7 @@ class MenuDefinition {
       Menu("Reverse", toolbar.reverseHandler, "Reverse the line order."),
       Menu("Randomise", toolbar.randomHandler, "Randomise the line order.",
           true),
-      Menu("Sort A-Z", toolbar.sortAZHandler, "Alphabetically sort lines."),
+      Menu("Sort A - Z", toolbar.sortAZHandler, "Alphabetically sort lines."),
       Menu("Sort by line length", toolbar.sortLineLengthHandler,
           "Sort lines by length - shortest to longest.")
     ]);
@@ -55,15 +55,15 @@ class MenuDefinition {
       Menu("Lorem Ipsum", toolbar.loremIpsumHandler, "Add Lorem Ipsum text.",
           true),
       Menu("Timestamp...", toolbar.timestampDlgHandler,
-          "Choose a timestamp to add to the document.", true),
+          "Choose a timestamp to add to the text.", true),
       Menu("Duplicate All", toolbar.duplicateHandler,
           "Append a copy of the entire text to itself."),
       Menu("Duplicate Lines", toolbar.dupeHandler,
           "Add a copy of a line to itself.", true),
       Menu("Generate Text...", toolbar.generateHandler,
-          "Add generated text into document."),
+          "Add generated text into text."),
       Menu("Num Sequence...", toolbar.generateSeqHandler,
-          "Add generated number sequence to document.")
+          "Add generated number sequence to text.")
     ]);
 
     removeMenuItems.addAll([
@@ -99,7 +99,7 @@ class MenuDefinition {
       Menu("Side By side", toolbar.dualReaderHandler,
           "Show texts alongside each other."),
       Menu("Reader", toolbar.readerHandler,
-          "Show a full screen readonly view of the text.")
+          "Show a full screen read-only view of the text.")
     ]);
 
     helpMenuItems.addAll([

@@ -20,7 +20,7 @@ class EditorComponentBase extends ComponentBase {
   @Input()
   TextDocument note;
 
-  int insertPos = -1;
+  var insertPos = -1;
   String generatedText;
 
   bool newLineAfter = false;
@@ -52,7 +52,7 @@ class EditorComponentBase extends ComponentBase {
   }
 
   void prependText() {
-    String newText = getGeneratedText() + '\n' + note.text;
+    var newText = getGeneratedText() + '\n' + note.text;
     saveAndUpdateState(newText, note.text.length);
   }
 

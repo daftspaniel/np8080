@@ -1,7 +1,7 @@
 const welcomeText = """
   Welcome to Notepad 8080 a clutter-free text editor in your browser.
   
-  For information on the application's features, click on Manual in the Help menu.
+  For information on features, click on Manual in the Help menu.
 
   1. Free/Libre Open Source software. It is 100% free to use, contains no advertising or tracking.
 
@@ -15,9 +15,9 @@ const welcomeText = """
 
   6. The application is constantly updated! Hit Refresh to make sure you are on the latest!
 
-  7. Written in Angular Dart 5 - Google's enterprise web framework.
+  7. Lightweight and fast to load!
 
-  8. Lightweight and fast to load!
+  8. Written in Angular Dart 5 - Google's enterprise web framework.
 
   9. NP8080 can be hosted on any web server - just HTML/CSS/JS!
 
@@ -57,7 +57,7 @@ Web Links
 
 const tab = "    ";
 
-String np8080Manual = 'If you can read this, the manual build failed!';
+var np8080Manual = 'If you can read this, the manual build failed!';
 
 const np8080ManualIntro = """
 Notepad 8080 is a text editor in your browser. It is 100% free to use, contains

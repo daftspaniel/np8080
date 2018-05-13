@@ -31,7 +31,7 @@ class SpliceDialog extends EditorComponentBase {
   }
 
   void performSplice() {
-    String txt = note.text;
+    var txt = note.text;
     if (endSplice == 0) {
       txt = textProcessingService.splice(txt, startSplice);
     } else {

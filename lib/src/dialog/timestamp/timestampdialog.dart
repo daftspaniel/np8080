@@ -24,9 +24,9 @@ class TimestampDialog extends EditorComponentBase {
   final times = List<String>();
   final defaultCustomFormat = 'yyyy-MM-dd EEEE h:m:ss a';
 
-  String timeStamp = '';
-  String customTimeStamp = '';
-  String customFormat;
+  var timeStamp = '';
+  var customTimeStamp = '';
+  var customFormat = '';
 
   bool useCustomFormat = false;
 
@@ -66,7 +66,7 @@ class TimestampDialog extends EditorComponentBase {
   }
 
   void updateTime() {
-    DateTime currentTime = DateTime.now();
+    var currentTime = DateTime.now();
     times.clear();
     times.addAll([
       currentTime.toString(),

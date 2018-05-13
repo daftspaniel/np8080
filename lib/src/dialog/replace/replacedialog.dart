@@ -16,7 +16,7 @@ class ReplaceDialog extends EditorComponentBase {
   String replacementText;
   String updatedText;
 
-  String _positionClass = "defaultpos";
+  var _positionClass = "defaultpos";
 
   String get positionClass => _positionClass;
 
