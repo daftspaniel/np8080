@@ -105,7 +105,7 @@ packages:
       name: build_runner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.8.3"
+    version: "0.8.9"
   build_web_compilers:
     dependency: "direct dev"
     description:
@@ -469,7 +469,7 @@ packages:
       name: source_gen
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.8.1"
+    version: "0.8.1+1"
   source_map_stack_trace:
     dependency: transitive
     description:

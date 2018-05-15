@@ -1,6 +1,6 @@
-# np8080 0.0.30
+# np8080 0.0.31
 
-*NOTE : NP8080 is moving to Dart 2 and Angular 5 - things will be bumpy!*
+*NOTE : NP8080 is currently moving to Dart 2 and Angular 5 - things will be bumpy!*
 
 NP8080 is a simple notepad type app for the web with some text processing features.
 It is lightweight and fast to load. 100% functionality when offline so great for Chromebooks.

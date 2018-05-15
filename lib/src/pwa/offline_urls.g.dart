@@ -2,8 +2,6 @@
 final offlineUrls = [
   './',
   './favicon.ico',
-  './img/background.png',
-  './img/github.png',
   './img/ico/favicon-16x16.png',
   './img/ico/favicon-32x32.png',
   './img/ico/favicon-96x96.png',
@@ -17,4 +15,4 @@ final offlineUrls = [
 ];
 
 /// Last modified timestamp of the files
-final String lastModified = '2018-04-16T18:40:31.999Z';
+final String lastModified = '2018-05-15T18:40:31.999Z';
