@@ -47,7 +47,7 @@ class MenuDefinition {
       Menu("Randomise", toolbar.randomHandler, "Randomise the line order.",
           true),
       Menu("Sort A - Z", toolbar.sortAZHandler, "Alphabetically sort lines."),
-      Menu("Sort by line length", toolbar.sortLineLengthHandler,
+      Menu("Sort by Line Length", toolbar.sortLineLengthHandler,
           "Sort lines by length - shortest to longest.")
     ]);
 
@@ -79,7 +79,7 @@ class MenuDefinition {
           "Remove all blank lines."),
       Menu("Extra Blank Lines", toolbar.removeExtraBlankLinesHandler,
           "Remove extra blank lines.", true),
-      Menu("Lines containing...", toolbar.removeLinesContaining,
+      Menu("Lines Containing...", toolbar.removeLinesContaining,
           "Remove lines containing (or NOT) a string."),
     ]);
 
@@ -96,7 +96,7 @@ class MenuDefinition {
           "Choose a colour theme for NP8080."),
       Menu("Markdown", toolbar.markdownHandler,
           "Show a rendering of Markdown alongside the text.", true),
-      Menu("Side By side", toolbar.dualReaderHandler,
+      Menu("Side By Side", toolbar.dualReaderHandler,
           "Show texts alongside each other."),
       Menu("Reader", toolbar.readerHandler,
           "Show a full screen read-only view of the text.")
