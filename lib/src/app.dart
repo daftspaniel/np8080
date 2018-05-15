@@ -31,13 +31,20 @@ class AppComponent {
   final note4 = TextDocument(4);
   final note5 = TextDocument(5);
   final note6 = TextDocument(6);
+
   final DocumentService documentService;
   final ThemeService themeService;
 
   var showPreview = false;
 
   AppComponent(this.documentService, this.themeService) {
-    documentService.note = note1;
-    documentService.inActiveNote = note2;
+    documentService
+      ..note = note1
+      ..addNote(note1)
+      ..addNote(note2)
+      ..addNote(note3)
+      ..addNote(note4)
+      ..addNote(note5)
+      ..addNote(note6);
   }
 }

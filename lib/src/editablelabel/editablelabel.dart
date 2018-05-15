@@ -38,7 +38,12 @@ class EditableLabel extends ComponentBase implements OnInit {
   ngOnInit() {
     formatText();
     eventBusService.subscribe('tabFocus$id', tabFocus);
-    eventBusService.subscribe('tabFocusDone${id == 1 ? 2 : 1}', tabBlur);
+    if (id != 1) eventBusService.subscribe('tabFocusDone1', tabBlur);
+    if (id != 2) eventBusService.subscribe('tabFocusDone2', tabBlur);
+    if (id != 3) eventBusService.subscribe('tabFocusDone3', tabBlur);
+    if (id != 4) eventBusService.subscribe('tabFocusDone4', tabBlur);
+    if (id != 5) eventBusService.subscribe('tabFocusDone5', tabBlur);
+    if (id != 6) eventBusService.subscribe('tabFocusDone6', tabBlur);
   }
 
   void update() {

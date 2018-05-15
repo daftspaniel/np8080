@@ -32,8 +32,12 @@ class Toolbar extends EditorComponentBase {
             newEventBusService) {
     menus.buildMenus(this);
     showPreview = loadValue(MarkdownPreviewVisibleKey, '').length > 0;
-    eventBusService.subscribe('tabFocusDone1', () => documentService.swap());
-    eventBusService.subscribe('tabFocusDone2', () => documentService.swap());
+    eventBusService.subscribe('tabFocusDone1', () => documentService.makeNoteActive(1));
+    eventBusService.subscribe('tabFocusDone2', () => documentService.makeNoteActive(2));
+    eventBusService.subscribe('tabFocusDone3', () => documentService.makeNoteActive(3));
+    eventBusService.subscribe('tabFocusDone4', () => documentService.makeNoteActive(4));
+    eventBusService.subscribe('tabFocusDone5', () => documentService.makeNoteActive(5));
+    eventBusService.subscribe('tabFocusDone6', () => documentService.makeNoteActive(6));
   }
 
   void markdownHandler() {
