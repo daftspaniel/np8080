@@ -11,7 +11,9 @@ import 'package:np8080/src/dialog/manual/manualdialog.dart';
 import 'package:np8080/src/editor/views/dualreaderview.dart';
 import 'package:np8080/src/editor/views/readerview.dart';
 import 'package:np8080/src/services/documentservice.dart';
+import 'package:np8080/src/services/eventbusservice.dart';
 import 'package:np8080/src/services/themeservice.dart';
+import 'package:np8080/src/storage/localstorage.dart';
 import 'package:np8080/src/toolbar/toolbar.dart';
 
 @Component(selector: 'np8080-app', templateUrl: 'app.html', directives: [
@@ -24,7 +26,7 @@ import 'package:np8080/src/toolbar/toolbar.dart';
   NgClass,
   DualReaderView
 ])
-class AppComponent {
+class AppComponent implements AfterViewInit {
   final note1 = TextDocument(1);
   final note2 = TextDocument(2);
   final note3 = TextDocument(3);
@@ -34,17 +36,27 @@ class AppComponent {
 
   final DocumentService documentService;
   final ThemeService themeService;
+  final EventBusService eventBusService;
 
   var showPreview = false;
 
-  AppComponent(this.documentService, this.themeService) {
+  AppComponent(this.documentService, this.themeService, this.eventBusService) {
     documentService
-      ..note = note1
+      ..activeNote = note1
       ..addNote(note1)
       ..addNote(note2)
       ..addNote(note3)
       ..addNote(note4)
       ..addNote(note5)
       ..addNote(note6);
+  }
+
+  ngAfterViewInit() {
+    print('HELLLO');
+    var index = loadValue('ActiveDocument', '1');
+    print(index);
+    //documentService.activeNote = documentService.getNote(int.parse(index) - 1);
+    documentService.makeNoteActive(5);
+    eventBusService.post("tabFocus5");
   }
 }

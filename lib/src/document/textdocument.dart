@@ -1,5 +1,4 @@
-import '../resources/resources.dart';
-
+import 'package:np8080/src/resources/resources.dart';
 import 'package:np8080/src/storage/localstorage.dart';
 
 const defaultDownloadName = 'np8080.txt';

@@ -23,7 +23,7 @@ class TextareaDomService {
 
   void setFocus() {
     TextAreaElement nptb = querySelector(_id);
-    nptb.focus();
+    nptb?.focus();
   }
 
   void setText(String txt) {

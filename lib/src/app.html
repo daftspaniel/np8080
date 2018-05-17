@@ -1,14 +1,14 @@
 <div [ngClass]="themeService.tertiaryClass">
-<editor-toolbar [(note)]="documentService.note"></editor-toolbar>
-<editable-label [(text)]="note1.downloadName" [id]="note1.id"></editable-label>
-<editable-label [(text)]="note2.downloadName" [id]="note2.id"></editable-label>
-<editable-label [(text)]="note3.downloadName" [id]="note3.id"></editable-label>
-<editable-label [(text)]="note4.downloadName" [id]="note4.id"></editable-label>
-<editable-label [(text)]="note5.downloadName" [id]="note5.id"></editable-label>
-<editable-label [(text)]="note6.downloadName" [id]="note6.id"></editable-label>
-<plain-editor [note]="documentService.note"></plain-editor>
-<about-dialog></about-dialog>
-<manual-dialog></manual-dialog>
-<reader-view  [note]="documentService.note"></reader-view>
-<dualreader-view [note1]="note1" [note2]="note2"></dualreader-view>
+    <editor-toolbar [(note)]="documentService.activeNote"></editor-toolbar>
+    <editable-label [(text)]="note1.downloadName" [id]="note1.id"></editable-label>
+    <editable-label [(text)]="note2.downloadName" [id]="note2.id"></editable-label>
+    <editable-label [(text)]="note3.downloadName" [id]="note3.id"></editable-label>
+    <editable-label [(text)]="note4.downloadName" [id]="note4.id"></editable-label>
+    <editable-label [(text)]="note5.downloadName" [id]="note5.id"></editable-label>
+    <editable-label [(text)]="note6.downloadName" [id]="note6.id"></editable-label>
+    <plain-editor [note]="documentService.activeNote"></plain-editor>
+    <about-dialog></about-dialog>
+    <manual-dialog></manual-dialog>
+    <reader-view [note]="documentService.activeNote"></reader-view>
+    <dualreader-view [note1]="note1" [note2]="note2"></dualreader-view>
 </div>

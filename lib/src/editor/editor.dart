@@ -92,7 +92,10 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
       note.undo();
       return false;
     } else if (e.keyCode == 81 && e.ctrlKey == true) {
-      eventBusService.post("showReplaceDialog");
+      eventBusService.post('showReplaceDialog');
+    } else if (e.keyCode == 77 && e.ctrlKey == true) {
+      eventBusService
+          .post(showPreview ? 'HideMarkdownPreview' : 'ShowMarkdownPreview');
     }
 
     return true;
@@ -152,6 +155,6 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
   void ngAfterContentInit() {
     eventBusService
         .post(showPreview ? 'ShowMarkdownPreview' : 'HideMarkdownPreview');
-    eventBusService.post("tabFocus1");
+    //eventBusService.post("tabFocus1");
   }
 }

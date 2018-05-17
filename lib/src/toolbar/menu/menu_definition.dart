@@ -33,7 +33,7 @@ class MenuDefinition {
 
     modifyMenuItems.addAll([
       Menu("Replace...", toolbar.replaceHandler,
-          "Replace text with different text.\tShortcut - Ctrl + Q"),
+          "Replace text with different text.\nShortcut - Ctrl + Q"),
       Menu("Pre/Post...", toolbar.prePostHandler,
           "Add text to start and/or end of lines.", true),
       Menu("Number", toolbar.numberHandler, "Number non-blank lines."),
@@ -95,7 +95,7 @@ class MenuDefinition {
       Menu("Themes...", toolbar.themesHandler,
           "Choose a colour theme for NP8080."),
       Menu("Markdown", toolbar.markdownHandler,
-          "Show a rendering of Markdown alongside the text.", true),
+          "Show a preview of MD.\nShortcut - Ctrl + M", true),
       Menu("Side By Side", toolbar.dualReaderHandler,
           "Show texts alongside each other."),
       Menu("Reader", toolbar.readerHandler,
