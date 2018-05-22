@@ -7,6 +7,11 @@ v0.0.31 - In Development
  - Added Lorem Ipsum to Add menu
  - Added Week Planner Template
  - Changed font in menus
+ - Improved Markdown preview performance
+ - Tabs increased to 6
+ - Active tab is remembered between loads
+ - 'Move to next tab' button
+ - Improved Sentence calculating
 
 v0.0.30
 
