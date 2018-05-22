@@ -12,7 +12,8 @@ import 'package:np8080/src/services/themeservice.dart';
     selector: 'markdown-preview',
     templateUrl: 'markdownpreview.html',
     directives: [NgModel, NgStyle, NgClass])
-class MarkdownPreview extends EditorComponentBase implements OnChanges {
+class MarkdownPreview extends EditorComponentBase
+    implements AfterContentInit, OnChanges {
   final _nullSanitizer = NullTreeSanitizer();
 
   DivElement _htmlDiv;
@@ -24,7 +25,10 @@ class MarkdownPreview extends EditorComponentBase implements OnChanges {
       EventBusService newEventBusService)
       : super(newTextProcessingService, newTextareaDomService, newThemeService,
             newEventBusService) {
-    eventBusService.subscribe('ShowMarkdownPreview', () => active = true);
+    eventBusService.subscribe('ShowMarkdownPreview', () {
+      active = true;
+      updatePreview();
+    });
     eventBusService.subscribe('HideMarkdownPreview', () => active = false);
   }
 
@@ -34,12 +38,14 @@ class MarkdownPreview extends EditorComponentBase implements OnChanges {
   bool active = false;
 
   ngOnChanges(Map<String, SimpleChange> changes) {
-    updatePreview();
+    if (active) updatePreview();
+  }
+
+  void ngAfterContentInit() {
+    _htmlDiv ??= querySelector('#previewPane');
   }
 
   void updatePreview() {
-    _htmlDiv ??= querySelector('#previewPane');
-
     _htmlDiv.setInnerHtml(textProcessingService.convertMarkdownToHtml(content),
         treeSanitizer: _nullSanitizer);
   }
