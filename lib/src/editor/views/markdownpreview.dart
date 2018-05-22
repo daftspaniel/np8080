@@ -46,8 +46,13 @@ class MarkdownPreview extends EditorComponentBase
   }
 
   void updatePreview() {
-    _htmlDiv.setInnerHtml(textProcessingService.convertMarkdownToHtml(content),
-        treeSanitizer: _nullSanitizer);
+    try {
+      _htmlDiv?.setInnerHtml(
+          textProcessingService.convertMarkdownToHtml(content),
+          treeSanitizer: _nullSanitizer);
+    } catch (Exception) {
+      print('exception updating Preview of MD');
+    }
   }
 }
 
