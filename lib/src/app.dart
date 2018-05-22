@@ -52,11 +52,8 @@ class AppComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    print('HELLLO');
     var index = loadValue('ActiveDocument', '1');
-    print(index);
-    //documentService.activeNote = documentService.getNote(int.parse(index) - 1);
-    documentService.makeNoteActive(5);
-    eventBusService.post("tabFocus5");
+    documentService.makeNoteActive(int.parse(index));
+    eventBusService.post("tabFocus$index");
   }
 }

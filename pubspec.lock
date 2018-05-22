@@ -441,7 +441,7 @@ packages:
       name: shelf
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.7.3"
+    version: "0.7.3+1"
   shelf_packages_handler:
     dependency: transitive
     description:
@@ -455,7 +455,7 @@ packages:
       name: shelf_static
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.7"
+    version: "0.2.7+1"
   shelf_web_socket:
     dependency: transitive
     description:
@@ -581,6 +581,6 @@ packages:
       name: yaml
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.13"
+    version: "2.1.14"
 sdks:
-  dart: ">=2.0.0-dev.54.0 <=2.0.0-dev.55.0"
+  dart: ">=2.0.0-dev.55.0 <=2.0.0-dev.56.0"

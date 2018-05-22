@@ -3,6 +3,7 @@ import 'dart:html';
 import 'package:angular/angular.dart';
 import 'package:np8080/src/document/textdocument.dart';
 import 'package:np8080/src/services/textareadomservice.dart';
+import 'package:np8080/src/storage/localstorage.dart';
 
 @Injectable()
 class DocumentService {
@@ -33,5 +34,6 @@ class DocumentService {
     _activeNote = _allNotes[id - 1];
     document.title = _activeNote.downloadName;
     _textareaDomService.setFocus();
+    storeValue('ActiveDocument', id.toString());
   }
 }
