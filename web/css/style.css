@@ -288,3 +288,12 @@ button {
     overflow: none;
     height: calc(100vh - 22px);
 }
+
+.nextTabButton {
+    font-size: 8pt;
+    margin-left: 15px;
+    padding: 3px;
+    font-weight: bold;
+    border: 2px solid;
+    border-radius: 8px;
+}

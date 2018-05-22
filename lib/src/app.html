@@ -6,6 +6,7 @@
     <editable-label [(text)]="note4.downloadName" [id]="note4.id"></editable-label>
     <editable-label [(text)]="note5.downloadName" [id]="note5.id"></editable-label>
     <editable-label [(text)]="note6.downloadName" [id]="note6.id"></editable-label>
+    <span (click)="nextTab()" class="nextTabButton">&gt;</span>
     <plain-editor [note]="documentService.activeNote"></plain-editor>
     <about-dialog></about-dialog>
     <manual-dialog></manual-dialog>

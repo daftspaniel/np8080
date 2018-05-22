@@ -10,6 +10,7 @@ class DocumentService {
   final _allNotes = List<TextDocument>();
   var _textareaDomService;
   TextDocument _activeNote;
+  int _activeNoteId = 0;
 
   DocumentService(TextareaDomService textareaDomService) {
     _textareaDomService = textareaDomService;
@@ -22,18 +23,21 @@ class DocumentService {
 
   get activeNote => _activeNote;
 
-  TextDocument getNote(int index) {
-    return _allNotes[index];
-  }
+  TextDocument getNote(int index) => _allNotes[index];
 
-  void addNote(TextDocument note) {
-    _allNotes.add(note);
-  }
+  void addNote(TextDocument note) => _allNotes.add(note);
 
   void makeNoteActive(int id) {
-    _activeNote = _allNotes[id - 1];
+    _activeNoteId = id - 1;
+    _activeNote = _allNotes[_activeNoteId];
     document.title = _activeNote.downloadName;
     _textareaDomService.setFocus();
     storeValue('ActiveDocument', id.toString());
+  }
+
+  void moveToNextTab() {
+    _activeNoteId++;
+    if (_activeNoteId > 5) _activeNoteId = 0;
+    makeNoteActive(_activeNoteId + 1);
   }
 }

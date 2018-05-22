@@ -37,7 +37,7 @@ class EditableLabel extends ComponentBase implements OnInit {
 
   ngOnInit() {
     formatText();
-    eventBusService.subscribe('tabFocus$id', tabFocus);
+    eventBusService.subscribe('tabFocus$id', giveTabFocus);
     if (id != 1) eventBusService.subscribe('tabFocusDone1', tabBlur);
     if (id != 2) eventBusService.subscribe('tabFocusDone2', tabBlur);
     if (id != 3) eventBusService.subscribe('tabFocusDone3', tabBlur);
@@ -59,9 +59,9 @@ class EditableLabel extends ComponentBase implements OnInit {
   }
 
   void giveTabFocus() {
+    eventBusService.post("tabFocusDone$id");
     if (tabFocused) return;
     tabFocus();
-    eventBusService.post("tabFocusDone$id");
   }
 
   void tabFocus() {
@@ -76,9 +76,7 @@ class EditableLabel extends ComponentBase implements OnInit {
 
   String getTabsClass() => themeService.secondaryClass;
 
-  void exitEdit() {
-    editMode = false;
-  }
+  void exitEdit() => editMode = false;
 
   void toggle() {
     editMode = !editMode;
