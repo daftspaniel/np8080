@@ -61,4 +61,9 @@ class AppComponent implements AfterViewInit {
     documentService.moveToNextTab();
     eventBusService.post("tabFocus${documentService.activeNote.id}");
   }
+
+  previousTab() {
+    documentService.moveToPreviousTab();
+    eventBusService.post("tabFocus${documentService.activeNote.id}");
+  }
 }

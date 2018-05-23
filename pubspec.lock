@@ -287,7 +287,7 @@ packages:
       name: json_annotation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.4"
+    version: "0.2.5"
   kernel:
     dependency: transitive
     description:
@@ -583,4 +583,4 @@ packages:
     source: hosted
     version: "2.1.14"
 sdks:
-  dart: ">=2.0.0-dev.55.0 <=2.0.0-dev.56.0"
+  dart: ">=2.0.0-dev.55.0 <=2.0.0-dev.57.0"

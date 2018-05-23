@@ -40,4 +40,10 @@ class DocumentService {
     if (_activeNoteId > 5) _activeNoteId = 0;
     makeNoteActive(_activeNoteId + 1);
   }
+
+  void moveToPreviousTab() {
+    _activeNoteId--;
+    if (_activeNoteId < 0) _activeNoteId = 5;
+    makeNoteActive(_activeNoteId + 1);
+  }
 }
