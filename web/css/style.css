@@ -289,9 +289,17 @@ button {
     height: calc(100vh - 22px);
 }
 
-.nextTabButton, .prevTabButton {
+.nextTabButton {
     font-size: 8pt;
     padding: 3px;
     font-weight: bold;
     border: 1px solid;
+}
+
+.prevTabButton {
+    font-size: 8pt;
+    padding: 3px;
+    font-weight: bold;
+    border: 1px solid;
+    margin-left: 25px;
 }
