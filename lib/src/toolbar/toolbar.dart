@@ -135,6 +135,8 @@ class Toolbar extends EditorComponentBase {
 
   void htmlUnescapeHandler() => operation(textProcessingService.htmlUnescape);
 
+  void tabsToSpaces() => operation(textProcessingService.convertTabsToSpace);
+
   void dupeHandler() => operation(textProcessingService.dupeLines);
 
   void downloadHandler() {

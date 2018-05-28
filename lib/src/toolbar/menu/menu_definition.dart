@@ -37,6 +37,8 @@ class MenuDefinition {
       Menu("Pre/Post...", toolbar.prePostHandler,
           "Add text to start and/or end of lines.", true),
       Menu("Number", toolbar.numberHandler, "Number non-blank lines."),
+      Menu("Tabs to Spaces", toolbar.tabsToSpaces,
+          "Convert tab characters to spaces."),
       Menu("Doublespace", toolbar.doublespaceHandler, "Double space the lines.",
           true),
       Menu("Split...", toolbar.splitHandler,
@@ -46,7 +48,7 @@ class MenuDefinition {
       Menu("Reverse", toolbar.reverseHandler, "Reverse the line order."),
       Menu("Randomise", toolbar.randomHandler, "Randomise the line order.",
           true),
-      Menu("Sort A - Z", toolbar.sortAZHandler, "Alphabetically sort lines."),
+      Menu("Sort A to Z", toolbar.sortAZHandler, "Alphabetically sort lines."),
       Menu("Sort by Line Length", toolbar.sortLineLengthHandler,
           "Sort lines by length - shortest to longest.")
     ]);
