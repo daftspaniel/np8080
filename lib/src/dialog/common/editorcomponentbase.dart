@@ -56,9 +56,16 @@ class EditorComponentBase extends ComponentBase {
     saveAndUpdateState(newText, note.text.length);
   }
 
+  void saveOnly(String newNoteText) {
+    note.updateAndSave(newNoteText);
+  }
+
   void saveAndUpdateState(String newNoteText, int cursorPos) {
     note.updateAndSave(newNoteText);
-    insertPos = cursorPos + generatedText.length;
+    insertPos = cursorPos;
+    if (generatedText != null) {
+      insertPos += generatedText.length;
+    }
     closeTheDialog();
   }
 

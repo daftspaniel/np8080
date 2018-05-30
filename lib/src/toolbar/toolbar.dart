@@ -193,5 +193,13 @@ class Toolbar extends EditorComponentBase {
         note.text.substring(selInfo.start);
 
     saveAndUpdateState(newText, selInfo.start);
+    textareaDomService.setFocus();
+  }
+
+  void duplicateCurrentLine() {
+    var selInfo = textareaDomService.getCurrentSelectionInfo();
+    var newText = textProcessingService.duplicateLine(note.text, selInfo.start);
+    saveOnly(newText);
+    textareaDomService.setFocusAndPosition(selInfo.start);
   }
 }

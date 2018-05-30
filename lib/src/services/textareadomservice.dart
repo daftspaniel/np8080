@@ -1,40 +1,46 @@
 import 'dart:html';
+import 'dart:async';
 import 'package:angular/angular.dart';
 
 @Injectable()
 class TextareaDomService {
   final String _id = '#nptextbox';
 
+  TextAreaElement nptb;
+
   TextareaSelection getCurrentSelectionInfo() {
-    TextAreaElement nptb = querySelector(_id);
-    TextareaSelection sel = TextareaSelection();
+    var sel = TextareaSelection();
     sel
-      ..start = nptb.selectionStart
-      ..end = nptb.selectionEnd
-      ..text = nptb.value.substring(sel.start, sel.end);
+      ..start = textArea.selectionStart
+      ..end = textArea.selectionEnd
+      ..text = textArea.value.substring(sel.start, sel.end);
 
     return sel;
   }
 
-  void setCursorPosition(int pos) {
-    TextAreaElement nptb = querySelector(_id);
-    nptb.setSelectionRange(pos, pos);
+  TextAreaElement get textArea {
+    if (nptb == null) {
+      nptb = querySelector(_id);
+    }
+    return nptb;
   }
+
+  void setCursorPosition(int pos) => textArea?.setSelectionRange(pos, pos);
 
   void setFocus() {
-    TextAreaElement nptb = querySelector(_id);
-    nptb?.focus();
+    Timer(Duration(milliseconds: 154), () => textArea?.focus());
   }
 
-  void setText(String txt) {
-    TextAreaElement nptb = querySelector(_id);
-    nptb.value = txt;
+  void setFocusAndPosition(int position) {
+    Timer(Duration(milliseconds: 255), () {
+      textArea.focus();
+      textArea.setSelectionRange(position, position);
+    });
   }
 
-  String getText() {
-    TextAreaElement nptb = querySelector(_id);
-    return nptb.value;
-  }
+  void setText(String txt) => textArea.value = txt;
+
+  String getText() => textArea.value;
 }
 
 class TextareaSelection {
