@@ -103,11 +103,11 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
 
   bool tabHandler(KeyboardEvent e) {
     e.preventDefault();
-    TextareaSelection selInfo = textareaDomService.getCurrentSelectionInfo();
+    var selInfo = textareaDomService.getCurrentSelectionInfo();
 
     if (selInfo.text.length > 0) {
-      String out = note.text.substring(0, selInfo.start);
-      String tabbedText = textProcessingService.prefixLines(selInfo.text, tab);
+      var out = note.text.substring(0, selInfo.start);
+      var tabbedText = textProcessingService.prefixLines(selInfo.text, tab);
       out += tabbedText + note.text.substring(selInfo.end);
       textareaDomService.setText(out);
       textareaDomService.setCursorPosition(selInfo.start + tabbedText.length);
@@ -155,6 +155,5 @@ class EditorComponent extends EditorComponentBase implements AfterContentInit {
   void ngAfterContentInit() {
     eventBusService
         .post(showPreview ? 'ShowMarkdownPreview' : 'HideMarkdownPreview');
-    //eventBusService.post("tabFocus1");
   }
 }

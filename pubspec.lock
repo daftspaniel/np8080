@@ -126,7 +126,7 @@ packages:
       name: built_value
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.5.0"
+    version: "5.5.1"
   charcode:
     dependency: transitive
     description:
@@ -245,7 +245,7 @@ packages:
       name: http_multi_server
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.4"
+    version: "2.0.5"
   http_parser:
     dependency: transitive
     description:
@@ -287,7 +287,7 @@ packages:
       name: json_annotation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.5"
+    version: "0.2.7"
   kernel:
     dependency: transitive
     description:
@@ -462,7 +462,7 @@ packages:
       name: shelf_web_socket
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.2.2+1"
+    version: "0.2.2+2"
   source_gen:
     dependency: transitive
     description:
@@ -525,7 +525,7 @@ packages:
       name: stringprocess
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.6"
+    version: "1.0.7"
   term_glyph:
     dependency: transitive
     description:
@@ -539,7 +539,7 @@ packages:
       name: test
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.12.38+1"
+    version: "0.12.38+3"
   tuple:
     dependency: transitive
     description:
@@ -574,7 +574,7 @@ packages:
       name: web_socket_channel
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.7"
+    version: "1.0.8"
   yaml:
     dependency: transitive
     description:

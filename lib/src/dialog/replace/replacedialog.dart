@@ -33,7 +33,7 @@ class ReplaceDialog extends EditorComponentBase {
   void initialiseAndShow() {
     textToReplace = "";
 
-    TextareaSelection tas = textareaDomService.getCurrentSelectionInfo();
+    var tas = textareaDomService.getCurrentSelectionInfo();
     if (tas.text.length > 0) {
       textToReplace = tas.text;
       setFocus('#replaceTextbox');

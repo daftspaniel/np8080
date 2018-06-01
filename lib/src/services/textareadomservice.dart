@@ -28,13 +28,14 @@ class TextareaDomService {
   void setCursorPosition(int pos) => textArea?.setSelectionRange(pos, pos);
 
   void setFocus() {
-    Timer(Duration(milliseconds: 154), () => textArea?.focus());
+    Timer(Duration(milliseconds: 254), () => textArea?.focus());
   }
 
   void setFocusAndPosition(int position) {
-    Timer(Duration(milliseconds: 255), () {
-      textArea.focus();
-      textArea.setSelectionRange(position, position);
+    Timer(Duration(milliseconds: 555), () {
+      textArea
+        ..focus()
+        ..setSelectionRange(position, position);
     });
   }
 

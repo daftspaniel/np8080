@@ -4,7 +4,7 @@ import 'dart:html';
 const np8080 = 'np8080';
 
 String getNp8080Store() {
-  String result = window.localStorage[np8080];
+  var result = window.localStorage[np8080];
   return result == null ? "{}" : result;
 }
 
@@ -12,7 +12,7 @@ void saveStore(Map store) => window.localStorage[np8080] = json.encode(store);
 
 String loadValue(String key, String defaultValue) {
   var store = getStorageAsMap();
-  String value = store[key];
+  var value = store[key];
   if (value == null) {
     value = defaultValue;
   }
@@ -31,7 +31,7 @@ void deleteStoredValue(String key) {
 }
 
 void storeValue(String key, String value) {
-  Map store = getStorageAsMap();
+  var store = getStorageAsMap();
   store[key] = value;
   saveStore(store);
 }
